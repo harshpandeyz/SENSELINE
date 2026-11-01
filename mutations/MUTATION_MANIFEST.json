@@ -1,0 +1,276 @@
+{
+  "mutation_count": 30,
+  "mutations": [
+    {
+      "file": "S01_ignore_signed.py",
+      "task": "S01",
+      "intended_defect": "S01 ignore signed",
+      "expected_failure_dimensions": [
+        "numerical_value"
+      ],
+      "purpose": "negative control; the grader must reject at least one hidden case in the listed dimension"
+    },
+    {
+      "file": "S01_ignore_sentinels.py",
+      "task": "S01",
+      "intended_defect": "S01 ignore sentinels",
+      "expected_failure_dimensions": [
+        "validity_state"
+      ],
+      "purpose": "negative control; the grader must reject at least one hidden case in the listed dimension"
+    },
+    {
+      "file": "S02_bad_fahrenheit.py",
+      "task": "S02",
+      "intended_defect": "S02 bad fahrenheit",
+      "expected_failure_dimensions": [
+        "numerical_value"
+      ],
+      "purpose": "negative control; the grader must reject at least one hidden case in the listed dimension"
+    },
+    {
+      "file": "S02_allow_incompatible.py",
+      "task": "S02",
+      "intended_defect": "S02 allow incompatible",
+      "expected_failure_dimensions": [
+        "validity_state"
+      ],
+      "purpose": "negative control; the grader must reject at least one hidden case in the listed dimension"
+    },
+    {
+      "file": "S03_omit_temperature.py",
+      "task": "S03",
+      "intended_defect": "S03 omit temperature",
+      "expected_failure_dimensions": [
+        "numerical_value"
+      ],
+      "purpose": "negative control; the grader must reject at least one hidden case in the listed dimension"
+    },
+    {
+      "file": "S03_gain_offset_order.py",
+      "task": "S03",
+      "intended_defect": "S03 gain offset order",
+      "expected_failure_dimensions": [
+        "numerical_value"
+      ],
+      "purpose": "negative control; the grader must reject at least one hidden case in the listed dimension"
+    },
+    {
+      "file": "S04_ignore_serial.py",
+      "task": "S04",
+      "intended_defect": "S04 ignore serial",
+      "expected_failure_dimensions": [
+        "validity_state"
+      ],
+      "purpose": "negative control; the grader must reject at least one hidden case in the listed dimension"
+    },
+    {
+      "file": "S04_ignore_traceability.py",
+      "task": "S04",
+      "intended_defect": "S04 ignore traceability",
+      "expected_failure_dimensions": [
+        "validity_state"
+      ],
+      "purpose": "negative control; the grader must reject at least one hidden case in the listed dimension"
+    },
+    {
+      "file": "S05_drop_correlation.py",
+      "task": "S05",
+      "intended_defect": "S05 drop correlation",
+      "expected_failure_dimensions": [
+        "numerical_value"
+      ],
+      "purpose": "negative control; the grader must reject at least one hidden case in the listed dimension"
+    },
+    {
+      "file": "S05_type_b_halfwidth.py",
+      "task": "S05",
+      "intended_defect": "S05 type b halfwidth",
+      "expected_failure_dimensions": [
+        "numerical_value"
+      ],
+      "purpose": "negative control; the grader must reject at least one hidden case in the listed dimension"
+    },
+    {
+      "file": "S06_point_only.py",
+      "task": "S06",
+      "intended_defect": "S06 point only",
+      "expected_failure_dimensions": [
+        "engineering_decision"
+      ],
+      "purpose": "negative control; the grader must reject at least one hidden case in the listed dimension"
+    },
+    {
+      "file": "S06_touching_is_reject.py",
+      "task": "S06",
+      "intended_defect": "S06 touching is reject",
+      "expected_failure_dimensions": [
+        "engineering_decision"
+      ],
+      "purpose": "negative control; the grader must reject at least one hidden case in the listed dimension"
+    },
+    {
+      "file": "S07_no_rollover.py",
+      "task": "S07",
+      "intended_defect": "S07 no rollover",
+      "expected_failure_dimensions": [
+        "validity_state"
+      ],
+      "purpose": "negative control; the grader must reject at least one hidden case in the listed dimension"
+    },
+    {
+      "file": "S07_ignore_freshness.py",
+      "task": "S07",
+      "intended_defect": "S07 ignore freshness",
+      "expected_failure_dimensions": [
+        "validity_state"
+      ],
+      "purpose": "negative control; the grader must reject at least one hidden case in the listed dimension"
+    },
+    {
+      "file": "S08_ignore_certificate.py",
+      "task": "S08",
+      "intended_defect": "S08 ignore certificate",
+      "expected_failure_dimensions": [
+        "validity_state"
+      ],
+      "purpose": "negative control; the grader must reject at least one hidden case in the listed dimension"
+    },
+    {
+      "file": "S08_ignore_uncertainty.py",
+      "task": "S08",
+      "intended_defect": "S08 ignore uncertainty",
+      "expected_failure_dimensions": [
+        "engineering_decision"
+      ],
+      "purpose": "negative control; the grader must reject at least one hidden case in the listed dimension"
+    },
+    {
+      "file": "S01_bad_signed_decode.py",
+      "task": "S01",
+      "intended_defect": "S01 bad signed decode",
+      "expected_failure_dimensions": [
+        "numerical_value"
+      ],
+      "purpose": "negative control; the grader must reject at least one hidden case in the listed dimension"
+    },
+    {
+      "file": "S01_bad_endianness.py",
+      "task": "S01",
+      "intended_defect": "S01 bad endianness",
+      "expected_failure_dimensions": [
+        "numerical_value"
+      ],
+      "purpose": "negative control; the grader must reject at least one hidden case in the listed dimension"
+    },
+    {
+      "file": "S02_wrong_unit_conversion.py",
+      "task": "S02",
+      "intended_defect": "S02 wrong unit conversion",
+      "expected_failure_dimensions": [
+        "numerical_value"
+      ],
+      "purpose": "negative control; the grader must reject at least one hidden case in the listed dimension"
+    },
+    {
+      "file": "S03_missing_compensation.py",
+      "task": "S03",
+      "intended_defect": "S03 missing compensation",
+      "expected_failure_dimensions": [
+        "numerical_value"
+      ],
+      "purpose": "negative control; the grader must reject at least one hidden case in the listed dimension"
+    },
+    {
+      "file": "S03_double_calibration.py",
+      "task": "S03",
+      "intended_defect": "S03 double calibration",
+      "expected_failure_dimensions": [
+        "numerical_value"
+      ],
+      "purpose": "negative control; the grader must reject at least one hidden case in the listed dimension"
+    },
+    {
+      "file": "S04_accept_invalid_certificate.py",
+      "task": "S04",
+      "intended_defect": "S04 accept invalid certificate",
+      "expected_failure_dimensions": [
+        "validity_state"
+      ],
+      "purpose": "negative control; the grader must reject at least one hidden case in the listed dimension"
+    },
+    {
+      "file": "S05_drop_uncertainty_component.py",
+      "task": "S05",
+      "intended_defect": "S05 drop uncertainty component",
+      "expected_failure_dimensions": [
+        "numerical_value"
+      ],
+      "purpose": "negative control; the grader must reject at least one hidden case in the listed dimension"
+    },
+    {
+      "file": "S05_ignore_covariance.py",
+      "task": "S05",
+      "intended_defect": "S05 ignore covariance",
+      "expected_failure_dimensions": [
+        "numerical_value"
+      ],
+      "purpose": "negative control; the grader must reject at least one hidden case in the listed dimension"
+    },
+    {
+      "file": "S06_wrong_equality_boundary.py",
+      "task": "S06",
+      "intended_defect": "S06 wrong equality boundary",
+      "expected_failure_dimensions": [
+        "engineering_decision"
+      ],
+      "purpose": "negative control; the grader must reject at least one hidden case in the listed dimension"
+    },
+    {
+      "file": "S07_accept_stale.py",
+      "task": "S07",
+      "intended_defect": "S07 accept stale",
+      "expected_failure_dimensions": [
+        "validity_state"
+      ],
+      "purpose": "negative control; the grader must reject at least one hidden case in the listed dimension"
+    },
+    {
+      "file": "S07_bad_rollover.py",
+      "task": "S07",
+      "intended_defect": "S07 bad rollover",
+      "expected_failure_dimensions": [
+        "validity_state"
+      ],
+      "purpose": "negative control; the grader must reject at least one hidden case in the listed dimension"
+    },
+    {
+      "file": "S08_wrong_unit_transformation.py",
+      "task": "S08",
+      "intended_defect": "S08 wrong unit transformation",
+      "expected_failure_dimensions": [
+        "numerical_value"
+      ],
+      "purpose": "negative control; the grader must reject at least one hidden case in the listed dimension"
+    },
+    {
+      "file": "S08_extra_schema_field.py",
+      "task": "S08",
+      "intended_defect": "S08 extra schema field",
+      "expected_failure_dimensions": [
+        "output_schema"
+      ],
+      "purpose": "negative control; the grader must reject at least one hidden case in the listed dimension"
+    },
+    {
+      "file": "S08_decoded_unit_label.py",
+      "task": "S08",
+      "intended_defect": "S08 changes only the decoded measurement unit label while preserving all numerical values",
+      "expected_failure_dimensions": [
+        "physical_unit",
+        "physical_quantity"
+      ],
+      "purpose": "adversarial regression for decoded_measurement.value unit integrity and SCR"
+    }
+  ]
+}

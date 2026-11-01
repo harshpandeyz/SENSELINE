@@ -1,0 +1,539 @@
+{
+  "cases": [
+    {
+      "category": "ordinary",
+      "expected": {
+        "reason": "ok",
+        "sequence_order": "NEWER",
+        "valid": true
+      },
+      "id": "S07-seeded-00",
+      "input": {
+        "allowed_future_skew_ms": 100,
+        "last_sequence": 20,
+        "max_age_ms": 1000,
+        "now_ms": 1800000000000,
+        "sequence": 21,
+        "timestamp_ms": 1800000000015
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "reason": "ok",
+        "sequence_order": "NEWER",
+        "valid": true
+      },
+      "id": "S07-seeded-01",
+      "input": {
+        "allowed_future_skew_ms": 100,
+        "last_sequence": 21,
+        "max_age_ms": 1000,
+        "now_ms": 1800000000000,
+        "sequence": 22,
+        "timestamp_ms": 1799999999292
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "reason": "ok",
+        "sequence_order": "NEWER",
+        "valid": true
+      },
+      "id": "S07-seeded-02",
+      "input": {
+        "allowed_future_skew_ms": 100,
+        "last_sequence": 22,
+        "max_age_ms": 1000,
+        "now_ms": 1800000000000,
+        "sequence": 23,
+        "timestamp_ms": 1799999999784
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "reason": "ok",
+        "sequence_order": "NEWER",
+        "valid": true
+      },
+      "id": "S07-seeded-03",
+      "input": {
+        "allowed_future_skew_ms": 100,
+        "last_sequence": 23,
+        "max_age_ms": 1000,
+        "now_ms": 1800000000000,
+        "sequence": 24,
+        "timestamp_ms": 1799999999430
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "reason": "ok",
+        "sequence_order": "NEWER",
+        "valid": true
+      },
+      "id": "S07-seeded-04",
+      "input": {
+        "allowed_future_skew_ms": 100,
+        "last_sequence": 24,
+        "max_age_ms": 1000,
+        "now_ms": 1800000000000,
+        "sequence": 25,
+        "timestamp_ms": 1799999999130
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "reason": "ok",
+        "sequence_order": "NEWER",
+        "valid": true
+      },
+      "id": "S07-seeded-05",
+      "input": {
+        "allowed_future_skew_ms": 100,
+        "last_sequence": 25,
+        "max_age_ms": 1000,
+        "now_ms": 1800000000000,
+        "sequence": 26,
+        "timestamp_ms": 1799999999541
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "reason": "ok",
+        "sequence_order": "NEWER",
+        "valid": true
+      },
+      "id": "S07-seeded-06",
+      "input": {
+        "allowed_future_skew_ms": 100,
+        "last_sequence": 26,
+        "max_age_ms": 1000,
+        "now_ms": 1800000000000,
+        "sequence": 27,
+        "timestamp_ms": 1799999999174
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "reason": "ok",
+        "sequence_order": "NEWER",
+        "valid": true
+      },
+      "id": "S07-seeded-07",
+      "input": {
+        "allowed_future_skew_ms": 100,
+        "last_sequence": 27,
+        "max_age_ms": 1000,
+        "now_ms": 1800000000000,
+        "sequence": 28,
+        "timestamp_ms": 1799999999710
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "reason": "ok",
+        "sequence_order": "NEWER",
+        "valid": true
+      },
+      "id": "S07-seeded-08",
+      "input": {
+        "allowed_future_skew_ms": 100,
+        "last_sequence": 28,
+        "max_age_ms": 1000,
+        "now_ms": 1800000000000,
+        "sequence": 29,
+        "timestamp_ms": 1799999999830
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "reason": "ok",
+        "sequence_order": "NEWER",
+        "valid": true
+      },
+      "id": "S07-seeded-09",
+      "input": {
+        "allowed_future_skew_ms": 100,
+        "last_sequence": 29,
+        "max_age_ms": 1000,
+        "now_ms": 1800000000000,
+        "sequence": 30,
+        "timestamp_ms": 1799999999594
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "reason": "ok",
+        "sequence_order": "NEWER",
+        "valid": true
+      },
+      "id": "S07-seeded-10",
+      "input": {
+        "allowed_future_skew_ms": 100,
+        "last_sequence": 30,
+        "max_age_ms": 1000,
+        "now_ms": 1800000000000,
+        "sequence": 31,
+        "timestamp_ms": 1799999999456
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "reason": "ok",
+        "sequence_order": "NEWER",
+        "valid": true
+      },
+      "id": "S07-seeded-11",
+      "input": {
+        "allowed_future_skew_ms": 100,
+        "last_sequence": 31,
+        "max_age_ms": 1000,
+        "now_ms": 1800000000000,
+        "sequence": 32,
+        "timestamp_ms": 1799999999795
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "reason": "stale_timestamp",
+        "valid": false
+      },
+      "id": "S07-seeded-12",
+      "input": {
+        "allowed_future_skew_ms": 100,
+        "last_sequence": 32,
+        "max_age_ms": 1000,
+        "now_ms": 1800000000000,
+        "sequence": 33,
+        "timestamp_ms": 1799999998838
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "reason": "ok",
+        "sequence_order": "NEWER",
+        "valid": true
+      },
+      "id": "S07-seeded-13",
+      "input": {
+        "allowed_future_skew_ms": 100,
+        "last_sequence": 33,
+        "max_age_ms": 1000,
+        "now_ms": 1800000000000,
+        "sequence": 34,
+        "timestamp_ms": 1799999999584
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "reason": "ok",
+        "sequence_order": "NEWER",
+        "valid": true
+      },
+      "id": "S07-seeded-14",
+      "input": {
+        "allowed_future_skew_ms": 100,
+        "last_sequence": 34,
+        "max_age_ms": 1000,
+        "now_ms": 1800000000000,
+        "sequence": 35,
+        "timestamp_ms": 1799999999796
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "reason": "ok",
+        "sequence_order": "NEWER",
+        "valid": true
+      },
+      "id": "S07-seeded-15",
+      "input": {
+        "allowed_future_skew_ms": 100,
+        "last_sequence": 35,
+        "max_age_ms": 1000,
+        "now_ms": 1800000000000,
+        "sequence": 36,
+        "timestamp_ms": 1799999999856
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "reason": "ok",
+        "sequence_order": "NEWER",
+        "valid": true
+      },
+      "id": "S07-seeded-16",
+      "input": {
+        "allowed_future_skew_ms": 100,
+        "last_sequence": 36,
+        "max_age_ms": 1000,
+        "now_ms": 1800000000000,
+        "sequence": 37,
+        "timestamp_ms": 1799999999590
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "reason": "ok",
+        "sequence_order": "NEWER",
+        "valid": true
+      },
+      "id": "S07-seeded-17",
+      "input": {
+        "allowed_future_skew_ms": 100,
+        "last_sequence": 37,
+        "max_age_ms": 1000,
+        "now_ms": 1800000000000,
+        "sequence": 38,
+        "timestamp_ms": 1799999999619
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "reason": "ok",
+        "sequence_order": "NEWER",
+        "valid": true
+      },
+      "id": "S07-stale-boundary",
+      "input": {
+        "allowed_future_skew_ms": 100,
+        "last_sequence": 19,
+        "max_age_ms": 1000,
+        "now_ms": 1800000000000,
+        "sequence": 20,
+        "timestamp_ms": 1799999999000
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "reason": "stale_timestamp",
+        "valid": false
+      },
+      "id": "S07-stale-before",
+      "input": {
+        "allowed_future_skew_ms": 100,
+        "last_sequence": 19,
+        "max_age_ms": 1000,
+        "now_ms": 1800000000000,
+        "sequence": 20,
+        "timestamp_ms": 1799999998999
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "reason": "ok",
+        "sequence_order": "NEWER",
+        "valid": true
+      },
+      "id": "S07-future-boundary",
+      "input": {
+        "allowed_future_skew_ms": 100,
+        "last_sequence": 19,
+        "max_age_ms": 1000,
+        "now_ms": 1800000000000,
+        "sequence": 20,
+        "timestamp_ms": 1800000000100
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "reason": "future_timestamp",
+        "valid": false
+      },
+      "id": "S07-future-after",
+      "input": {
+        "allowed_future_skew_ms": 100,
+        "last_sequence": 19,
+        "max_age_ms": 1000,
+        "now_ms": 1800000000000,
+        "sequence": 20,
+        "timestamp_ms": 1800000000101
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "reason": "ok",
+        "sequence_order": "NEWER",
+        "valid": true
+      },
+      "id": "S07-rollover-newer",
+      "input": {
+        "allowed_future_skew_ms": 100,
+        "last_sequence": 4294967295,
+        "max_age_ms": 1000,
+        "now_ms": 1800000000000,
+        "sequence": 0,
+        "timestamp_ms": 1799999999900
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "duplicate_sequence",
+        "valid": false
+      },
+      "id": "S07-duplicate",
+      "input": {
+        "allowed_future_skew_ms": 100,
+        "last_sequence": 10,
+        "max_age_ms": 1000,
+        "now_ms": 1800000000000,
+        "sequence": 10,
+        "timestamp_ms": 1799999999900
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "out_of_order_sequence",
+        "valid": false
+      },
+      "id": "S07-out-of-order",
+      "input": {
+        "allowed_future_skew_ms": 100,
+        "last_sequence": 11,
+        "max_age_ms": 1000,
+        "now_ms": 1800000000000,
+        "sequence": 10,
+        "timestamp_ms": 1799999999900
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "ambiguous_half_range",
+        "valid": false
+      },
+      "id": "S07-half-range",
+      "input": {
+        "allowed_future_skew_ms": 100,
+        "last_sequence": 0,
+        "max_age_ms": 1000,
+        "now_ms": 1800000000000,
+        "sequence": 2147483648,
+        "timestamp_ms": 1799999999900
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "reason": "first_sequence",
+        "sequence_order": "FIRST",
+        "valid": true
+      },
+      "id": "S07-first",
+      "input": {
+        "allowed_future_skew_ms": 100,
+        "max_age_ms": 1000,
+        "now_ms": 1800000000000,
+        "sequence": 4294967295,
+        "timestamp_ms": 1799999999900
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "invalid_timestamp_or_parameters",
+        "valid": false
+      },
+      "id": "S07-negative-time",
+      "input": {
+        "allowed_future_skew_ms": 100,
+        "last_sequence": 19,
+        "max_age_ms": 1000,
+        "now_ms": 1800000000000,
+        "sequence": 20,
+        "timestamp_ms": -1
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "invalid_timestamp_or_parameters",
+        "valid": false
+      },
+      "id": "S07-float-time",
+      "input": {
+        "allowed_future_skew_ms": 100,
+        "last_sequence": 19,
+        "max_age_ms": 1000,
+        "now_ms": 1800000000000,
+        "sequence": 20,
+        "timestamp_ms": 1.5
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "invalid_timestamp_or_parameters",
+        "valid": false
+      },
+      "id": "S07-bad-sequence",
+      "input": {
+        "allowed_future_skew_ms": 100,
+        "last_sequence": 19,
+        "max_age_ms": 1000,
+        "now_ms": 1800000000000,
+        "sequence": 4294967296,
+        "timestamp_ms": 1799999999900
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "invalid_timestamp_or_parameters",
+        "valid": false
+      },
+      "id": "S07-negative-age",
+      "input": {
+        "allowed_future_skew_ms": 100,
+        "last_sequence": 19,
+        "max_age_ms": -1,
+        "now_ms": 1800000000000,
+        "sequence": 20,
+        "timestamp_ms": 1799999999900
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "invalid_last_sequence",
+        "valid": false
+      },
+      "id": "S07-bad-last",
+      "input": {
+        "allowed_future_skew_ms": 100,
+        "last_sequence": -1,
+        "max_age_ms": 1000,
+        "now_ms": 1800000000000,
+        "sequence": 20,
+        "timestamp_ms": 1799999999900
+      }
+    }
+  ],
+  "master_seed": 20261101,
+  "task": "S07",
+  "task_seed": 20268164
+}

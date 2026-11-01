@@ -1,0 +1,1114 @@
+{
+  "cases": [
+    {
+      "category": "ordinary",
+      "expected": {
+        "reasons": [],
+        "valid": true
+      },
+      "id": "S04-seeded-00",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-11-01",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "7"
+        }
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "reasons": [],
+        "valid": true
+      },
+      "id": "S04-seeded-01",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-02-15",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "25"
+        }
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "reasons": [],
+        "valid": true
+      },
+      "id": "S04-seeded-02",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "1.5",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-11-01",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "25"
+        }
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "reasons": [],
+        "valid": true
+      },
+      "id": "S04-seeded-03",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-11-01",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "1"
+        }
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "reasons": [],
+        "valid": true
+      },
+      "id": "S04-seeded-04",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-01-15",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "25"
+        }
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "reasons": [],
+        "valid": true
+      },
+      "id": "S04-seeded-05",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.01",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-11-01",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "25"
+        }
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "reasons": [],
+        "valid": true
+      },
+      "id": "S04-seeded-06",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-11-01",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "1"
+        }
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "reasons": [],
+        "valid": true
+      },
+      "id": "S04-seeded-07",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-07-15",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "25"
+        }
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "reasons": [],
+        "valid": true
+      },
+      "id": "S04-seeded-08",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.01",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-11-01",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "25"
+        }
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "reasons": [],
+        "valid": true
+      },
+      "id": "S04-seeded-09",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-11-01",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "76"
+        }
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "reasons": [],
+        "valid": true
+      },
+      "id": "S04-seeded-10",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-07-15",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "25"
+        }
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "reasons": [],
+        "valid": true
+      },
+      "id": "S04-seeded-11",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.01",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-11-01",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "25"
+        }
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "reasons": [],
+        "valid": true
+      },
+      "id": "S04-seeded-12",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-11-01",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "-19"
+        }
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "reasons": [],
+        "valid": true
+      },
+      "id": "S04-seeded-13",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-01-15",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "25"
+        }
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "reasons": [],
+        "valid": true
+      },
+      "id": "S04-seeded-14",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.01",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-11-01",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "25"
+        }
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "reasons": [],
+        "valid": true
+      },
+      "id": "S04-seeded-15",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-11-01",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "52"
+        }
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "reasons": [],
+        "valid": true
+      },
+      "id": "S04-seeded-16",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-01-15",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "25"
+        }
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "reasons": [],
+        "valid": true
+      },
+      "id": "S04-seeded-17",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "1.5",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-11-01",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "25"
+        }
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "reasons": [],
+        "valid": true
+      },
+      "id": "S04-valid-start",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-01-01",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "25"
+        }
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "reasons": [],
+        "valid": true
+      },
+      "id": "S04-valid-end",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-12-31",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "25"
+        }
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reasons": [
+          "outside_validity_dates"
+        ],
+        "valid": false
+      },
+      "id": "S04-outside-start",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2025-12-31",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "25"
+        }
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reasons": [
+          "serial_mismatch"
+        ],
+        "valid": false
+      },
+      "id": "S04-serial-mismatch",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-X",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-11-01",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "25"
+        }
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reasons": [
+          "measurand_mismatch"
+        ],
+        "valid": false
+      },
+      "id": "S04-measurand-mismatch",
+      "input": {
+        "certificate": {
+          "measurand": "pressure",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-11-01",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "25"
+        }
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reasons": [
+          "calibration_not_current"
+        ],
+        "valid": false
+      },
+      "id": "S04-expired-status",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "EXPIRED",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-11-01",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "25"
+        }
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "reasons": [],
+        "valid": true
+      },
+      "id": "S04-range-low",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-11-01",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "-20"
+        }
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "reasons": [],
+        "valid": true
+      },
+      "id": "S04-range-high",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-11-01",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "100"
+        }
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reasons": [
+          "outside_calibration_range"
+        ],
+        "valid": false
+      },
+      "id": "S04-outside-range",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-11-01",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "100.01"
+        }
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reasons": [
+          "invalid_uncertainty"
+        ],
+        "valid": false
+      },
+      "id": "S04-negative-u",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "-0.1",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-11-01",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "25"
+        }
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reasons": [
+          "unit_mismatch"
+        ],
+        "valid": false
+      },
+      "id": "S04-unit-mismatch",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "K",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-11-01",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "25"
+        }
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reasons": [
+          "traceability_not_documented"
+        ],
+        "valid": false
+      },
+      "id": "S04-traceability-unknown",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "UNKNOWN",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-11-01",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "25"
+        }
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reasons": [
+          "invalid_date"
+        ],
+        "valid": false
+      },
+      "id": "S04-malformed-date",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-02-30",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "25"
+        }
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reasons": [
+          "invalid_date"
+        ],
+        "valid": false
+      },
+      "id": "S04-week-date",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-W44-7",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "25"
+        }
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reasons": [
+          "invalid_range"
+        ],
+        "valid": false
+      },
+      "id": "S04-reversed-range",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "0",
+          "range_min": "10",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-11-01",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "25"
+        }
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reasons": [
+          "missing_valid_from",
+          "measurand_mismatch"
+        ],
+        "valid": false
+      },
+      "id": "S04-missing-valid-from-plus-measurand",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-11-01",
+          "measurand": "pressure",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "25"
+        }
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reasons": [
+          "missing_range_max",
+          "invalid_range_or_value"
+        ],
+        "valid": false
+      },
+      "id": "S04-missing-range-max-plus-bad-value",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-11-01",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "not-a-reading"
+        }
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reasons": [
+          "missing_serial_number",
+          "missing_unit"
+        ],
+        "valid": false
+      },
+      "id": "S04-missing-serial-and-unit",
+      "input": {
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "measurement": {
+          "date": "2026-11-01",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "25"
+        }
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reasons": [
+          "missing_serial_number",
+          "measurand_mismatch",
+          "calibration_not_current",
+          "outside_validity_dates",
+          "invalid_uncertainty",
+          "unit_mismatch",
+          "traceability_not_documented"
+        ],
+        "valid": false
+      },
+      "id": "S04-simultaneous-independent-defects",
+      "input": {
+        "certificate": {
+          "measurand": "pressure",
+          "range_max": "100",
+          "range_min": "-20",
+          "status": "EXPIRED",
+          "traceability_chain_status": "UNKNOWN",
+          "uncertainty": "-0.2",
+          "unit": "K",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-10-31"
+        },
+        "measurement": {
+          "date": "2026-11-01",
+          "measurand": "temperature",
+          "serial_number": "SN-17",
+          "unit": "C",
+          "value": "25"
+        }
+      }
+    }
+  ],
+  "master_seed": 20261101,
+  "task": "S04",
+  "task_seed": 20265137
+}

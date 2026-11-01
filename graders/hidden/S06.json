@@ -1,0 +1,483 @@
+{
+  "cases": [
+    {
+      "category": "ordinary",
+      "expected": {
+        "decision": "ACCEPT",
+        "lower": "10",
+        "upper": "10",
+        "valid": true
+      },
+      "id": "S06-seeded-00",
+      "input": {
+        "expanded_uncertainty": "0",
+        "lower_limit": "-7",
+        "upper_limit": "10",
+        "y": "10"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "decision": "ACCEPT",
+        "lower": "-8",
+        "upper": "-2",
+        "valid": true
+      },
+      "id": "S06-seeded-01",
+      "input": {
+        "expanded_uncertainty": "3",
+        "lower_limit": "-9",
+        "upper_limit": "3",
+        "y": "-5"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "decision": "INDETERMINATE",
+        "lower": "-4",
+        "upper": "0",
+        "valid": true
+      },
+      "id": "S06-seeded-02",
+      "input": {
+        "expanded_uncertainty": "2",
+        "lower_limit": "0",
+        "upper_limit": "4",
+        "y": "-2"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "decision": "ACCEPT",
+        "lower": "3",
+        "upper": "5",
+        "valid": true
+      },
+      "id": "S06-seeded-03",
+      "input": {
+        "expanded_uncertainty": "1",
+        "lower_limit": "0",
+        "upper_limit": "7",
+        "y": "4"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "decision": "ACCEPT",
+        "lower": "-8",
+        "upper": "-2",
+        "valid": true
+      },
+      "id": "S06-seeded-04",
+      "input": {
+        "expanded_uncertainty": "3",
+        "lower_limit": "-10",
+        "upper_limit": "2",
+        "y": "-5"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "decision": "INDETERMINATE",
+        "lower": "6",
+        "upper": "12",
+        "valid": true
+      },
+      "id": "S06-seeded-05",
+      "input": {
+        "expanded_uncertainty": "3",
+        "lower_limit": "-10",
+        "upper_limit": "6",
+        "y": "9"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "decision": "ACCEPT",
+        "lower": "2",
+        "upper": "4",
+        "valid": true
+      },
+      "id": "S06-seeded-06",
+      "input": {
+        "expanded_uncertainty": "1",
+        "lower_limit": "-6",
+        "upper_limit": "10",
+        "y": "3"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "decision": "REJECT",
+        "lower": "-10",
+        "upper": "-10",
+        "valid": true
+      },
+      "id": "S06-seeded-07",
+      "input": {
+        "expanded_uncertainty": "0",
+        "lower_limit": "-9",
+        "upper_limit": "8",
+        "y": "-10"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "decision": "ACCEPT",
+        "lower": "-2",
+        "upper": "2",
+        "valid": true
+      },
+      "id": "S06-seeded-08",
+      "input": {
+        "expanded_uncertainty": "2",
+        "lower_limit": "-5",
+        "upper_limit": "8",
+        "y": "0"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "decision": "INDETERMINATE",
+        "lower": "0",
+        "upper": "4",
+        "valid": true
+      },
+      "id": "S06-seeded-09",
+      "input": {
+        "expanded_uncertainty": "2",
+        "lower_limit": "-8",
+        "upper_limit": "2",
+        "y": "2"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "decision": "ACCEPT",
+        "lower": "2",
+        "upper": "2",
+        "valid": true
+      },
+      "id": "S06-seeded-10",
+      "input": {
+        "expanded_uncertainty": "0",
+        "lower_limit": "0",
+        "upper_limit": "10",
+        "y": "2"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "decision": "ACCEPT",
+        "lower": "2",
+        "upper": "4",
+        "valid": true
+      },
+      "id": "S06-seeded-11",
+      "input": {
+        "expanded_uncertainty": "1",
+        "lower_limit": "-2",
+        "upper_limit": "4",
+        "y": "3"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "decision": "INDETERMINATE",
+        "lower": "-4",
+        "upper": "0",
+        "valid": true
+      },
+      "id": "S06-seeded-12",
+      "input": {
+        "expanded_uncertainty": "2",
+        "lower_limit": "-3",
+        "upper_limit": "1",
+        "y": "-2"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "decision": "REJECT",
+        "lower": "6",
+        "upper": "8",
+        "valid": true
+      },
+      "id": "S06-seeded-13",
+      "input": {
+        "expanded_uncertainty": "1",
+        "lower_limit": "0",
+        "upper_limit": "5",
+        "y": "7"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "decision": "REJECT",
+        "lower": "-10",
+        "upper": "-10",
+        "valid": true
+      },
+      "id": "S06-seeded-14",
+      "input": {
+        "expanded_uncertainty": "0",
+        "lower_limit": "-7",
+        "upper_limit": "1",
+        "y": "-10"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "decision": "ACCEPT",
+        "lower": "0",
+        "upper": "6",
+        "valid": true
+      },
+      "id": "S06-seeded-15",
+      "input": {
+        "expanded_uncertainty": "3",
+        "lower_limit": "-2",
+        "upper_limit": "10",
+        "y": "3"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "decision": "ACCEPT",
+        "lower": "1",
+        "upper": "5",
+        "valid": true
+      },
+      "id": "S06-seeded-16",
+      "input": {
+        "expanded_uncertainty": "2",
+        "lower_limit": "-3",
+        "upper_limit": "8",
+        "y": "3"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "decision": "INDETERMINATE",
+        "lower": "9",
+        "upper": "15",
+        "valid": true
+      },
+      "id": "S06-seeded-17",
+      "input": {
+        "expanded_uncertainty": "3",
+        "lower_limit": "-5",
+        "upper_limit": "10",
+        "y": "12"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "decision": "REJECT",
+        "lower": "-11",
+        "upper": "-11",
+        "valid": true
+      },
+      "id": "S06-seeded-18",
+      "input": {
+        "expanded_uncertainty": "0",
+        "lower_limit": "-9",
+        "upper_limit": "4",
+        "y": "-11"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "decision": "INDETERMINATE",
+        "lower": "-15",
+        "upper": "-9",
+        "valid": true
+      },
+      "id": "S06-seeded-19",
+      "input": {
+        "expanded_uncertainty": "3",
+        "lower_limit": "-10",
+        "upper_limit": "6",
+        "y": "-12"
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "decision": "ACCEPT",
+        "lower": "-1",
+        "upper": "1",
+        "valid": true
+      },
+      "id": "S06-accept-equality",
+      "input": {
+        "expanded_uncertainty": "1",
+        "lower_limit": "-1",
+        "upper_limit": "1",
+        "y": "0"
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "decision": "INDETERMINATE",
+        "lower": "-1",
+        "upper": "1",
+        "valid": true
+      },
+      "id": "S06-touch-outside-lower",
+      "input": {
+        "expanded_uncertainty": "1",
+        "lower_limit": "1",
+        "upper_limit": "2",
+        "y": "0"
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "decision": "INDETERMINATE",
+        "lower": "2",
+        "upper": "4",
+        "valid": true
+      },
+      "id": "S06-touch-outside-upper",
+      "input": {
+        "expanded_uncertainty": "1",
+        "lower_limit": "1",
+        "upper_limit": "2",
+        "y": "3"
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "decision": "REJECT",
+        "lower": "-4",
+        "upper": "-2",
+        "valid": true
+      },
+      "id": "S06-reject-below",
+      "input": {
+        "expanded_uncertainty": "1",
+        "lower_limit": "0",
+        "upper_limit": "2",
+        "y": "-3"
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "decision": "INDETERMINATE",
+        "lower": "2",
+        "upper": "4",
+        "valid": true
+      },
+      "id": "S06-reject-above",
+      "input": {
+        "expanded_uncertainty": "1",
+        "lower_limit": "0",
+        "upper_limit": "2",
+        "y": "3"
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "decision": "ACCEPT",
+        "lower": "1",
+        "upper": "1",
+        "valid": true
+      },
+      "id": "S06-zero-u-at-limit",
+      "input": {
+        "expanded_uncertainty": "0",
+        "lower_limit": "1",
+        "upper_limit": "2",
+        "y": "1"
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "negative_uncertainty",
+        "valid": false
+      },
+      "id": "S06-negative-u",
+      "input": {
+        "expanded_uncertainty": "-0.1",
+        "lower_limit": "0",
+        "upper_limit": "2",
+        "y": "1"
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "malformed_limits",
+        "valid": false
+      },
+      "id": "S06-reversed-limits",
+      "input": {
+        "expanded_uncertainty": "0.1",
+        "lower_limit": "2",
+        "upper_limit": "0",
+        "y": "1"
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "decision": "INDETERMINATE",
+        "lower": "-100",
+        "upper": "100",
+        "valid": true
+      },
+      "id": "S06-wide-indeterminate",
+      "input": {
+        "expanded_uncertainty": "100",
+        "lower_limit": "-1",
+        "upper_limit": "1",
+        "y": "0"
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "decision": "ACCEPT",
+        "lower": "0",
+        "upper": "0.2",
+        "valid": true
+      },
+      "id": "S06-decimal",
+      "input": {
+        "expanded_uncertainty": "0.1",
+        "lower_limit": "0",
+        "upper_limit": "0.2",
+        "y": "0.1"
+      }
+    }
+  ],
+  "master_seed": 20261101,
+  "task": "S06",
+  "task_seed": 20267155
+}

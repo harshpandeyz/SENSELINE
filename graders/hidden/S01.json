@@ -1,0 +1,578 @@
+{
+  "cases": [
+    {
+      "category": "ordinary",
+      "expected": {
+        "raw_count": -104,
+        "valid": true,
+        "value": "-52.000"
+      },
+      "id": "S01-seeded-00",
+      "input": {
+        "byte_order": "big",
+        "frame_hex": "98",
+        "rounding_places": 3,
+        "scale": "0.5",
+        "sentinel_codes": [],
+        "signed": true,
+        "width_bits": 8
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "raw_count": 22417,
+        "valid": true,
+        "value": "22.417"
+      },
+      "id": "S01-seeded-01",
+      "input": {
+        "byte_order": "little",
+        "frame_hex": "9157",
+        "rounding_places": 3,
+        "scale": "0.001",
+        "sentinel_codes": [],
+        "signed": false,
+        "width_bits": 16
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "raw_count": 1002788,
+        "valid": true,
+        "value": "1002.788"
+      },
+      "id": "S01-seeded-02",
+      "input": {
+        "byte_order": "big",
+        "frame_hex": "0f4d24",
+        "rounding_places": 3,
+        "scale": "0.001",
+        "sentinel_codes": [],
+        "signed": true,
+        "width_bits": 24
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "raw_count": 527298523,
+        "valid": true,
+        "value": "5272985.230"
+      },
+      "id": "S01-seeded-03",
+      "input": {
+        "byte_order": "little",
+        "frame_hex": "dbef6d1f",
+        "rounding_places": 3,
+        "scale": "0.01",
+        "sentinel_codes": [],
+        "signed": false,
+        "width_bits": 32
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "raw_count": 112,
+        "valid": true,
+        "value": "224.000"
+      },
+      "id": "S01-seeded-04",
+      "input": {
+        "byte_order": "big",
+        "frame_hex": "70",
+        "rounding_places": 3,
+        "scale": "2",
+        "sentinel_codes": [],
+        "signed": true,
+        "width_bits": 8
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "raw_count": 63568,
+        "valid": true,
+        "value": "31784.000"
+      },
+      "id": "S01-seeded-05",
+      "input": {
+        "byte_order": "little",
+        "frame_hex": "50f8",
+        "rounding_places": 3,
+        "scale": "0.5",
+        "sentinel_codes": [],
+        "signed": false,
+        "width_bits": 16
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "raw_count": 4213939,
+        "valid": true,
+        "value": "8427878.000"
+      },
+      "id": "S01-seeded-06",
+      "input": {
+        "byte_order": "big",
+        "frame_hex": "404cb3",
+        "rounding_places": 3,
+        "scale": "2",
+        "sentinel_codes": [],
+        "signed": true,
+        "width_bits": 24
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "raw_count": 3365665005,
+        "valid": true,
+        "value": "33656650.050"
+      },
+      "id": "S01-seeded-07",
+      "input": {
+        "byte_order": "little",
+        "frame_hex": "edf89bc8",
+        "rounding_places": 3,
+        "scale": "0.01",
+        "sentinel_codes": [],
+        "signed": false,
+        "width_bits": 32
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "raw_count": -112,
+        "valid": true,
+        "value": "-0.112"
+      },
+      "id": "S01-seeded-08",
+      "input": {
+        "byte_order": "big",
+        "frame_hex": "90",
+        "rounding_places": 3,
+        "scale": "0.001",
+        "sentinel_codes": [],
+        "signed": true,
+        "width_bits": 8
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "raw_count": 62141,
+        "valid": true,
+        "value": "62.141"
+      },
+      "id": "S01-seeded-09",
+      "input": {
+        "byte_order": "little",
+        "frame_hex": "bdf2",
+        "rounding_places": 3,
+        "scale": "0.001",
+        "sentinel_codes": [],
+        "signed": false,
+        "width_bits": 16
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "raw_count": -7748932,
+        "valid": true,
+        "value": "-7748.932"
+      },
+      "id": "S01-seeded-10",
+      "input": {
+        "byte_order": "big",
+        "frame_hex": "89c2bc",
+        "rounding_places": 3,
+        "scale": "0.001",
+        "sentinel_codes": [],
+        "signed": true,
+        "width_bits": 24
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "raw_count": 949181120,
+        "valid": true,
+        "value": "9491811.200"
+      },
+      "id": "S01-seeded-11",
+      "input": {
+        "byte_order": "little",
+        "frame_hex": "c05a9338",
+        "rounding_places": 3,
+        "scale": "0.01",
+        "sentinel_codes": [],
+        "signed": false,
+        "width_bits": 32
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "raw_count": -108,
+        "valid": true,
+        "value": "-216.000"
+      },
+      "id": "S01-seeded-12",
+      "input": {
+        "byte_order": "big",
+        "frame_hex": "94",
+        "rounding_places": 3,
+        "scale": "2",
+        "sentinel_codes": [],
+        "signed": true,
+        "width_bits": 8
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "raw_count": 9730,
+        "valid": true,
+        "value": "97.300"
+      },
+      "id": "S01-seeded-13",
+      "input": {
+        "byte_order": "little",
+        "frame_hex": "0226",
+        "rounding_places": 3,
+        "scale": "0.01",
+        "sentinel_codes": [],
+        "signed": false,
+        "width_bits": 16
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "raw_count": -2878397,
+        "valid": true,
+        "value": "-5756794.000"
+      },
+      "id": "S01-seeded-14",
+      "input": {
+        "byte_order": "big",
+        "frame_hex": "d41443",
+        "rounding_places": 3,
+        "scale": "2",
+        "sentinel_codes": [],
+        "signed": true,
+        "width_bits": 24
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "raw_count": 3946239561,
+        "valid": true,
+        "value": "3946239.561"
+      },
+      "id": "S01-seeded-15",
+      "input": {
+        "byte_order": "little",
+        "frame_hex": "49d636eb",
+        "rounding_places": 3,
+        "scale": "0.001",
+        "sentinel_codes": [],
+        "signed": false,
+        "width_bits": 32
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "raw_count": -46,
+        "valid": true,
+        "value": "-0.460"
+      },
+      "id": "S01-seeded-16",
+      "input": {
+        "byte_order": "big",
+        "frame_hex": "d2",
+        "rounding_places": 3,
+        "scale": "0.01",
+        "sentinel_codes": [],
+        "signed": true,
+        "width_bits": 8
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "raw_count": 9817,
+        "valid": true,
+        "value": "19634.000"
+      },
+      "id": "S01-seeded-17",
+      "input": {
+        "byte_order": "little",
+        "frame_hex": "5926",
+        "rounding_places": 3,
+        "scale": "2",
+        "sentinel_codes": [],
+        "signed": false,
+        "width_bits": 16
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "raw_count": -128,
+        "valid": true,
+        "value": "-128"
+      },
+      "id": "S01-signed-min",
+      "input": {
+        "byte_order": "big",
+        "frame_hex": "80",
+        "rounding_places": 0,
+        "scale": "1",
+        "sentinel_codes": [],
+        "signed": true,
+        "width_bits": 8
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "raw_count": 127,
+        "valid": true,
+        "value": "127"
+      },
+      "id": "S01-signed-max",
+      "input": {
+        "byte_order": "big",
+        "frame_hex": "7F",
+        "rounding_places": 0,
+        "scale": "1",
+        "sentinel_codes": [],
+        "signed": true,
+        "width_bits": 8
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "raw_count": 65535,
+        "valid": true,
+        "value": "65535"
+      },
+      "id": "S01-unsigned-max",
+      "input": {
+        "byte_order": "big",
+        "frame_hex": "FFFF",
+        "rounding_places": 0,
+        "scale": "1",
+        "sentinel_codes": [],
+        "signed": false,
+        "width_bits": 16
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "raw_count": 4660,
+        "valid": true,
+        "value": "466.0"
+      },
+      "id": "S01-little-endian",
+      "input": {
+        "byte_order": "little",
+        "frame_hex": "3412",
+        "rounding_places": 1,
+        "scale": "0.1",
+        "sentinel_codes": [],
+        "signed": false,
+        "width_bits": 16
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "sentinel",
+        "valid": false
+      },
+      "id": "S01-sentinel",
+      "input": {
+        "byte_order": "big",
+        "frame_hex": "FF",
+        "rounding_places": 0,
+        "scale": "1",
+        "sentinel_codes": [
+          255
+        ],
+        "signed": true,
+        "width_bits": 8
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "frame_length",
+        "valid": false
+      },
+      "id": "S01-truncated",
+      "input": {
+        "byte_order": "big",
+        "frame_hex": "12",
+        "rounding_places": 0,
+        "scale": "1",
+        "sentinel_codes": [],
+        "signed": false,
+        "width_bits": 16
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "invalid_frame",
+        "valid": false
+      },
+      "id": "S01-malformed-hex",
+      "input": {
+        "byte_order": "big",
+        "frame_hex": "GG",
+        "rounding_places": 0,
+        "scale": "1",
+        "sentinel_codes": [],
+        "signed": false,
+        "width_bits": 8
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "invalid_parameters",
+        "valid": false
+      },
+      "id": "S01-bad-scale",
+      "input": {
+        "byte_order": "big",
+        "frame_hex": "01",
+        "rounding_places": 0,
+        "scale": "NaN",
+        "sentinel_codes": [],
+        "signed": false,
+        "width_bits": 8
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "invalid_width",
+        "valid": false
+      },
+      "id": "S01-bad-width",
+      "input": {
+        "byte_order": "big",
+        "frame_hex": "0000",
+        "rounding_places": 0,
+        "scale": "1",
+        "sentinel_codes": [],
+        "signed": false,
+        "width_bits": 12
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "raw_count": 3,
+        "valid": true,
+        "value": "2"
+      },
+      "id": "S01-round-half-even",
+      "input": {
+        "byte_order": "big",
+        "frame_hex": "03",
+        "rounding_places": 0,
+        "scale": "0.5",
+        "sentinel_codes": [],
+        "signed": false,
+        "width_bits": 8
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "invalid_frame",
+        "valid": false
+      },
+      "id": "S01-odd-nibble",
+      "input": {
+        "byte_order": "big",
+        "frame_hex": "F",
+        "rounding_places": 0,
+        "scale": "1",
+        "sentinel_codes": [],
+        "signed": false,
+        "width_bits": 8
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "invalid_scale",
+        "valid": false
+      },
+      "id": "S01-negative-scale",
+      "input": {
+        "byte_order": "big",
+        "frame_hex": "01",
+        "rounding_places": 0,
+        "scale": "-1",
+        "sentinel_codes": [],
+        "signed": false,
+        "width_bits": 8
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "invalid_sentinels",
+        "valid": false
+      },
+      "id": "S01-sentinel-out-of-width",
+      "input": {
+        "byte_order": "big",
+        "frame_hex": "01",
+        "rounding_places": 0,
+        "scale": "1",
+        "sentinel_codes": [
+          256
+        ],
+        "signed": false,
+        "width_bits": 8
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "invalid_frame",
+        "valid": false
+      },
+      "id": "S01-tab-separator-not-allowed",
+      "input": {
+        "byte_order": "big",
+        "frame_hex": "00\t01",
+        "rounding_places": 0,
+        "scale": "1",
+        "sentinel_codes": [],
+        "signed": false,
+        "width_bits": 16
+      }
+    }
+  ],
+  "master_seed": 20261101,
+  "task": "S01",
+  "task_seed": 20262110
+}

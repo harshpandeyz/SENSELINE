@@ -1,0 +1,546 @@
+{
+  "cases": [
+    {
+      "category": "ordinary",
+      "expected": {
+        "corrected_value": "90.0000",
+        "valid": true
+      },
+      "id": "S03-seeded-00",
+      "input": {
+        "ambient_temperature_c": "38",
+        "correction_state": "RAW",
+        "gain": "1",
+        "offset": "1",
+        "raw_value": "89",
+        "reference_temperature_c": "20",
+        "rounding_places": 4,
+        "temp_coefficient": "0"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "corrected_value": "-53.1000",
+        "valid": true
+      },
+      "id": "S03-seeded-01",
+      "input": {
+        "ambient_temperature_c": "0",
+        "correction_state": "RAW",
+        "gain": "0.5",
+        "offset": "-5",
+        "raw_value": "-97",
+        "reference_temperature_c": "20",
+        "rounding_places": 4,
+        "temp_coefficient": "-0.02"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "corrected_value": "-68.0000",
+        "valid": true
+      },
+      "id": "S03-seeded-02",
+      "input": {
+        "ambient_temperature_c": "38",
+        "correction_state": "RAW",
+        "gain": "1",
+        "offset": "3",
+        "raw_value": "-71",
+        "reference_temperature_c": "20",
+        "rounding_places": 4,
+        "temp_coefficient": "0"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "corrected_value": "207.9200",
+        "valid": true
+      },
+      "id": "S03-seeded-03",
+      "input": {
+        "ambient_temperature_c": "49",
+        "correction_state": "RAW",
+        "gain": "2.5",
+        "offset": "1",
+        "raw_value": "83",
+        "reference_temperature_c": "20",
+        "rounding_places": 4,
+        "temp_coefficient": "-0.02"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "corrected_value": "16.7600",
+        "valid": true
+      },
+      "id": "S03-seeded-04",
+      "input": {
+        "ambient_temperature_c": "57",
+        "correction_state": "RAW",
+        "gain": "0.5",
+        "offset": "2",
+        "raw_value": "31",
+        "reference_temperature_c": "20",
+        "rounding_places": 4,
+        "temp_coefficient": "-0.02"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "corrected_value": "8.7500",
+        "valid": true
+      },
+      "id": "S03-seeded-05",
+      "input": {
+        "ambient_temperature_c": "-5",
+        "correction_state": "RAW",
+        "gain": "1",
+        "offset": "-4",
+        "raw_value": "13",
+        "reference_temperature_c": "20",
+        "rounding_places": 4,
+        "temp_coefficient": "0.01"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "corrected_value": "17.8400",
+        "valid": true
+      },
+      "id": "S03-seeded-06",
+      "input": {
+        "ambient_temperature_c": "4",
+        "correction_state": "RAW",
+        "gain": "1",
+        "offset": "-2",
+        "raw_value": "20",
+        "reference_temperature_c": "20",
+        "rounding_places": 4,
+        "temp_coefficient": "0.01"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "corrected_value": "225.0000",
+        "valid": true
+      },
+      "id": "S03-seeded-07",
+      "input": {
+        "ambient_temperature_c": "-8",
+        "correction_state": "RAW",
+        "gain": "2.5",
+        "offset": "5",
+        "raw_value": "88",
+        "reference_temperature_c": "20",
+        "rounding_places": 4,
+        "temp_coefficient": "0"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "corrected_value": "-7.0000",
+        "valid": true
+      },
+      "id": "S03-seeded-08",
+      "input": {
+        "ambient_temperature_c": "33",
+        "correction_state": "RAW",
+        "gain": "0.5",
+        "offset": "-5",
+        "raw_value": "-4",
+        "reference_temperature_c": "20",
+        "rounding_places": 4,
+        "temp_coefficient": "0"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "corrected_value": "-80.6100",
+        "valid": true
+      },
+      "id": "S03-seeded-09",
+      "input": {
+        "ambient_temperature_c": "59",
+        "correction_state": "RAW",
+        "gain": "2.5",
+        "offset": "4",
+        "raw_value": "-34",
+        "reference_temperature_c": "20",
+        "rounding_places": 4,
+        "temp_coefficient": "0.01"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "corrected_value": "71.2100",
+        "valid": true
+      },
+      "id": "S03-seeded-10",
+      "input": {
+        "ambient_temperature_c": "-9",
+        "correction_state": "RAW",
+        "gain": "1.02",
+        "offset": "-5",
+        "raw_value": "75",
+        "reference_temperature_c": "20",
+        "rounding_places": 4,
+        "temp_coefficient": "0.01"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "corrected_value": "21.0000",
+        "valid": true
+      },
+      "id": "S03-seeded-11",
+      "input": {
+        "ambient_temperature_c": "-18",
+        "correction_state": "RAW",
+        "gain": "0.5",
+        "offset": "0",
+        "raw_value": "42",
+        "reference_temperature_c": "20",
+        "rounding_places": 4,
+        "temp_coefficient": "0"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "corrected_value": "79.6600",
+        "valid": true
+      },
+      "id": "S03-seeded-12",
+      "input": {
+        "ambient_temperature_c": "37",
+        "correction_state": "RAW",
+        "gain": "2.5",
+        "offset": "0",
+        "raw_value": "32",
+        "reference_temperature_c": "20",
+        "rounding_places": 4,
+        "temp_coefficient": "-0.02"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "corrected_value": "50.6900",
+        "valid": true
+      },
+      "id": "S03-seeded-13",
+      "input": {
+        "ambient_temperature_c": "39",
+        "correction_state": "RAW",
+        "gain": "2.5",
+        "offset": "3",
+        "raw_value": "19",
+        "reference_temperature_c": "20",
+        "rounding_places": 4,
+        "temp_coefficient": "0.01"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "corrected_value": "-6.2600",
+        "valid": true
+      },
+      "id": "S03-seeded-14",
+      "input": {
+        "ambient_temperature_c": "8",
+        "correction_state": "RAW",
+        "gain": "1.02",
+        "offset": "1",
+        "raw_value": "-7",
+        "reference_temperature_c": "20",
+        "rounding_places": 4,
+        "temp_coefficient": "0.01"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "corrected_value": "-93.6900",
+        "valid": true
+      },
+      "id": "S03-seeded-15",
+      "input": {
+        "ambient_temperature_c": "51",
+        "correction_state": "RAW",
+        "gain": "1",
+        "offset": "5",
+        "raw_value": "-99",
+        "reference_temperature_c": "20",
+        "rounding_places": 4,
+        "temp_coefficient": "0.01"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "corrected_value": "-98.9600",
+        "valid": true
+      },
+      "id": "S03-seeded-16",
+      "input": {
+        "ambient_temperature_c": "24",
+        "correction_state": "RAW",
+        "gain": "1",
+        "offset": "-1",
+        "raw_value": "-98",
+        "reference_temperature_c": "20",
+        "rounding_places": 4,
+        "temp_coefficient": "0.01"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "corrected_value": "95.2600",
+        "valid": true
+      },
+      "id": "S03-seeded-17",
+      "input": {
+        "ambient_temperature_c": "7",
+        "correction_state": "RAW",
+        "gain": "1",
+        "offset": "5",
+        "raw_value": "90",
+        "reference_temperature_c": "20",
+        "rounding_places": 4,
+        "temp_coefficient": "-0.02"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "corrected_value": "21.5000",
+        "valid": true
+      },
+      "id": "S03-seeded-18",
+      "input": {
+        "ambient_temperature_c": "10",
+        "correction_state": "RAW",
+        "gain": "0.5",
+        "offset": "3",
+        "raw_value": "37",
+        "reference_temperature_c": "20",
+        "rounding_places": 4,
+        "temp_coefficient": "0"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "corrected_value": "-85.7400",
+        "valid": true
+      },
+      "id": "S03-seeded-19",
+      "input": {
+        "ambient_temperature_c": "58",
+        "correction_state": "RAW",
+        "gain": "1.02",
+        "offset": "3",
+        "raw_value": "-87",
+        "reference_temperature_c": "20",
+        "rounding_places": 4,
+        "temp_coefficient": "0"
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "corrected_value": "10.00",
+        "valid": true
+      },
+      "id": "S03-zero-temp-delta",
+      "input": {
+        "ambient_temperature_c": "20",
+        "correction_state": "RAW",
+        "gain": "1",
+        "offset": "0",
+        "raw_value": "10",
+        "reference_temperature_c": "20",
+        "rounding_places": 2,
+        "temp_coefficient": "0"
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "corrected_value": "11.00",
+        "valid": true
+      },
+      "id": "S03-temp-compensation",
+      "input": {
+        "ambient_temperature_c": "25",
+        "correction_state": "RAW",
+        "gain": "1",
+        "offset": "0",
+        "raw_value": "10",
+        "reference_temperature_c": "20",
+        "rounding_places": 2,
+        "temp_coefficient": "0.2"
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "invalid_gain",
+        "valid": false
+      },
+      "id": "S03-negative-gain",
+      "input": {
+        "ambient_temperature_c": "20",
+        "correction_state": "RAW",
+        "gain": "-1",
+        "offset": "0",
+        "raw_value": "10",
+        "reference_temperature_c": "20",
+        "rounding_places": 2,
+        "temp_coefficient": "0"
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "invalid_gain",
+        "valid": false
+      },
+      "id": "S03-zero-gain",
+      "input": {
+        "ambient_temperature_c": "20",
+        "correction_state": "RAW",
+        "gain": "0",
+        "offset": "0",
+        "raw_value": "10",
+        "reference_temperature_c": "20",
+        "rounding_places": 2,
+        "temp_coefficient": "0"
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "already_corrected",
+        "valid": false
+      },
+      "id": "S03-double-correction",
+      "input": {
+        "ambient_temperature_c": "20",
+        "correction_state": "CORRECTED",
+        "gain": "1",
+        "offset": "0",
+        "raw_value": "10",
+        "reference_temperature_c": "20",
+        "rounding_places": 2,
+        "temp_coefficient": "0"
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "invalid_parameters",
+        "valid": false
+      },
+      "id": "S03-missing-coefficient",
+      "input": {
+        "ambient_temperature_c": "20",
+        "correction_state": "RAW",
+        "gain": "1",
+        "offset": "0",
+        "raw_value": "10",
+        "reference_temperature_c": "20",
+        "rounding_places": 2
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "invalid_parameters",
+        "valid": false
+      },
+      "id": "S03-nonfinite",
+      "input": {
+        "ambient_temperature_c": "20",
+        "correction_state": "RAW",
+        "gain": "1",
+        "offset": "NaN",
+        "raw_value": "10",
+        "reference_temperature_c": "20",
+        "rounding_places": 2,
+        "temp_coefficient": "0"
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "corrected_value": "1.24",
+        "valid": true
+      },
+      "id": "S03-round-half-even",
+      "input": {
+        "ambient_temperature_c": "20",
+        "correction_state": "RAW",
+        "gain": "1",
+        "offset": "0",
+        "raw_value": "1.245",
+        "reference_temperature_c": "20",
+        "rounding_places": 2,
+        "temp_coefficient": "0"
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "corrected_value": "6.00",
+        "valid": true
+      },
+      "id": "S03-negative-temps",
+      "input": {
+        "ambient_temperature_c": "-40",
+        "correction_state": "RAW",
+        "gain": "1",
+        "offset": "0",
+        "raw_value": "10",
+        "reference_temperature_c": "0",
+        "rounding_places": 2,
+        "temp_coefficient": "0.1"
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "corrected_value": "1000000010.00",
+        "valid": true
+      },
+      "id": "S03-large-offset",
+      "input": {
+        "ambient_temperature_c": "20",
+        "correction_state": "RAW",
+        "gain": "1",
+        "offset": "1000000000",
+        "raw_value": "10",
+        "reference_temperature_c": "20",
+        "rounding_places": 2,
+        "temp_coefficient": "0"
+      }
+    }
+  ],
+  "master_seed": 20261101,
+  "task": "S03",
+  "task_seed": 20264128
+}

@@ -1,0 +1,453 @@
+{
+  "cases": [
+    {
+      "category": "ordinary",
+      "expected": {
+        "unit": "F",
+        "valid": true,
+        "value": "-40.00000"
+      },
+      "id": "S02-seeded-00",
+      "input": {
+        "from_unit": "C",
+        "rounding_places": 5,
+        "to_unit": "F",
+        "value": "-40"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "unit": "C",
+        "valid": true,
+        "value": "-17.78056"
+      },
+      "id": "S02-seeded-01",
+      "input": {
+        "from_unit": "F",
+        "rounding_places": 5,
+        "to_unit": "C",
+        "value": "-0.005"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "unit": "K",
+        "valid": true,
+        "value": "233.15000"
+      },
+      "id": "S02-seeded-02",
+      "input": {
+        "from_unit": "C",
+        "rounding_places": 5,
+        "to_unit": "K",
+        "value": "-40"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "unit": "C",
+        "valid": true,
+        "value": "-313.15000"
+      },
+      "id": "S02-seeded-03",
+      "input": {
+        "from_unit": "K",
+        "rounding_places": 5,
+        "to_unit": "C",
+        "value": "-40"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "unit": "kPa",
+        "valid": true,
+        "value": "1000.00000"
+      },
+      "id": "S02-seeded-04",
+      "input": {
+        "from_unit": "Pa",
+        "rounding_places": 5,
+        "to_unit": "kPa",
+        "value": "1000000"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "unit": "Pa",
+        "valid": true,
+        "value": "32000.00000"
+      },
+      "id": "S02-seeded-05",
+      "input": {
+        "from_unit": "kPa",
+        "rounding_places": 5,
+        "to_unit": "Pa",
+        "value": "32"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "unit": "Pa",
+        "valid": true,
+        "value": "27315000.00000"
+      },
+      "id": "S02-seeded-06",
+      "input": {
+        "from_unit": "bar",
+        "rounding_places": 5,
+        "to_unit": "Pa",
+        "value": "273.15"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "unit": "bar",
+        "valid": true,
+        "value": "0.00273"
+      },
+      "id": "S02-seeded-07",
+      "input": {
+        "from_unit": "Pa",
+        "rounding_places": 5,
+        "to_unit": "bar",
+        "value": "273.15"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "unit": "mV",
+        "valid": true,
+        "value": "32000.00000"
+      },
+      "id": "S02-seeded-08",
+      "input": {
+        "from_unit": "V",
+        "rounding_places": 5,
+        "to_unit": "mV",
+        "value": "32"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "unit": "V",
+        "valid": true,
+        "value": "-0.04000"
+      },
+      "id": "S02-seeded-09",
+      "input": {
+        "from_unit": "mV",
+        "rounding_places": 5,
+        "to_unit": "V",
+        "value": "-40"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "unit": "F",
+        "valid": true,
+        "value": "89.60000"
+      },
+      "id": "S02-seeded-10",
+      "input": {
+        "from_unit": "C",
+        "rounding_places": 5,
+        "to_unit": "F",
+        "value": "32"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "unit": "C",
+        "valid": true,
+        "value": "0.00000"
+      },
+      "id": "S02-seeded-11",
+      "input": {
+        "from_unit": "F",
+        "rounding_places": 5,
+        "to_unit": "C",
+        "value": "32"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "unit": "K",
+        "valid": true,
+        "value": "274.15000"
+      },
+      "id": "S02-seeded-12",
+      "input": {
+        "from_unit": "C",
+        "rounding_places": 5,
+        "to_unit": "K",
+        "value": "1"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "unit": "C",
+        "valid": true,
+        "value": "-272.15000"
+      },
+      "id": "S02-seeded-13",
+      "input": {
+        "from_unit": "K",
+        "rounding_places": 5,
+        "to_unit": "C",
+        "value": "1"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "unit": "kPa",
+        "valid": true,
+        "value": "0.00125"
+      },
+      "id": "S02-seeded-14",
+      "input": {
+        "from_unit": "Pa",
+        "rounding_places": 5,
+        "to_unit": "kPa",
+        "value": "1.25"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "unit": "Pa",
+        "valid": true,
+        "value": "273150.00000"
+      },
+      "id": "S02-seeded-15",
+      "input": {
+        "from_unit": "kPa",
+        "rounding_places": 5,
+        "to_unit": "Pa",
+        "value": "273.15"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "unit": "Pa",
+        "valid": true,
+        "value": "3200000.00000"
+      },
+      "id": "S02-seeded-16",
+      "input": {
+        "from_unit": "bar",
+        "rounding_places": 5,
+        "to_unit": "Pa",
+        "value": "32"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "unit": "bar",
+        "valid": true,
+        "value": "0.00000"
+      },
+      "id": "S02-seeded-17",
+      "input": {
+        "from_unit": "Pa",
+        "rounding_places": 5,
+        "to_unit": "bar",
+        "value": "0"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "unit": "mV",
+        "valid": true,
+        "value": "-5.00000"
+      },
+      "id": "S02-seeded-18",
+      "input": {
+        "from_unit": "V",
+        "rounding_places": 5,
+        "to_unit": "mV",
+        "value": "-0.005"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "unit": "V",
+        "valid": true,
+        "value": "0.03200"
+      },
+      "id": "S02-seeded-19",
+      "input": {
+        "from_unit": "mV",
+        "rounding_places": 5,
+        "to_unit": "V",
+        "value": "32"
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "unit": "C",
+        "valid": true,
+        "value": "-273.15"
+      },
+      "id": "S02-same-unit",
+      "input": {
+        "from_unit": "C",
+        "rounding_places": 2,
+        "to_unit": "C",
+        "value": "-273.15"
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "incompatible_or_unknown_unit",
+        "valid": false
+      },
+      "id": "S02-incompatible",
+      "input": {
+        "from_unit": "V",
+        "rounding_places": 2,
+        "to_unit": "Pa",
+        "value": "1"
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "incompatible_or_unknown_unit",
+        "valid": false
+      },
+      "id": "S02-unknown-unit",
+      "input": {
+        "from_unit": "psi",
+        "rounding_places": 2,
+        "to_unit": "Pa",
+        "value": "1"
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "unit": "V",
+        "valid": true,
+        "value": "1.24"
+      },
+      "id": "S02-half-even-down",
+      "input": {
+        "from_unit": "V",
+        "rounding_places": 2,
+        "to_unit": "V",
+        "value": "1.245"
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "unit": "V",
+        "valid": true,
+        "value": "1.26"
+      },
+      "id": "S02-half-even-up",
+      "input": {
+        "from_unit": "V",
+        "rounding_places": 2,
+        "to_unit": "V",
+        "value": "1.255"
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "invalid_parameters",
+        "valid": false
+      },
+      "id": "S02-bad-decimal",
+      "input": {
+        "from_unit": "C",
+        "rounding_places": 2,
+        "to_unit": "K",
+        "value": "Infinity"
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "invalid_parameters",
+        "valid": false
+      },
+      "id": "S02-bad-precision",
+      "input": {
+        "from_unit": "Pa",
+        "rounding_places": 99,
+        "to_unit": "kPa",
+        "value": "3"
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "unit": "C",
+        "valid": true,
+        "value": "-273.15"
+      },
+      "id": "S02-absolute-zero",
+      "input": {
+        "from_unit": "K",
+        "rounding_places": 2,
+        "to_unit": "C",
+        "value": "0"
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "unit": "kPa",
+        "valid": true,
+        "value": "-200.000"
+      },
+      "id": "S02-negative-pressure",
+      "input": {
+        "from_unit": "bar",
+        "rounding_places": 3,
+        "to_unit": "kPa",
+        "value": "-2"
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "unit": "V",
+        "valid": true,
+        "value": "2.500"
+      },
+      "id": "S02-milli",
+      "input": {
+        "from_unit": "mV",
+        "rounding_places": 3,
+        "to_unit": "V",
+        "value": "2500"
+      }
+    }
+  ],
+  "master_seed": 20261101,
+  "task": "S02",
+  "task_seed": 20263119
+}

@@ -1,0 +1,1041 @@
+{
+  "cases": [
+    {
+      "category": "ordinary",
+      "expected": {
+        "combined_standard_uncertainty": "3.223450288755927527418205362944923057564",
+        "expanded_uncertainty": "6.446900577511855054836410725889846115128",
+        "standard_uncertainties": [
+          "3.473110997362451127108136760257138607329",
+          "0.2886751345948128822545743902509787278238"
+        ],
+        "valid": true
+      },
+      "id": "S05-seeded-00",
+      "input": {
+        "components": [
+          {
+            "kind": "type_a",
+            "observations": [
+              "-5",
+              "-1",
+              "7",
+              "10"
+            ],
+            "sensitivity": "1"
+          },
+          {
+            "half_width": "0.5",
+            "kind": "type_b_rectangular",
+            "sensitivity": "2"
+          }
+        ],
+        "correlation_matrix": [
+          [
+            "1",
+            "-0.5"
+          ],
+          [
+            "-0.5",
+            "1"
+          ]
+        ],
+        "coverage_factor": "2"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "combined_standard_uncertainty": "8.09963990969145903466290448579803098253",
+        "expanded_uncertainty": "16.19927981938291806932580897159606196506",
+        "standard_uncertainties": [
+          "4.049176871085447328478286184425513231198",
+          "0.2886751345948128822545743902509787278238"
+        ],
+        "valid": true
+      },
+      "id": "S05-seeded-01",
+      "input": {
+        "components": [
+          {
+            "kind": "type_a",
+            "observations": [
+              "-10",
+              "-8",
+              "2",
+              "7"
+            ],
+            "sensitivity": "2"
+          },
+          {
+            "half_width": "0.5",
+            "kind": "type_b_rectangular",
+            "sensitivity": "0.5"
+          }
+        ],
+        "coverage_factor": "2"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "combined_standard_uncertainty": "4.877330049864475834307861344784619736427",
+        "expanded_uncertainty": "9.754660099728951668615722689569239472854",
+        "standard_uncertainties": [
+          "3.774917217635374848618342403473058529111",
+          "0.8660254037844386467637231707529361834713"
+        ],
+        "valid": true
+      },
+      "id": "S05-seeded-02",
+      "input": {
+        "components": [
+          {
+            "kind": "type_a",
+            "observations": [
+              "-8",
+              "0",
+              "4",
+              "10"
+            ],
+            "sensitivity": "-1"
+          },
+          {
+            "half_width": "1.5",
+            "kind": "type_b_rectangular",
+            "sensitivity": "2"
+          }
+        ],
+        "correlation_matrix": [
+          [
+            "1",
+            "-0.5"
+          ],
+          [
+            "-0.5",
+            "1"
+          ]
+        ],
+        "coverage_factor": "2"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "combined_standard_uncertainty": "6.474308199851677331845637735687207290877",
+        "expanded_uncertainty": "12.94861639970335466369127547137441458175",
+        "standard_uncertainties": [
+          "3.22425702035885056911569655237637879517",
+          "0.2886751345948128822545743902509787278238"
+        ],
+        "valid": true
+      },
+      "id": "S05-seeded-03",
+      "input": {
+        "components": [
+          {
+            "kind": "type_a",
+            "observations": [
+              "-5",
+              "0",
+              "7",
+              "9"
+            ],
+            "sensitivity": "-2"
+          },
+          {
+            "half_width": "0.5",
+            "kind": "type_b_rectangular",
+            "sensitivity": "2"
+          }
+        ],
+        "coverage_factor": "2"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "combined_standard_uncertainty": "2.390198642395992507930327508507664728765",
+        "expanded_uncertainty": "4.78039728479198501586065501701532945753",
+        "standard_uncertainties": [
+          "2.625991876098121772963875203360255761607",
+          "0.2886751345948128822545743902509787278238"
+        ],
+        "valid": true
+      },
+      "id": "S05-seeded-04",
+      "input": {
+        "components": [
+          {
+            "kind": "type_a",
+            "observations": [
+              "-2",
+              "5",
+              "8",
+              "10"
+            ],
+            "sensitivity": "1"
+          },
+          {
+            "half_width": "0.5",
+            "kind": "type_b_rectangular",
+            "sensitivity": "2"
+          }
+        ],
+        "correlation_matrix": [
+          [
+            "1",
+            "-0.5"
+          ],
+          [
+            "-0.5",
+            "1"
+          ]
+        ],
+        "coverage_factor": "2"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "combined_standard_uncertainty": "3.145764348029479040515285336227548774259",
+        "expanded_uncertainty": "7.864410870073697601288213340568871935648",
+        "standard_uncertainties": [
+          "3.09232921921324541236605739198055776886",
+          "0.2886751345948128822545743902509787278238"
+        ],
+        "valid": true
+      },
+      "id": "S05-seeded-05",
+      "input": {
+        "components": [
+          {
+            "kind": "type_a",
+            "observations": [
+              "-8",
+              "-1",
+              "1",
+              "7"
+            ],
+            "sensitivity": "-1"
+          },
+          {
+            "half_width": "0.5",
+            "kind": "type_b_rectangular",
+            "sensitivity": "2"
+          }
+        ],
+        "coverage_factor": "2.5"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "combined_standard_uncertainty": "5.680082159030213652084994468876750295147",
+        "expanded_uncertainty": "14.20020539757553413021248617219187573787",
+        "standard_uncertainties": [
+          "2.839454172900136805446168991996178220571",
+          "0.05773502691896257645091487805019574556475"
+        ],
+        "valid": true
+      },
+      "id": "S05-seeded-06",
+      "input": {
+        "components": [
+          {
+            "kind": "type_a",
+            "observations": [
+              "-9",
+              "-7",
+              "0",
+              "3"
+            ],
+            "sensitivity": "2"
+          },
+          {
+            "half_width": "0.1",
+            "kind": "type_b_rectangular",
+            "sensitivity": "2"
+          }
+        ],
+        "correlation_matrix": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "coverage_factor": "2.5"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "combined_standard_uncertainty": "5.965246572160003066059434775491644741524",
+        "expanded_uncertainty": "5.965246572160003066059434775491644741524",
+        "standard_uncertainties": [
+          "2.982588361362213411755839473967143269438",
+          "0.05773502691896257645091487805019574556475"
+        ],
+        "valid": true
+      },
+      "id": "S05-seeded-07",
+      "input": {
+        "components": [
+          {
+            "kind": "type_a",
+            "observations": [
+              "-10",
+              "-9",
+              "-7",
+              "3"
+            ],
+            "sensitivity": "2"
+          },
+          {
+            "half_width": "0.1",
+            "kind": "type_b_rectangular",
+            "sensitivity": "0.5"
+          }
+        ],
+        "coverage_factor": "1"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "combined_standard_uncertainty": "4.108036221281896102403018590519865149448",
+        "expanded_uncertainty": "4.108036221281896102403018590519865149448",
+        "standard_uncertainties": [
+          "2.345207879911714777282815056772233140294",
+          "0.8660254037844386467637231707529361834713"
+        ],
+        "valid": true
+      },
+      "id": "S05-seeded-08",
+      "input": {
+        "components": [
+          {
+            "kind": "type_a",
+            "observations": [
+              "-8",
+              "-3",
+              "0",
+              "3"
+            ],
+            "sensitivity": "2"
+          },
+          {
+            "half_width": "1.5",
+            "kind": "type_b_rectangular",
+            "sensitivity": "2"
+          }
+        ],
+        "correlation_matrix": [
+          [
+            "1",
+            "-0.5"
+          ],
+          [
+            "-0.5",
+            "1"
+          ]
+        ],
+        "coverage_factor": "1"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "combined_standard_uncertainty": "4.203569911396740407494390432782454207138",
+        "expanded_uncertainty": "4.203569911396740407494390432782454207138",
+        "standard_uncertainties": [
+          "2.101586702153081921871437639088852049955",
+          "0.05773502691896257645091487805019574556475"
+        ],
+        "valid": true
+      },
+      "id": "S05-seeded-09",
+      "input": {
+        "components": [
+          {
+            "kind": "type_a",
+            "observations": [
+              "-5",
+              "-2",
+              "0",
+              "5"
+            ],
+            "sensitivity": "2"
+          },
+          {
+            "half_width": "0.1",
+            "kind": "type_b_rectangular",
+            "sensitivity": "1"
+          }
+        ],
+        "coverage_factor": "1"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "combined_standard_uncertainty": "2.915475947422650235437076438772791538261",
+        "expanded_uncertainty": "7.288689868556625588592691096931978845652",
+        "standard_uncertainties": [
+          "2.901149197588201713453740278452275455204",
+          "0.2886751345948128822545743902509787278238"
+        ],
+        "valid": true
+      },
+      "id": "S05-seeded-10",
+      "input": {
+        "components": [
+          {
+            "kind": "type_a",
+            "observations": [
+              "-8",
+              "-7",
+              "2",
+              "3"
+            ],
+            "sensitivity": "1"
+          },
+          {
+            "half_width": "0.5",
+            "kind": "type_b_rectangular",
+            "sensitivity": "1"
+          }
+        ],
+        "correlation_matrix": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "coverage_factor": "2.5"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "combined_standard_uncertainty": "7.406359879634979408165987380713385873615",
+        "expanded_uncertainty": "7.406359879634979408165987380713385873615",
+        "standard_uncertainties": [
+          "3.696845502136472387350533367536644306155",
+          "0.8660254037844386467637231707529361834713"
+        ],
+        "valid": true
+      },
+      "id": "S05-seeded-11",
+      "input": {
+        "components": [
+          {
+            "kind": "type_a",
+            "observations": [
+              "-9",
+              "-3",
+              "5",
+              "7"
+            ],
+            "sensitivity": "2"
+          },
+          {
+            "half_width": "1.5",
+            "kind": "type_b_rectangular",
+            "sensitivity": "0.5"
+          }
+        ],
+        "coverage_factor": "1"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "combined_standard_uncertainty": "3.811444330825658171336583050313266079366",
+        "expanded_uncertainty": "9.528610827064145428341457625783165198415",
+        "standard_uncertainties": [
+          "3.796928583298172421219037697382342814609",
+          "0.05773502691896257645091487805019574556475"
+        ],
+        "valid": true
+      },
+      "id": "S05-seeded-12",
+      "input": {
+        "components": [
+          {
+            "kind": "type_a",
+            "observations": [
+              "-9",
+              "1",
+              "6",
+              "8"
+            ],
+            "sensitivity": "1"
+          },
+          {
+            "half_width": "0.1",
+            "kind": "type_b_rectangular",
+            "sensitivity": "0.5"
+          }
+        ],
+        "correlation_matrix": [
+          [
+            "1",
+            "0.5"
+          ],
+          [
+            "0.5",
+            "1"
+          ]
+        ],
+        "coverage_factor": "2.5"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "combined_standard_uncertainty": "6.583059066016851915533639439443661961852",
+        "expanded_uncertainty": "13.1661181320337038310672788788873239237",
+        "standard_uncertainties": [
+          "3.291402943021916502906410173953849844347",
+          "0.05773502691896257645091487805019574556475"
+        ],
+        "valid": true
+      },
+      "id": "S05-seeded-13",
+      "input": {
+        "components": [
+          {
+            "kind": "type_a",
+            "observations": [
+              "-8",
+              "-1",
+              "1",
+              "8"
+            ],
+            "sensitivity": "-2"
+          },
+          {
+            "half_width": "0.1",
+            "kind": "type_b_rectangular",
+            "sensitivity": "1"
+          }
+        ],
+        "coverage_factor": "2"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "combined_standard_uncertainty": "1.974176068394782753549697930566410004666",
+        "expanded_uncertainty": "3.948352136789565507099395861132820009332",
+        "standard_uncertainties": [
+          "2.198484326378819861822801288787056622381",
+          "0.2886751345948128822545743902509787278238"
+        ],
+        "valid": true
+      },
+      "id": "S05-seeded-14",
+      "input": {
+        "components": [
+          {
+            "kind": "type_a",
+            "observations": [
+              "-1",
+              "2",
+              "6",
+              "9"
+            ],
+            "sensitivity": "1"
+          },
+          {
+            "half_width": "0.5",
+            "kind": "type_b_rectangular",
+            "sensitivity": "2"
+          }
+        ],
+        "correlation_matrix": [
+          [
+            "1",
+            "-0.5"
+          ],
+          [
+            "-0.5",
+            "1"
+          ]
+        ],
+        "coverage_factor": "2"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "combined_standard_uncertainty": "3.418698582794335789643041226337070238799",
+        "expanded_uncertainty": "6.837397165588671579286082452674140477598",
+        "standard_uncertainties": [
+          "1.70782512765993306387017311342017533179",
+          "0.2886751345948128822545743902509787278238"
+        ],
+        "valid": true
+      },
+      "id": "S05-seeded-15",
+      "input": {
+        "components": [
+          {
+            "kind": "type_a",
+            "observations": [
+              "-9",
+              "-5",
+              "-3",
+              "-1"
+            ],
+            "sensitivity": "-2"
+          },
+          {
+            "half_width": "0.5",
+            "kind": "type_b_rectangular",
+            "sensitivity": "0.5"
+          }
+        ],
+        "coverage_factor": "2"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "combined_standard_uncertainty": "3.318565858849094767400635390429919624981",
+        "expanded_uncertainty": "8.296414647122736918501588476074799062452",
+        "standard_uncertainties": [
+          "3.304037933599834847190730606960368019592",
+          "0.05773502691896257645091487805019574556475"
+        ],
+        "valid": true
+      },
+      "id": "S05-seeded-16",
+      "input": {
+        "components": [
+          {
+            "kind": "type_a",
+            "observations": [
+              "-6",
+              "-4",
+              "4",
+              "8"
+            ],
+            "sensitivity": "-1"
+          },
+          {
+            "half_width": "0.1",
+            "kind": "type_b_rectangular",
+            "sensitivity": "0.5"
+          }
+        ],
+        "correlation_matrix": [
+          [
+            "1",
+            "-0.5"
+          ],
+          [
+            "-0.5",
+            "1"
+          ]
+        ],
+        "coverage_factor": "2.5"
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "combined_standard_uncertainty": "6.726812023536855158581542731085202096935",
+        "expanded_uncertainty": "13.45362404707371031716308546217040419387",
+        "standard_uncertainties": [
+          "3.25",
+          "0.8660254037844386467637231707529361834713"
+        ],
+        "valid": true
+      },
+      "id": "S05-seeded-17",
+      "input": {
+        "components": [
+          {
+            "kind": "type_a",
+            "observations": [
+              "-8",
+              "-5",
+              "-1",
+              "7"
+            ],
+            "sensitivity": "-2"
+          },
+          {
+            "half_width": "1.5",
+            "kind": "type_b_rectangular",
+            "sensitivity": "2"
+          }
+        ],
+        "coverage_factor": "2"
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "combined_standard_uncertainty": "0.5773502691896257645091487805019574556476",
+        "expanded_uncertainty": "1.154700538379251529018297561003914911295",
+        "standard_uncertainties": [
+          "0.5773502691896257645091487805019574556476"
+        ],
+        "valid": true
+      },
+      "id": "S05-type-a-known",
+      "input": {
+        "components": [
+          {
+            "kind": "type_a",
+            "observations": [
+              "1",
+              "2",
+              "3"
+            ],
+            "sensitivity": "1"
+          }
+        ],
+        "coverage_factor": "2"
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "combined_standard_uncertainty": "1",
+        "expanded_uncertainty": "2",
+        "standard_uncertainties": [
+          "1"
+        ],
+        "valid": true
+      },
+      "id": "S05-type-b-known",
+      "input": {
+        "components": [
+          {
+            "half_width": "1.732050807568877293527446341505872366943",
+            "kind": "type_b_rectangular",
+            "sensitivity": "1"
+          }
+        ],
+        "coverage_factor": "2"
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "combined_standard_uncertainty": "1.732050807568877293527446341505872366943",
+        "expanded_uncertainty": "3.464101615137754587054892683011744733886",
+        "standard_uncertainties": [
+          "1",
+          "1"
+        ],
+        "valid": true
+      },
+      "id": "S05-correlation-positive",
+      "input": {
+        "components": [
+          {
+            "half_width": "1.732050807568877293527446341505872366943",
+            "kind": "type_b_rectangular",
+            "sensitivity": "1"
+          },
+          {
+            "half_width": "1.732050807568877293527446341505872366943",
+            "kind": "type_b_rectangular",
+            "sensitivity": "1"
+          }
+        ],
+        "correlation_matrix": [
+          [
+            "1",
+            "0.5"
+          ],
+          [
+            "0.5",
+            "1"
+          ]
+        ],
+        "coverage_factor": "2"
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "combined_standard_uncertainty": "1",
+        "expanded_uncertainty": "2",
+        "standard_uncertainties": [
+          "1",
+          "1"
+        ],
+        "valid": true
+      },
+      "id": "S05-correlation-negative",
+      "input": {
+        "components": [
+          {
+            "half_width": "1.732050807568877293527446341505872366943",
+            "kind": "type_b_rectangular",
+            "sensitivity": "1"
+          },
+          {
+            "half_width": "1.732050807568877293527446341505872366943",
+            "kind": "type_b_rectangular",
+            "sensitivity": "1"
+          }
+        ],
+        "correlation_matrix": [
+          [
+            "1",
+            "-0.5"
+          ],
+          [
+            "-0.5",
+            "1"
+          ]
+        ],
+        "coverage_factor": "2"
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "non_psd_correlation_matrix",
+        "valid": false
+      },
+      "id": "S05-non-psd",
+      "input": {
+        "components": [
+          {
+            "half_width": "1",
+            "kind": "type_b_rectangular",
+            "sensitivity": "1"
+          },
+          {
+            "half_width": "1",
+            "kind": "type_b_rectangular",
+            "sensitivity": "1"
+          },
+          {
+            "half_width": "1",
+            "kind": "type_b_rectangular",
+            "sensitivity": "1"
+          }
+        ],
+        "correlation_matrix": [
+          [
+            "1",
+            "0.9",
+            "-0.9"
+          ],
+          [
+            "0.9",
+            "1",
+            "0.9"
+          ],
+          [
+            "-0.9",
+            "0.9",
+            "1"
+          ]
+        ],
+        "coverage_factor": "2"
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "invalid_correlation_matrix",
+        "valid": false
+      },
+      "id": "S05-asymmetric",
+      "input": {
+        "components": [
+          {
+            "half_width": "1",
+            "kind": "type_b_rectangular",
+            "sensitivity": "1"
+          },
+          {
+            "half_width": "1",
+            "kind": "type_b_rectangular",
+            "sensitivity": "1"
+          }
+        ],
+        "correlation_matrix": [
+          [
+            "1",
+            "0.5"
+          ],
+          [
+            "0.4",
+            "1"
+          ]
+        ],
+        "coverage_factor": "2"
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "invalid_correlation_matrix",
+        "valid": false
+      },
+      "id": "S05-out-of-bounds-rho",
+      "input": {
+        "components": [
+          {
+            "half_width": "1",
+            "kind": "type_b_rectangular",
+            "sensitivity": "1"
+          },
+          {
+            "half_width": "1",
+            "kind": "type_b_rectangular",
+            "sensitivity": "1"
+          }
+        ],
+        "correlation_matrix": [
+          [
+            "1",
+            "1.01"
+          ],
+          [
+            "1.01",
+            "1"
+          ]
+        ],
+        "coverage_factor": "2"
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "invalid_correlation_diagonal",
+        "valid": false
+      },
+      "id": "S05-nonunit-diagonal",
+      "input": {
+        "components": [
+          {
+            "half_width": "1",
+            "kind": "type_b_rectangular",
+            "sensitivity": "1"
+          }
+        ],
+        "correlation_matrix": [
+          [
+            "1.0000000000000000001"
+          ]
+        ],
+        "coverage_factor": "2"
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "invalid_coverage_factor",
+        "valid": false
+      },
+      "id": "S05-zero-factor",
+      "input": {
+        "components": [
+          {
+            "kind": "type_a",
+            "observations": [
+              "1",
+              "1"
+            ],
+            "sensitivity": "1"
+          }
+        ],
+        "coverage_factor": "0"
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "negative_half_width",
+        "valid": false
+      },
+      "id": "S05-negative-half-width",
+      "input": {
+        "components": [
+          {
+            "half_width": "-1",
+            "kind": "type_b_rectangular",
+            "sensitivity": "1"
+          }
+        ],
+        "coverage_factor": "2"
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "type_a_requires_two_observations",
+        "valid": false
+      },
+      "id": "S05-one-observation",
+      "input": {
+        "components": [
+          {
+            "kind": "type_a",
+            "observations": [
+              "1"
+            ],
+            "sensitivity": "1"
+          }
+        ],
+        "coverage_factor": "2"
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "reason": "unsupported_component_count",
+        "valid": false
+      },
+      "id": "S05-too-many-components",
+      "input": {
+        "components": [
+          {
+            "half_width": "1",
+            "kind": "type_b_rectangular",
+            "sensitivity": "1"
+          },
+          {
+            "half_width": "1",
+            "kind": "type_b_rectangular",
+            "sensitivity": "1"
+          },
+          {
+            "half_width": "1",
+            "kind": "type_b_rectangular",
+            "sensitivity": "1"
+          },
+          {
+            "half_width": "1",
+            "kind": "type_b_rectangular",
+            "sensitivity": "1"
+          }
+        ],
+        "coverage_factor": "2"
+      }
+    }
+  ],
+  "master_seed": 20261101,
+  "task": "S05",
+  "task_seed": 20266146
+}

@@ -1,0 +1,4415 @@
+{
+  "cases": [
+    {
+      "category": "ordinary",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "ACCEPT",
+        "conformity_interval": {
+          "lower": "25.9845299461620748470981702438996085088705",
+          "upper": "26.2154700538379251529018297561003914911295"
+        },
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "26.1"
+        },
+        "decoded_measurement": {
+          "raw_count": 26,
+          "unit": "C",
+          "value": "26"
+        },
+        "error_reasons": [],
+        "expanded_uncertainty": "0.1154700538379251529018297561003914911295",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "26"
+        },
+        "standard_uncertainty": "0.05773502691896257645091487805019574556475",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": true
+      },
+      "id": "S08-seeded-00",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "0.1",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "1A",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "20",
+          "upper_limit": "30"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.1",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "REJECT",
+        "conformity_interval": {
+          "lower": "14.6535898384862245412945107316988255266114",
+          "upper": "15.3464101615137754587054892683011744733886"
+        },
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "15"
+        },
+        "decoded_measurement": {
+          "raw_count": 15,
+          "unit": "C",
+          "value": "15"
+        },
+        "error_reasons": [],
+        "expanded_uncertainty": "0.3464101615137754587054892683011744733886",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "15"
+        },
+        "standard_uncertainty": "0.1732050807568877293527446341505872366943",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": true
+      },
+      "id": "S08-seeded-01",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "0",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "0F",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "20",
+          "upper_limit": "30"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.3",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "ACCEPT",
+        "conformity_interval": {
+          "lower": "24.669059892324149694196340487799217017741",
+          "upper": "25.130940107675850305803659512200782982259"
+        },
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "24.9"
+        },
+        "decoded_measurement": {
+          "raw_count": 25,
+          "unit": "C",
+          "value": "25"
+        },
+        "error_reasons": [],
+        "expanded_uncertainty": "0.230940107675850305803659512200782982259",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "25"
+        },
+        "standard_uncertainty": "0.1154700538379251529018297561003914911295",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": true
+      },
+      "id": "S08-seeded-02",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "-0.1",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "19",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "20",
+          "upper_limit": "30"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.2",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "ACCEPT",
+        "conformity_interval": {
+          "lower": "23.7845299461620748470981702438996085088705",
+          "upper": "24.0154700538379251529018297561003914911295"
+        },
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "23.9"
+        },
+        "decoded_measurement": {
+          "raw_count": 24,
+          "unit": "C",
+          "value": "24"
+        },
+        "error_reasons": [],
+        "expanded_uncertainty": "0.1154700538379251529018297561003914911295",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "24"
+        },
+        "standard_uncertainty": "0.05773502691896257645091487805019574556475",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": true
+      },
+      "id": "S08-seeded-03",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "-0.1",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "18",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "20",
+          "upper_limit": "30"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.1",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "ACCEPT",
+        "conformity_interval": {
+          "lower": "21.769059892324149694196340487799217017741",
+          "upper": "22.230940107675850305803659512200782982259"
+        },
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "22"
+        },
+        "decoded_measurement": {
+          "raw_count": 22,
+          "unit": "C",
+          "value": "22"
+        },
+        "error_reasons": [],
+        "expanded_uncertainty": "0.230940107675850305803659512200782982259",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "22"
+        },
+        "standard_uncertainty": "0.1154700538379251529018297561003914911295",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": true
+      },
+      "id": "S08-seeded-04",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "0",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "16",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "20",
+          "upper_limit": "30"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.2",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "REJECT",
+        "conformity_interval": {
+          "lower": "33.7845299461620748470981702438996085088705",
+          "upper": "34.0154700538379251529018297561003914911295"
+        },
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "33.9"
+        },
+        "decoded_measurement": {
+          "raw_count": 34,
+          "unit": "C",
+          "value": "34"
+        },
+        "error_reasons": [],
+        "expanded_uncertainty": "0.1154700538379251529018297561003914911295",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "34"
+        },
+        "standard_uncertainty": "0.05773502691896257645091487805019574556475",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": true
+      },
+      "id": "S08-seeded-05",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "-0.1",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "22",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "20",
+          "upper_limit": "30"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.1",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "REJECT",
+        "conformity_interval": {
+          "lower": "17.6535898384862245412945107316988255266114",
+          "upper": "18.3464101615137754587054892683011744733886"
+        },
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "18"
+        },
+        "decoded_measurement": {
+          "raw_count": 18,
+          "unit": "C",
+          "value": "18"
+        },
+        "error_reasons": [],
+        "expanded_uncertainty": "0.3464101615137754587054892683011744733886",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "18"
+        },
+        "standard_uncertainty": "0.1732050807568877293527446341505872366943",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": true
+      },
+      "id": "S08-seeded-06",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "0",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "12",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "20",
+          "upper_limit": "30"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.3",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "INDETERMINATE",
+        "conformity_interval": {
+          "lower": "19.669059892324149694196340487799217017741",
+          "upper": "20.130940107675850305803659512200782982259"
+        },
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "19.9"
+        },
+        "decoded_measurement": {
+          "raw_count": 20,
+          "unit": "C",
+          "value": "20"
+        },
+        "error_reasons": [],
+        "expanded_uncertainty": "0.230940107675850305803659512200782982259",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "20"
+        },
+        "standard_uncertainty": "0.1154700538379251529018297561003914911295",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": true
+      },
+      "id": "S08-seeded-07",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "-0.1",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "14",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "20",
+          "upper_limit": "30"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.2",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "INDETERMINATE",
+        "conformity_interval": {
+          "lower": "29.7535898384862245412945107316988255266114",
+          "upper": "30.4464101615137754587054892683011744733886"
+        },
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "30.1"
+        },
+        "decoded_measurement": {
+          "raw_count": 30,
+          "unit": "C",
+          "value": "30"
+        },
+        "error_reasons": [],
+        "expanded_uncertainty": "0.3464101615137754587054892683011744733886",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "30"
+        },
+        "standard_uncertainty": "0.1732050807568877293527446341505872366943",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": true
+      },
+      "id": "S08-seeded-08",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "0.1",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "1E",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "20",
+          "upper_limit": "30"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.3",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "REJECT",
+        "conformity_interval": {
+          "lower": "31.769059892324149694196340487799217017741",
+          "upper": "32.230940107675850305803659512200782982259"
+        },
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "32"
+        },
+        "decoded_measurement": {
+          "raw_count": 32,
+          "unit": "C",
+          "value": "32"
+        },
+        "error_reasons": [],
+        "expanded_uncertainty": "0.230940107675850305803659512200782982259",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "32"
+        },
+        "standard_uncertainty": "0.1154700538379251529018297561003914911295",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": true
+      },
+      "id": "S08-seeded-09",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "0",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "20",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "20",
+          "upper_limit": "30"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.2",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "REJECT",
+        "conformity_interval": {
+          "lower": "33.9845299461620748470981702438996085088705",
+          "upper": "34.2154700538379251529018297561003914911295"
+        },
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "34.1"
+        },
+        "decoded_measurement": {
+          "raw_count": 34,
+          "unit": "C",
+          "value": "34"
+        },
+        "error_reasons": [],
+        "expanded_uncertainty": "0.1154700538379251529018297561003914911295",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "34"
+        },
+        "standard_uncertainty": "0.05773502691896257645091487805019574556475",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": true
+      },
+      "id": "S08-seeded-10",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "0.1",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "22",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "20",
+          "upper_limit": "30"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.1",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "ACCEPT",
+        "conformity_interval": {
+          "lower": "21.7845299461620748470981702438996085088705",
+          "upper": "22.0154700538379251529018297561003914911295"
+        },
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "21.9"
+        },
+        "decoded_measurement": {
+          "raw_count": 22,
+          "unit": "C",
+          "value": "22"
+        },
+        "error_reasons": [],
+        "expanded_uncertainty": "0.1154700538379251529018297561003914911295",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "22"
+        },
+        "standard_uncertainty": "0.05773502691896257645091487805019574556475",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": true
+      },
+      "id": "S08-seeded-11",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "-0.1",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "16",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "20",
+          "upper_limit": "30"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.1",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "ACCEPT",
+        "conformity_interval": {
+          "lower": "27.769059892324149694196340487799217017741",
+          "upper": "28.230940107675850305803659512200782982259"
+        },
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "28"
+        },
+        "decoded_measurement": {
+          "raw_count": 28,
+          "unit": "C",
+          "value": "28"
+        },
+        "error_reasons": [],
+        "expanded_uncertainty": "0.230940107675850305803659512200782982259",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "28"
+        },
+        "standard_uncertainty": "0.1154700538379251529018297561003914911295",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": true
+      },
+      "id": "S08-seeded-12",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "0",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "1C",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "20",
+          "upper_limit": "30"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.2",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "REJECT",
+        "conformity_interval": {
+          "lower": "15.5535898384862245412945107316988255266114",
+          "upper": "16.2464101615137754587054892683011744733886"
+        },
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "15.9"
+        },
+        "decoded_measurement": {
+          "raw_count": 16,
+          "unit": "C",
+          "value": "16"
+        },
+        "error_reasons": [],
+        "expanded_uncertainty": "0.3464101615137754587054892683011744733886",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "16"
+        },
+        "standard_uncertainty": "0.1732050807568877293527446341505872366943",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": true
+      },
+      "id": "S08-seeded-13",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "-0.1",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "10",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "20",
+          "upper_limit": "30"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.3",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "ACCEPT",
+        "conformity_interval": {
+          "lower": "21.8845299461620748470981702438996085088705",
+          "upper": "22.1154700538379251529018297561003914911295"
+        },
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "22"
+        },
+        "decoded_measurement": {
+          "raw_count": 22,
+          "unit": "C",
+          "value": "22"
+        },
+        "error_reasons": [],
+        "expanded_uncertainty": "0.1154700538379251529018297561003914911295",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "22"
+        },
+        "standard_uncertainty": "0.05773502691896257645091487805019574556475",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": true
+      },
+      "id": "S08-seeded-14",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "0",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "16",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "20",
+          "upper_limit": "30"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.1",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "REJECT",
+        "conformity_interval": {
+          "lower": "17.9845299461620748470981702438996085088705",
+          "upper": "18.2154700538379251529018297561003914911295"
+        },
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "18.1"
+        },
+        "decoded_measurement": {
+          "raw_count": 18,
+          "unit": "C",
+          "value": "18"
+        },
+        "error_reasons": [],
+        "expanded_uncertainty": "0.1154700538379251529018297561003914911295",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "18"
+        },
+        "standard_uncertainty": "0.05773502691896257645091487805019574556475",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": true
+      },
+      "id": "S08-seeded-15",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "0.1",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "12",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "20",
+          "upper_limit": "30"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.1",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "ACCEPT",
+        "conformity_interval": {
+          "lower": "27.6535898384862245412945107316988255266114",
+          "upper": "28.3464101615137754587054892683011744733886"
+        },
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "28"
+        },
+        "decoded_measurement": {
+          "raw_count": 28,
+          "unit": "C",
+          "value": "28"
+        },
+        "error_reasons": [],
+        "expanded_uncertainty": "0.3464101615137754587054892683011744733886",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "28"
+        },
+        "standard_uncertainty": "0.1732050807568877293527446341505872366943",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": true
+      },
+      "id": "S08-seeded-16",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "0",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "1C",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "20",
+          "upper_limit": "30"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.3",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "ordinary",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "ACCEPT",
+        "conformity_interval": {
+          "lower": "28.869059892324149694196340487799217017741",
+          "upper": "29.330940107675850305803659512200782982259"
+        },
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "29.1"
+        },
+        "decoded_measurement": {
+          "raw_count": 29,
+          "unit": "C",
+          "value": "29"
+        },
+        "error_reasons": [],
+        "expanded_uncertainty": "0.230940107675850305803659512200782982259",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "29"
+        },
+        "standard_uncertainty": "0.1154700538379251529018297561003914911295",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": true
+      },
+      "id": "S08-seeded-17",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "0.1",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "1D",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "20",
+          "upper_limit": "30"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.2",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": false
+        },
+        "conformity_decision": "INDETERMINATE",
+        "corrected_measurement": null,
+        "decoded_measurement": null,
+        "error_reasons": [
+          "decode:sentinel"
+        ],
+        "expanded_uncertainty": null,
+        "physical_quantity": null,
+        "standard_uncertainty": null,
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": false
+      },
+      "id": "S08-sentinel-frame",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "0",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "FF",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [
+            255
+          ],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "20",
+          "upper_limit": "30"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.2",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [
+            "traceability_not_documented"
+          ],
+          "valid": false
+        },
+        "conformity_decision": "INDETERMINATE",
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "25"
+        },
+        "decoded_measurement": {
+          "raw_count": 25,
+          "unit": "C",
+          "value": "25"
+        },
+        "error_reasons": [
+          "certificate:traceability_not_documented"
+        ],
+        "expanded_uncertainty": "0.230940107675850305803659512200782982259",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "25"
+        },
+        "standard_uncertainty": "0.1154700538379251529018297561003914911295",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": false
+      },
+      "id": "S08-unclear-traceability",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "0",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "UNKNOWN",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "19",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "20",
+          "upper_limit": "30"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.2",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [
+            "serial_mismatch"
+          ],
+          "valid": false
+        },
+        "conformity_decision": "INDETERMINATE",
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "25"
+        },
+        "decoded_measurement": {
+          "raw_count": 25,
+          "unit": "C",
+          "value": "25"
+        },
+        "error_reasons": [
+          "certificate:serial_mismatch"
+        ],
+        "expanded_uncertainty": "0.230940107675850305803659512200782982259",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "25"
+        },
+        "standard_uncertainty": "0.1154700538379251529018297561003914911295",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": false
+      },
+      "id": "S08-certificate-serial",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "0",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "OTHER",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "19",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "20",
+          "upper_limit": "30"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.2",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "INDETERMINATE",
+        "conformity_interval": {
+          "lower": "24.769059892324149694196340487799217017741",
+          "upper": "25.230940107675850305803659512200782982259"
+        },
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "25"
+        },
+        "decoded_measurement": {
+          "raw_count": 25,
+          "unit": "C",
+          "value": "25"
+        },
+        "error_reasons": [],
+        "expanded_uncertainty": "0.230940107675850305803659512200782982259",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "25"
+        },
+        "standard_uncertainty": "0.1154700538379251529018297561003914911295",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": true
+      },
+      "id": "S08-indeterminate",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "0",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "19",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "20",
+          "upper_limit": "25.1"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.2",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "REJECT",
+        "conformity_interval": {
+          "lower": "24.769059892324149694196340487799217017741",
+          "upper": "25.230940107675850305803659512200782982259"
+        },
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "25"
+        },
+        "decoded_measurement": {
+          "raw_count": 25,
+          "unit": "C",
+          "value": "25"
+        },
+        "error_reasons": [],
+        "expanded_uncertainty": "0.230940107675850305803659512200782982259",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "25"
+        },
+        "standard_uncertainty": "0.1154700538379251529018297561003914911295",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": true
+      },
+      "id": "S08-reject",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "0",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "19",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "20",
+          "upper_limit": "24.5"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.2",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": false
+        },
+        "conformity_decision": "INDETERMINATE",
+        "corrected_measurement": null,
+        "decoded_measurement": null,
+        "error_reasons": [
+          "decode:frame_length"
+        ],
+        "expanded_uncertainty": null,
+        "physical_quantity": null,
+        "standard_uncertainty": null,
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": false
+      },
+      "id": "S08-truncated-frame",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "0",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "19",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 16
+        },
+        "specification": {
+          "lower_limit": "20",
+          "upper_limit": "30"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.2",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "ACCEPT",
+        "conformity_interval": {
+          "lower": "25.769059892324149694196340487799217017741",
+          "upper": "26.230940107675850305803659512200782982259"
+        },
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "26"
+        },
+        "decoded_measurement": {
+          "raw_count": 25,
+          "unit": "C",
+          "value": "25"
+        },
+        "error_reasons": [],
+        "expanded_uncertainty": "0.230940107675850305803659512200782982259",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "25"
+        },
+        "standard_uncertainty": "0.1154700538379251529018297561003914911295",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": true
+      },
+      "id": "S08-environment-correction",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "30",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "0",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0.1"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "19",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "20",
+          "upper_limit": "30"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.2",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "INDETERMINATE",
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "25"
+        },
+        "decoded_measurement": {
+          "raw_count": 25,
+          "unit": "C",
+          "value": "25"
+        },
+        "error_reasons": [
+          "uncertainty:invalid_coverage_factor"
+        ],
+        "expanded_uncertainty": null,
+        "physical_quantity": {
+          "unit": "C",
+          "value": "25"
+        },
+        "standard_uncertainty": null,
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": false
+      },
+      "id": "S08-uncertainty-invalid",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "0",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "19",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "20",
+          "upper_limit": "30"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.2",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "0"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [
+            "outside_validity_dates"
+          ],
+          "valid": false
+        },
+        "conformity_decision": "INDETERMINATE",
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "25"
+        },
+        "decoded_measurement": {
+          "raw_count": 25,
+          "unit": "C",
+          "value": "25"
+        },
+        "error_reasons": [
+          "certificate:outside_validity_dates"
+        ],
+        "expanded_uncertainty": "0.230940107675850305803659512200782982259",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "25"
+        },
+        "standard_uncertainty": "0.1154700538379251529018297561003914911295",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": false
+      },
+      "id": "S08-expired-evidence",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "0",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-10-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "19",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "20",
+          "upper_limit": "30"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.2",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "ACCEPT",
+        "conformity_interval": {
+          "lower": "24.769059892324149694196340487799217017741",
+          "upper": "25.230940107675850305803659512200782982259"
+        },
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "25"
+        },
+        "decoded_measurement": {
+          "raw_count": 25,
+          "unit": "C",
+          "value": "25"
+        },
+        "error_reasons": [],
+        "expanded_uncertainty": "0.230940107675850305803659512200782982259",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "25"
+        },
+        "standard_uncertainty": "0.1154700538379251529018297561003914911295",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": true
+      },
+      "id": "S08-signed-byte",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "0",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "19",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": true,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "20",
+          "upper_limit": "30"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.2",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": false
+        },
+        "conformity_decision": "INDETERMINATE",
+        "corrected_measurement": null,
+        "decoded_measurement": {
+          "raw_count": 25,
+          "unit": "C",
+          "value": "25"
+        },
+        "error_reasons": [
+          "calibration:already_corrected"
+        ],
+        "expanded_uncertainty": "0.230940107675850305803659512200782982259",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "25"
+        },
+        "standard_uncertainty": "0.1154700538379251529018297561003914911295",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": false
+      },
+      "id": "S08-double-correction",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "CORRECTED",
+          "gain": "1",
+          "offset": "0",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "19",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "20",
+          "upper_limit": "30"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.2",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": false
+        },
+        "conformity_decision": "INDETERMINATE",
+        "corrected_measurement": null,
+        "decoded_measurement": {
+          "raw_count": 25,
+          "unit": "V",
+          "value": "25"
+        },
+        "error_reasons": [
+          "units:incompatible_or_unknown_unit"
+        ],
+        "expanded_uncertainty": null,
+        "physical_quantity": null,
+        "standard_uncertainty": null,
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": false
+      },
+      "id": "S08-incompatible-units",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "0",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "19",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "20",
+          "upper_limit": "30"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.2",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "V",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "ACCEPT",
+        "conformity_interval": {
+          "lower": "24.769059892324149694196340487799217017741",
+          "upper": "25.230940107675850305803659512200782982259"
+        },
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "25"
+        },
+        "decoded_measurement": {
+          "raw_count": 25,
+          "unit": "C",
+          "value": "25"
+        },
+        "error_reasons": [],
+        "expanded_uncertainty": "0.230940107675850305803659512200782982259",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "25"
+        },
+        "standard_uncertainty": "0.1154700538379251529018297561003914911295",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": true
+      },
+      "id": "S08-accept-tight",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "0",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "19",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "24.6",
+          "upper_limit": "25.4"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.2",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "integration",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "ACCEPT",
+        "conformity_interval": {
+          "lower": "20.15",
+          "upper": "20.55"
+        },
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "20.35"
+        },
+        "decoded_measurement": {
+          "raw_count": 680,
+          "unit": "F",
+          "value": "68.0"
+        },
+        "error_reasons": [],
+        "expanded_uncertainty": "0.2",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "20"
+        },
+        "standard_uncertainty": "0.09999999999999999999999999999999999999998",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": true
+      },
+      "id": "S08-fahrenheit-calibrated-correlated-full-pipeline",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "25",
+          "correction_state": "RAW",
+          "gain": "1.01",
+          "offset": "0.1",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0.01"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "125",
+          "range_min": "-40",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "02A8",
+          "rounding_places": 1,
+          "scale": "0.1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 16
+        },
+        "specification": {
+          "lower_limit": "20.1",
+          "upper_limit": "20.6"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.1",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            },
+            {
+              "half_width": "0.1",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "correlation_matrix": [
+            [
+              "1",
+              "0.5"
+            ],
+            [
+              "0.5",
+              "1"
+            ]
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "F",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "integration",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "ACCEPT",
+        "conformity_interval": {
+          "lower": "-5.130940107675850305803659512200782982259",
+          "upper": "-4.669059892324149694196340487799217017741"
+        },
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "-4.9"
+        },
+        "decoded_measurement": {
+          "raw_count": -50,
+          "unit": "C",
+          "value": "-5.0"
+        },
+        "error_reasons": [],
+        "expanded_uncertainty": "0.230940107675850305803659512200782982259",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "-5"
+        },
+        "standard_uncertainty": "0.1154700538379251529018297561003914911295",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": true
+      },
+      "id": "S08-signed-negative-with-environmental-compensation",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "25",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "0",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0.02"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "125",
+          "range_min": "-40",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "FFCE",
+          "rounding_places": 1,
+          "scale": "0.1",
+          "sentinel_codes": [],
+          "signed": true,
+          "width_bits": 16
+        },
+        "specification": {
+          "lower_limit": "-5.2",
+          "upper_limit": "-4.6"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.2",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "integration",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "ACCEPT",
+        "conformity_interval": {
+          "lower": "23",
+          "upper": "27"
+        },
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "25"
+        },
+        "decoded_measurement": {
+          "raw_count": 25,
+          "unit": "C",
+          "value": "25"
+        },
+        "error_reasons": [],
+        "expanded_uncertainty": "2",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "25"
+        },
+        "standard_uncertainty": "0.9999999999999999999999999999999999999998",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": true
+      },
+      "id": "S08-two-correlated-rectangular-contributors",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "0",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "19",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "22.5",
+          "upper_limit": "27.5"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "1",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            },
+            {
+              "half_width": "1",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "correlation_matrix": [
+            [
+              "1",
+              "0.5"
+            ],
+            [
+              "0.5",
+              "1"
+            ]
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "integration",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "ACCEPT",
+        "conformity_interval": {
+          "lower": "50.3071796769724490825890214633976510532228",
+          "upper": "51.6928203230275509174109785366023489467772"
+        },
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "51"
+        },
+        "decoded_measurement": {
+          "raw_count": 25,
+          "unit": "C",
+          "value": "25"
+        },
+        "error_reasons": [],
+        "expanded_uncertainty": "0.6928203230275509174109785366023489467772",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "25"
+        },
+        "standard_uncertainty": "0.3464101615137754587054892683011744733886",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": true
+      },
+      "id": "S08-uncertainty-supplied-after-calibration-not-rescaled",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "25",
+          "correction_state": "RAW",
+          "gain": "2",
+          "offset": "0.5",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0.1"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "19",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "50",
+          "upper_limit": "52"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.6",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "integration",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "ACCEPT",
+        "conformity_interval": {
+          "lower": "35.845299461620748470981702438996085088705",
+          "upper": "38.154700538379251529018297561003914911295"
+        },
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "37"
+        },
+        "decoded_measurement": {
+          "raw_count": 25,
+          "unit": "C",
+          "value": "25"
+        },
+        "error_reasons": [],
+        "expanded_uncertainty": "1.154700538379251529018297561003914911295",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "25"
+        },
+        "standard_uncertainty": "0.5773502691896257645091487805019574556476",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": true
+      },
+      "id": "S08-type-a-observations-already-in-final-unit",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1.5",
+          "offset": "-0.5",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "19",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "35",
+          "upper_limit": "39"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "kind": "type_a",
+              "observations": [
+                "49",
+                "50",
+                "51"
+              ],
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "integration",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "ACCEPT",
+        "conformity_interval": {
+          "lower": "78.5535898384862245412945107316988255266114",
+          "upper": "79.2464101615137754587054892683011744733886"
+        },
+        "corrected_measurement": {
+          "unit": "F",
+          "value": "78.9"
+        },
+        "decoded_measurement": {
+          "raw_count": 25,
+          "unit": "C",
+          "value": "25"
+        },
+        "error_reasons": [],
+        "expanded_uncertainty": "0.3464101615137754587054892683011744733886",
+        "physical_quantity": {
+          "unit": "F",
+          "value": "77"
+        },
+        "standard_uncertainty": "0.1732050807568877293527446341505872366943",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": true
+      },
+      "id": "S08-fahrenheit-output-units-and-celsius-temperature-interval",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "25",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "0.9",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0.2"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "212",
+          "range_min": "32",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "F",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "19",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "78",
+          "upper_limit": "80"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.3",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "F"
+        }
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "ACCEPT",
+        "conformity_interval": {
+          "lower": "25.1",
+          "upper": "26.1"
+        },
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "25.6"
+        },
+        "decoded_measurement": {
+          "raw_count": 2500,
+          "unit": "C",
+          "value": "25.00"
+        },
+        "error_reasons": [],
+        "expanded_uncertainty": "0.5",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "25"
+        },
+        "standard_uncertainty": "0.25",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": true
+      },
+      "id": "S08-calibrated-result-touches-upper-conformity-boundary",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1.02",
+          "offset": "0.1",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "100",
+          "range_min": "-20",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "09C4",
+          "rounding_places": 2,
+          "scale": "0.01",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 16
+        },
+        "specification": {
+          "lower_limit": "20",
+          "upper_limit": "26.1"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.4330127018922193233818615853764680917357",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "ACCEPT",
+        "conformity_interval": {
+          "lower": "-0.1154700538379251529018297561003914911295",
+          "upper": "0.1154700538379251529018297561003914911295"
+        },
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "0"
+        },
+        "decoded_measurement": {
+          "raw_count": 0,
+          "unit": "C",
+          "value": "0"
+        },
+        "error_reasons": [],
+        "expanded_uncertainty": "0.1154700538379251529018297561003914911295",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "0"
+        },
+        "standard_uncertainty": "0.05773502691896257645091487805019574556475",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": true
+      },
+      "id": "S08-calibration-range-inclusive-low",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "0",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "40",
+          "range_min": "0",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "00",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "-1",
+          "upper_limit": "1"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.1",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "ACCEPT",
+        "conformity_interval": {
+          "lower": "39.8845299461620748470981702438996085088705",
+          "upper": "40.1154700538379251529018297561003914911295"
+        },
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "40"
+        },
+        "decoded_measurement": {
+          "raw_count": 40,
+          "unit": "C",
+          "value": "40"
+        },
+        "error_reasons": [],
+        "expanded_uncertainty": "0.1154700538379251529018297561003914911295",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "40"
+        },
+        "standard_uncertainty": "0.05773502691896257645091487805019574556475",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": true
+      },
+      "id": "S08-calibration-range-inclusive-high",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "0",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "40",
+          "range_min": "0",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "28",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "39",
+          "upper_limit": "41"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.1",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [
+            "outside_calibration_range"
+          ],
+          "valid": false
+        },
+        "conformity_decision": "INDETERMINATE",
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "-0.01"
+        },
+        "decoded_measurement": {
+          "raw_count": -1,
+          "unit": "C",
+          "value": "-0.01"
+        },
+        "error_reasons": [
+          "certificate:outside_calibration_range"
+        ],
+        "expanded_uncertainty": "0.1154700538379251529018297561003914911295",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "-0.01"
+        },
+        "standard_uncertainty": "0.05773502691896257645091487805019574556475",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": false
+      },
+      "id": "S08-calibration-range-exclusive-below",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "0",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "40",
+          "range_min": "0",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "ffff",
+          "rounding_places": 2,
+          "scale": "0.01",
+          "sentinel_codes": [],
+          "signed": true,
+          "width_bits": 16
+        },
+        "specification": {
+          "lower_limit": "-5",
+          "upper_limit": "45"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.1",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [
+            "outside_calibration_range"
+          ],
+          "valid": false
+        },
+        "conformity_decision": "INDETERMINATE",
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "40.01"
+        },
+        "decoded_measurement": {
+          "raw_count": 4001,
+          "unit": "C",
+          "value": "40.01"
+        },
+        "error_reasons": [
+          "certificate:outside_calibration_range"
+        ],
+        "expanded_uncertainty": "0.1154700538379251529018297561003914911295",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "40.01"
+        },
+        "standard_uncertainty": "0.05773502691896257645091487805019574556475",
+        "temporal_validity": {
+          "reason": "ok",
+          "sequence_order": "NEWER",
+          "valid": true
+        },
+        "valid": false
+      },
+      "id": "S08-calibration-range-exclusive-above",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "0",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "40",
+          "range_min": "0",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "0fa1",
+          "rounding_places": 2,
+          "scale": "0.01",
+          "sentinel_codes": [],
+          "signed": true,
+          "width_bits": 16
+        },
+        "specification": {
+          "lower_limit": "-5",
+          "upper_limit": "45"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491199900
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.1",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "INDETERMINATE",
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "25"
+        },
+        "decoded_measurement": {
+          "raw_count": 25,
+          "unit": "C",
+          "value": "25"
+        },
+        "error_reasons": [
+          "temporal:stale_timestamp"
+        ],
+        "expanded_uncertainty": "0.230940107675850305803659512200782982259",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "25"
+        },
+        "standard_uncertainty": "0.1154700538379251529018297561003914911295",
+        "temporal_validity": {
+          "reason": "stale_timestamp",
+          "valid": false
+        },
+        "valid": false
+      },
+      "id": "S08-valid-certificate-with-stale-sensor-data",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "0",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "125",
+          "range_min": "-40",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "19",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "20",
+          "upper_limit": "30"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491198999
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.2",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "adversarial",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [
+            "calibration_not_current",
+            "outside_validity_dates",
+            "traceability_not_documented"
+          ],
+          "valid": false
+        },
+        "conformity_decision": "INDETERMINATE",
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "25"
+        },
+        "decoded_measurement": {
+          "raw_count": 25,
+          "unit": "C",
+          "value": "25"
+        },
+        "error_reasons": [
+          "temporal:stale_timestamp",
+          "uncertainty:negative_half_width",
+          "certificate:calibration_not_current",
+          "certificate:outside_validity_dates",
+          "certificate:traceability_not_documented"
+        ],
+        "expanded_uncertainty": null,
+        "physical_quantity": {
+          "unit": "C",
+          "value": "25"
+        },
+        "standard_uncertainty": null,
+        "temporal_validity": {
+          "reason": "stale_timestamp",
+          "valid": false
+        },
+        "valid": false
+      },
+      "id": "S08-stale-invalid-uncertainty-and-invalid-certificate",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "0",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "125",
+          "range_min": "-40",
+          "serial_number": "SN-17",
+          "status": "EXPIRED",
+          "traceability_chain_status": "UNKNOWN",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-10-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "19",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "20",
+          "upper_limit": "30"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "last_sequence": 19,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 20,
+          "timestamp_ms": 1793491198999
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "-0.1",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    },
+    {
+      "category": "boundary",
+      "expected": {
+        "calibration_validity": {
+          "reasons": [],
+          "valid": true
+        },
+        "conformity_decision": "ACCEPT",
+        "conformity_interval": {
+          "lower": "24.769059892324149694196340487799217017741",
+          "upper": "25.230940107675850305803659512200782982259"
+        },
+        "corrected_measurement": {
+          "unit": "C",
+          "value": "25"
+        },
+        "decoded_measurement": {
+          "raw_count": 25,
+          "unit": "C",
+          "value": "25"
+        },
+        "error_reasons": [],
+        "expanded_uncertainty": "0.230940107675850305803659512200782982259",
+        "physical_quantity": {
+          "unit": "C",
+          "value": "25"
+        },
+        "standard_uncertainty": "0.1154700538379251529018297561003914911295",
+        "temporal_validity": {
+          "reason": "first_sequence",
+          "sequence_order": "FIRST",
+          "valid": true
+        },
+        "valid": true
+      },
+      "id": "S08-first-packet-at-rollover-boundary",
+      "input": {
+        "calibration": {
+          "ambient_temperature_c": "20",
+          "correction_state": "RAW",
+          "gain": "1",
+          "offset": "0",
+          "reference_temperature_c": "20",
+          "rounding_places": 2,
+          "temp_coefficient": "0"
+        },
+        "certificate": {
+          "measurand": "temperature",
+          "range_max": "125",
+          "range_min": "-40",
+          "serial_number": "SN-17",
+          "status": "CURRENT",
+          "traceability_chain_status": "DOCUMENTED",
+          "uncertainty": "0.2",
+          "unit": "C",
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31"
+        },
+        "instrument_serial": "SN-17",
+        "measurand": "temperature",
+        "measurement_date": "2026-11-01",
+        "sensor": {
+          "byte_order": "big",
+          "frame_hex": "19",
+          "rounding_places": 0,
+          "scale": "1",
+          "sentinel_codes": [],
+          "signed": false,
+          "width_bits": 8
+        },
+        "specification": {
+          "lower_limit": "20",
+          "upper_limit": "30"
+        },
+        "temporal": {
+          "allowed_future_skew_ms": 100,
+          "max_age_ms": 1000,
+          "now_ms": 1793491200000,
+          "sequence": 0,
+          "timestamp_ms": 1793491200000
+        },
+        "uncertainty": {
+          "components": [
+            {
+              "half_width": "0.2",
+              "kind": "type_b_rectangular",
+              "sensitivity": "1"
+            }
+          ],
+          "coverage_factor": "2"
+        },
+        "units": {
+          "from_unit": "C",
+          "to_unit": "C"
+        }
+      }
+    }
+  ],
+  "master_seed": 20261101,
+  "task": "S08",
+  "task_seed": 20269173
+}
