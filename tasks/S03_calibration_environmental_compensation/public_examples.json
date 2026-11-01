@@ -1,0 +1,50 @@
+[
+  {
+    "input": {
+      "raw_value": "10",
+      "gain": "1.02",
+      "offset": "-0.1",
+      "temp_coefficient": "0.01",
+      "ambient_temperature_c": "30",
+      "reference_temperature_c": "20",
+      "correction_state": "RAW",
+      "rounding_places": 3
+    },
+    "expected": {
+      "valid": true,
+      "corrected_value": "10.200"
+    }
+  },
+  {
+    "input": {
+      "raw_value": "4",
+      "gain": "2",
+      "offset": "1",
+      "temp_coefficient": "0.5",
+      "ambient_temperature_c": "30",
+      "reference_temperature_c": "20",
+      "correction_state": "RAW",
+      "rounding_places": 3
+    },
+    "expected": {
+      "valid": true,
+      "corrected_value": "14.000"
+    }
+  },
+  {
+    "input": {
+      "raw_value": "0",
+      "gain": "1",
+      "offset": "0",
+      "temp_coefficient": "0",
+      "ambient_temperature_c": "-40",
+      "reference_temperature_c": "20",
+      "correction_state": "RAW",
+      "rounding_places": 1
+    },
+    "expected": {
+      "valid": true,
+      "corrected_value": "0.0"
+    }
+  }
+]

@@ -1,0 +1,211 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "valid",
+    "decoded_measurement",
+    "physical_quantity",
+    "corrected_measurement",
+    "temporal_validity",
+    "calibration_validity",
+    "standard_uncertainty",
+    "expanded_uncertainty",
+    "conformity_decision",
+    "error_reasons"
+  ],
+  "properties": {
+    "valid": {
+      "type": "boolean"
+    },
+    "decoded_measurement": {
+      "description": "Reported in units.from_unit exactly as decoded and scaled from the sensor frame.",
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "raw_count",
+            "value",
+            "unit"
+          ],
+          "properties": {
+            "raw_count": {
+              "type": "integer"
+            },
+            "value": {
+              "type": "string",
+              "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+            },
+            "unit": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "physical_quantity": {
+      "description": "Reported in the canonical requested units.to_unit.",
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "value",
+            "unit"
+          ],
+          "properties": {
+            "value": {
+              "type": "string",
+              "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+            },
+            "unit": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "corrected_measurement": {
+      "description": "Calibration is applied after unit conversion; reported in units.to_unit.",
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "value",
+            "unit"
+          ],
+          "properties": {
+            "value": {
+              "type": "string",
+              "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+            },
+            "unit": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "temporal_validity": {
+      "type": "object",
+      "required": [
+        "valid",
+        "reason"
+      ],
+      "properties": {
+        "valid": {
+          "type": "boolean"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "sequence_order": {
+          "enum": [
+            "FIRST",
+            "NEWER"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "calibration_validity": {
+      "type": "object",
+      "required": [
+        "valid",
+        "reasons"
+      ],
+      "properties": {
+        "valid": {
+          "type": "boolean"
+        },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "standard_uncertainty": {
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "expanded_uncertainty": {
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "conformity_decision": {
+      "enum": [
+        "ACCEPT",
+        "REJECT",
+        "INDETERMINATE"
+      ]
+    },
+    "error_reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "conformity_interval": {
+      "type": "object",
+      "required": [
+        "lower",
+        "upper"
+      ],
+      "properties": {
+        "lower": {
+          "type": "string",
+          "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+        },
+        "upper": {
+          "type": "string",
+          "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "valid": {
+            "const": true
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "conformity_interval"
+        ]
+      }
+    }
+  ]
+}

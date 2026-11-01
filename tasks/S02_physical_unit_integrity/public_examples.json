@@ -1,0 +1,41 @@
+[
+  {
+    "input": {
+      "value": "32",
+      "from_unit": "F",
+      "to_unit": "C",
+      "rounding_places": 2
+    },
+    "expected": {
+      "valid": true,
+      "value": "0.00",
+      "unit": "C"
+    }
+  },
+  {
+    "input": {
+      "value": "101325",
+      "from_unit": "Pa",
+      "to_unit": "kPa",
+      "rounding_places": 2
+    },
+    "expected": {
+      "valid": true,
+      "value": "101.32",
+      "unit": "kPa"
+    }
+  },
+  {
+    "input": {
+      "value": "2500",
+      "from_unit": "mV",
+      "to_unit": "V",
+      "rounding_places": 3
+    },
+    "expected": {
+      "valid": true,
+      "value": "2.500",
+      "unit": "V"
+    }
+  }
+]

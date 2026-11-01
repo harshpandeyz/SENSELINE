@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "certificate",
+    "measurement"
+  ],
+  "properties": {
+    "certificate": {
+      "type": "object",
+      "required": [
+        "serial_number",
+        "measurand",
+        "status",
+        "valid_from",
+        "valid_to",
+        "range_min",
+        "range_max",
+        "uncertainty",
+        "unit",
+        "traceability_chain_status"
+      ],
+      "properties": {
+        "serial_number": {
+          "type": "string"
+        },
+        "measurand": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "valid_from": {
+          "type": "string"
+        },
+        "valid_to": {
+          "type": "string"
+        },
+        "range_min": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+            },
+            {
+              "type": "integer"
+            }
+          ]
+        },
+        "range_max": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+            },
+            {
+              "type": "integer"
+            }
+          ]
+        },
+        "uncertainty": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+            },
+            {
+              "type": "integer"
+            }
+          ]
+        },
+        "unit": {
+          "type": "string"
+        },
+        "traceability_chain_status": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "measurement": {
+      "type": "object",
+      "required": [
+        "serial_number",
+        "measurand",
+        "date",
+        "value",
+        "unit"
+      ],
+      "properties": {
+        "serial_number": {
+          "type": "string"
+        },
+        "measurand": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        },
+        "value": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+            },
+            {
+              "type": "integer"
+            }
+          ]
+        },
+        "unit": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

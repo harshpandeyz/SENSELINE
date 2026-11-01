@@ -1,0 +1,46 @@
+[
+  {
+    "input": {
+      "timestamp_ms": 100000,
+      "now_ms": 100100,
+      "max_age_ms": 1000,
+      "allowed_future_skew_ms": 50,
+      "sequence": 0,
+      "last_sequence": 4294967295
+    },
+    "expected": {
+      "valid": true,
+      "reason": "ok",
+      "sequence_order": "NEWER"
+    }
+  },
+  {
+    "input": {
+      "timestamp_ms": 100000,
+      "now_ms": 100000,
+      "max_age_ms": 1000,
+      "allowed_future_skew_ms": 0,
+      "sequence": 0,
+      "last_sequence": 4294967295
+    },
+    "expected": {
+      "valid": true,
+      "reason": "ok",
+      "sequence_order": "NEWER"
+    }
+  },
+  {
+    "input": {
+      "timestamp_ms": 98999,
+      "now_ms": 100000,
+      "max_age_ms": 1000,
+      "allowed_future_skew_ms": 0,
+      "sequence": 1,
+      "last_sequence": 0
+    },
+    "expected": {
+      "valid": false,
+      "reason": "stale_timestamp"
+    }
+  }
+]

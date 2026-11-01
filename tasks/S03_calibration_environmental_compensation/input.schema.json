@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "raw_value",
+    "gain",
+    "offset",
+    "temp_coefficient",
+    "ambient_temperature_c",
+    "reference_temperature_c",
+    "correction_state",
+    "rounding_places"
+  ],
+  "properties": {
+    "raw_value": {
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "gain": {
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "offset": {
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "temp_coefficient": {
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "ambient_temperature_c": {
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "reference_temperature_c": {
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "correction_state": {
+      "enum": [
+        "RAW"
+      ]
+    },
+    "rounding_places": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 12
+    }
+  },
+  "additionalProperties": false
+}

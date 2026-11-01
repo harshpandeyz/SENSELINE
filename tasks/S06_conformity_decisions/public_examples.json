@@ -1,0 +1,44 @@
+[
+  {
+    "input": {
+      "y": "10",
+      "expanded_uncertainty": "0.5",
+      "lower_limit": "9",
+      "upper_limit": "11"
+    },
+    "expected": {
+      "valid": true,
+      "lower": "9.5",
+      "upper": "10.5",
+      "decision": "ACCEPT"
+    }
+  },
+  {
+    "input": {
+      "y": "0",
+      "expanded_uncertainty": "1",
+      "lower_limit": "-1",
+      "upper_limit": "1"
+    },
+    "expected": {
+      "valid": true,
+      "lower": "-1",
+      "upper": "1",
+      "decision": "ACCEPT"
+    }
+  },
+  {
+    "input": {
+      "y": "5",
+      "expanded_uncertainty": "0.5",
+      "lower_limit": "0",
+      "upper_limit": "4"
+    },
+    "expected": {
+      "valid": true,
+      "lower": "4.5",
+      "upper": "5.5",
+      "decision": "REJECT"
+    }
+  }
+]

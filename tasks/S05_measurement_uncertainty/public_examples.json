@@ -1,0 +1,98 @@
+[
+  {
+    "input": {
+      "components": [
+        {
+          "kind": "type_a",
+          "observations": [
+            "9.9",
+            "10.0",
+            "10.1"
+          ],
+          "sensitivity": "1"
+        },
+        {
+          "kind": "type_b_rectangular",
+          "half_width": "0.3",
+          "sensitivity": "2"
+        }
+      ],
+      "coverage_factor": "2",
+      "correlation_matrix": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ]
+    },
+    "expected": {
+      "valid": true,
+      "standard_uncertainties": [
+        "0.05773502691896257645091487805019574556476",
+        "0.1732050807568877293527446341505872366943"
+      ],
+      "combined_standard_uncertainty": "0.3511884584284246282800468220633222492249",
+      "expanded_uncertainty": "0.7023769168568492565600936441266444984498"
+    }
+  },
+  {
+    "input": {
+      "components": [
+        {
+          "kind": "type_b_rectangular",
+          "half_width": "1",
+          "sensitivity": "1"
+        }
+      ],
+      "coverage_factor": "2"
+    },
+    "expected": {
+      "valid": true,
+      "standard_uncertainties": [
+        "0.5773502691896257645091487805019574556475"
+      ],
+      "combined_standard_uncertainty": "0.5773502691896257645091487805019574556475",
+      "expanded_uncertainty": "1.154700538379251529018297561003914911295"
+    }
+  },
+  {
+    "input": {
+      "components": [
+        {
+          "kind": "type_b_rectangular",
+          "half_width": "1",
+          "sensitivity": "1"
+        },
+        {
+          "kind": "type_b_rectangular",
+          "half_width": "2",
+          "sensitivity": "1"
+        }
+      ],
+      "coverage_factor": "2",
+      "correlation_matrix": [
+        [
+          "1",
+          "0.5"
+        ],
+        [
+          "0.5",
+          "1"
+        ]
+      ]
+    },
+    "expected": {
+      "valid": true,
+      "standard_uncertainties": [
+        "0.5773502691896257645091487805019574556475",
+        "1.154700538379251529018297561003914911295"
+      ],
+      "combined_standard_uncertainty": "1.527525231651946668862682397909336162994",
+      "expanded_uncertainty": "3.055050463303893337725364795818672325988"
+    }
+  }
+]

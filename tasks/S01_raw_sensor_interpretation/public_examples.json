@@ -1,0 +1,50 @@
+[
+  {
+    "input": {
+      "frame_hex": "FFFE",
+      "width_bits": 16,
+      "byte_order": "big",
+      "signed": true,
+      "scale": "0.01",
+      "rounding_places": 2,
+      "sentinel_codes": []
+    },
+    "expected": {
+      "valid": true,
+      "raw_count": -2,
+      "value": "-0.02"
+    }
+  },
+  {
+    "input": {
+      "frame_hex": "3412",
+      "width_bits": 16,
+      "byte_order": "little",
+      "signed": false,
+      "scale": "0.1",
+      "rounding_places": 1
+    },
+    "expected": {
+      "valid": true,
+      "raw_count": 4660,
+      "value": "466.0"
+    }
+  },
+  {
+    "input": {
+      "frame_hex": "FF",
+      "width_bits": 8,
+      "byte_order": "big",
+      "signed": false,
+      "scale": "1",
+      "rounding_places": 0,
+      "sentinel_codes": [
+        255
+      ]
+    },
+    "expected": {
+      "valid": false,
+      "reason": "sentinel"
+    }
+  }
+]

@@ -1,0 +1,83 @@
+[
+  {
+    "input": {
+      "certificate": {
+        "serial_number": "SN-17",
+        "measurand": "temperature",
+        "status": "CURRENT",
+        "valid_from": "2026-01-01",
+        "valid_to": "2026-12-31",
+        "range_min": "-20",
+        "range_max": "100",
+        "uncertainty": "0.2",
+        "unit": "C",
+        "traceability_chain_status": "DOCUMENTED"
+      },
+      "measurement": {
+        "serial_number": "SN-17",
+        "measurand": "temperature",
+        "date": "2026-11-01",
+        "value": "25",
+        "unit": "C"
+      }
+    },
+    "expected": {
+      "valid": true,
+      "reasons": []
+    }
+  },
+  {
+    "input": {
+      "certificate": {
+        "serial_number": "SN-17",
+        "measurand": "temperature",
+        "status": "CURRENT",
+        "valid_from": "2026-01-01",
+        "valid_to": "2026-12-31",
+        "range_min": "-20",
+        "range_max": "100",
+        "uncertainty": "0.2",
+        "unit": "C",
+        "traceability_chain_status": "DOCUMENTED"
+      },
+      "measurement": {
+        "serial_number": "SN-17",
+        "measurand": "temperature",
+        "date": "2026-11-01",
+        "value": "-20",
+        "unit": "C"
+      }
+    },
+    "expected": {
+      "valid": true,
+      "reasons": []
+    }
+  },
+  {
+    "input": {
+      "certificate": {
+        "serial_number": "SN-17",
+        "measurand": "temperature",
+        "status": "CURRENT",
+        "valid_from": "2026-01-01",
+        "valid_to": "2026-12-31",
+        "range_min": "-20",
+        "range_max": "100",
+        "uncertainty": "0.2",
+        "unit": "C",
+        "traceability_chain_status": "DOCUMENTED"
+      },
+      "measurement": {
+        "serial_number": "SN-17",
+        "measurand": "temperature",
+        "date": "2026-01-01",
+        "value": "25",
+        "unit": "C"
+      }
+    },
+    "expected": {
+      "valid": true,
+      "reasons": []
+    }
+  }
+]

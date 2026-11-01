@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "timestamp_ms",
+    "now_ms",
+    "max_age_ms",
+    "allowed_future_skew_ms",
+    "sequence"
+  ],
+  "properties": {
+    "timestamp_ms": {
+      "type": "integer"
+    },
+    "now_ms": {
+      "type": "integer"
+    },
+    "max_age_ms": {
+      "type": "integer"
+    },
+    "allowed_future_skew_ms": {
+      "type": "integer"
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 4294967295
+    },
+    "last_sequence": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4294967295
+        }
+      ]
+    }
+  },
+  "additionalProperties": false
+}

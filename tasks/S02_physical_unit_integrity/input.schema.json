@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "value",
+    "from_unit",
+    "to_unit",
+    "rounding_places"
+  ],
+  "properties": {
+    "value": {
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "from_unit": {
+      "enum": [
+        "C",
+        "F",
+        "K",
+        "Pa",
+        "kPa",
+        "bar",
+        "V",
+        "mV"
+      ]
+    },
+    "to_unit": {
+      "enum": [
+        "C",
+        "F",
+        "K",
+        "Pa",
+        "kPa",
+        "bar",
+        "V",
+        "mV"
+      ]
+    },
+    "rounding_places": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 12
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "frame_hex",
+    "width_bits",
+    "byte_order",
+    "signed",
+    "scale",
+    "rounding_places"
+  ],
+  "properties": {
+    "frame_hex": {
+      "type": "string"
+    },
+    "width_bits": {
+      "enum": [
+        8,
+        16,
+        24,
+        32
+      ]
+    },
+    "byte_order": {
+      "enum": [
+        "big",
+        "little"
+      ]
+    },
+    "signed": {
+      "type": "boolean"
+    },
+    "scale": {
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "rounding_places": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 12
+    },
+    "sentinel_codes": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 0
+      }
+    }
+  },
+  "additionalProperties": false
+}

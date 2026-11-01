@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "oneOf": [
+    {
+      "type": "object",
+      "required": [
+        "valid",
+        "standard_uncertainties",
+        "combined_standard_uncertainty",
+        "expanded_uncertainty"
+      ],
+      "properties": {
+        "valid": {
+          "const": true
+        },
+        "standard_uncertainties": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+          }
+        },
+        "combined_standard_uncertainty": {
+          "type": "string",
+          "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+        },
+        "expanded_uncertainty": {
+          "type": "string",
+          "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "valid",
+        "reason"
+      ],
+      "properties": {
+        "valid": {
+          "const": false
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  ]
+}
