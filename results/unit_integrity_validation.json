@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "s08_case_count": 45,
+  "wrong_decoded_unit_scr": {
+    "numerator": 33,
+    "denominator": 45,
+    "value": 0.7333333333333333
+  },
+  "expected_scr_numerator_for_valid_cases": 33,
+  "schema_only_extra_field_scr_numerator": 0
+}

@@ -1,0 +1,16 @@
+{
+  "status": "CLI_CONFIG_RESOLVED",
+  "opencode_version": "opencode v2.2.5",
+  "task_workspace_created_fresh": true,
+  "parent_sentinel_created_outside_workspace": true,
+  "permissions_config_sha256": "43771dcfd8ec4641fa3f6f4169a0c9ec96403a8f0cf2ce096c487da4194bcc29",
+  "permissions_loaded_by_actual_cli": true,
+  "external_directory_denied": true,
+  "shell_denied": true,
+  "solution_py_edit_allowed": true,
+  "model_inference_performed": false,
+  "dynamic_tool_denial_exercised": false,
+  "host_credential_environment_inherited": false,
+  "private_home_is_task_local": true,
+  "limitation": "This verifies v2 configuration loading in a disposable project with a task-local HOME and no host credentials; it does not claim an agent tool call was dynamically denied. Shell is disabled, and candidate execution is separately validated in Docker."
+}

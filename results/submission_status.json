@@ -1,0 +1,46 @@
+{
+  "as_of": "2026-11-02",
+  "statuses": {
+    "CODE_COMPLETE": {
+      "status": "COMPLETE",
+      "evidence": ["104 tests pass", "all eight task packages and implementations are present", "S08 integration fixtures remain unchanged"]
+    },
+    "GRADER_VALIDATED": {
+      "status": "COMPLETE",
+      "evidence": ["266/266 reference cases pass", "30/30 mutations rejected", "unit-integrity regressions pass", "SCR and UAR definitions documented"]
+    },
+    "SECURITY_VALIDATED": {
+      "status": "COMPLETE_WITH_LIMITATION",
+      "evidence": ["12/12 Docker security checks pass with zero skips", "Codex CLI sandbox checks pass", "OpenCode 2.2.5 resolves task-local permission policy"],
+      "limitations": ["OpenCode dynamic tool denial was not exercised; the installed CLI resolved the explicit shell and external-directory deny policy.", "No provider credential was injected or used."]
+    },
+    "EXPERIMENTS_COMPLETED": {
+      "status": "NOT_RUN",
+      "evidence": ["9-trial pilot and 72-trial full-run plans validated without starting inference"],
+      "blocker": "No dedicated provider API-key environment variables, selected exact model matrix, owner-approved spend cap, or provider hard-spending limit is configured."
+    },
+    "FAILURE_ANALYSIS_COMPLETED": {
+      "status": "NOT_COMPLETE",
+      "evidence": ["Failure-analysis document explicitly distinguishes mutation coverage from observed model behavior"],
+      "blocker": "No genuine model transcripts or candidate failures exist because experiments were not run."
+    },
+    "REPRODUCIBILITY_VALIDATED": {
+      "status": "COMPLETE",
+      "evidence": ["Release ZIP extracted into a fresh temporary directory", "dependencies installed from the extracted archive", "tests, reference validation, and security checks passed from the extracted archive"],
+      "archive_digest_is_recorded_in": "FINAL_AUDIT_REPORT.md"
+    },
+    "DOCUMENTATION_COMPLETED": {
+      "status": "COMPLETE",
+      "evidence": ["README, methodology, related work, failure analysis, review package, five-minute script, and standalone slides are present"]
+    },
+    "VIDEO_PUBLISHED": {
+      "status": "NOT_PUBLISHED",
+      "evidence": ["Recording script and presentation assets are prepared"],
+      "blocker": "No recording or public hosting URL is available."
+    },
+    "SUBMISSION_READY": {
+      "status": "NOT_READY",
+      "blockers": ["Genuine model results and transcript-backed failure analysis are missing.", "A public video walkthrough link is missing."]
+    }
+  }
+}

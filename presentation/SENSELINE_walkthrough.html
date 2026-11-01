@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SENSELINE — Five-minute walkthrough</title>
+  <style>
+    :root { color-scheme: dark; --bg:#07111f; --panel:#102136; --ink:#eef6ff; --muted:#9fb2c8; --cyan:#54d6cf; --amber:#ffbf69; --red:#ff7e79; }
+    * { box-sizing:border-box; }
+    body { margin:0; padding:28px; background:#020812; color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif; }
+    .slide { width:min(1280px,100%); aspect-ratio:16/9; margin:0 auto 28px; padding:6.2% 7%; display:flex; flex-direction:column; justify-content:center; position:relative; overflow:hidden; background:radial-gradient(ellipse at 90% 10%,#183650 0,transparent 42%),linear-gradient(135deg,#0a1626,#07111f 68%); border:1px solid #26405b; border-radius:18px; page-break-after:always; }
+    .eyebrow { color:var(--cyan); text-transform:uppercase; letter-spacing:.14em; font-size:clamp(10px,1vw,15px); font-weight:750; }
+    h1 { margin:.2em 0; font-size:clamp(34px,5.7vw,76px); line-height:1.03; letter-spacing:-.045em; }
+    h2 { margin:.25em 0 .55em; font-size:clamp(24px,3.25vw,44px); letter-spacing:-.035em; }
+    p,li { color:var(--muted); font-size:clamp(13px,1.55vw,21px); line-height:1.45; }
+    strong { color:var(--ink); }
+    .sub { max-width:800px; font-size:clamp(17px,2vw,26px); }
+    .bar { width:86px; height:5px; background:var(--cyan); border-radius:8px; margin:14px 0 24px; }
+    .footer { position:absolute; bottom:3.5%; left:7%; right:7%; display:flex; justify-content:space-between; color:#7890aa; font-size:12px; }
+    .flow { display:grid; grid-template-columns:repeat(6,1fr); gap:10px; align-items:stretch; margin:22px 0; }
+    .node { padding:16px 10px; background:#10283b; border:1px solid #26445c; border-radius:12px; text-align:center; font-size:clamp(12px,1.1vw,16px); }
+    .node b { display:block; color:var(--cyan); margin-bottom:7px; }
+    .warning { color:var(--amber); }
+    .grid { display:grid; grid-template-columns:repeat(4,1fr); gap:11px; }
+    .card { background:#102136; border:1px solid #29445f; border-radius:14px; padding:16px; min-height:88px; }
+    .card b { color:var(--cyan); font-size:clamp(13px,1.25vw,17px); }
+    .card span { display:block; color:var(--muted); font-size:clamp(11px,1vw,14px); margin-top:6px; }
+    .cols { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+    .metric { padding:18px 20px; border-left:4px solid var(--cyan); background:#102136; border-radius:8px; margin:10px 0; }
+    .metric code { color:var(--ink); font-size:clamp(13px,1.3vw,18px); white-space:normal; }
+    .status { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:18px 0; }
+    .stat { background:#102136; border:1px solid #29445f; border-radius:14px; padding:18px; }
+    .stat strong { display:block; color:var(--cyan); font-size:clamp(27px,3.2vw,43px); }
+    .stat span { color:var(--muted); font-size:13px; }
+    .notrun { border-color:#8b6236; background:#241e18; }
+    .notrun strong { color:var(--amber); font-size:clamp(18px,2vw,26px); }
+    .refs { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .refs div { padding:15px 18px; background:#102136; border:1px solid #29445f; border-radius:12px; color:var(--muted); font-size:clamp(12px,1.1vw,15px); }
+    @media print { body { padding:0; background:#fff; } .slide { width:100vw; height:56.25vw; margin:0; border-radius:0; border:0; } }
+  </style>
+</head>
+<body>
+  <section class="slide">
+    <div class="eyebrow">The Silent Sensor Semantics Benchmark</div>
+    <h1>When a number<br>looks right but means<br>something else.</h1>
+    <div class="bar"></div>
+    <p class="sub">SENSELINE measures whether AI-generated software preserves sensor meaning from raw register data to an engineering decision.</p>
+    <div class="flow">
+      <div class="node"><b>80 00</b>register bytes</div><div class="node"><b>−32768</b>signed count</div><div class="node"><b>−3.2768</b>scale 0.0001</div><div class="node"><b>unit?</b>physical quantity</div><div class="node"><b>U</b>uncertainty</div><div class="node"><b>ACCEPT?</b>decision</div>
+    </div>
+    <p class="warning">A plausible output can still silently corrupt the measurement.</p>
+    <div class="footer"><span>SENSELINE · research walkthrough</span><span>1 / 5 · 0:00–1:00</span></div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Eight executable tasks</div>
+    <h2>Test the layers, then test the pipeline.</h2>
+    <div class="grid">
+      <div class="card"><b>S01 · Decode</b><span>Signedness, endianness, scale, sentinels</span></div>
+      <div class="card"><b>S02 · Units</b><span>Affine conversion and dimensions</span></div>
+      <div class="card"><b>S03 · Calibration</b><span>Gain, offset, temperature correction</span></div>
+      <div class="card"><b>S04 · Evidence</b><span>Serial, status, dates, range, traceability</span></div>
+      <div class="card"><b>S05 · Uncertainty</b><span>Type A/B, sensitivities, covariance</span></div>
+      <div class="card"><b>S06 · Conformity</b><span>Decision from the full uncertainty interval</span></div>
+      <div class="card"><b>S07 · Time</b><span>Freshness, sequence, rollover</span></div>
+      <div class="card"><b>S08 · End to end</b><span>Decode → units → calibration → decision</span></div>
+    </div>
+    <div class="bar"></div>
+    <p>S08 specifies conversion order and dimensions. Its uncertainty budget is already post-calibration in the final output unit; a Celsius interval remains a Celsius interval even for Fahrenheit output.</p>
+    <div class="footer"><span>Synthetic contracts · no hardware claims</span><span>2 / 5 · 1:00–2:15</span></div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Independent grading · reproducible execution</div>
+    <h2>Separate correctness from silent corruption.</h2>
+    <div class="cols">
+      <div>
+        <div class="metric"><code>SCR = corrupted cases / all evaluated cases</code><p>Counts a wrong value/unit or false validity/ACCEPT claim. Harmless schema-only defects and equivalent noncanonical unit pairs alone are excluded.</p></div>
+        <div class="metric"><code>UAR = unsafe ACCEPT / all non-acceptable S06/S08 cases</code><p>Invalid S06 cases remain in the denominator.</p></div>
+      </div>
+      <div>
+        <p><strong>Three checks on answers</strong></p>
+        <p>Reference solutions · independent numerical oracle · grader-owned unit transforms</p>
+        <p><strong>30 deliberate defective controls</strong></p>
+        <p><strong>Sandbox boundary</strong></p>
+        <p>Fresh Docker container per input; no network, non-root UID, read-only mounts, dropped capabilities, resource limits. Hidden fixtures never enter the task export.</p>
+      </div>
+    </div>
+    <div class="footer"><span>Trial transcript captures actual emitted events, not private reasoning</span><span>3 / 5 · 2:15–3:30</span></div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Validation evidence · current experiment state</div>
+    <h2>Verified controls are not model results.</h2>
+    <div class="status">
+      <div class="stat"><strong>266/266</strong><span>reference cases</span></div>
+      <div class="stat"><strong>30/30</strong><span>mutations rejected</span></div>
+      <div class="stat"><strong>12/12</strong><span>Docker security tests · zero skipped</span></div>
+      <div class="stat"><strong>8/8</strong><span>clean task exports</span></div>
+    </div>
+    <div class="stat notrun"><strong>MODEL EXPERIMENTS: NOT RUN</strong><span>No dedicated provider API key in the runner environment, no owner-approved spend cap/provider hard cap, and no three-model matrix. One local Ollama model is installed; no inference was started.</span></div>
+    <p class="warning">No model score, model failure, transcript, runtime, or API cost is claimed.</p>
+    <div class="footer"><span>See results/ for machine-readable validation evidence</span><span>4 / 5 · 3:30–4:30</span></div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Research context · limitations</div>
+    <h2>A focused measurement-integrity evaluation.</h2>
+    <div class="refs">
+      <div>EngiBench · engineering problem solving</div>
+      <div>IoT-SkillsBench · hardware-validated embedded tasks</div>
+      <div>Closed-loop embedded-agent evaluation</div>
+      <div>Vibe-FDTR · agent-assisted thermal metrology</div>
+      <div>NIST TN 1297 · uncertainty propagation</div>
+      <div>GUM · measurement uncertainty</div>
+      <div>ILAC G8 · decision rules</div>
+      <div>NIST traceability · documented calibration chains</div>
+    </div>
+    <p class="sub">SENSELINE makes no first-of-kind claim. It is synthetic software evaluation, not ISO/IEC 17025 accreditation, instrument certification, or real-world safety validation.</p>
+    <p class="warning">Walkthrough script is ready to record. No public recording has been published.</p>
+    <div class="footer"><span>SENSELINE · exact experimental status disclosed</span><span>5 / 5 · 4:30–5:00</span></div>
+  </section>
+</body>
+</html>

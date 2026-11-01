@@ -1,0 +1,1744 @@
+{
+  "status": "PASS",
+  "classification": "reference/oracle and deliberate mutation validation; not model results",
+  "task_case_counts": {
+    "S01": 32,
+    "S02": 30,
+    "S03": 30,
+    "S04": 37,
+    "S05": 30,
+    "S06": 30,
+    "S07": 32,
+    "S08": 45
+  },
+  "reference_cases_passed": 266,
+  "reference_case_count": 266,
+  "mutation_controls_rejected": 30,
+  "mutation_control_count": 30,
+  "mutation_controls": [
+    {
+      "mutation": "S01_bad_endianness.py",
+      "task": "S01",
+      "rejected": true,
+      "cases_failed": 10,
+      "case_count": 32,
+      "observed_failure_dimensions": [
+        "numerical_value"
+      ],
+      "intended_failure_dimensions": [
+        "numerical_value"
+      ],
+      "silent_corruption_rate": {
+        "numerator": 10,
+        "denominator": 32,
+        "value": 0.3125
+      }
+    },
+    {
+      "mutation": "S01_bad_signed_decode.py",
+      "task": "S01",
+      "rejected": true,
+      "cases_failed": 7,
+      "case_count": 32,
+      "observed_failure_dimensions": [
+        "numerical_value"
+      ],
+      "intended_failure_dimensions": [
+        "numerical_value"
+      ],
+      "silent_corruption_rate": {
+        "numerator": 7,
+        "denominator": 32,
+        "value": 0.21875
+      }
+    },
+    {
+      "mutation": "S01_ignore_sentinels.py",
+      "task": "S01",
+      "rejected": true,
+      "cases_failed": 2,
+      "case_count": 32,
+      "observed_failure_dimensions": [
+        "validity_state"
+      ],
+      "intended_failure_dimensions": [
+        "validity_state"
+      ],
+      "silent_corruption_rate": {
+        "numerator": 2,
+        "denominator": 32,
+        "value": 0.0625
+      }
+    },
+    {
+      "mutation": "S01_ignore_signed.py",
+      "task": "S01",
+      "rejected": true,
+      "cases_failed": 7,
+      "case_count": 32,
+      "observed_failure_dimensions": [
+        "numerical_value"
+      ],
+      "intended_failure_dimensions": [
+        "numerical_value"
+      ],
+      "silent_corruption_rate": {
+        "numerator": 7,
+        "denominator": 32,
+        "value": 0.21875
+      }
+    },
+    {
+      "mutation": "S02_allow_incompatible.py",
+      "task": "S02",
+      "rejected": true,
+      "cases_failed": 2,
+      "case_count": 30,
+      "observed_failure_dimensions": [
+        "validity_state"
+      ],
+      "intended_failure_dimensions": [
+        "validity_state"
+      ],
+      "silent_corruption_rate": {
+        "numerator": 2,
+        "denominator": 30,
+        "value": 0.06666666666666667
+      }
+    },
+    {
+      "mutation": "S02_bad_fahrenheit.py",
+      "task": "S02",
+      "rejected": true,
+      "cases_failed": 2,
+      "case_count": 30,
+      "observed_failure_dimensions": [
+        "numerical_value",
+        "physical_quantity"
+      ],
+      "intended_failure_dimensions": [
+        "numerical_value"
+      ],
+      "silent_corruption_rate": {
+        "numerator": 2,
+        "denominator": 30,
+        "value": 0.06666666666666667
+      }
+    },
+    {
+      "mutation": "S02_wrong_unit_conversion.py",
+      "task": "S02",
+      "rejected": true,
+      "cases_failed": 21,
+      "case_count": 30,
+      "observed_failure_dimensions": [
+        "numerical_value",
+        "physical_quantity"
+      ],
+      "intended_failure_dimensions": [
+        "numerical_value"
+      ],
+      "silent_corruption_rate": {
+        "numerator": 21,
+        "denominator": 30,
+        "value": 0.7
+      }
+    },
+    {
+      "mutation": "S03_double_calibration.py",
+      "task": "S03",
+      "rejected": true,
+      "cases_failed": 23,
+      "case_count": 30,
+      "observed_failure_dimensions": [
+        "numerical_value"
+      ],
+      "intended_failure_dimensions": [
+        "numerical_value"
+      ],
+      "silent_corruption_rate": {
+        "numerator": 23,
+        "denominator": 30,
+        "value": 0.7666666666666667
+      }
+    },
+    {
+      "mutation": "S03_gain_offset_order.py",
+      "task": "S03",
+      "rejected": true,
+      "cases_failed": 14,
+      "case_count": 30,
+      "observed_failure_dimensions": [
+        "numerical_value",
+        "output_schema",
+        "validity_state"
+      ],
+      "intended_failure_dimensions": [
+        "numerical_value"
+      ],
+      "silent_corruption_rate": {
+        "numerator": 14,
+        "denominator": 30,
+        "value": 0.4666666666666667
+      }
+    },
+    {
+      "mutation": "S03_missing_compensation.py",
+      "task": "S03",
+      "rejected": true,
+      "cases_failed": 16,
+      "case_count": 30,
+      "observed_failure_dimensions": [
+        "numerical_value",
+        "validity_state"
+      ],
+      "intended_failure_dimensions": [
+        "numerical_value"
+      ],
+      "silent_corruption_rate": {
+        "numerator": 16,
+        "denominator": 30,
+        "value": 0.5333333333333333
+      }
+    },
+    {
+      "mutation": "S03_omit_temperature.py",
+      "task": "S03",
+      "rejected": true,
+      "cases_failed": 16,
+      "case_count": 30,
+      "observed_failure_dimensions": [
+        "numerical_value",
+        "validity_state"
+      ],
+      "intended_failure_dimensions": [
+        "numerical_value"
+      ],
+      "silent_corruption_rate": {
+        "numerator": 16,
+        "denominator": 30,
+        "value": 0.5333333333333333
+      }
+    },
+    {
+      "mutation": "S04_accept_invalid_certificate.py",
+      "task": "S04",
+      "rejected": true,
+      "cases_failed": 15,
+      "case_count": 37,
+      "observed_failure_dimensions": [
+        "validity_state"
+      ],
+      "intended_failure_dimensions": [
+        "validity_state"
+      ],
+      "silent_corruption_rate": {
+        "numerator": 15,
+        "denominator": 37,
+        "value": 0.40540540540540543
+      }
+    },
+    {
+      "mutation": "S04_ignore_serial.py",
+      "task": "S04",
+      "rejected": true,
+      "cases_failed": 1,
+      "case_count": 37,
+      "observed_failure_dimensions": [
+        "validity_state"
+      ],
+      "intended_failure_dimensions": [
+        "validity_state"
+      ],
+      "silent_corruption_rate": {
+        "numerator": 1,
+        "denominator": 37,
+        "value": 0.02702702702702703
+      }
+    },
+    {
+      "mutation": "S04_ignore_traceability.py",
+      "task": "S04",
+      "rejected": true,
+      "cases_failed": 2,
+      "case_count": 37,
+      "observed_failure_dimensions": [
+        "exact_semantic_contract",
+        "validity_state"
+      ],
+      "intended_failure_dimensions": [
+        "validity_state"
+      ],
+      "silent_corruption_rate": {
+        "numerator": 1,
+        "denominator": 37,
+        "value": 0.02702702702702703
+      }
+    },
+    {
+      "mutation": "S05_drop_correlation.py",
+      "task": "S05",
+      "rejected": true,
+      "cases_failed": 13,
+      "case_count": 30,
+      "observed_failure_dimensions": [
+        "numerical_value",
+        "validity_state"
+      ],
+      "intended_failure_dimensions": [
+        "numerical_value"
+      ],
+      "silent_corruption_rate": {
+        "numerator": 13,
+        "denominator": 30,
+        "value": 0.43333333333333335
+      }
+    },
+    {
+      "mutation": "S05_drop_uncertainty_component.py",
+      "task": "S05",
+      "rejected": true,
+      "cases_failed": 24,
+      "case_count": 30,
+      "observed_failure_dimensions": [
+        "numerical_value",
+        "validity_state"
+      ],
+      "intended_failure_dimensions": [
+        "numerical_value"
+      ],
+      "silent_corruption_rate": {
+        "numerator": 24,
+        "denominator": 30,
+        "value": 0.8
+      }
+    },
+    {
+      "mutation": "S05_ignore_covariance.py",
+      "task": "S05",
+      "rejected": true,
+      "cases_failed": 13,
+      "case_count": 30,
+      "observed_failure_dimensions": [
+        "numerical_value",
+        "validity_state"
+      ],
+      "intended_failure_dimensions": [
+        "numerical_value"
+      ],
+      "silent_corruption_rate": {
+        "numerator": 13,
+        "denominator": 30,
+        "value": 0.43333333333333335
+      }
+    },
+    {
+      "mutation": "S05_type_b_halfwidth.py",
+      "task": "S05",
+      "rejected": true,
+      "cases_failed": 21,
+      "case_count": 30,
+      "observed_failure_dimensions": [
+        "numerical_value"
+      ],
+      "intended_failure_dimensions": [
+        "numerical_value"
+      ],
+      "silent_corruption_rate": {
+        "numerator": 21,
+        "denominator": 30,
+        "value": 0.7
+      }
+    },
+    {
+      "mutation": "S06_point_only.py",
+      "task": "S06",
+      "rejected": true,
+      "cases_failed": 23,
+      "case_count": 30,
+      "observed_failure_dimensions": [
+        "engineering_decision",
+        "numerical_value",
+        "validity_state"
+      ],
+      "intended_failure_dimensions": [
+        "engineering_decision"
+      ],
+      "silent_corruption_rate": {
+        "numerator": 23,
+        "denominator": 30,
+        "value": 0.7666666666666667
+      }
+    },
+    {
+      "mutation": "S06_touching_is_reject.py",
+      "task": "S06",
+      "rejected": true,
+      "cases_failed": 5,
+      "case_count": 30,
+      "observed_failure_dimensions": [
+        "engineering_decision"
+      ],
+      "intended_failure_dimensions": [
+        "engineering_decision"
+      ],
+      "silent_corruption_rate": {
+        "numerator": 0,
+        "denominator": 30,
+        "value": 0.0
+      }
+    },
+    {
+      "mutation": "S06_wrong_equality_boundary.py",
+      "task": "S06",
+      "rejected": true,
+      "cases_failed": 5,
+      "case_count": 30,
+      "observed_failure_dimensions": [
+        "engineering_decision"
+      ],
+      "intended_failure_dimensions": [
+        "engineering_decision"
+      ],
+      "silent_corruption_rate": {
+        "numerator": 0,
+        "denominator": 30,
+        "value": 0.0
+      }
+    },
+    {
+      "mutation": "S07_accept_stale.py",
+      "task": "S07",
+      "rejected": true,
+      "cases_failed": 2,
+      "case_count": 32,
+      "observed_failure_dimensions": [
+        "validity_state"
+      ],
+      "intended_failure_dimensions": [
+        "validity_state"
+      ],
+      "silent_corruption_rate": {
+        "numerator": 2,
+        "denominator": 32,
+        "value": 0.0625
+      }
+    },
+    {
+      "mutation": "S07_bad_rollover.py",
+      "task": "S07",
+      "rejected": true,
+      "cases_failed": 1,
+      "case_count": 32,
+      "observed_failure_dimensions": [
+        "validity_state"
+      ],
+      "intended_failure_dimensions": [
+        "validity_state"
+      ],
+      "silent_corruption_rate": {
+        "numerator": 0,
+        "denominator": 32,
+        "value": 0.0
+      }
+    },
+    {
+      "mutation": "S07_ignore_freshness.py",
+      "task": "S07",
+      "rejected": true,
+      "cases_failed": 4,
+      "case_count": 32,
+      "observed_failure_dimensions": [
+        "validity_state"
+      ],
+      "intended_failure_dimensions": [
+        "validity_state"
+      ],
+      "silent_corruption_rate": {
+        "numerator": 4,
+        "denominator": 32,
+        "value": 0.125
+      }
+    },
+    {
+      "mutation": "S07_no_rollover.py",
+      "task": "S07",
+      "rejected": true,
+      "cases_failed": 1,
+      "case_count": 32,
+      "observed_failure_dimensions": [
+        "validity_state"
+      ],
+      "intended_failure_dimensions": [
+        "validity_state"
+      ],
+      "silent_corruption_rate": {
+        "numerator": 0,
+        "denominator": 32,
+        "value": 0.0
+      }
+    },
+    {
+      "mutation": "S08_decoded_unit_label.py",
+      "task": "S08",
+      "rejected": true,
+      "cases_failed": 43,
+      "case_count": 45,
+      "observed_failure_dimensions": [
+        "exact_semantic_contract",
+        "physical_quantity",
+        "physical_unit"
+      ],
+      "intended_failure_dimensions": [
+        "physical_quantity",
+        "physical_unit"
+      ],
+      "silent_corruption_rate": {
+        "numerator": 33,
+        "denominator": 45,
+        "value": 0.7333333333333333
+      }
+    },
+    {
+      "mutation": "S08_extra_schema_field.py",
+      "task": "S08",
+      "rejected": true,
+      "cases_failed": 45,
+      "case_count": 45,
+      "observed_failure_dimensions": [
+        "exact_semantic_contract",
+        "output_schema"
+      ],
+      "intended_failure_dimensions": [
+        "output_schema"
+      ],
+      "silent_corruption_rate": {
+        "numerator": 0,
+        "denominator": 45,
+        "value": 0.0
+      }
+    },
+    {
+      "mutation": "S08_ignore_certificate.py",
+      "task": "S08",
+      "rejected": true,
+      "cases_failed": 6,
+      "case_count": 45,
+      "observed_failure_dimensions": [
+        "engineering_decision",
+        "validity_state"
+      ],
+      "intended_failure_dimensions": [
+        "validity_state"
+      ],
+      "silent_corruption_rate": {
+        "numerator": 6,
+        "denominator": 45,
+        "value": 0.13333333333333333
+      }
+    },
+    {
+      "mutation": "S08_ignore_uncertainty.py",
+      "task": "S08",
+      "rejected": true,
+      "cases_failed": 3,
+      "case_count": 45,
+      "observed_failure_dimensions": [
+        "engineering_decision"
+      ],
+      "intended_failure_dimensions": [
+        "engineering_decision"
+      ],
+      "silent_corruption_rate": {
+        "numerator": 1,
+        "denominator": 45,
+        "value": 0.022222222222222223
+      }
+    },
+    {
+      "mutation": "S08_wrong_unit_transformation.py",
+      "task": "S08",
+      "rejected": true,
+      "cases_failed": 1,
+      "case_count": 45,
+      "observed_failure_dimensions": [
+        "engineering_decision",
+        "numerical_value",
+        "physical_quantity",
+        "physical_unit"
+      ],
+      "intended_failure_dimensions": [
+        "numerical_value"
+      ],
+      "silent_corruption_rate": {
+        "numerator": 1,
+        "denominator": 45,
+        "value": 0.022222222222222223
+      }
+    }
+  ],
+  "isolated_candidate_execution": {
+    "status": "PASS",
+    "sandbox_image": "python:3.11.18-slim-bookworm@sha256:ef521de1d817dc92a6358c906bbadb9a0b7e38040038642833521b9d582c2233",
+    "sandbox_image_id": "sha256:ef521de1d817dc92a6358c906bbadb9a0b7e38040038642833521b9d582c2233",
+    "reference_cases_passed": 266,
+    "mutation_controls_rejected": 30
+  },
+  "task_export_validation": {
+    "status": "PASS",
+    "tasks": {
+      "S01": {
+        "status": "PASS",
+        "visible_files": [
+          "AGENT_README.md",
+          "input.schema.json",
+          "output.schema.json",
+          "public_examples.json",
+          "solution.py",
+          "task.md"
+        ],
+        "protected_material_found": false
+      },
+      "S02": {
+        "status": "PASS",
+        "visible_files": [
+          "AGENT_README.md",
+          "input.schema.json",
+          "output.schema.json",
+          "public_examples.json",
+          "solution.py",
+          "task.md"
+        ],
+        "protected_material_found": false
+      },
+      "S03": {
+        "status": "PASS",
+        "visible_files": [
+          "AGENT_README.md",
+          "input.schema.json",
+          "output.schema.json",
+          "public_examples.json",
+          "solution.py",
+          "task.md"
+        ],
+        "protected_material_found": false
+      },
+      "S04": {
+        "status": "PASS",
+        "visible_files": [
+          "AGENT_README.md",
+          "input.schema.json",
+          "output.schema.json",
+          "public_examples.json",
+          "solution.py",
+          "task.md"
+        ],
+        "protected_material_found": false
+      },
+      "S05": {
+        "status": "PASS",
+        "visible_files": [
+          "AGENT_README.md",
+          "input.schema.json",
+          "output.schema.json",
+          "public_examples.json",
+          "solution.py",
+          "task.md"
+        ],
+        "protected_material_found": false
+      },
+      "S06": {
+        "status": "PASS",
+        "visible_files": [
+          "AGENT_README.md",
+          "input.schema.json",
+          "output.schema.json",
+          "public_examples.json",
+          "solution.py",
+          "task.md"
+        ],
+        "protected_material_found": false
+      },
+      "S07": {
+        "status": "PASS",
+        "visible_files": [
+          "AGENT_README.md",
+          "input.schema.json",
+          "output.schema.json",
+          "public_examples.json",
+          "solution.py",
+          "task.md"
+        ],
+        "protected_material_found": false
+      },
+      "S08": {
+        "status": "PASS",
+        "visible_files": [
+          "AGENT_README.md",
+          "input.schema.json",
+          "output.schema.json",
+          "public_examples.json",
+          "solution.py",
+          "task.md"
+        ],
+        "protected_material_found": false
+      }
+    }
+  },
+  "unit_integrity_validation": {
+    "status": "PASS",
+    "s08_case_count": 45,
+    "wrong_decoded_unit_scr": {
+      "numerator": 33,
+      "denominator": 45,
+      "value": 0.7333333333333333
+    },
+    "expected_scr_numerator_for_valid_cases": 33,
+    "schema_only_extra_field_scr_numerator": 0
+  },
+  "reference_metrics": {
+    "case_count": 266,
+    "functional_correctness": {
+      "numerator": 266,
+      "denominator": 266,
+      "value": 1.0
+    },
+    "schema_compliance": {
+      "numerator": 266,
+      "denominator": 266,
+      "value": 1.0
+    },
+    "numerical_correctness": {
+      "numerator": 167,
+      "denominator": 167,
+      "value": 1.0
+    },
+    "physical_unit_correctness": {
+      "numerator": 152,
+      "denominator": 152,
+      "value": 1.0
+    },
+    "physical_equivalence_correctness": {
+      "numerator": 152,
+      "denominator": 152,
+      "value": 1.0
+    },
+    "physical_integrity_correctness": {
+      "numerator": 266,
+      "denominator": 266,
+      "value": 1.0
+    },
+    "semantic_integrity_failures": {
+      "numerator": 0,
+      "denominator": 266,
+      "value": 0.0
+    },
+    "validity_state_correctness": {
+      "numerator": 266,
+      "denominator": 266,
+      "value": 1.0
+    },
+    "engineering_decision_correctness": {
+      "numerator": 73,
+      "denominator": 73,
+      "value": 1.0
+    },
+    "execution_failures": {
+      "numerator": 0,
+      "denominator": 266,
+      "value": 0.0
+    },
+    "malformed_response_rate": {
+      "numerator": 0,
+      "denominator": 266,
+      "value": 0.0
+    },
+    "contract_violations": {
+      "numerator": 0,
+      "denominator": 266,
+      "value": 0.0
+    },
+    "end_to_end_correctness": {
+      "numerator": 45,
+      "denominator": 45,
+      "value": 1.0
+    },
+    "silent_corruption_rate": {
+      "numerator": 0,
+      "denominator": 266,
+      "value": 0.0
+    },
+    "unsafe_acceptance_rate": {
+      "numerator": 0,
+      "denominator": 40,
+      "value": 0.0
+    },
+    "numerical_error_by_field_unit": {
+      "S01.raw_count [scaled sensor count]": {
+        "field": "raw_count",
+        "task": "S01",
+        "unit": "scaled sensor count",
+        "case_count": 23,
+        "numeric_actual_count": 23,
+        "within_tolerance_count": 23,
+        "mean_absolute_error": "0",
+        "maximum_absolute_error": "0",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S01.value [scaled sensor count]": {
+        "field": "value",
+        "task": "S01",
+        "unit": "scaled sensor count",
+        "case_count": 23,
+        "numeric_actual_count": 23,
+        "within_tolerance_count": 23,
+        "mean_absolute_error": "0.000",
+        "maximum_absolute_error": "0.000",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S02.value [C]": {
+        "field": "value",
+        "task": "S02",
+        "unit": "C",
+        "case_count": 6,
+        "numeric_actual_count": 6,
+        "within_tolerance_count": 6,
+        "mean_absolute_error": "0.00000",
+        "maximum_absolute_error": "0.00000",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S02.value [F]": {
+        "field": "value",
+        "task": "S02",
+        "unit": "F",
+        "case_count": 2,
+        "numeric_actual_count": 2,
+        "within_tolerance_count": 2,
+        "mean_absolute_error": "0.00000",
+        "maximum_absolute_error": "0.00000",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S02.value [K]": {
+        "field": "value",
+        "task": "S02",
+        "unit": "K",
+        "case_count": 2,
+        "numeric_actual_count": 2,
+        "within_tolerance_count": 2,
+        "mean_absolute_error": "0.00000",
+        "maximum_absolute_error": "0.00000",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S02.value [Pa]": {
+        "field": "value",
+        "task": "S02",
+        "unit": "Pa",
+        "case_count": 4,
+        "numeric_actual_count": 4,
+        "within_tolerance_count": 4,
+        "mean_absolute_error": "0.00000",
+        "maximum_absolute_error": "0.00000",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S02.value [V]": {
+        "field": "value",
+        "task": "S02",
+        "unit": "V",
+        "case_count": 5,
+        "numeric_actual_count": 5,
+        "within_tolerance_count": 5,
+        "mean_absolute_error": "0.00000",
+        "maximum_absolute_error": "0.00000",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S02.value [bar]": {
+        "field": "value",
+        "task": "S02",
+        "unit": "bar",
+        "case_count": 2,
+        "numeric_actual_count": 2,
+        "within_tolerance_count": 2,
+        "mean_absolute_error": "0.00000",
+        "maximum_absolute_error": "0.00000",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S02.value [kPa]": {
+        "field": "value",
+        "task": "S02",
+        "unit": "kPa",
+        "case_count": 3,
+        "numeric_actual_count": 3,
+        "within_tolerance_count": 3,
+        "mean_absolute_error": "0.00000",
+        "maximum_absolute_error": "0.00000",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S02.value [mV]": {
+        "field": "value",
+        "task": "S02",
+        "unit": "mV",
+        "case_count": 2,
+        "numeric_actual_count": 2,
+        "within_tolerance_count": 2,
+        "mean_absolute_error": "0.00000",
+        "maximum_absolute_error": "0.00000",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S03.corrected_value [MU (task-defined measurand unit)]": {
+        "field": "corrected_value",
+        "task": "S03",
+        "unit": "MU (task-defined measurand unit)",
+        "case_count": 25,
+        "numeric_actual_count": 25,
+        "within_tolerance_count": 25,
+        "mean_absolute_error": "0.0000",
+        "maximum_absolute_error": "0.0000",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S05.combined_standard_uncertainty [MU (task-defined measurand unit)]": {
+        "field": "combined_standard_uncertainty",
+        "task": "S05",
+        "unit": "MU (task-defined measurand unit)",
+        "case_count": 22,
+        "numeric_actual_count": 22,
+        "within_tolerance_count": 22,
+        "mean_absolute_error": "0E-40",
+        "maximum_absolute_error": "0E-39",
+        "maximum_normalized_error": "0E-23",
+        "permitted_tolerance": "1E-16"
+      },
+      "S05.expanded_uncertainty [MU (task-defined measurand unit)]": {
+        "field": "expanded_uncertainty",
+        "task": "S05",
+        "unit": "MU (task-defined measurand unit)",
+        "case_count": 22,
+        "numeric_actual_count": 22,
+        "within_tolerance_count": 22,
+        "mean_absolute_error": "0E-39",
+        "maximum_absolute_error": "0E-39",
+        "maximum_normalized_error": "0E-23",
+        "permitted_tolerance": "1E-16"
+      },
+      "S05.standard_uncertainties.0 [MU (task-defined measurand unit)]": {
+        "field": "standard_uncertainties.0",
+        "task": "S05",
+        "unit": "MU (task-defined measurand unit)",
+        "case_count": 22,
+        "numeric_actual_count": 22,
+        "within_tolerance_count": 22,
+        "mean_absolute_error": "0E-40",
+        "maximum_absolute_error": "0E-39",
+        "maximum_normalized_error": "0E-23",
+        "permitted_tolerance": "1E-16"
+      },
+      "S05.standard_uncertainties.1 [MU (task-defined measurand unit)]": {
+        "field": "standard_uncertainties.1",
+        "task": "S05",
+        "unit": "MU (task-defined measurand unit)",
+        "case_count": 20,
+        "numeric_actual_count": 20,
+        "within_tolerance_count": 20,
+        "mean_absolute_error": "0E-41",
+        "maximum_absolute_error": "0E-40",
+        "maximum_normalized_error": "0E-24",
+        "permitted_tolerance": "1E-16"
+      },
+      "S06.lower [MU (task-defined specification unit)]": {
+        "field": "lower",
+        "task": "S06",
+        "unit": "MU (task-defined specification unit)",
+        "case_count": 28,
+        "numeric_actual_count": 28,
+        "within_tolerance_count": 28,
+        "mean_absolute_error": "0",
+        "maximum_absolute_error": "0",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S06.upper [MU (task-defined specification unit)]": {
+        "field": "upper",
+        "task": "S06",
+        "unit": "MU (task-defined specification unit)",
+        "case_count": 28,
+        "numeric_actual_count": 28,
+        "within_tolerance_count": 28,
+        "mean_absolute_error": "0.0",
+        "maximum_absolute_error": "0",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S08.conformity_interval.lower [C]": {
+        "field": "conformity_interval.lower",
+        "task": "S08",
+        "unit": "C",
+        "case_count": 32,
+        "numeric_actual_count": 32,
+        "within_tolerance_count": 32,
+        "mean_absolute_error": "0E-40",
+        "maximum_absolute_error": "0E-40",
+        "maximum_normalized_error": "0E-24",
+        "permitted_tolerance": "1E-16"
+      },
+      "S08.conformity_interval.lower [F]": {
+        "field": "conformity_interval.lower",
+        "task": "S08",
+        "unit": "F",
+        "case_count": 1,
+        "numeric_actual_count": 1,
+        "within_tolerance_count": 1,
+        "mean_absolute_error": "0E-40",
+        "maximum_absolute_error": "0E-40",
+        "maximum_normalized_error": "0E-24",
+        "permitted_tolerance": "1E-16"
+      },
+      "S08.conformity_interval.upper [C]": {
+        "field": "conformity_interval.upper",
+        "task": "S08",
+        "unit": "C",
+        "case_count": 32,
+        "numeric_actual_count": 32,
+        "within_tolerance_count": 32,
+        "mean_absolute_error": "0E-40",
+        "maximum_absolute_error": "0E-40",
+        "maximum_normalized_error": "0E-24",
+        "permitted_tolerance": "1E-16"
+      },
+      "S08.conformity_interval.upper [F]": {
+        "field": "conformity_interval.upper",
+        "task": "S08",
+        "unit": "F",
+        "case_count": 1,
+        "numeric_actual_count": 1,
+        "within_tolerance_count": 1,
+        "mean_absolute_error": "0E-40",
+        "maximum_absolute_error": "0E-40",
+        "maximum_normalized_error": "0E-24",
+        "permitted_tolerance": "1E-16"
+      },
+      "S08.corrected_measurement.value [C]": {
+        "field": "corrected_measurement.value",
+        "task": "S08",
+        "unit": "C",
+        "case_count": 40,
+        "numeric_actual_count": 40,
+        "within_tolerance_count": 40,
+        "mean_absolute_error": "0.00",
+        "maximum_absolute_error": "0.0",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S08.corrected_measurement.value [F]": {
+        "field": "corrected_measurement.value",
+        "task": "S08",
+        "unit": "F",
+        "case_count": 1,
+        "numeric_actual_count": 1,
+        "within_tolerance_count": 1,
+        "mean_absolute_error": "0.0",
+        "maximum_absolute_error": "0.0",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S08.decoded_measurement.raw_count [register count]": {
+        "field": "decoded_measurement.raw_count",
+        "task": "S08",
+        "unit": "register count",
+        "case_count": 43,
+        "numeric_actual_count": 43,
+        "within_tolerance_count": 43,
+        "mean_absolute_error": "0",
+        "maximum_absolute_error": "0",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S08.decoded_measurement.value [C]": {
+        "field": "decoded_measurement.value",
+        "task": "S08",
+        "unit": "C",
+        "case_count": 41,
+        "numeric_actual_count": 41,
+        "within_tolerance_count": 41,
+        "mean_absolute_error": "0.00",
+        "maximum_absolute_error": "0",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S08.decoded_measurement.value [F]": {
+        "field": "decoded_measurement.value",
+        "task": "S08",
+        "unit": "F",
+        "case_count": 1,
+        "numeric_actual_count": 1,
+        "within_tolerance_count": 1,
+        "mean_absolute_error": "0.0",
+        "maximum_absolute_error": "0.0",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S08.decoded_measurement.value [V]": {
+        "field": "decoded_measurement.value",
+        "task": "S08",
+        "unit": "V",
+        "case_count": 1,
+        "numeric_actual_count": 1,
+        "within_tolerance_count": 1,
+        "mean_absolute_error": "0",
+        "maximum_absolute_error": "0",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S08.expanded_uncertainty [C]": {
+        "field": "expanded_uncertainty",
+        "task": "S08",
+        "unit": "C",
+        "case_count": 39,
+        "numeric_actual_count": 39,
+        "within_tolerance_count": 39,
+        "mean_absolute_error": "0E-40",
+        "maximum_absolute_error": "0E-40",
+        "maximum_normalized_error": "0E-24",
+        "permitted_tolerance": "1E-16"
+      },
+      "S08.expanded_uncertainty [F]": {
+        "field": "expanded_uncertainty",
+        "task": "S08",
+        "unit": "F",
+        "case_count": 1,
+        "numeric_actual_count": 1,
+        "within_tolerance_count": 1,
+        "mean_absolute_error": "0E-40",
+        "maximum_absolute_error": "0E-40",
+        "maximum_normalized_error": "0E-24",
+        "permitted_tolerance": "1E-16"
+      },
+      "S08.physical_quantity.value [C]": {
+        "field": "physical_quantity.value",
+        "task": "S08",
+        "unit": "C",
+        "case_count": 41,
+        "numeric_actual_count": 41,
+        "within_tolerance_count": 41,
+        "mean_absolute_error": "0.00",
+        "maximum_absolute_error": "0",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S08.physical_quantity.value [F]": {
+        "field": "physical_quantity.value",
+        "task": "S08",
+        "unit": "F",
+        "case_count": 1,
+        "numeric_actual_count": 1,
+        "within_tolerance_count": 1,
+        "mean_absolute_error": "0",
+        "maximum_absolute_error": "0",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S08.standard_uncertainty [C]": {
+        "field": "standard_uncertainty",
+        "task": "S08",
+        "unit": "C",
+        "case_count": 39,
+        "numeric_actual_count": 39,
+        "within_tolerance_count": 39,
+        "mean_absolute_error": "0E-41",
+        "maximum_absolute_error": "0E-41",
+        "maximum_normalized_error": "0E-25",
+        "permitted_tolerance": "1E-16"
+      },
+      "S08.standard_uncertainty [F]": {
+        "field": "standard_uncertainty",
+        "task": "S08",
+        "unit": "F",
+        "case_count": 1,
+        "numeric_actual_count": 1,
+        "within_tolerance_count": 1,
+        "mean_absolute_error": "0E-40",
+        "maximum_absolute_error": "0E-40",
+        "maximum_normalized_error": "0E-24",
+        "permitted_tolerance": "1E-16"
+      }
+    },
+    "calibration_validity_recall": {
+      "numerator": 57,
+      "denominator": 57,
+      "value": 1.0
+    },
+    "uncertainty_calculation_accuracy": {
+      "numerator": 62,
+      "denominator": 62,
+      "value": 1.0
+    },
+    "false_rejection_rate": {
+      "numerator": 0,
+      "denominator": 35,
+      "value": 0.0
+    },
+    "boundary_decision_accuracy": {
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1.0
+    },
+    "macro_average_task_accuracy": 1.0,
+    "per_task": {
+      "S01": {
+        "functional_correctness": {
+          "numerator": 32,
+          "denominator": 32,
+          "value": 1.0
+        },
+        "schema_compliance": {
+          "numerator": 32,
+          "denominator": 32,
+          "value": 1.0
+        },
+        "numerical_correctness": {
+          "numerator": 23,
+          "denominator": 23,
+          "value": 1.0
+        },
+        "physical_unit_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "physical_integrity_correctness": {
+          "numerator": 32,
+          "denominator": 32,
+          "value": 1.0
+        },
+        "semantic_integrity_failures": {
+          "numerator": 0,
+          "denominator": 32,
+          "value": 0.0
+        },
+        "validity_state_correctness": {
+          "numerator": 32,
+          "denominator": 32,
+          "value": 1.0
+        },
+        "engineering_decision_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "execution_failures": {
+          "numerator": 0,
+          "denominator": 32,
+          "value": 0.0
+        },
+        "malformed_response_rate": {
+          "numerator": 0,
+          "denominator": 32,
+          "value": 0.0
+        },
+        "contract_violations": {
+          "numerator": 0,
+          "denominator": 32,
+          "value": 0.0
+        },
+        "silent_corruption_rate": {
+          "numerator": 0,
+          "denominator": 32,
+          "value": 0.0
+        },
+        "unsafe_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        }
+      },
+      "S02": {
+        "functional_correctness": {
+          "numerator": 30,
+          "denominator": 30,
+          "value": 1.0
+        },
+        "schema_compliance": {
+          "numerator": 30,
+          "denominator": 30,
+          "value": 1.0
+        },
+        "numerical_correctness": {
+          "numerator": 26,
+          "denominator": 26,
+          "value": 1.0
+        },
+        "physical_unit_correctness": {
+          "numerator": 26,
+          "denominator": 26,
+          "value": 1.0
+        },
+        "physical_integrity_correctness": {
+          "numerator": 30,
+          "denominator": 30,
+          "value": 1.0
+        },
+        "semantic_integrity_failures": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "validity_state_correctness": {
+          "numerator": 30,
+          "denominator": 30,
+          "value": 1.0
+        },
+        "engineering_decision_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "execution_failures": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "malformed_response_rate": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "contract_violations": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "silent_corruption_rate": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "unsafe_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        }
+      },
+      "S03": {
+        "functional_correctness": {
+          "numerator": 30,
+          "denominator": 30,
+          "value": 1.0
+        },
+        "schema_compliance": {
+          "numerator": 30,
+          "denominator": 30,
+          "value": 1.0
+        },
+        "numerical_correctness": {
+          "numerator": 25,
+          "denominator": 25,
+          "value": 1.0
+        },
+        "physical_unit_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "physical_integrity_correctness": {
+          "numerator": 30,
+          "denominator": 30,
+          "value": 1.0
+        },
+        "semantic_integrity_failures": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "validity_state_correctness": {
+          "numerator": 30,
+          "denominator": 30,
+          "value": 1.0
+        },
+        "engineering_decision_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "execution_failures": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "malformed_response_rate": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "contract_violations": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "silent_corruption_rate": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "unsafe_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        }
+      },
+      "S04": {
+        "functional_correctness": {
+          "numerator": 37,
+          "denominator": 37,
+          "value": 1.0
+        },
+        "schema_compliance": {
+          "numerator": 37,
+          "denominator": 37,
+          "value": 1.0
+        },
+        "numerical_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "physical_unit_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "physical_integrity_correctness": {
+          "numerator": 37,
+          "denominator": 37,
+          "value": 1.0
+        },
+        "semantic_integrity_failures": {
+          "numerator": 0,
+          "denominator": 37,
+          "value": 0.0
+        },
+        "validity_state_correctness": {
+          "numerator": 37,
+          "denominator": 37,
+          "value": 1.0
+        },
+        "engineering_decision_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "execution_failures": {
+          "numerator": 0,
+          "denominator": 37,
+          "value": 0.0
+        },
+        "malformed_response_rate": {
+          "numerator": 0,
+          "denominator": 37,
+          "value": 0.0
+        },
+        "contract_violations": {
+          "numerator": 0,
+          "denominator": 37,
+          "value": 0.0
+        },
+        "silent_corruption_rate": {
+          "numerator": 0,
+          "denominator": 37,
+          "value": 0.0
+        },
+        "unsafe_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        }
+      },
+      "S05": {
+        "functional_correctness": {
+          "numerator": 30,
+          "denominator": 30,
+          "value": 1.0
+        },
+        "schema_compliance": {
+          "numerator": 30,
+          "denominator": 30,
+          "value": 1.0
+        },
+        "numerical_correctness": {
+          "numerator": 22,
+          "denominator": 22,
+          "value": 1.0
+        },
+        "physical_unit_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "physical_integrity_correctness": {
+          "numerator": 30,
+          "denominator": 30,
+          "value": 1.0
+        },
+        "semantic_integrity_failures": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "validity_state_correctness": {
+          "numerator": 30,
+          "denominator": 30,
+          "value": 1.0
+        },
+        "engineering_decision_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "execution_failures": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "malformed_response_rate": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "contract_violations": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "silent_corruption_rate": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "unsafe_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        }
+      },
+      "S06": {
+        "functional_correctness": {
+          "numerator": 30,
+          "denominator": 30,
+          "value": 1.0
+        },
+        "schema_compliance": {
+          "numerator": 30,
+          "denominator": 30,
+          "value": 1.0
+        },
+        "numerical_correctness": {
+          "numerator": 28,
+          "denominator": 28,
+          "value": 1.0
+        },
+        "physical_unit_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "physical_integrity_correctness": {
+          "numerator": 30,
+          "denominator": 30,
+          "value": 1.0
+        },
+        "semantic_integrity_failures": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "validity_state_correctness": {
+          "numerator": 30,
+          "denominator": 30,
+          "value": 1.0
+        },
+        "engineering_decision_correctness": {
+          "numerator": 28,
+          "denominator": 28,
+          "value": 1.0
+        },
+        "execution_failures": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "malformed_response_rate": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "contract_violations": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "silent_corruption_rate": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "unsafe_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 17,
+          "value": 0.0
+        }
+      },
+      "S07": {
+        "functional_correctness": {
+          "numerator": 32,
+          "denominator": 32,
+          "value": 1.0
+        },
+        "schema_compliance": {
+          "numerator": 32,
+          "denominator": 32,
+          "value": 1.0
+        },
+        "numerical_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "physical_unit_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "physical_integrity_correctness": {
+          "numerator": 32,
+          "denominator": 32,
+          "value": 1.0
+        },
+        "semantic_integrity_failures": {
+          "numerator": 0,
+          "denominator": 32,
+          "value": 0.0
+        },
+        "validity_state_correctness": {
+          "numerator": 32,
+          "denominator": 32,
+          "value": 1.0
+        },
+        "engineering_decision_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "execution_failures": {
+          "numerator": 0,
+          "denominator": 32,
+          "value": 0.0
+        },
+        "malformed_response_rate": {
+          "numerator": 0,
+          "denominator": 32,
+          "value": 0.0
+        },
+        "contract_violations": {
+          "numerator": 0,
+          "denominator": 32,
+          "value": 0.0
+        },
+        "silent_corruption_rate": {
+          "numerator": 0,
+          "denominator": 32,
+          "value": 0.0
+        },
+        "unsafe_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        }
+      },
+      "S08": {
+        "functional_correctness": {
+          "numerator": 45,
+          "denominator": 45,
+          "value": 1.0
+        },
+        "schema_compliance": {
+          "numerator": 45,
+          "denominator": 45,
+          "value": 1.0
+        },
+        "numerical_correctness": {
+          "numerator": 43,
+          "denominator": 43,
+          "value": 1.0
+        },
+        "physical_unit_correctness": {
+          "numerator": 43,
+          "denominator": 43,
+          "value": 1.0
+        },
+        "physical_integrity_correctness": {
+          "numerator": 45,
+          "denominator": 45,
+          "value": 1.0
+        },
+        "semantic_integrity_failures": {
+          "numerator": 0,
+          "denominator": 45,
+          "value": 0.0
+        },
+        "validity_state_correctness": {
+          "numerator": 45,
+          "denominator": 45,
+          "value": 1.0
+        },
+        "engineering_decision_correctness": {
+          "numerator": 45,
+          "denominator": 45,
+          "value": 1.0
+        },
+        "execution_failures": {
+          "numerator": 0,
+          "denominator": 45,
+          "value": 0.0
+        },
+        "malformed_response_rate": {
+          "numerator": 0,
+          "denominator": 45,
+          "value": 0.0
+        },
+        "contract_violations": {
+          "numerator": 0,
+          "denominator": 45,
+          "value": 0.0
+        },
+        "silent_corruption_rate": {
+          "numerator": 0,
+          "denominator": 45,
+          "value": 0.0
+        },
+        "unsafe_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 23,
+          "value": 0.0
+        }
+      }
+    },
+    "pass_at_3": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "pass_cubed": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    }
+  }
+}
