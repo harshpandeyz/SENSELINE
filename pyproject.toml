@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools==75.8.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "senseline-benchmark"
+version = "0.3.1"
+description = "The Silent Sensor Semantics Benchmark"
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+dependencies = ["jsonschema==4.23.0"]
+
+[project.optional-dependencies]
+test = ["pytest==8.3.5"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+markers = ["docker_integration: requires a running Docker daemon and the pinned Python sandbox image"]
+
+[tool.setuptools]
+packages = ["oracle", "reference", "graders", "harness", "simulator"]
