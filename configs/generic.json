@@ -1,0 +1,9 @@
+{
+  "name": "generic-command",
+  "command": ["python3", "my_agent.py", "--workspace", "{workspace}", "--prompt", "{prompt}", "--model", "{model}"],
+  "version_command": [],
+  "settings": {
+    "adapter": "argv template; no shell interpolation is performed",
+    "replace_command_with": "the locally verified non-interactive command for your agent"
+  }
+}

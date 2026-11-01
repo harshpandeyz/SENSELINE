@@ -1,0 +1,14 @@
+{
+  "name": "codex-cli",
+  "command": ["codex", "exec", "--json", "--ephemeral", "--model", "{model}", "--cd", "{workspace}", "--skip-git-repo-check", "{prompt}"],
+  "version_command": ["codex", "--version"],
+  "structured_stdout_jsonl": true,
+  "credential_env": ["OPENAI_API_KEY"],
+  "settings": {
+    "sandbox": "temporary CODEX_HOME custom permission profile; only current task workspace writable, minimal system read, command network disabled",
+    "approval": "on-request in temporary CODEX_HOME config; no approval or sandbox bypass flags",
+    "isolation": "fresh task workspace; host CODEX_HOME and HOME are replaced; shell environment inherits none; candidate code separately runs in the network-disabled Docker sandbox",
+    "network": "provider requests use only the explicitly named dedicated API key from the execution environment; Codex sandbox commands and candidate code have no network",
+    "model_id": "provided at run time with --model-id"
+  }
+}

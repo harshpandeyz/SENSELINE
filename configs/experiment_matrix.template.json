@@ -1,0 +1,90 @@
+{
+  "protocol_version": "0.3.1",
+  "status": "TEMPLATE_NOT_CONFIGURED",
+  "spend_control": {
+    "max_total_cost_usd": null,
+    "provider_hard_spend_limit_usd": null,
+    "provider_hard_spend_limit_configured": false,
+    "provider_hard_spend_limit_evidence": null,
+    "owner_authorization_record": null
+  },
+  "configurations": [
+    {
+      "name": "configuration_1",
+      "profile": "configs/opencode.json",
+      "model_id": null,
+      "agent_version_expected": null,
+      "budget": {
+        "agent_timeout_seconds": 900,
+        "candidate_timeout_seconds": 5,
+        "max_cost_per_trial_usd": null,
+        "max_total_tokens_per_trial": null,
+        "input_usd_per_million_tokens": null,
+        "output_usd_per_million_tokens": null,
+        "cost_capture": "provider-reported token usage is estimated; confirmed billing requires provider reconciliation",
+        "reasoning_effort": null
+      },
+      "credential_env": []
+    },
+    {
+      "name": "configuration_2",
+      "profile": "configs/opencode.json",
+      "model_id": null,
+      "agent_version_expected": null,
+      "budget": {
+        "agent_timeout_seconds": 900,
+        "candidate_timeout_seconds": 5,
+        "max_cost_per_trial_usd": null,
+        "max_total_tokens_per_trial": null,
+        "input_usd_per_million_tokens": null,
+        "output_usd_per_million_tokens": null,
+        "cost_capture": "provider-reported token usage is estimated; confirmed billing requires provider reconciliation",
+        "reasoning_effort": null
+      },
+      "credential_env": []
+    },
+    {
+      "name": "configuration_3",
+      "profile": "configs/opencode.json",
+      "model_id": null,
+      "agent_version_expected": null,
+      "budget": {
+        "agent_timeout_seconds": 900,
+        "candidate_timeout_seconds": 5,
+        "max_cost_per_trial_usd": null,
+        "max_total_tokens_per_trial": null,
+        "input_usd_per_million_tokens": null,
+        "output_usd_per_million_tokens": null,
+        "cost_capture": "provider-reported token usage is estimated; confirmed billing requires provider reconciliation",
+        "reasoning_effort": null
+      },
+      "credential_env": []
+    }
+  ],
+  "tasks": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08"
+  ],
+  "trials": [
+    1,
+    2,
+    3
+  ],
+  "pilot": {
+    "tasks": [
+      "S01",
+      "S05",
+      "S08"
+    ],
+    "trial": 0,
+    "runs_per_configuration": 1,
+    "human_review_required_before_full": true
+  },
+  "comparison_unit": "model"
+}

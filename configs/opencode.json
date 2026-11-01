@@ -1,0 +1,23 @@
+{
+  "name": "opencode",
+  "command": ["npm", "exec", "--yes", "--package=@opencode/cli@2.2.5", "--", "opencode", "--standalone", "run", "--model", "{model}", "--format", "json", "{prompt}"],
+  "version_command": ["npm", "exec", "--yes", "--package=@opencode/cli@2.2.5", "--", "opencode", "--version"],
+  "structured_stdout_jsonl": true,
+  "environment_allowlist": ["OPENCODE_CONFIG", "OPENCODE_CONFIG_DIR", "OPENCODE_DISABLE_PROJECT_CONFIG", "OPENCODE_DISABLE_EXTERNAL_SKILLS", "OPENCODE_DISABLE_CLAUDE_CODE", "OPENCODE_DISABLE_AUTOUPDATE"],
+  "credential_env": [],
+  "environment": {
+    "OPENCODE_CONFIG": "{opencode_policy_path}",
+    "OPENCODE_CONFIG_DIR": "{opencode_config_dir}",
+    "OPENCODE_DISABLE_PROJECT_CONFIG": "true",
+    "OPENCODE_DISABLE_EXTERNAL_SKILLS": "true",
+    "OPENCODE_DISABLE_CLAUDE_CODE": "true",
+    "OPENCODE_DISABLE_AUTOUPDATE": "true"
+  },
+  "settings": {
+    "mode": "OpenCode CLI 2.2.5 non-interactive run from the isolated task workspace",
+    "model_id": "exact provider/model ID supplied at run time with --model",
+    "isolation": "read-only task files and solution.py-only edits; external directories and all shell commands denied; candidate code separately runs in the network-disabled Docker sandbox",
+    "network": "the agent CLI requires outbound HTTPS to the selected model provider; candidate execution has no network",
+    "dynamic_permission_test": "not performed; the pinned CLI resolves this policy without inference, while shell is denied and candidate execution is separately sandboxed"
+  }
+}
