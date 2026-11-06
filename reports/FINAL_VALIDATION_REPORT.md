@@ -56,10 +56,10 @@ fresh `python3.11` venv for every validation gate, including the archive-extract
 ## Archive gate (Phase I)
 
 The release artifact is verified by independent extraction (see packaging log):
-`dist/SENSELINE_FINAL_SUBMISSION.zip` (4,096,159 bytes, SHA-256
-`9cd5bbb5c496ed5bf19c8b24dc9158780e5c390c9e3bdcc61141bf080588d545`, 712 files)
+`dist/SENSELINE_FINAL_SUBMISSION.zip` (4,096,664 bytes, SHA-256
+`e12958522955234d18477899f28a348023aec18cbad01aece8cdea2ed4255ac7`, 713 files)
 + `.sha256` sidecar — fresh-directory extraction, clean dependency install, `pytest`,
 `validate_submission.py`, Docker security, and Codex/OpenCode checks re-executed from the
-extracted copy with PASS (585.6 s); video status PENDING_OWNER_ACTION is recorded in
+extracted copy with PASS (782.6 s); video status PENDING_OWNER_ACTION is recorded in
 `results/archive_validation.json` as the release blocker. README-at-root, 8 task packages,
 50 MB limit, and prohibited-file scan all enforced by `scripts/verify_release_archive.py`.

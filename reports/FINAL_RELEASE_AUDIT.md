@@ -2,10 +2,10 @@
 
 Audit date: 2026-11-06 UTC. Auditor: release operator (MuseSpark build). Owner review: pending.
 Canonical evidence: `results/experiment_analysis.json` (90 trials: 16 GENUINE, 58 TOOL_USE, 16 INFRA).
-Release artifact: `dist/SENSELINE_FINAL_SUBMISSION.zip` (4,096,159 bytes, SHA-256
-`9cd5bbb5c496ed5bf19c8b24dc9158780e5c390c9e3bdcc61141bf080588d545`), 712 files,
-README at ZIP root, verified by independent fresh-extraction gate (PASS, 585.6 s; video PENDING_OWNER_ACTION recorded as release blocker).
-Earlier releases preserved in `dist-archive/` (2026-11-02 original, 2026-11-06 superseded first final).
+Release artifact: `dist/SENSELINE_FINAL_SUBMISSION.zip` (4,096,664 bytes, SHA-256
+`e12958522955234d18477899f28a348023aec18cbad01aece8cdea2ed4255ac7`), 713 files,
+README at ZIP root, verified by independent fresh-extraction gate (PASS, 782.6 s; video PENDING_OWNER_ACTION recorded as release blocker).
+Earlier releases preserved in `dist-archive/` (2026-11-02 original plus two superseded finals).
 Git: branch `main` pushed to `https://github.com/harshpandeyz/SENSELINE` (no force-push).
 Content commit `e950815`; remote sync merged the owner's deletion of stale
 `FINAL_AUDIT_REPORT.md`. Release-time tip `406622c` (audit-reference commits only).
