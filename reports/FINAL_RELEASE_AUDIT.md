@@ -1,8 +1,14 @@
 # SENSELINE Final Release Audit
 
 Audit date: 2026-11-06 UTC. Auditor: release operator (MuseSpark build). Owner review: pending.
-Canonical evidence: `results/experiment_analysis.json` (90 classified trials). Raw records: `results/runs/`,
-`results/pilot/`, `results/pilot-history/`, `results/supplementary/`, `results/transcripts/`.
+Canonical evidence: `results/experiment_analysis.json` (90 trials: 16 GENUINE, 58 TOOL_USE, 16 INFRA).
+Release artifact: `dist/SENSELINE_FINAL_SUBMISSION.zip` (4,057,950 bytes, SHA-256
+`8696f877e0f87756693a23fdb6a368cb098818ad4e0c2489bb9978cf7e60cdc5`), 700 files,
+README at ZIP root, verified by independent fresh-extraction gate (PASS, 547.9 s).
+Earlier release `dist-archive/2026-11-02/SENSELINE_submission.zip` preserved for history.
+Git: commit `b33c966` (+ finalization), branch `main`, pushed to
+`https://github.com/harshpandeyz/SENSELINE` (no force-push; remote deletion of the
+stale `FINAL_AUDIT_REPORT.md` merged).
 
 ## 1. Project state
 
