@@ -23,13 +23,13 @@ ROOT_FILES = (
     "docs/FAILURE_ANALYSIS.md", "docs/video_walkthrough_script.md",
     "docs/INDEPENDENT_REVIEW_PACKAGE.md", "presentation/SENSELINE_walkthrough.html",
     "configs/experiment_matrix.template.json", "configs/opencode_task_permissions.json",
-    "scripts/package_submission.py", "scripts/verify_release_archive.py",
+    "scripts/package_submission.py", "scripts/verify_release_archive.py", "scripts/finalize_submission.py",
     "results/submission_status.json", "results/experiment_analysis.json",
     "results/free_model_availability.json",
     "reports/FINAL_RELEASE_AUDIT.md", "reports/FINAL_EXPERIMENT_ANALYSIS.md",
     "reports/FINAL_VALIDATION_REPORT.md", "reports/MODEL_COMPARISON.md",
     "reports/FINAL_EXECUTION_AUDIT.md", "reports/OWNER_REVIEW_REQUIRED.md",
-    "reports/COST_AND_USAGE_DISCLOSURE.md",
+    "reports/COST_AND_USAGE_DISCLOSURE.md", "reports/SUBMISSION_CONTENT_MANIFEST.md",
     "scripts/run_docker_security_tests.py", "scripts/verify_agent_security.py",
     "scripts/verify_opencode_permissions.py", "harness/secure_execution.py",
     "harness/candidate_runtime.py", "harness/agent_environment.py", "harness/agent_usage.py",
@@ -96,7 +96,30 @@ def _isolated_validation(preflight: dict, mutation_paths: list[Path]) -> dict:
     }
 
 
+def _parse_video_line(video_line: str) -> dict:
+    """Candidate mode allows the explicit VIDEO_URL_PENDING_OWNER_RECORDING placeholder;
+    final mode requires a real public https URL. Placeholders, local/file URLs and
+    example domains are always rejected in final mode."""
+    if "VIDEO_URL_PENDING_OWNER_RECORDING" in video_line:
+        return {"status": "PENDING_OWNER_ACTION", "note": video_line.strip(), "placeholder": "VIDEO_URL_PENDING_OWNER_RECORDING"}
+    if video_line.startswith("Video walkthrough: https://"):
+        url = video_line.split(":", 1)[1].strip().split()[0]
+        lowered = url.lower()
+        banned = ("example.com", "example.org", "example.net", "localhost", "127.0.0.1", "placeholder", "pending", "todo", "xxx")
+        if any(token in lowered for token in banned) or len(url) < 12:
+            raise SystemExit(f"FAIL: README video URL is not a legitimate public link: {url}")
+        return {"status": "PUBLISHED", "url": url}
+    if video_line.startswith("Video walkthrough: PENDING"):
+        return {"status": "PENDING_OWNER_ACTION", "note": video_line.split(":", 1)[1].strip()}
+    raise SystemExit("FAIL: README video line must be a real 'https://' URL or the explicit 'VIDEO_URL_PENDING_OWNER_RECORDING' / 'PENDING' owner-action marker; placeholders are rejected")
+
+
 def main() -> int:
+    import argparse as _argparse
+    _parser = _argparse.ArgumentParser()
+    _parser.add_argument("--mode", choices=["candidate", "final"], default="candidate",
+                         help="candidate allows the PENDING placeholder (reports PENDING_VIDEO); final rejects it")
+    _args, _unknown = _parser.parse_known_args()
     missing = [path for path in ROOT_FILES if not (ROOT / path).is_file()]
     missing.extend(
         f"{task}/{name}" for task, folder in TASK_DIRS.items() for name in TASK_FILES
@@ -113,13 +136,13 @@ def main() -> int:
     if not video_markers:
         raise SystemExit("FAIL: README is missing its 'Video walkthrough:' line")
     video_line = video_markers[0]
-    if video_line.startswith("Video walkthrough: https://"):
-        video_status = {"status": "PUBLISHED", "url": video_line.split(":", 1)[1].strip()}
-    elif video_line.startswith("Video walkthrough: PENDING"):
-        video_status = {"status": "PENDING_OWNER_ACTION", "note": video_line.split(":", 1)[1].strip()}
+    video_status = _parse_video_line(video_line)
+    if video_status["status"] == "PENDING_OWNER_ACTION":
         print("WARNING: video walkthrough URL is pending (project-owner action); release is blocked on publication")
-    else:
-        raise SystemExit("FAIL: README video line must be a real 'https://' URL or an explicit 'PENDING' owner-action marker; placeholders are rejected")
+        if _args.mode == "final":
+            raise SystemExit("FAIL: final mode rejects the VIDEO_URL_PENDING_OWNER_RECORDING/PENDING placeholder; supply a real public https URL")
+    if _args.mode == "candidate" and video_status["status"] == "PUBLISHED":
+        print("NOTE: candidate validation sees a published video URL; final validation still required for submission")
 
     secret_env = [p for p in [ROOT / ".env", *ROOT.glob(".env.*")] if p.is_file() and p.name != ".env.example"]
     if secret_env:

@@ -152,8 +152,8 @@ Trial classes: {"GENUINE": 0, "TOOL_USE": 0, "INFRA": 1, "BUDGET_BREACH": 0}
 No genuine trials: every metric is null (reported as "no eligible executions", never as zero).
 
 ## Budget-breach findings (excluded from primary metrics)
-  [pilot-history] nemotron-3.5-super-vl:free S08 t0 acc=0.7111111111111111 cases=32/45 tokens=None reason=budget enforcer stopped the agent at 82740 tokens (token_budget_exceeded); work cut off before completion run=20261105T204856_382435Z_S08_opencode_trial0
-  [pilot-history] nemotron-3.5-super-vl:free S01 t1 acc=0.96875 cases=31/32 tokens=None reason=budget enforcer stopped the agent at 64271 tokens (token_budget_exceeded); work cut off before completion run=20261106T010759_300310Z_S01_opencode_trial1
+  [pilot-history] nemotron-3.5-super-vl:free S08 t0 acc=0.7111111111111111 cases=32/45 tokens=82740 reason=budget enforcer stopped the agent at 82740 tokens (token_budget_exceeded); work cut off before completion run=20261105T204856_382435Z_S08_opencode_trial0
+  [pilot-history] nemotron-3.5-super-vl:free S01 t1 acc=0.96875 cases=31/32 tokens=64271 reason=budget enforcer stopped the agent at 64271 tokens (token_budget_exceeded); work cut off before completion run=20261106T010759_300310Z_S01_opencode_trial1
 
 ## Trial roster (all 91, with class + reason)
   [pilot] llama3.2:1b S01 t0 class=INFRA acc=0.0 reason=provider resolution/rate-limit error with no usage metadata

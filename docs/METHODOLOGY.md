@@ -1,6 +1,6 @@
 # SENSELINE methodology and scoring
 
-Protocol version: 0.3.1. No model trial has been run. The frozen hidden fixture suite contains 266 cases across eight tasks. Each task has an explicit input/output schema, public examples, deterministic hidden fixtures, a reference solution, and an independently implemented oracle. The oracle imports no reference code; the grader owns a third set of unit transformations.
+Protocol version: 0.3.1. The frozen hidden fixture suite contains 266 cases across eight tasks. Each task has an explicit input/output schema, public examples, deterministic hidden fixtures, a reference solution, and an independently implemented oracle. The oracle imports no reference code; the grader owns a third set of unit transformations. Executed 2026-11-05/06 UTC: 91 classified trials (14 GENUINE, 58 TOOL_USE, 17 INFRA, 2 BUDGET_BREACH) under a strict $0 cap; canonical eligibility-aware analysis is `results/experiment_analysis.json` generated from raw records by `scripts/analyze_results.py`.
 
 ## Construct and scope
 

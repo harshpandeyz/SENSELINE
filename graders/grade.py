@@ -462,12 +462,26 @@ def _rate(numerator: int, denominator: int) -> dict:
 
 
 def _pass_metric(reports, all_pass):
+    """Pass@3 (any-of-3) / pass^3 (all-3) over genuine trials only.
+
+    Formula: for each (model_id, agent, task) group with n>=3 genuine trials,
+    denominator sums C(n,3) triples; pass@3 numerator counts triples with >=1
+    perfect trial (1.0 task_accuracy), pass^3 counts triples with 3 perfect trials.
+    Groups with n<3 contribute 0/0 (insufficient genuine repeats -> null overall
+    if no group qualifies). Each trial is keyed by run_id when available so
+    identical trial numbers from different phases never collide. Callers must
+    pass only GENUINE trials; INFRA/TOOL_USE/BUDGET_BREACH are excluded upstream.
+    """
     if not reports:
         return _rate(0, 0)
     distinct = {}
     for index, report in enumerate(reports):
         base = (report.get("model_id"), report.get("agent"), report.get("task"))
-        repetition = report.get("trial", f"__record_{index}")
+        run_id = report.get("run_id")
+        if run_id:
+            repetition = ("run_id", run_id)
+        else:
+            repetition = ("trial", report.get("trial", f"__record_{index}"), index)
         distinct[base + (repetition,)] = report.get("task_accuracy", 0) == 1.0
     grouped = {}
     for key, passed in distinct.items():

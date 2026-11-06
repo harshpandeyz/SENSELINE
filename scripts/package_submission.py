@@ -31,7 +31,8 @@ REQUIRED = {
     "README.md", "requirements.txt", ".env.example", ".gitignore", "Makefile", "Dockerfile", "pyproject.toml",
     "SUBMISSION_CHECKLIST.md", "graders/grade.py", "oracle/compute.py", "harness/secure_execution.py",
     "harness/candidate_runtime.py", "scripts/run_experiment.py", "scripts/validate_submission.py",
-    "scripts/package_submission.py", "scripts/verify_release_archive.py", "mutations/MUTATION_MANIFEST.json",
+    "scripts/package_submission.py", "scripts/verify_release_archive.py", "scripts/finalize_submission.py",
+    "mutations/MUTATION_MANIFEST.json",
     "tests/test_benchmark.py", "docs/METHODOLOGY.md", "docs/RELATED_WORK.md",
     "docs/FAILURE_ANALYSIS.md", "docs/video_walkthrough_script.md",
     "docs/INDEPENDENT_REVIEW_PACKAGE.md", "presentation/SENSELINE_walkthrough.html",
@@ -97,9 +98,12 @@ def package(root: Path = ROOT, archive: Path = ARCHIVE) -> dict:
         raise ValueError("project root README.md is missing")
     files = archive_members(root)
     archive.parent.mkdir(parents=True, exist_ok=True)
-    # Remove stale archives in dist so exactly one release archive remains.
+    # Allowed release artifacts: candidate (placeholder) and final (published URL).
+    # Do not delete the sibling artifact; only remove unknown stale archives.
+    allowed = {"SENSELINE_SUBMISSION_CANDIDATE.zip", "SENSELINE_FINAL_SUBMISSION.zip", "SENSELINE_submission.zip"}
     for stale in archive.parent.glob("*.zip"):
-        stale.unlink()
+        if stale.resolve() != archive and stale.name not in allowed:
+            stale.unlink()
 
     with zipfile.ZipFile(archive, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9, allowZip64=False) as zf:
         for path in files:
@@ -123,9 +127,13 @@ def package(root: Path = ROOT, archive: Path = ARCHIVE) -> dict:
     digest = hashlib.sha256(archive.read_bytes()).hexdigest()
     checksum_path = archive.with_suffix(archive.suffix + ".sha256")
     checksum_path.write_text(f"{digest}  {archive.name}\n", encoding="ascii")
-    zips = list(archive.parent.glob("*.zip"))
-    if zips != [archive]:
-        raise ValueError(f"dist must contain exactly {archive.name}")
+    zips = sorted(p.name for p in archive.parent.glob("*.zip"))
+    allowed = {"SENSELINE_SUBMISSION_CANDIDATE.zip", "SENSELINE_FINAL_SUBMISSION.zip", "SENSELINE_submission.zip"}
+    unknown = [name for name in zips if name not in allowed]
+    if unknown:
+        raise ValueError(f"dist contains unknown archives: {unknown}")
+    if archive.name not in zips:
+        raise ValueError(f"dist must contain {archive.name}")
     return {
         "archive": str(archive), "archive_size_bytes": size,
         "archive_sha256": digest, "file_count": len(files),

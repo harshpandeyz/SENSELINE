@@ -20,7 +20,7 @@ REQUIRED = {
     "README.md", "requirements.txt", "SUBMISSION_CHECKLIST.md",
     "scripts/validate_submission.py", "scripts/run_docker_security_tests.py",
     "scripts/verify_agent_security.py", "scripts/verify_opencode_permissions.py",
-    "scripts/package_submission.py", "scripts/run_experiment.py",
+    "scripts/package_submission.py", "scripts/finalize_submission.py", "scripts/run_experiment.py",
     "graders/grade.py", "oracle/compute.py", "harness/secure_execution.py",
     "reference/s01.py", "reference/s02.py", "reference/s03.py", "reference/s04.py",
     "reference/s05.py", "reference/s06.py", "reference/s07.py", "reference/s08.py",
@@ -78,7 +78,7 @@ def _run(command: list[str], cwd: Path, timeout: int = 1800) -> dict:
     return record
 
 
-def verify(archive: Path = ARCHIVE, checksum: Path = CHECKSUM) -> dict:
+def verify(archive: Path = ARCHIVE, checksum: Path = CHECKSUM, mode: str = "candidate") -> dict:
     archive = Path(archive).resolve()
     checksum = Path(checksum).resolve()
     if not archive.is_file() or not checksum.is_file():
@@ -86,8 +86,13 @@ def verify(archive: Path = ARCHIVE, checksum: Path = CHECKSUM) -> dict:
     size = archive.stat().st_size
     if size >= MAX_BYTES:
         raise RuntimeError(f"archive is not below 50 MiB: {size} bytes")
-    if list(archive.parent.glob("*.zip")) != [archive]:
-        raise RuntimeError("dist must contain exactly the named submission ZIP")
+    present = sorted(p.name for p in archive.parent.glob("*.zip"))
+    allowed = {"SENSELINE_SUBMISSION_CANDIDATE.zip", "SENSELINE_FINAL_SUBMISSION.zip", "SENSELINE_submission.zip"}
+    unknown = [name for name in present if name not in allowed]
+    if unknown:
+        raise RuntimeError(f"dist contains unknown archives: {unknown}")
+    if archive.name not in present:
+        raise RuntimeError(f"dist must contain {archive.name}")
     digest = hashlib.sha256(archive.read_bytes()).hexdigest()
     expected_digest, expected_name = checksum.read_text(encoding="ascii").strip().split(maxsplit=1)
     if expected_digest != digest or expected_name != archive.name:
@@ -108,8 +113,8 @@ def verify(archive: Path = ARCHIVE, checksum: Path = CHECKSUM) -> dict:
                 if line.split("=", 1)[1].strip():
                     raise RuntimeError(".env.example contains a non-empty credential value")
         for info in zf.infolist():
-            mode = info.external_attr >> 16
-            if mode and (mode & 0o170000) == 0o120000:
+            file_mode = info.external_attr >> 16
+            if file_mode and (file_mode & 0o170000) == 0o120000:
                 raise RuntimeError(f"archive contains a symbolic link: {info.filename}")
 
         with tempfile.TemporaryDirectory(prefix="senseline-release-verify-") as temporary:
@@ -129,7 +134,8 @@ def verify(archive: Path = ARCHIVE, checksum: Path = CHECKSUM) -> dict:
             commands = []
             commands.append(_run([str(python), "-m", "pip", "install", "--disable-pip-version-check", "-r", "requirements.txt"], extracted, 900))
             commands.append(_run([str(python), "-m", "pytest", "-q"], extracted, 1800))
-            commands.append(_run([str(python), "scripts/validate_submission.py"], extracted, 1800))
+            validate_mode = "final" if mode == "final" else "candidate"
+            commands.append(_run([str(python), "scripts/validate_submission.py", "--mode", validate_mode], extracted, 1800))
             commands.append(_run([str(python), "scripts/run_docker_security_tests.py"], extracted, 1800))
             commands.append(_run([str(python), "scripts/verify_agent_security.py"], extracted, 180))
             commands.append(_run([str(python), "scripts/verify_opencode_permissions.py"], extracted, 180))
@@ -149,13 +155,22 @@ def verify(archive: Path = ARCHIVE, checksum: Path = CHECKSUM) -> dict:
 
             reference_report = json.loads((extracted / "results" / "reference_validation.json").read_text(encoding="utf-8"))
             video_status = reference_report.get("video_status", {"status": "UNKNOWN"})
+            # Candidate mode allows the explicit placeholder and reports PENDING_VIDEO;
+            # final mode rejects it and requires a published URL. A candidate ZIP must
+            # never receive a final-submission PASS.
+            if mode == "final" and video_status.get("status") != "PUBLISHED":
+                raise RuntimeError("final mode requires a published public video URL; placeholder rejected")
             if video_status.get("status") != "PUBLISHED":
                 video_blocker = "video walkthrough URL pending (project-owner action); technical package validates, submission readiness is blocked"
+                technical = "PASS"
+                readiness = "PENDING_VIDEO"
             else:
                 video_blocker = None
+                technical = "PASS"
+                readiness = "READY" if mode == "final" else "READY_CANDIDATE_VIDEO_PRESENT"
 
             return {
-                "status": "PASS", "archive": archive.name, "archive_size_bytes": size,
+                "status": technical, "archive": archive.name, "archive_size_bytes": size,
                 "archive_sha256": digest, "zip_crc_valid": True, "flat_root_readme": True,
                 "task_package_count": 8, "file_count": len(names), "fresh_extraction": True,
                 "dependencies_installed_from_archive": True, "validation_commands": commands,
@@ -165,15 +180,28 @@ def verify(archive: Path = ARCHIVE, checksum: Path = CHECKSUM) -> dict:
                 "opencode_config_status": security_records[2]["status"],
                 "video_status": video_status.get("status"),
                 "video_release_blocker": video_blocker,
+                "technical_package_validation": technical,
+                "video_url": video_status.get("status"),
+                "submission_readiness": readiness,
+                "validation_mode": mode,
                 "runtime_seconds": round(time.monotonic() - start, 3),
                 "temporary_extraction_removed": True,
             }
 
 
 def main() -> int:
+    import argparse as _argparse
+    _parser = _argparse.ArgumentParser()
+    _parser.add_argument("--mode", choices=["candidate", "final"], default="candidate")
+    _parser.add_argument("--archive", type=Path, default=ARCHIVE)
+    _parser.add_argument("--checksum", type=Path, default=CHECKSUM)
+    _parsed, _ = _parser.parse_known_args()
+    # Resolve archive/checksum from explicit args or env-driven defaults.
+    _archive = _parsed.archive if isinstance(_parsed.archive, Path) else Path(_parsed.archive)
+    _checksum = _parsed.checksum if isinstance(_parsed.checksum, Path) else Path(_parsed.checksum)
     destination = ROOT / "results" / "archive_validation.json"
     try:
-        report = verify()
+        report = verify(archive=_archive, checksum=_checksum, mode=_parsed.mode)
     except Exception as exc:
         report = {"status": "FAIL", "reason": f"{type(exc).__name__}: {exc}"}
         destination.parent.mkdir(parents=True, exist_ok=True)

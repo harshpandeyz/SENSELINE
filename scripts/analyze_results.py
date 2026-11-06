@@ -152,14 +152,32 @@ def main():
             "candidate_sha256": i.get("candidate_source_sha256"),
             "run_id": i.get("run_id"),
         })
+    from collections import Counter as _Counter
+    phase_counts = _Counter((t.get("phase"), t["class"]) for t in trials)
     output = {
         "trial_count": len(trials),
         "eligible_model_trial_count": summary["trial_class_counts"].get("GENUINE", 0),
         "trial_class_counts": summary["trial_class_counts"],
+        "phase_class_counts": {f"{phase}/{cls}": count for (phase, cls), count in sorted(phase_counts.items())},
         "overall_genuine_metrics": summary["overall_genuine_metrics"],
         "per_model": summary["per_model"],
         "trials": rows,
-        "method_note": "Model metrics use GENUINE trials only. INFRA trials are excluded from all numerators/denominators. TOOL_USE trials are behavioral evidence reported separately.",
+        "method_note": (
+            "Canonical eligibility-aware analysis generated from raw trial records "
+            "(results/runs, results/pilot, results/pilot-history, results/supplementary). "
+            "Every metric reports numerator/denominator/value; denominators are pooled genuine hidden cases. "
+            "Eligible trial count: GENUINE only (candidate code produced and Docker-graded under its registered "
+            "900 s / 120000-token budget). Included phases: full + pilot + pilot-history + supplementary pooled for "
+            "overall_genuine_metrics; per_model splits by phase|model|agent. Excluded from every model numerator/denominator: "
+            "INFRA (provider/launch failure, no usable candidate), TOOL_USE (agent ran with usage but starter/empty solution.py; "
+            "behavioral evidence, never a reasoning score), BUDGET_BREACH (budget enforcer cut the agent off mid-work, e.g. "
+            "82740 and 64271 tokens on 60k budgets; evidence preserved, reported separately). "
+            "SCR = corrupted genuine cases / evaluated genuine cases (wrong/incompatible value claimed valid or ACCEPT; "
+            "missing-unit-only and harmless schema-only failures excluded). UAR = ACCEPT on non-ACCEPT S06/S08 genuine cases / "
+            "all non-ACCEPT S06/S08 genuine cases (zero denominator -> null). pass@3 (any-of-3 perfect) and pass^3 (all-3 perfect) "
+            "require >=3 genuine trials per (model, agent, task); groups with fewer contribute 0/0. Numerical errors grouped by "
+            "task/field/unit, never pooled across incompatible dimensions."
+        ),
     }
     args.out.write_text(json.dumps(output, indent=2) + "\n", encoding="utf-8")
     csv_path = args.out.with_suffix(".csv")

@@ -5,7 +5,7 @@ EXPERIMENT_MATRIX ?= configs/experiment_matrix.template.json
 EXPERIMENT_EXECUTE ?= 0
 EXPERIMENT_EXECUTE_ARG = $(if $(filter 1 true yes,$(EXPERIMENT_EXECUTE)),--execute,)
 
-.PHONY: setup test security-test opencode-verify validate experiment-pilot experiment-full package aggregate clean
+.PHONY: setup test security-test opencode-verify validate validate-final experiment-pilot experiment-full package package-candidate package-final aggregate clean
 
 setup:
 	$(PYTHON) -m venv $(VENV)
@@ -24,7 +24,10 @@ opencode-verify:
 
 validate:
 	$(VPY) -m pytest -q
-	$(VPY) scripts/validate_submission.py
+	$(VPY) scripts/validate_submission.py --mode candidate
+
+validate-final:
+	$(VPY) scripts/validate_submission.py --mode final
 
 experiment-pilot:
 	$(VPY) scripts/run_experiment.py --matrix $(EXPERIMENT_MATRIX) --mode pilot $(EXPERIMENT_EXECUTE_ARG)
@@ -34,11 +37,15 @@ experiment-full:
 
 package:
 	$(VPY) scripts/package_submission.py
-	$(VPY) scripts/verify_release_archive.py
+	$(VPY) scripts/verify_release_archive.py --mode candidate
+
+package-candidate:
+	SENSELINE_ARCHIVE_NAME=SENSELINE_SUBMISSION_CANDIDATE.zip $(VPY) scripts/package_submission.py
+	SENSELINE_ARCHIVE_NAME=SENSELINE_SUBMISSION_CANDIDATE.zip $(VPY) scripts/verify_release_archive.py --mode candidate --archive dist/SENSELINE_SUBMISSION_CANDIDATE.zip --checksum dist/SENSELINE_SUBMISSION_CANDIDATE.zip.sha256
 
 package-final:
 	SENSELINE_ARCHIVE_NAME=SENSELINE_FINAL_SUBMISSION.zip $(VPY) scripts/package_submission.py
-	SENSELINE_ARCHIVE_NAME=SENSELINE_FINAL_SUBMISSION.zip $(VPY) scripts/verify_release_archive.py
+	SENSELINE_ARCHIVE_NAME=SENSELINE_FINAL_SUBMISSION.zip $(VPY) scripts/verify_release_archive.py --mode candidate --archive dist/SENSELINE_FINAL_SUBMISSION.zip --checksum dist/SENSELINE_FINAL_SUBMISSION.zip.sha256
 
 aggregate:
 	$(VPY) -m harness.aggregate --results results

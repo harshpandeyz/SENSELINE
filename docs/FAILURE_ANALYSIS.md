@@ -8,16 +8,18 @@ Canonical evidence: 91 classified trials (`results/experiment_analysis.json`, ge
 - **TOOL_USE** (58): the agent ran with reported usage but never produced an
   implementation (starter/empty/missing `solution.py`). Behavioral evidence, never
   scored as reasoning failures.
-- **INFRA** (15): provider/launch failures with no usage metadata. Excluded from all
-  model numerators and denominators.
+- **INFRA** (17): provider/launch failures with no usable candidate (including two
+  opencode free-tier quota blocks). Excluded from all model numerators and denominators.
+- **BUDGET_BREACH** (2): budget enforcer cut the agent off mid-work (S08 82740 tokens,
+  S01 64271 tokens on 60k budgets); evidence preserved, excluded from primary metrics.
 
-| Phase | Trials | GENUINE | TOOL_USE | INFRA |
-| --- | --- | --- | --- | --- |
-| Full run (`results/runs`, 72-design) | 55 | 7 | 42 | 6 |
-| Pilot (`results/pilot`, 9-trial) | 9 | 3 | 2 | 4 |
-| Pilot history (`results/pilot-history`, attempts 1–4) | 24 | 4 | 13 | 5 |
-| Budget findings (2 over-budget trials, evidence preserved, metrics excluded) | 2 | 0 | 0 | 0 (BUDGET_BREACH: 2) |
-| Supplementary probes (`results/supplementary`) | 2 | 0 | 1 | 1 |
+| Phase | Trials | GENUINE | TOOL_USE | INFRA | BUDGET_BREACH |
+| --- | ---: | ---:| ---:| ---:| ---:|
+| Full run (`results/runs`, 72-design) | 55 | 7 | 42 | 6 | 0 |
+| Pilot (`results/pilot`, 9-trial) | 9 | 3 | 2 | 4 | 0 |
+| Pilot history (`results/pilot-history`, attempts 1–4) | 24 | 4 | 13 | 5 | 2 |
+| Supplementary probes (`results/supplementary`) | 3 | 0 | 1 | 2 | 0 |
+| **TOTAL** | **91** | **14** | **58** | **17** | **2** |
 
 Per-configuration full-run record (opencode v2.2.5 agent, uniform 120000-token budget, $0 caps):
 
@@ -107,13 +109,11 @@ is reported as such.
 
 ## Infrastructure failures (excluded from metrics)
 
-- 17 INFRA trials: 13 fast `provider.no-route` / `Model unavailable` errors and one
+- 17 INFRA trials: fast `provider.no-route` / `Model unavailable` errors and one
   743 s provider hang from the opencode→Ollama router on local-model trials, plus two
-  opencode free-quota blocks (beam, deepseek)
-  (6 full-run, 4 pilot, 4 pilot-history; correlated with host memory pressure on the
-  16 GB machine), one setup-blocked trial from the pre-fix harness gate, and one
-  opencode free-tier quota block (beam supplementary probe, usage reported but agent
-  stopped before implementing).
+  opencode free-quota blocks (beam, deepseek: `results/supplementary/`)
+  (6 full-run, 4 pilot, 5 pilot-history, 2 supplementary; correlated with host memory
+  pressure on the 16 GB machine), one setup-blocked trial from the pre-fix harness gate.
   All have no usable candidate and are excluded from every model numerator and
   denominator. (The OpenRouter quota halt stopped the run after a trial that still
   graded 30/30; that trial is counted GENUINE with its quota flag preserved.) Mitigated by single-resident-model scheduling and a

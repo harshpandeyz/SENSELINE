@@ -12,8 +12,8 @@ environment.
 | Provider pricing metadata | ollama/*: local, no price. `openrouter/…:free`: prompt $0 / completion $0 (`/api/v1/models`, read-only). opencode/*-free: $0 free-tier (agent-reported cost 0) | `results/free_model_availability.json` |
 | Free-tier quota | OpenRouter: 50 requests/day (verified `/api/v1/auth/key`); exhausted 2026-11-05 and 2026-11-06, resets 00:00 UTC. opencode pool: ~2–4 requests before `free-limit` 429 (observed; reset window ~5.5 h) | quota probes + trial logs |
 | Trial-level estimated cost | $0.00 for all 91 trials (usage.tokens × $0 rates) | `trial_index.json` → `usage.estimated_cost_usd: "0"` |
-| Provider-reported usage | Tokens per trial recorded (e.g., 136750 qwen / 76163 llama / 268054 nemotron-full). OpenRouter account usage counter moved +$0.0008 across all free-tier probing (4.9868 → 4.9876 → 4.9884 of $5 prepaid; usage now ~$5.02, so paid calls fail closed with 402) | transcripts + account endpoint (read-only) |
-| Confirmed billed charges | **None confirmed, none expected.** No billing record was pulled (owner-only). The $0.0008 counter delta on $0-priced models is disclosed, not billed. | — |
+| Provider-reported usage | Tokens per trial recorded (e.g., 136750 qwen / 76163 llama / 268054 nemotron-full). OpenRouter account usage counter moved +$0.0016 total across all free-tier probing in two +$0.0008 steps (4.9868 → 4.9876 → 4.9884 of $5 prepaid; usage now ~$5.02, so paid calls fail closed with 402) | transcripts + account endpoint (read-only) |
+| Confirmed billed charges | **Unverified — no billing dashboard pulled (owner-only).** The +$0.0016 counter delta on documented $0-priced models is disclosed as a counter movement, not as confirmed billing or confirmed zero charges. | — |
 
 ## Enforcement
 
@@ -23,5 +23,5 @@ environment.
 
 ## Remaining owner-side verification
 
-1. Confirm via the OpenRouter billing page that no charge corresponds to the +$0.0008 usage-counter delta.
+1. Confirm via the OpenRouter billing page whether any charge corresponds to the +$0.0016 usage-counter delta (two +$0.0008 steps); do not treat the counter as billing.
 2. If paid evaluation is ever authorized: set an explicit cap, a provider-side hard limit with dated evidence, and dedicated credentials — then rerun under the paid path (already implemented, never executed).

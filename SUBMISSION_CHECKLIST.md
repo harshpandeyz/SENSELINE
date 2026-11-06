@@ -24,7 +24,7 @@ Evidence dates: 2026-11-06. Source validation and experiment results are retaine
 
 - [x] Inspected OpenCode 2.2.5 catalog (465 models), authenticated provider profiles, dedicated credential environment, local Ollama models, OpenRouter free-quota state, and paid-provider balances/limits.
 - [x] Ran the 9-trial pilot to PILOT_COMPLETE with operator transcript review (owner review pending; see results/pilot/pilot_approval.json).
-- [x] Ran the 72-design full experiment to 55 trials; halted by design with QUOTA_EXHAUSTED (free-tier quota, $0 cap intact). Preserved 24 pilot-history and 1 supplementary trial with phases labeled. 90 classified trials: 16 GENUINE, 58 TOOL_USE, 16 INFRA.
+- [x] Ran the 72-design full experiment to 55 trials; halted by design with QUOTA_EXHAUSTED (free-tier quota, $0 cap intact). Preserved 24 pilot-history and 3 supplementary trials with phases labeled. 91 classified trials: 14 GENUINE, 58 TOOL_USE, 17 INFRA, 2 BUDGET_BREACH. Missing 17 full-run slots (S03×2, S04×3, S05×3, S06×3, S07×3, S08×3) are absent, not zero.
 - [x] Genuine-only metrics computed (`results/experiment_analysis.json`): nemotron S01–S03 acc 0.977, SCR 0.0; genuine pilot S08 0/45 (SCR 41/45, UAR 3/23) plus exploratory budget-breach 32/45 snapshot analyzed case-by-case; local-model tool-use boundary and opencode-pool quota blocks documented; no grader defects found.
 - [x] Free-model availability recorded (`results/free_model_availability.json`): 7 opencode-pool + OpenRouter free IDs checked; beam/deepseek S01 pilots quota-blocked; GLM/lightning/MiMo/Flint share the exhausted pool (not attempted); paid paths excluded with evidence.
 - [ ] Nemotron S04–S08 block (17 trials) missing — free quota exhausted; rerun after 00:00 UTC reset or with funded credits (out of $0 scope).
@@ -33,8 +33,8 @@ Evidence dates: 2026-11-06. Source validation and experiment results are retaine
 ## Documentation and submission
 
 - [x] Root README contains scope, all eight tasks, architecture, metrics, install/run instructions, dependencies, actual experiment status/results, runtime/cost, references, AI disclosures, and an explicit PENDING video marker (no invented URL).
-- [x] Methodology, related work, failure analysis (reconciled 89-trial evidence), five-minute walkthrough script, independent-review package, standalone slide deck, and reports/ (audit, experiment analysis, validation) are included and mutually consistent. No external reviewer or public video is claimed.
-- [x] `make package` creates the final ZIP with README at the ZIP root and a SHA-256 sidecar; the archive verifier checks a fresh extraction, install, tests, validation, security, archive contents, and the 50 MiB limit.
+- [x] Methodology, related work, failure analysis (reconciled 91-trial evidence: 14 GENUINE / 58 TOOL_USE / 17 INFRA / 2 BUDGET_BREACH), five-minute walkthrough script, independent-review package, standalone slide deck, and reports/ (audit, experiment analysis, validation) are included and mutually consistent. No external reviewer or public video is claimed.
+- [x] `make package-candidate` creates `dist/SENSELINE_SUBMISSION_CANDIDATE.zip` (README with `VIDEO_URL_PENDING_OWNER_RECORDING` at the ZIP root, SHA-256 sidecar); `scripts/finalize_submission.py --video-url "URL"` rebuilds `dist/SENSELINE_FINAL_SUBMISSION.zip` with the same inclusion/exclusion rules. The archive verifier checks a fresh extraction, install, tests, validation (candidate/final modes), security, archive contents, and the 50 MiB limit. Candidate validation reports TECHNICAL_PASS + PENDING_VIDEO; final validation rejects the placeholder.
 - [ ] Publish the recording and replace the PENDING video marker with its public link (project-owner action).
 - [ ] Complete owner review of pilot approval and this release (operator review recorded).
 

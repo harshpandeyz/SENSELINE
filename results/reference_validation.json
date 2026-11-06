@@ -3,7 +3,8 @@
   "classification": "reference/oracle and deliberate mutation validation; not model results",
   "video_status": {
     "status": "PENDING_OWNER_ACTION",
-    "note": "PENDING \u2014 project owner to record and publish the five-minute walkthrough, then replace this line with the public https URL (see docs/video_walkthrough_script.md)."
+    "note": "Video walkthrough: VIDEO_URL_PENDING_OWNER_RECORDING \u2014 project owner to record and publish the five-minute walkthrough, then run `python scripts/finalize_submission.py --video-url \"ACTUAL_PUBLIC_VIDEO_URL\"` to insert the public https URL (see docs/video_walkthrough_script.md).",
+    "placeholder": "VIDEO_URL_PENDING_OWNER_RECORDING"
   },
   "task_case_counts": {
     "S01": 32,

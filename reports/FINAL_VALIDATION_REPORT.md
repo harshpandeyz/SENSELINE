@@ -8,11 +8,11 @@ pinned sandbox image `python:3.11.18-slim-bookworm@sha256:ef521de1…` present l
 | Check | Command | Result |
 |---|---|---|
 | Unit/integration tests | `.venv/bin/python -m pytest -q` | **104 passed, 0 skipped** |
-| Reference + mutation validation | `.venv/bin/python scripts/validate_submission.py` | **PASS**: 266/266 references, 30/30 mutations rejected, 8 exports, unit-integrity PASS |
+| Reference + mutation validation | `.venv/bin/python scripts/validate_submission.py --mode candidate` | **PASS**: 266/266 references, 30/30 mutations rejected, 8 exports, unit-integrity PASS; video PENDING (candidate mode). Final mode (`--mode final`) correctly rejects the placeholder |
 | Docker security | `.venv/bin/python scripts/run_docker_security_tests.py` | **PASS**: 12/12, 0 skipped |
 | Agent workspace security | `.venv/bin/python scripts/verify_agent_security.py` | **PASS** (codex-cli 0.164.0-alpha.11.1, reinstalled pinned) |
 | OpenCode permissions | `.venv/bin/python scripts/verify_opencode_permissions.py` | **CLI_CONFIG_RESOLVED** (opencode v2.2.5; policy resolution only, no dynamic denial claimed) |
-| Experiment analysis | `.venv/bin/python scripts/analyze_results.py` | 90 trials classified; canonical JSON + CSV written |
+| Experiment analysis | `.venv/bin/python scripts/analyze_results.py` | 91 trials classified (14 GENUINE, 58 TOOL_USE, 17 INFRA, 2 BUDGET_BREACH); canonical JSON + CSV written |
 | Aggregate (raw record) | `.venv/bin/python -m harness.aggregate --results results` | 55 full trials, PARTIAL (nemotron S04–S08 absent on quota) |
 
 Note: one pytest run showed 11 docker-integration skips while the Docker daemon was down;
@@ -56,8 +56,11 @@ fresh `python3.11` venv for every validation gate, including the archive-extract
 ## Archive gate (Phase I)
 
 The release artifact is verified by independent extraction (see packaging log):
-`dist/SENSELINE_FINAL_SUBMISSION.zip` + `.sha256` sidecar (artifact identity per the sidecar checksum) — fresh-directory extraction, clean dependency install, `pytest`,
-`validate_submission.py`, Docker security, and Codex/OpenCode checks re-executed from the
-extracted copy with PASS; video status PENDING_OWNER_ACTION is recorded in
-`results/archive_validation.json` (source tree) as the release blocker. README-at-root, 8 task packages,
-50 MB limit, and prohibited-file scan all enforced by `scripts/verify_release_archive.py`.
+`dist/SENSELINE_SUBMISSION_CANDIDATE.zip` + `.sha256` sidecar (artifact identity per the sidecar checksum) — fresh-directory extraction, clean dependency install, `pytest`,
+`validate_submission.py --mode candidate`, Docker security, and Codex/OpenCode checks re-executed from the
+extracted copy with TECHNICAL_PASS; video status PENDING_OWNER_ACTION is recorded in
+`results/archive_validation.json` (source tree) as the release blocker (SUBMISSION_READINESS PENDING_VIDEO).
+README-at-root, 8 task packages, 50 MB limit, and prohibited-file scan all enforced by
+`scripts/verify_release_archive.py --mode candidate`. Final mode (`--mode final`) rejects the
+`VIDEO_URL_PENDING_OWNER_RECORDING` placeholder; `scripts/finalize_submission.py` rebuilds
+`dist/SENSELINE_FINAL_SUBMISSION.zip` only after a real public URL is supplied.
