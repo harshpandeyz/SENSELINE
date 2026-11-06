@@ -1,42 +1,56 @@
 # Five-minute SENSELINE walkthrough script
 
-**Recording status:** script and slides are updated to the 2026-11-06 evidence (55 full-run + 9 pilot trials, 16 genuine). No recording or public URL exists. The README carries an explicit PENDING marker; never invent a URL.
+**Recording status:** script and slides reflect the 2026-11-06 evidence (91 classified trials:
+14 GENUINE, 58 TOOL_USE, 17 INFRA, 2 BUDGET_BREACH). No recording or public URL exists.
+The README carries an explicit PENDING marker; never invent a URL.
 
 **Slides:** open [the standalone slide deck](../presentation/SENSELINE_walkthrough.html). Advance one slide at a time. Use the actual JSON outputs under `results/` (not old reports): `results/experiment_analysis.json` for model metrics, `results/reference_validation.json` for controls.
 
-## 0:00–1:00 — Engineering problem
+## 0:00–0:40 — The engineering problem
 
-**On screen:** Slide 1. Show a sensor register frame and a plausible displayed value.
+**On screen:** Slide 1. A sensor register frame and a plausible displayed value.
 
-**Narration:** “SENSELINE is the Silent Sensor Semantics Benchmark. Embedded measurement code can return a plausible number while silently changing its meaning. Signed data can become unsigned, Fahrenheit can be mislabeled as Celsius, or an uncertainty interval can cross a limit while the result is still accepted. This benchmark asks whether AI coding agents preserve measurement integrity from raw bytes through an engineering decision. The data are synthetic, and the rules are explicit software contracts. This is not a hardware safety test or a laboratory accreditation.”
+**Narration:** “Embedded measurement code can return a plausible number while silently changing what it means. Signed data becomes unsigned. Fahrenheit is mislabeled as Celsius. An uncertainty interval crosses a specification limit — and the result is still accepted. SENSELINE, the Silent Sensor Semantics Benchmark, asks whether AI coding agents preserve measurement integrity from raw register bytes through the engineering decision. Synthetic data, explicit software contracts. Not a hardware safety test, not a laboratory accreditation.”
 
-## 1:00–2:15 — Architecture and tasks
+## 0:40–1:30 — SENSELINE's central hypothesis
 
-**On screen:** Slide 2. Follow S01–S08 across the pipeline; briefly zoom in on S08.
+**On screen:** Slide 1 (cont.). Corruption vs contract-failure vs rejection diagram.
 
-**Narration:** “Eight tasks isolate and then connect the failure points: sensor decoding, unit integrity, calibration, certificate applicability, uncertainty propagation, conformity decisions, temporal integrity, and an end-to-end pipeline. S08 fixes the order: decode into the sensor unit, convert once, calibrate once, calculate the supplied post-calibration uncertainty budget, check time and certificate evidence, and then decide. Gain is dimensionless, offset is in the final unit, and the temperature interval is Celsius even when the corrected value is Fahrenheit.”
+**Narration:** “The hypothesis: models fail not where arithmetic is hard, but where meaning must be preserved across layers — decoding into units, converting once, calibrating once, checking certificate evidence, propagating uncertainty, then deciding. A wrong number with the right label is ordinary error. A wrong number claimed valid, or an ACCEPT on evidence that forbids it, is silent corruption — the failure this benchmark is built to catch. Harmless schema quirks and equivalent units in non-canonical form are deliberately excluded from that charge.”
 
-## 2:15–3:30 — Oracle, metrics, and method
+## 1:30–2:30 — Eight tasks and evaluation design
 
-**On screen:** Slide 3. Show the independent oracle, grader-owned unit conversion, SCR/UAR denominators, container boundary.
+**On screen:** Slide 2. S01–S08 pipeline; zoom into S08.
 
-**Narration:** “Reference solutions and a separate oracle are checked against 266 deterministic cases. Thirty deliberate defective controls make sure the grader catches known mistakes. Every trial is classified genuine, tool-use failure, or infrastructure failure — only genuine trials enter model metrics. Silent Corruption Rate counts corrupted cases over evaluated genuine cases; harmless schema failures alone are excluded. Unsafe Acceptance Rate counts ACCEPT outputs over S06/S08 cases whose expected disposition is not ACCEPT. Candidate inputs run in fresh, network-disabled, resource-limited Docker containers. Hidden fixtures are not exported to the coding agent. All 72 planned trials run under a zero-dollar API cap.”
+**Narration:** “Eight tasks isolate the failure points, then S08 connects them end to end: decode, convert once, calibrate once with dimensionless gain and final-unit offset, evaluate a supplied post-calibration uncertainty budget, check time and certificate evidence, then apply the inclusive-interval conformity rule. References and an independent oracle agree on 266 hidden cases; thirty deliberate defective controls verify the grader catches known mistakes. Every trial is classified genuine, tool-use failure, infrastructure failure, or budget breach — only genuine trials enter model metrics. Candidates run in fresh, network-disabled, resource-limited Docker containers; hidden fixtures are never exported. All seventy-two planned trials run under a zero-dollar API cap.”
 
-## 3:30–4:30 — Experiment results (actual)
+## 2:30–3:30 — Live demonstration of one physical-corruption failure
 
-**On screen:** Slide 4. Display `results/experiment_analysis.json` figures: 55/72 full trials plus 9 pilot; 16 genuine; per-model table.
+**On screen:** Terminal + transcript excerpt (redacted). Run the stored candidate from pilot S08 run B against one case, e.g. `S08-unclear-traceability`.
 
-**Narration:** “Fifty-five of seventy-two planned trials executed before the free-tier quota halted the run by design; nine pilot trials completed separately. Of eighty-nine preserved trials, sixteen are genuine. The strong configuration, Nemotron Super-VL, scores two-eleven of two-sixteen on sensor decoding, units, and calibration with zero silent corruption — its only misses are reason-string vocabulary on correctly rejected inputs. But pilot end-to-end runs show the core failure: correct arithmetic with dropped certificate evidence and malformed frames accepted anyway — five unsafe acceptances in forty-six non-acceptable cases. The two small local models never engaged the file tools: fifty-eight tool-use trials with zero implementations, a reproducible agent-capability boundary, not a reasoning score. Ten infrastructure trials are excluded from every metric. Nemotron tasks S04 through S08 are missing on quota — absent, not zero — and paid frontier models were unavailable under the zero-dollar cap.”
+**Demonstration commands (from a clean checkout):**
+1. `make setup && make test` — 104 tests green.
+2. `.venv/bin/python -m harness.aggregate --results results` — raw trial record.
+3. `.venv/bin/python scripts/analyze_results.py --results results --out /tmp/demo.json` — eligibility classification.
+4. Show the graded case: expected `calibration_validity.valid=false`, `disposition INDETERMINATE` (traceability not documented); model output `valid=true`, `ACCEPT`. Point at the two diverging fields.
 
-## 4:30–5:00 — Position and conclusion
+**Narration:** “Here is one real failure. The certificate has no documented traceability, so the expected verdict is indeterminate with invalid calibration evidence. The model computed the numbers correctly — twenty-five degrees — ignored the evidence rule, declared everything valid, and accepted. That is silent corruption plus an unsafe acceptance, from a model that scores ninety-eight percent on decoding, units, and calibration. The same pattern appears with serial mismatches, invalid coverage factors, and even an invented measurement from a truncated frame.”
 
-**On screen:** Slide 5. Show related-work sources, scope limits, and the pending video link field.
+## 3:30–4:30 — Experimental findings and model comparison
 
-**Narration:** “SENSELINE is positioned alongside existing engineering, embedded-agent, and measurement-science work. Its contribution is a focused executable evaluation of measurement meaning across a sensor pipeline; it makes no first-of-kind claim. The benchmark is synthetic and does not certify instruments, standards compliance, or real-world safety. The remaining work is external: rerunning the missing end-to-end block after the quota reset, publishing this walkthrough, and completing owner review. This script is ready to record.”
+**On screen:** Slide 4. Per-model table from `results/experiment_analysis.json`.
+
+**Narration:** “Fifty-five of seventy-two planned trials plus nine pilot trials, twenty-four pilot-history trials, and three supplementary probes: ninety-one classified trials, fourteen genuine. Nemotron Super-VL, the only configuration that completed the tool-use loop, scores two-eleven of two-sixteen on sensor decoding, units, and calibration with zero silent corruption — its only misses are reason-string vocabulary on correctly rejected inputs. But its pilot end-to-end run shows the validity-propagation failure above. The two small local models never engaged the file tools: fifty-eight tool-use trials with zero implementations — a reproducible agent-capability boundary, not a reasoning score. Ten infrastructure trials and two budget-breach snapshots are excluded from every metric. Nemotron tasks S04 through S08 are missing — the free quota ran out — absent, not zero. Paid frontier models were unavailable under the zero-dollar cap, so no frontier claim is made.”
+
+## 4:30–5:00 — Research significance and limitations
+
+**On screen:** Slide 5. Related work, scope limits, pending-items field.
+
+**Narration:** “SENSELINE's contribution is a focused, executable evaluation of measurement meaning across a sensor pipeline, with eligibility-aware scoring that refuses to let tool-use failures or infrastructure noise pose as model quality. It makes no first-of-kind claim. It is synthetic: no accreditation, no safety certification, no independent review yet. Remaining work is external: rerunning the missing end-to-end block after the quota reset, publishing this walkthrough, and completing owner review. This script is ready to record.”
 
 ## Capture checklist
 
 - Record the current build and real JSON validation outputs; do not substitute screenshots or numbers from old reports.
-- Show the GENUINE/TOOL_USE/INFRA split whenever model results appear.
-- Do not show environment values, auth files, hidden fixtures, or reference outputs in an agent task workspace.
+- Show the GENUINE/TOOL_USE/INFRA/BUDGET_BREACH split whenever model results appear.
+- Demo uses only stored, redacted transcripts — never live credentials, auth files, hidden fixtures, or reference outputs.
 - Add a public URL to README only after a real recording is published.

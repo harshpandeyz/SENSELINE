@@ -1,96 +1,97 @@
 {
-  "trial_count": 90,
-  "eligible_model_trial_count": 16,
+  "trial_count": 91,
+  "eligible_model_trial_count": 14,
   "trial_class_counts": {
-    "INFRA": 16,
+    "INFRA": 17,
     "TOOL_USE": 58,
-    "GENUINE": 16
+    "GENUINE": 14,
+    "BUDGET_BREACH": 2
   },
   "overall_genuine_metrics": {
-    "case_count": 522,
+    "case_count": 445,
     "functional_correctness": {
-      "numerator": 396,
-      "denominator": 522,
-      "value": 0.7586206896551724
+      "numerator": 333,
+      "denominator": 445,
+      "value": 0.748314606741573
     },
     "schema_compliance": {
-      "numerator": 492,
-      "denominator": 522,
-      "value": 0.9425287356321839
+      "numerator": 415,
+      "denominator": 445,
+      "value": 0.9325842696629213
     },
     "numerical_correctness": {
-      "numerator": 338,
-      "denominator": 415,
-      "value": 0.8144578313253013
+      "numerator": 272,
+      "denominator": 349,
+      "value": 0.7793696275071633
     },
     "physical_unit_correctness": {
-      "numerator": 330,
-      "denominator": 330,
+      "numerator": 204,
+      "denominator": 204,
       "value": 1.0
     },
     "physical_equivalence_correctness": {
-      "numerator": 330,
-      "denominator": 330,
+      "numerator": 204,
+      "denominator": 204,
       "value": 1.0
     },
     "physical_integrity_correctness": {
-      "numerator": 445,
-      "denominator": 522,
-      "value": 0.8524904214559387
+      "numerator": 368,
+      "denominator": 445,
+      "value": 0.8269662921348314
     },
     "semantic_integrity_failures": {
       "numerator": 0,
-      "denominator": 522,
+      "denominator": 445,
       "value": 0.0
     },
     "validity_state_correctness": {
-      "numerator": 455,
-      "denominator": 522,
-      "value": 0.8716475095785441
+      "numerator": 385,
+      "denominator": 445,
+      "value": 0.8651685393258427
     },
     "engineering_decision_correctness": {
-      "numerator": 85,
-      "denominator": 90,
-      "value": 0.9444444444444444
+      "numerator": 42,
+      "denominator": 45,
+      "value": 0.9333333333333333
     },
     "execution_failures": {
       "numerator": 30,
-      "denominator": 522,
-      "value": 0.05747126436781609
+      "denominator": 445,
+      "value": 0.06741573033707865
     },
     "malformed_response_rate": {
       "numerator": 0,
-      "denominator": 522,
+      "denominator": 445,
       "value": 0.0
     },
     "contract_violations": {
-      "numerator": 126,
-      "denominator": 522,
-      "value": 0.2413793103448276
+      "numerator": 112,
+      "denominator": 445,
+      "value": 0.251685393258427
     },
     "end_to_end_correctness": {
-      "numerator": 32,
-      "denominator": 90,
-      "value": 0.35555555555555557
+      "numerator": 0,
+      "denominator": 45,
+      "value": 0.0
     },
     "silent_corruption_rate": {
-      "numerator": 48,
-      "denominator": 522,
-      "value": 0.09195402298850575
+      "numerator": 41,
+      "denominator": 445,
+      "value": 0.09213483146067415
     },
     "unsafe_acceptance_rate": {
-      "numerator": 5,
-      "denominator": 46,
-      "value": 0.10869565217391304
+      "numerator": 3,
+      "denominator": 23,
+      "value": 0.13043478260869565
     },
     "numerical_error_by_field_unit": {
       "S01.raw_count [scaled sensor count]": {
         "field": "raw_count",
         "task": "S01",
         "unit": "scaled sensor count",
-        "case_count": 138,
-        "numeric_actual_count": 138,
-        "within_tolerance_count": 138,
+        "case_count": 115,
+        "numeric_actual_count": 115,
+        "within_tolerance_count": 115,
         "mean_absolute_error": "0",
         "maximum_absolute_error": "0",
         "maximum_normalized_error": "0",
@@ -100,9 +101,9 @@
         "field": "value",
         "task": "S01",
         "unit": "scaled sensor count",
-        "case_count": 138,
-        "numeric_actual_count": 138,
-        "within_tolerance_count": 138,
+        "case_count": 115,
+        "numeric_actual_count": 115,
+        "within_tolerance_count": 115,
         "mean_absolute_error": "0.000",
         "maximum_absolute_error": "0.000",
         "maximum_normalized_error": "0",
@@ -268,10 +269,10 @@
         "field": "conformity_interval.lower",
         "task": "S08",
         "unit": "C",
-        "case_count": 64,
-        "numeric_actual_count": 64,
-        "within_tolerance_count": 32,
-        "mean_absolute_error": "0.08063299651018015696500596797",
+        "case_count": 32,
+        "numeric_actual_count": 32,
+        "within_tolerance_count": 0,
+        "mean_absolute_error": "0.1612659930203603139300119359",
         "maximum_absolute_error": "1.000000000000000000000000000",
         "maximum_normalized_error": "10000000000000000.00000000000",
         "permitted_tolerance": "1E-16"
@@ -280,10 +281,10 @@
         "field": "conformity_interval.lower",
         "task": "S08",
         "unit": "F",
-        "case_count": 2,
-        "numeric_actual_count": 2,
-        "within_tolerance_count": 1,
-        "mean_absolute_error": "0.0866025403784438646763723171",
+        "case_count": 1,
+        "numeric_actual_count": 1,
+        "within_tolerance_count": 0,
+        "mean_absolute_error": "0.1732050807568877293527446342",
         "maximum_absolute_error": "0.1732050807568877293527446342",
         "maximum_normalized_error": "1732050807568877.293527446342",
         "permitted_tolerance": "1E-16"
@@ -292,10 +293,10 @@
         "field": "conformity_interval.upper",
         "task": "S08",
         "unit": "C",
-        "case_count": 64,
-        "numeric_actual_count": 64,
-        "within_tolerance_count": 32,
-        "mean_absolute_error": "0.08063299651018015696500596797",
+        "case_count": 32,
+        "numeric_actual_count": 32,
+        "within_tolerance_count": 0,
+        "mean_absolute_error": "0.1612659930203603139300119359",
         "maximum_absolute_error": "1.000000000000000000000000000",
         "maximum_normalized_error": "10000000000000000.00000000000",
         "permitted_tolerance": "1E-16"
@@ -304,10 +305,10 @@
         "field": "conformity_interval.upper",
         "task": "S08",
         "unit": "F",
-        "case_count": 2,
-        "numeric_actual_count": 2,
-        "within_tolerance_count": 1,
-        "mean_absolute_error": "0.0866025403784438646763723171",
+        "case_count": 1,
+        "numeric_actual_count": 1,
+        "within_tolerance_count": 0,
+        "mean_absolute_error": "0.1732050807568877293527446342",
         "maximum_absolute_error": "0.1732050807568877293527446342",
         "maximum_normalized_error": "1732050807568877.293527446342",
         "permitted_tolerance": "1E-16"
@@ -316,9 +317,9 @@
         "field": "corrected_measurement.value",
         "task": "S08",
         "unit": "C",
-        "case_count": 80,
-        "numeric_actual_count": 80,
-        "within_tolerance_count": 80,
+        "case_count": 40,
+        "numeric_actual_count": 40,
+        "within_tolerance_count": 40,
         "mean_absolute_error": "0.00",
         "maximum_absolute_error": "0.0",
         "maximum_normalized_error": "0",
@@ -328,9 +329,9 @@
         "field": "corrected_measurement.value",
         "task": "S08",
         "unit": "F",
-        "case_count": 2,
-        "numeric_actual_count": 2,
-        "within_tolerance_count": 2,
+        "case_count": 1,
+        "numeric_actual_count": 1,
+        "within_tolerance_count": 1,
         "mean_absolute_error": "0.0",
         "maximum_absolute_error": "0.0",
         "maximum_normalized_error": "0",
@@ -340,9 +341,9 @@
         "field": "decoded_measurement.raw_count",
         "task": "S08",
         "unit": "register count",
-        "case_count": 86,
-        "numeric_actual_count": 86,
-        "within_tolerance_count": 86,
+        "case_count": 43,
+        "numeric_actual_count": 43,
+        "within_tolerance_count": 43,
         "mean_absolute_error": "0",
         "maximum_absolute_error": "0",
         "maximum_normalized_error": "0",
@@ -352,9 +353,9 @@
         "field": "decoded_measurement.value",
         "task": "S08",
         "unit": "C",
-        "case_count": 82,
-        "numeric_actual_count": 82,
-        "within_tolerance_count": 82,
+        "case_count": 41,
+        "numeric_actual_count": 41,
+        "within_tolerance_count": 41,
         "mean_absolute_error": "0.00",
         "maximum_absolute_error": "0",
         "maximum_normalized_error": "0",
@@ -364,9 +365,9 @@
         "field": "decoded_measurement.value",
         "task": "S08",
         "unit": "F",
-        "case_count": 2,
-        "numeric_actual_count": 2,
-        "within_tolerance_count": 2,
+        "case_count": 1,
+        "numeric_actual_count": 1,
+        "within_tolerance_count": 1,
         "mean_absolute_error": "0.0",
         "maximum_absolute_error": "0.0",
         "maximum_normalized_error": "0",
@@ -376,9 +377,9 @@
         "field": "decoded_measurement.value",
         "task": "S08",
         "unit": "V",
-        "case_count": 2,
-        "numeric_actual_count": 2,
-        "within_tolerance_count": 2,
+        "case_count": 1,
+        "numeric_actual_count": 1,
+        "within_tolerance_count": 1,
         "mean_absolute_error": "0",
         "maximum_absolute_error": "0",
         "maximum_normalized_error": "0",
@@ -388,33 +389,33 @@
         "field": "expanded_uncertainty",
         "task": "S08",
         "unit": "C",
-        "case_count": 78,
-        "numeric_actual_count": 78,
-        "within_tolerance_count": 78,
-        "mean_absolute_error": "3.677245613246500978241025641E-41",
-        "maximum_absolute_error": "2.0350254025375203720E-40",
-        "maximum_normalized_error": "2.0350254025375203720E-24",
+        "case_count": 39,
+        "numeric_actual_count": 39,
+        "within_tolerance_count": 39,
+        "mean_absolute_error": "3.677245612820512820512820513E-41",
+        "maximum_absolute_error": "2.035025402E-40",
+        "maximum_normalized_error": "2.035025402E-24",
         "permitted_tolerance": "1E-16"
       },
       "S08.expanded_uncertainty [F]": {
         "field": "expanded_uncertainty",
         "task": "S08",
         "unit": "F",
-        "case_count": 2,
-        "numeric_actual_count": 2,
-        "within_tolerance_count": 2,
-        "mean_absolute_error": "3.8949237921937194420E-41",
-        "maximum_absolute_error": "3.8949237923874388840E-41",
-        "maximum_normalized_error": "3.8949237923874388840E-25",
+        "case_count": 1,
+        "numeric_actual_count": 1,
+        "within_tolerance_count": 1,
+        "mean_absolute_error": "3.894923792E-41",
+        "maximum_absolute_error": "3.894923792E-41",
+        "maximum_normalized_error": "3.894923792E-25",
         "permitted_tolerance": "1E-16"
       },
       "S08.physical_quantity.value [C]": {
         "field": "physical_quantity.value",
         "task": "S08",
         "unit": "C",
-        "case_count": 82,
-        "numeric_actual_count": 82,
-        "within_tolerance_count": 82,
+        "case_count": 41,
+        "numeric_actual_count": 41,
+        "within_tolerance_count": 41,
         "mean_absolute_error": "0.00",
         "maximum_absolute_error": "0",
         "maximum_normalized_error": "0",
@@ -424,9 +425,9 @@
         "field": "physical_quantity.value",
         "task": "S08",
         "unit": "F",
-        "case_count": 2,
-        "numeric_actual_count": 2,
-        "within_tolerance_count": 2,
+        "case_count": 1,
+        "numeric_actual_count": 1,
+        "within_tolerance_count": 1,
         "mean_absolute_error": "0",
         "maximum_absolute_error": "0",
         "maximum_normalized_error": "0",
@@ -436,63 +437,63 @@
         "field": "standard_uncertainty",
         "task": "S08",
         "unit": "C",
-        "case_count": 78,
-        "numeric_actual_count": 78,
-        "within_tolerance_count": 78,
-        "mean_absolute_error": "2.146315114355301771171666667E-41",
-        "maximum_absolute_error": "1.99999999999999999998E-40",
-        "maximum_normalized_error": "1.99999999999999999998E-24",
+        "case_count": 39,
+        "numeric_actual_count": 39,
+        "within_tolerance_count": 39,
+        "mean_absolute_error": "2.146315114182051282051282051E-41",
+        "maximum_absolute_error": "1.9999999999E-40",
+        "maximum_normalized_error": "1.9999999999E-24",
         "permitted_tolerance": "1E-16"
       },
       "S08.standard_uncertainty [F]": {
         "field": "standard_uncertainty",
         "task": "S08",
         "unit": "F",
-        "case_count": 2,
-        "numeric_actual_count": 2,
-        "within_tolerance_count": 2,
-        "mean_absolute_error": "1.9474618960968597210E-41",
-        "maximum_absolute_error": "1.9474618961937194420E-41",
-        "maximum_normalized_error": "1.9474618961937194420E-25",
+        "case_count": 1,
+        "numeric_actual_count": 1,
+        "within_tolerance_count": 1,
+        "mean_absolute_error": "1.947461896E-41",
+        "maximum_absolute_error": "1.947461896E-41",
+        "maximum_normalized_error": "1.947461896E-25",
         "permitted_tolerance": "1E-16"
       }
     },
     "calibration_validity_recall": {
-      "numerator": 70,
-      "denominator": 70,
+      "numerator": 35,
+      "denominator": 35,
       "value": 1.0
     },
     "uncertainty_calculation_accuracy": {
-      "numerator": 124,
-      "denominator": 168,
-      "value": 0.7380952380952381
+      "numerator": 84,
+      "denominator": 128,
+      "value": 0.65625
     },
     "false_rejection_rate": {
       "numerator": 0,
-      "denominator": 44,
+      "denominator": 22,
       "value": 0.0
     },
     "boundary_decision_accuracy": {
-      "numerator": 18,
-      "denominator": 18,
+      "numerator": 9,
+      "denominator": 9,
       "value": 1.0
     },
-    "macro_average_task_accuracy": 0.7634027777777778,
+    "macro_average_task_accuracy": 0.6916666666666667,
     "per_task": {
       "S01": {
         "functional_correctness": {
-          "numerator": 183,
-          "denominator": 192,
-          "value": 0.953125
+          "numerator": 152,
+          "denominator": 160,
+          "value": 0.95
         },
         "schema_compliance": {
-          "numerator": 192,
-          "denominator": 192,
+          "numerator": 160,
+          "denominator": 160,
           "value": 1.0
         },
         "numerical_correctness": {
-          "numerator": 138,
-          "denominator": 138,
+          "numerator": 115,
+          "denominator": 115,
           "value": 1.0
         },
         "physical_unit_correctness": {
@@ -501,18 +502,18 @@
           "value": null
         },
         "physical_integrity_correctness": {
-          "numerator": 192,
-          "denominator": 192,
+          "numerator": 160,
+          "denominator": 160,
           "value": 1.0
         },
         "semantic_integrity_failures": {
           "numerator": 0,
-          "denominator": 192,
+          "denominator": 160,
           "value": 0.0
         },
         "validity_state_correctness": {
-          "numerator": 192,
-          "denominator": 192,
+          "numerator": 160,
+          "denominator": 160,
           "value": 1.0
         },
         "engineering_decision_correctness": {
@@ -522,22 +523,22 @@
         },
         "execution_failures": {
           "numerator": 0,
-          "denominator": 192,
+          "denominator": 160,
           "value": 0.0
         },
         "malformed_response_rate": {
           "numerator": 0,
-          "denominator": 192,
+          "denominator": 160,
           "value": 0.0
         },
         "contract_violations": {
-          "numerator": 9,
-          "denominator": 192,
-          "value": 0.046875
+          "numerator": 8,
+          "denominator": 160,
+          "value": 0.05
         },
         "silent_corruption_rate": {
           "numerator": 0,
-          "denominator": 192,
+          "denominator": 160,
           "value": 0.0
         },
         "unsafe_acceptance_rate": {
@@ -749,69 +750,69 @@
       },
       "S08": {
         "functional_correctness": {
-          "numerator": 32,
-          "denominator": 90,
-          "value": 0.35555555555555557
+          "numerator": 0,
+          "denominator": 45,
+          "value": 0.0
         },
         "schema_compliance": {
-          "numerator": 90,
-          "denominator": 90,
+          "numerator": 45,
+          "denominator": 45,
           "value": 1.0
         },
         "numerical_correctness": {
-          "numerator": 53,
-          "denominator": 86,
-          "value": 0.6162790697674418
+          "numerator": 10,
+          "denominator": 43,
+          "value": 0.23255813953488372
         },
         "physical_unit_correctness": {
-          "numerator": 86,
-          "denominator": 86,
+          "numerator": 43,
+          "denominator": 43,
           "value": 1.0
         },
         "physical_integrity_correctness": {
-          "numerator": 57,
-          "denominator": 90,
-          "value": 0.6333333333333333
+          "numerator": 12,
+          "denominator": 45,
+          "value": 0.26666666666666666
         },
         "semantic_integrity_failures": {
           "numerator": 0,
-          "denominator": 90,
+          "denominator": 45,
           "value": 0.0
         },
         "validity_state_correctness": {
-          "numerator": 75,
-          "denominator": 90,
-          "value": 0.8333333333333334
+          "numerator": 37,
+          "denominator": 45,
+          "value": 0.8222222222222222
         },
         "engineering_decision_correctness": {
-          "numerator": 85,
-          "denominator": 90,
-          "value": 0.9444444444444444
+          "numerator": 42,
+          "denominator": 45,
+          "value": 0.9333333333333333
         },
         "execution_failures": {
           "numerator": 0,
-          "denominator": 90,
+          "denominator": 45,
           "value": 0.0
         },
         "malformed_response_rate": {
           "numerator": 0,
-          "denominator": 90,
+          "denominator": 45,
           "value": 0.0
         },
         "contract_violations": {
-          "numerator": 58,
-          "denominator": 90,
-          "value": 0.6444444444444445
+          "numerator": 45,
+          "denominator": 45,
+          "value": 1.0
         },
         "silent_corruption_rate": {
-          "numerator": 48,
-          "denominator": 90,
-          "value": 0.5333333333333333
+          "numerator": 41,
+          "denominator": 45,
+          "value": 0.9111111111111111
         },
         "unsafe_acceptance_rate": {
-          "numerator": 5,
-          "denominator": 46,
-          "value": 0.10869565217391304
+          "numerator": 3,
+          "denominator": 23,
+          "value": 0.13043478260869565
         }
       }
     },
@@ -831,7 +832,8 @@
       "trial_classes": {
         "GENUINE": 0,
         "TOOL_USE": 1,
-        "INFRA": 2
+        "INFRA": 2,
+        "BUDGET_BREACH": 0
       },
       "metrics": null
     },
@@ -839,7 +841,8 @@
       "trial_classes": {
         "GENUINE": 0,
         "TOOL_USE": 1,
-        "INFRA": 2
+        "INFRA": 2,
+        "BUDGET_BREACH": 0
       },
       "metrics": null
     },
@@ -847,7 +850,8 @@
       "trial_classes": {
         "GENUINE": 3,
         "TOOL_USE": 0,
-        "INFRA": 0
+        "INFRA": 0,
+        "BUDGET_BREACH": 0
       },
       "metrics": {
         "case_count": 107,
@@ -1432,7 +1436,8 @@
       "trial_classes": {
         "GENUINE": 0,
         "TOOL_USE": 7,
-        "INFRA": 1
+        "INFRA": 1,
+        "BUDGET_BREACH": 0
       },
       "metrics": null
     },
@@ -1440,7 +1445,8 @@
       "trial_classes": {
         "GENUINE": 2,
         "TOOL_USE": 6,
-        "INFRA": 3
+        "INFRA": 3,
+        "BUDGET_BREACH": 0
       },
       "metrics": {
         "case_count": 60,
@@ -1673,95 +1679,96 @@
     },
     "pilot-history|openrouter/nvidia/nemotron-3.5-super-vl:free|opencode": {
       "trial_classes": {
-        "GENUINE": 4,
+        "GENUINE": 2,
         "TOOL_USE": 0,
-        "INFRA": 1
+        "INFRA": 1,
+        "BUDGET_BREACH": 2
       },
       "metrics": {
-        "case_count": 139,
+        "case_count": 62,
         "functional_correctness": {
-          "numerator": 124,
-          "denominator": 139,
-          "value": 0.8920863309352518
+          "numerator": 61,
+          "denominator": 62,
+          "value": 0.9838709677419355
         },
         "schema_compliance": {
-          "numerator": 139,
-          "denominator": 139,
+          "numerator": 62,
+          "denominator": 62,
           "value": 1.0
         },
         "numerical_correctness": {
-          "numerator": 111,
-          "denominator": 111,
+          "numerator": 45,
+          "denominator": 45,
           "value": 1.0
         },
         "physical_unit_correctness": {
-          "numerator": 126,
-          "denominator": 126,
-          "value": 1.0
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
         },
         "physical_equivalence_correctness": {
-          "numerator": 126,
-          "denominator": 126,
-          "value": 1.0
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
         },
         "physical_integrity_correctness": {
-          "numerator": 139,
-          "denominator": 139,
+          "numerator": 62,
+          "denominator": 62,
           "value": 1.0
         },
         "semantic_integrity_failures": {
           "numerator": 0,
-          "denominator": 139,
+          "denominator": 62,
           "value": 0.0
         },
         "validity_state_correctness": {
-          "numerator": 132,
-          "denominator": 139,
-          "value": 0.9496402877697842
+          "numerator": 62,
+          "denominator": 62,
+          "value": 1.0
         },
         "engineering_decision_correctness": {
-          "numerator": 43,
-          "denominator": 45,
-          "value": 0.9555555555555556
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
         },
         "execution_failures": {
           "numerator": 0,
-          "denominator": 139,
+          "denominator": 62,
           "value": 0.0
         },
         "malformed_response_rate": {
           "numerator": 0,
-          "denominator": 139,
+          "denominator": 62,
           "value": 0.0
         },
         "contract_violations": {
-          "numerator": 15,
-          "denominator": 139,
-          "value": 0.1079136690647482
+          "numerator": 1,
+          "denominator": 62,
+          "value": 0.016129032258064516
         },
         "end_to_end_correctness": {
-          "numerator": 32,
-          "denominator": 45,
-          "value": 0.7111111111111111
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
         },
         "silent_corruption_rate": {
-          "numerator": 7,
-          "denominator": 139,
-          "value": 0.050359712230215826
+          "numerator": 0,
+          "denominator": 62,
+          "value": 0.0
         },
         "unsafe_acceptance_rate": {
-          "numerator": 2,
-          "denominator": 23,
-          "value": 0.08695652173913043
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
         },
         "numerical_error_by_field_unit": {
           "S01.raw_count [scaled sensor count]": {
             "field": "raw_count",
             "task": "S01",
             "unit": "scaled sensor count",
-            "case_count": 46,
-            "numeric_actual_count": 46,
-            "within_tolerance_count": 46,
+            "case_count": 23,
+            "numeric_actual_count": 23,
+            "within_tolerance_count": 23,
             "mean_absolute_error": "0",
             "maximum_absolute_error": "0",
             "maximum_normalized_error": "0",
@@ -1771,9 +1778,9 @@
             "field": "value",
             "task": "S01",
             "unit": "scaled sensor count",
-            "case_count": 46,
-            "numeric_actual_count": 46,
-            "within_tolerance_count": 46,
+            "case_count": 23,
+            "numeric_actual_count": 23,
+            "within_tolerance_count": 23,
             "mean_absolute_error": "0.000",
             "maximum_absolute_error": "0.000",
             "maximum_normalized_error": "0",
@@ -1826,236 +1833,44 @@
             "maximum_absolute_error": "0E-40",
             "maximum_normalized_error": "0E-24",
             "permitted_tolerance": "1E-16"
-          },
-          "S08.conformity_interval.lower [C]": {
-            "field": "conformity_interval.lower",
-            "task": "S08",
-            "unit": "C",
-            "case_count": 32,
-            "numeric_actual_count": 32,
-            "within_tolerance_count": 32,
-            "mean_absolute_error": "3.718508565711775992375E-41",
-            "maximum_absolute_error": "2.035025402537520372E-40",
-            "maximum_normalized_error": "2.035025402537520372E-24",
-            "permitted_tolerance": "1E-16"
-          },
-          "S08.conformity_interval.lower [F]": {
-            "field": "conformity_interval.lower",
-            "task": "S08",
-            "unit": "F",
-            "case_count": 1,
-            "numeric_actual_count": 1,
-            "within_tolerance_count": 1,
-            "mean_absolute_error": "3.89492379238743888E-41",
-            "maximum_absolute_error": "3.89492379238743888E-41",
-            "maximum_normalized_error": "3.89492379238743888E-25",
-            "permitted_tolerance": "1E-16"
-          },
-          "S08.conformity_interval.upper [C]": {
-            "field": "conformity_interval.upper",
-            "task": "S08",
-            "unit": "C",
-            "case_count": 32,
-            "numeric_actual_count": 32,
-            "within_tolerance_count": 32,
-            "mean_absolute_error": "3.718508565711775992375E-41",
-            "maximum_absolute_error": "2.035025402537520372E-40",
-            "maximum_normalized_error": "2.035025402537520372E-24",
-            "permitted_tolerance": "1E-16"
-          },
-          "S08.conformity_interval.upper [F]": {
-            "field": "conformity_interval.upper",
-            "task": "S08",
-            "unit": "F",
-            "case_count": 1,
-            "numeric_actual_count": 1,
-            "within_tolerance_count": 1,
-            "mean_absolute_error": "3.89492379238743888E-41",
-            "maximum_absolute_error": "3.89492379238743888E-41",
-            "maximum_normalized_error": "3.89492379238743888E-25",
-            "permitted_tolerance": "1E-16"
-          },
-          "S08.corrected_measurement.value [C]": {
-            "field": "corrected_measurement.value",
-            "task": "S08",
-            "unit": "C",
-            "case_count": 40,
-            "numeric_actual_count": 40,
-            "within_tolerance_count": 40,
-            "mean_absolute_error": "0.00",
-            "maximum_absolute_error": "0.0",
-            "maximum_normalized_error": "0",
-            "permitted_tolerance": "0"
-          },
-          "S08.corrected_measurement.value [F]": {
-            "field": "corrected_measurement.value",
-            "task": "S08",
-            "unit": "F",
-            "case_count": 1,
-            "numeric_actual_count": 1,
-            "within_tolerance_count": 1,
-            "mean_absolute_error": "0.0",
-            "maximum_absolute_error": "0.0",
-            "maximum_normalized_error": "0",
-            "permitted_tolerance": "0"
-          },
-          "S08.decoded_measurement.raw_count [register count]": {
-            "field": "decoded_measurement.raw_count",
-            "task": "S08",
-            "unit": "register count",
-            "case_count": 43,
-            "numeric_actual_count": 43,
-            "within_tolerance_count": 43,
-            "mean_absolute_error": "0",
-            "maximum_absolute_error": "0",
-            "maximum_normalized_error": "0",
-            "permitted_tolerance": "0"
-          },
-          "S08.decoded_measurement.value [C]": {
-            "field": "decoded_measurement.value",
-            "task": "S08",
-            "unit": "C",
-            "case_count": 41,
-            "numeric_actual_count": 41,
-            "within_tolerance_count": 41,
-            "mean_absolute_error": "0.00",
-            "maximum_absolute_error": "0",
-            "maximum_normalized_error": "0",
-            "permitted_tolerance": "0"
-          },
-          "S08.decoded_measurement.value [F]": {
-            "field": "decoded_measurement.value",
-            "task": "S08",
-            "unit": "F",
-            "case_count": 1,
-            "numeric_actual_count": 1,
-            "within_tolerance_count": 1,
-            "mean_absolute_error": "0.0",
-            "maximum_absolute_error": "0.0",
-            "maximum_normalized_error": "0",
-            "permitted_tolerance": "0"
-          },
-          "S08.decoded_measurement.value [V]": {
-            "field": "decoded_measurement.value",
-            "task": "S08",
-            "unit": "V",
-            "case_count": 1,
-            "numeric_actual_count": 1,
-            "within_tolerance_count": 1,
-            "mean_absolute_error": "0",
-            "maximum_absolute_error": "0",
-            "maximum_normalized_error": "0",
-            "permitted_tolerance": "0"
-          },
-          "S08.expanded_uncertainty [C]": {
-            "field": "expanded_uncertainty",
-            "task": "S08",
-            "unit": "C",
-            "case_count": 39,
-            "numeric_actual_count": 39,
-            "within_tolerance_count": 39,
-            "mean_absolute_error": "3.677245613672489135969230769E-41",
-            "maximum_absolute_error": "2.0350254025375203720E-40",
-            "maximum_normalized_error": "2.0350254025375203720E-24",
-            "permitted_tolerance": "1E-16"
-          },
-          "S08.expanded_uncertainty [F]": {
-            "field": "expanded_uncertainty",
-            "task": "S08",
-            "unit": "F",
-            "case_count": 1,
-            "numeric_actual_count": 1,
-            "within_tolerance_count": 1,
-            "mean_absolute_error": "3.8949237923874388840E-41",
-            "maximum_absolute_error": "3.8949237923874388840E-41",
-            "maximum_normalized_error": "3.8949237923874388840E-25",
-            "permitted_tolerance": "1E-16"
-          },
-          "S08.physical_quantity.value [C]": {
-            "field": "physical_quantity.value",
-            "task": "S08",
-            "unit": "C",
-            "case_count": 41,
-            "numeric_actual_count": 41,
-            "within_tolerance_count": 41,
-            "mean_absolute_error": "0.00",
-            "maximum_absolute_error": "0",
-            "maximum_normalized_error": "0",
-            "permitted_tolerance": "0"
-          },
-          "S08.physical_quantity.value [F]": {
-            "field": "physical_quantity.value",
-            "task": "S08",
-            "unit": "F",
-            "case_count": 1,
-            "numeric_actual_count": 1,
-            "within_tolerance_count": 1,
-            "mean_absolute_error": "0",
-            "maximum_absolute_error": "0",
-            "maximum_normalized_error": "0",
-            "permitted_tolerance": "0"
-          },
-          "S08.standard_uncertainty [C]": {
-            "field": "standard_uncertainty",
-            "task": "S08",
-            "unit": "C",
-            "case_count": 39,
-            "numeric_actual_count": 39,
-            "within_tolerance_count": 39,
-            "mean_absolute_error": "2.146315114528552260292051282E-41",
-            "maximum_absolute_error": "1.99999999999999999998E-40",
-            "maximum_normalized_error": "1.99999999999999999998E-24",
-            "permitted_tolerance": "1E-16"
-          },
-          "S08.standard_uncertainty [F]": {
-            "field": "standard_uncertainty",
-            "task": "S08",
-            "unit": "F",
-            "case_count": 1,
-            "numeric_actual_count": 1,
-            "within_tolerance_count": 1,
-            "mean_absolute_error": "1.9474618961937194420E-41",
-            "maximum_absolute_error": "1.9474618961937194420E-41",
-            "maximum_normalized_error": "1.9474618961937194420E-25",
-            "permitted_tolerance": "1E-16"
           }
         },
         "calibration_validity_recall": {
-          "numerator": 35,
-          "denominator": 35,
-          "value": 1.0
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
         },
         "uncertainty_calculation_accuracy": {
-          "numerator": 62,
-          "denominator": 62,
+          "numerator": 22,
+          "denominator": 22,
           "value": 1.0
         },
         "false_rejection_rate": {
           "numerator": 0,
-          "denominator": 22,
-          "value": 0.0
+          "denominator": 0,
+          "value": null
         },
         "boundary_decision_accuracy": {
-          "numerator": 9,
-          "denominator": 9,
-          "value": 1.0
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
         },
-        "macro_average_task_accuracy": 0.893287037037037,
+        "macro_average_task_accuracy": 0.984375,
         "per_task": {
           "S01": {
             "functional_correctness": {
-              "numerator": 62,
-              "denominator": 64,
+              "numerator": 31,
+              "denominator": 32,
               "value": 0.96875
             },
             "schema_compliance": {
-              "numerator": 64,
-              "denominator": 64,
+              "numerator": 32,
+              "denominator": 32,
               "value": 1.0
             },
             "numerical_correctness": {
-              "numerator": 46,
-              "denominator": 46,
+              "numerator": 23,
+              "denominator": 23,
               "value": 1.0
             },
             "physical_unit_correctness": {
@@ -2064,18 +1879,18 @@
               "value": null
             },
             "physical_integrity_correctness": {
-              "numerator": 64,
-              "denominator": 64,
+              "numerator": 32,
+              "denominator": 32,
               "value": 1.0
             },
             "semantic_integrity_failures": {
               "numerator": 0,
-              "denominator": 64,
+              "denominator": 32,
               "value": 0.0
             },
             "validity_state_correctness": {
-              "numerator": 64,
-              "denominator": 64,
+              "numerator": 32,
+              "denominator": 32,
               "value": 1.0
             },
             "engineering_decision_correctness": {
@@ -2085,22 +1900,22 @@
             },
             "execution_failures": {
               "numerator": 0,
-              "denominator": 64,
+              "denominator": 32,
               "value": 0.0
             },
             "malformed_response_rate": {
               "numerator": 0,
-              "denominator": 64,
+              "denominator": 32,
               "value": 0.0
             },
             "contract_violations": {
-              "numerator": 2,
-              "denominator": 64,
+              "numerator": 1,
+              "denominator": 32,
               "value": 0.03125
             },
             "silent_corruption_rate": {
               "numerator": 0,
-              "denominator": 64,
+              "denominator": 32,
               "value": 0.0
             },
             "unsafe_acceptance_rate": {
@@ -2175,73 +1990,6 @@
               "denominator": 0,
               "value": null
             }
-          },
-          "S08": {
-            "functional_correctness": {
-              "numerator": 32,
-              "denominator": 45,
-              "value": 0.7111111111111111
-            },
-            "schema_compliance": {
-              "numerator": 45,
-              "denominator": 45,
-              "value": 1.0
-            },
-            "numerical_correctness": {
-              "numerator": 43,
-              "denominator": 43,
-              "value": 1.0
-            },
-            "physical_unit_correctness": {
-              "numerator": 43,
-              "denominator": 43,
-              "value": 1.0
-            },
-            "physical_integrity_correctness": {
-              "numerator": 45,
-              "denominator": 45,
-              "value": 1.0
-            },
-            "semantic_integrity_failures": {
-              "numerator": 0,
-              "denominator": 45,
-              "value": 0.0
-            },
-            "validity_state_correctness": {
-              "numerator": 38,
-              "denominator": 45,
-              "value": 0.8444444444444444
-            },
-            "engineering_decision_correctness": {
-              "numerator": 43,
-              "denominator": 45,
-              "value": 0.9555555555555556
-            },
-            "execution_failures": {
-              "numerator": 0,
-              "denominator": 45,
-              "value": 0.0
-            },
-            "malformed_response_rate": {
-              "numerator": 0,
-              "denominator": 45,
-              "value": 0.0
-            },
-            "contract_violations": {
-              "numerator": 13,
-              "denominator": 45,
-              "value": 0.28888888888888886
-            },
-            "silent_corruption_rate": {
-              "numerator": 7,
-              "denominator": 45,
-              "value": 0.15555555555555556
-            },
-            "unsafe_acceptance_rate": {
-              "numerator": 2,
-              "denominator": 23,
-              "value": 0.08695652173913043
-            }
           }
         },
         "pass_at_3": {
@@ -2260,7 +2008,8 @@
       "trial_classes": {
         "GENUINE": 0,
         "TOOL_USE": 18,
-        "INFRA": 6
+        "INFRA": 6,
+        "BUDGET_BREACH": 0
       },
       "metrics": null
     },
@@ -2268,7 +2017,8 @@
       "trial_classes": {
         "GENUINE": 0,
         "TOOL_USE": 24,
-        "INFRA": 0
+        "INFRA": 0,
+        "BUDGET_BREACH": 0
       },
       "metrics": null
     },
@@ -2276,7 +2026,8 @@
       "trial_classes": {
         "GENUINE": 7,
         "TOOL_USE": 0,
-        "INFRA": 0
+        "INFRA": 0,
+        "BUDGET_BREACH": 0
       },
       "metrics": {
         "case_count": 216,
@@ -2729,7 +2480,17 @@
       "trial_classes": {
         "GENUINE": 0,
         "TOOL_USE": 0,
-        "INFRA": 1
+        "INFRA": 1,
+        "BUDGET_BREACH": 0
+      },
+      "metrics": null
+    },
+    "supplementary|opencode/deepseek-v4.1-flash-free|opencode": {
+      "trial_classes": {
+        "GENUINE": 0,
+        "TOOL_USE": 0,
+        "INFRA": 1,
+        "BUDGET_BREACH": 0
       },
       "metrics": null
     },
@@ -2737,7 +2498,8 @@
       "trial_classes": {
         "GENUINE": 0,
         "TOOL_USE": 1,
-        "INFRA": 0
+        "INFRA": 0,
+        "BUDGET_BREACH": 0
       },
       "metrics": null
     }
@@ -3244,8 +3006,8 @@
       "model_id": "openrouter/nvidia/nemotron-3.5-super-vl:free",
       "task": "S08",
       "trial": 0,
-      "class": "GENUINE",
-      "reason": "candidate code produced and graded",
+      "class": "BUDGET_BREACH",
+      "reason": "budget enforcer stopped the agent at 82740 tokens (token_budget_exceeded); work cut off before completion",
       "task_accuracy": 0.7111111111111111,
       "cases_passed": 32,
       "case_count": 45,
@@ -3260,8 +3022,8 @@
       "model_id": "openrouter/nvidia/nemotron-3.5-super-vl:free",
       "task": "S01",
       "trial": 1,
-      "class": "GENUINE",
-      "reason": "candidate code produced and graded",
+      "class": "BUDGET_BREACH",
+      "reason": "budget enforcer stopped the agent at 64271 tokens (token_budget_exceeded); work cut off before completion",
       "task_accuracy": 0.96875,
       "cases_passed": 31,
       "case_count": 32,
@@ -4166,6 +3928,22 @@
       "usage_reported": true,
       "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
       "run_id": "20261106T145511_157711Z_S01_opencode_trial1"
+    },
+    {
+      "phase": "supplementary",
+      "model_id": "opencode/deepseek-v4.1-flash-free",
+      "task": "S01",
+      "trial": 1,
+      "class": "INFRA",
+      "reason": "provider quota exhausted before any implementation was produced",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "runtime_seconds": 35.9,
+      "total_tokens": 2725,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261106T155548_127526Z_S01_opencode_trial1"
     },
     {
       "phase": "supplementary",

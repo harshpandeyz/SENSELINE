@@ -82,7 +82,8 @@ Copy [.env.example](.env.example) only as a template. Provider credentials are n
 ## Model experiment status and actual results
 
 Executed 2026-11-05/06 UTC under a strict $0 API spending cap (no paid calls): 55
-full-run trials plus 9 pilot trials across three opencode v2.2.5 configurations —
+full-run trials plus 9 pilot trials, 24 pilot-history trials, and 3 supplementary probes
+across three opencode v2.2.5 configurations —
 `ollama/qwen3:8b` and `ollama/llama3.2:1b` (local inference) and
 `openrouter/nvidia/nemotron-3.5-super-vl:free` (documented $0 free-tier model).
 Uniform budgets: 900 s agent wall time, 5 s per-input candidate limit, 120000
@@ -92,21 +93,24 @@ quota consumed at ~8-11 requests per agentic trial); the nemotron S04–S08 bloc
 missing pending the daily reset — absent, not zero. The pilot (S01/S05/S08 × 3
 configurations) completed 9/9 with operator review (owner review pending).
 
-Every trial is classified GENUINE (graded candidate code), TOOL_USE (agent ran but
-never produced an implementation), or INFRA (provider failure, no evidence).
-Model metrics pool GENUINE trials only. Totals across all preserved phases (89
-classified trials): 16 GENUINE, 58 TOOL_USE, 16 INFRA
+Every trial is classified GENUINE (graded candidate code under its registered budget),
+TOOL_USE (agent ran but never produced an implementation), INFRA (provider failure, no
+evidence), or BUDGET_BREACH (budget enforcer cut the agent off mid-work; evidence preserved,
+excluded from primary metrics).
+Model metrics pool GENUINE trials only. Totals across all preserved phases (91
+classified trials): 14 GENUINE, 58 TOOL_USE, 17 INFRA, 2 BUDGET_BREACH
 (`results/experiment_analysis.json`, canonical; `results/experiment_status.json`
 is the harness's raw trial-presence record).
 
 Headline genuine results: nemotron full-run S01–S03, 211/216 (accuracy 0.977, SCR
 0.0; the only 5 misses are reason-string vocabulary mismatches on correctly
-rejected inputs). S02 and S03 perfect (120/120). Pilot S08 nemotron runs show the
-core failure mode — correct arithmetic with dropped certificate-evidence and
-malformed-frame rules (attempt-4 run 32/45, UAR 2/23; pilot run 0/45, UAR 3/23;
-both silent corruption). Local models almost never engaged the file tools (qwen 0
-genuine in 24 full trials, with 1/30 and 0/30 in two early attempts; llama 0
-genuine; qwen2.5-coder supplementary probe 0 genuine) — a reproducible tool-use
+rejected inputs). S02 and S03 perfect (120/120). Pilot S08 nemotron (genuine run
+0/45, UAR 3/23) shows the core failure mode — correct arithmetic with dropped
+certificate-evidence and malformed-frame rules, all silent corruption; an exploratory
+budget-breach run scored 32/45 (UAR 2/23) before the enforcer cut it off. Local models
+almost never engaged the file tools (qwen 0 genuine in 24 full trials, with 1/30 and
+0/30 in two early attempts; llama 0 genuine; qwen2.5-coder supplementary probe 0 genuine;
+beam/deepseek probes quota-blocked) — a reproducible tool-use
 boundary, not a reasoning score. See docs/FAILURE_ANALYSIS.md for case-level
 evidence and docs/METHODOLOGY.md for denominators and eligibility rules.
 
@@ -115,7 +119,11 @@ exhausted (paid calls fail closed with 402), the stored OpenAI-slot key is an
 OpenRouter key (invalid for OpenAI), and NVIDIA/Meta paid use has no verifiable
 balance or provider-side hard limit — so no paid spend could be authorized under
 the $0 cap. MuseSpark is the engineering model for this build; it was not tested
-as a benchmark model (not independently runnable through the harness).
+as a benchmark model (not independently runnable through the harness). Two extra
+$0-pool probes (opencode/beam-free, opencode/deepseek-v4.1-flash-free) were blocked
+by the shared opencode free-tier quota before producing implementations; GLM,
+Nemotron-Lightning, MiMo, and Flint share the same exhausted pool and were not
+attempted (see results/free_model_availability.json).
 
 The harness records the exact task instruction and prompt, trial seed, model and
 agent versions, profile and settings, candidate snapshot/hash, available
@@ -133,7 +141,7 @@ controls are validation fixtures, not observed model failures.
 
 The local reference and grader use deterministic fixtures and make no provider calls. Reference validation: 266/266 isolated reference cases pass; all 30 mutation controls rejected; 8 task exports and unit-integrity checks pass. Docker security: 12/12 checks pass with zero skips; Codex CLI sandbox checks pass; OpenCode 2.2.5 permission policy resolves.
 
-Model execution (actuals): 55 full-run trials — qwen 24 trials / 2.86 agent-hours / 136750 tokens; llama 24 trials / 0.37 agent-hours / 76163 tokens; nemotron 7 trials / 0.35 agent-hours / 268054 tokens — plus 9 pilot and 24 pilot-history trials. Estimated cost $0 for every trial (zero-cost tier: local inference and documented $0 free-tier pricing). Confirmed billing: not applicable — no paid API call was made. The OpenRouter account usage counter moved +$0.0008 across all free-tier probing (4.9868 → 4.9876 against $5 prepaid credits, usage now ~$5.02 so paid calls fail closed); free-model daily quota 50/day was exhausted twice and resets 00:00 UTC daily. The harness records agent-reported token usage as an estimate and never labels it confirmed billing; only provider billing records can establish actual charges.
+Model execution (actuals): 55 full-run trials — qwen 24 trials / 2.86 agent-hours / 136750 tokens; llama 24 trials / 0.37 agent-hours / 76163 tokens; nemotron 7 trials / 0.35 agent-hours / 268054 tokens — plus 9 pilot, 24 pilot-history, and 3 supplementary trials. Estimated cost $0 for every trial (zero-cost tier: local inference and documented $0 free-tier pricing). Confirmed billing: not applicable — no paid API call was made (see reports/COST_AND_USAGE_DISCLOSURE.md for the six-way accounting). The OpenRouter account usage counter moved +$0.0016 across all free-tier probing against $5 prepaid credits (usage now ~$5.02, so paid calls fail closed); free-model daily quota 50/day was exhausted twice and resets 00:00 UTC daily. The harness records agent-reported token usage as an estimate and never labels it confirmed billing; only provider billing records can establish actual charges.
 
 
 ## Prior work and technical references

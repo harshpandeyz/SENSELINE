@@ -1,6 +1,6 @@
 # SENSELINE release checklist
 
-Evidence dates: 2026-11-06. Source validation and experiment results are retained in `results/`.
+Evidence dates: 2026-11-06. Source validation and experiment results are retained in `results/`. Canonical analysis: 91 trials (14 GENUINE, 58 TOOL_USE, 17 INFRA, 2 BUDGET_BREACH).
 
 ## Engineering and grading
 
@@ -25,7 +25,8 @@ Evidence dates: 2026-11-06. Source validation and experiment results are retaine
 - [x] Inspected OpenCode 2.2.5 catalog (465 models), authenticated provider profiles, dedicated credential environment, local Ollama models, OpenRouter free-quota state, and paid-provider balances/limits.
 - [x] Ran the 9-trial pilot to PILOT_COMPLETE with operator transcript review (owner review pending; see results/pilot/pilot_approval.json).
 - [x] Ran the 72-design full experiment to 55 trials; halted by design with QUOTA_EXHAUSTED (free-tier quota, $0 cap intact). Preserved 24 pilot-history and 1 supplementary trial with phases labeled. 90 classified trials: 16 GENUINE, 58 TOOL_USE, 16 INFRA.
-- [x] Genuine-only metrics computed (`results/experiment_analysis.json`): nemotron S01–S03 acc 0.977, SCR 0.0; pilot S08 corruption and UAR analyzed case-by-case; local-model tool-use boundary documented; no grader defects found.
+- [x] Genuine-only metrics computed (`results/experiment_analysis.json`): nemotron S01–S03 acc 0.977, SCR 0.0; genuine pilot S08 0/45 (SCR 41/45, UAR 3/23) plus exploratory budget-breach 32/45 snapshot analyzed case-by-case; local-model tool-use boundary and opencode-pool quota blocks documented; no grader defects found.
+- [x] Free-model availability recorded (`results/free_model_availability.json`): 7 opencode-pool + OpenRouter free IDs checked; beam/deepseek S01 pilots quota-blocked; GLM/lightning/MiMo/Flint share the exhausted pool (not attempted); paid paths excluded with evidence.
 - [ ] Nemotron S04–S08 block (17 trials) missing — free quota exhausted; rerun after 00:00 UTC reset or with funded credits (out of $0 scope).
 - [ ] Paid frontier configurations not tested — no verifiable balance or provider hard limit; excluded honestly rather than fabricated.
 
@@ -37,4 +38,4 @@ Evidence dates: 2026-11-06. Source validation and experiment results are retaine
 - [ ] Publish the recording and replace the PENDING video marker with its public link (project-owner action).
 - [ ] Complete owner review of pilot approval and this release (operator review recorded).
 
-Release status: **READY_WITH_DISCLOSED_LIMITATIONS** — genuine model results, transcript-backed failure analysis, and full validation are delivered and reproducible; the missing nemotron S04–S08 block, the unpublished video, and pending owner review are disclosed blockers, not hidden gaps.
+Release status: **READY_WITH_DISCLOSED_LIMITATIONS** — genuine model results, transcript-backed failure analysis, and full validation are delivered and reproducible; the missing nemotron S04–S08 block, the unpublished video, pending owner review, and the unobtained independent review are disclosed blockers, not hidden gaps. New reports: FINAL_EXECUTION_AUDIT, FINAL_EXPERIMENT_ANALYSIS, MODEL_COMPARISON, FINAL_VALIDATION_REPORT, OWNER_REVIEW_REQUIRED (pending), COST_AND_USAGE_DISCLOSURE.

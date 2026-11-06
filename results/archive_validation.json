@@ -1,18 +1,18 @@
 {
   "status": "PASS",
   "archive": "SENSELINE_FINAL_SUBMISSION.zip",
-  "archive_size_bytes": 4057950,
-  "archive_sha256": "8696f877e0f87756693a23fdb6a368cb098818ad4e0c2489bb9978cf7e60cdc5",
+  "archive_size_bytes": 4096159,
+  "archive_sha256": "9cd5bbb5c496ed5bf19c8b24dc9158780e5c390c9e3bdcc61141bf080588d545",
   "zip_crc_valid": true,
   "flat_root_readme": true,
   "task_package_count": 8,
-  "file_count": 700,
+  "file_count": 712,
   "fresh_extraction": true,
   "dependencies_installed_from_archive": true,
   "validation_commands": [
     {
       "command": [
-        "/var/folders/44/_vlhjh2x1fq6b1101pp_7f1w0000gn/T/senseline-release-verify-ypde38kc/venv/bin/python",
+        "/var/folders/44/_vlhjh2x1fq6b1101pp_7f1w0000gn/T/senseline-release-verify-yifjucmx/venv/bin/python",
         "-m",
         "pip",
         "install",
@@ -21,59 +21,59 @@
         "requirements.txt"
       ],
       "exit_code": 0,
-      "runtime_seconds": 0.944,
+      "runtime_seconds": 1.022,
       "stdout_tail": "Collecting attrs==26.1.0 (from -r requirements.txt (line 1))\n  Using cached attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)\nCollecting iniconfig==2.3.1 (from -r requirements.txt (line 2))\n  Using cached iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)\nCollecting jsonschema==4.23.0 (from -r requirements.txt (line 3))\n  Using cached jsonschema-4.23.0-py3-none-any.whl.metadata (7.9 kB)\nCollecting jsonschema-specifications==2025.9.1 (from -r requirements.txt (line 4))\n  Using cached jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)\nCollecting packaging==26.3 (from -r requirements.txt (line 5))\n  Using cached packaging-26.3-py3-none-any.whl.metadata (3.5 kB)\nCollecting pluggy==1.7.0 (from -r requirements.txt (line 6))\n  Using cached pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)\nCollecting pytest==8.3.5 (from -r requirements.txt (line 7))\n  Using cached pytest-8.3.5-py3-none-any.whl.metadata (7.6 kB)\nCollecting referencing==0.37.0 (from -r requirements.txt (line 8))\n  Using cached referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)\nCollecting rpds-py==2026.9.1 (from -r requirements.txt (line 9))\n  Using cached rpds_py-2026.9.1-cp311-cp311-macosx_11_0_arm64.whl.metadata (4.1 kB)\nCollecting typing_extensions==4.16.0 (from -r requirements.txt (line 10))\n  Using cached typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)\nUsing cached attrs-26.1.0-py3-none-any.whl (67 kB)\nUsing cached iniconfig-2.3.1-py3-none-any.whl (7.6 kB)\nUsing cached jsonschema-4.23.0-py3-none-any.whl (88 kB)\nUsing cached jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)\nUsing cached packaging-26.3-py3-none-any.whl (129 kB)\nUsing cached pluggy-1.7.0-py3-none-any.whl (27 kB)\nUsing cached pytest-8.3.5-py3-none-any.whl (343 kB)\nUsing cached referencing-0.37.0-py3-none-any.whl (26 kB)\nUsing cached rpds_py-2026.9.1-cp311-cp311-macosx_11_0_arm64.whl (346 kB)\nUsing cached typing_extensions-4.16.0-py3-none-any.whl (45 kB)\nInstalling collected packages: typing_extensions, rpds-py, pluggy, packaging, iniconfig, attrs, referencing, pytest, jsonschema-specifications, jsonschema\n\nSuccessfully installed attrs-26.1.0 iniconfig-2.3.1 jsonschema-4.23.0 jsonschema-specifications-2025.9.1 packaging-26.3 pluggy-1.7.0 pytest-8.3.5 referencing-0.37.0 rpds-py-2026.9.1 typing_extensions-4.16.0\n",
       "stderr_tail": ""
     },
     {
       "command": [
-        "/var/folders/44/_vlhjh2x1fq6b1101pp_7f1w0000gn/T/senseline-release-verify-ypde38kc/venv/bin/python",
+        "/var/folders/44/_vlhjh2x1fq6b1101pp_7f1w0000gn/T/senseline-release-verify-yifjucmx/venv/bin/python",
         "-m",
         "pytest",
         "-q"
       ],
       "exit_code": 0,
-      "runtime_seconds": 12.879,
-      "stdout_tail": "........................................................................ [ 69%]\n................................                                         [100%]\n104 passed in 12.77s\n",
+      "runtime_seconds": 14.618,
+      "stdout_tail": "........................................................................ [ 69%]\n................................                                         [100%]\n104 passed in 14.49s\n",
       "stderr_tail": ""
     },
     {
       "command": [
-        "/var/folders/44/_vlhjh2x1fq6b1101pp_7f1w0000gn/T/senseline-release-verify-ypde38kc/venv/bin/python",
+        "/var/folders/44/_vlhjh2x1fq6b1101pp_7f1w0000gn/T/senseline-release-verify-yifjucmx/venv/bin/python",
         "scripts/validate_submission.py"
       ],
       "exit_code": 0,
-      "runtime_seconds": 459.883,
+      "runtime_seconds": 475.916,
       "stdout_tail": "WARNING: video walkthrough URL is pending (project-owner action); release is blocked on publication\n{\n  \"status\": \"PASS\",\n  \"reference_cases_passed\": 266,\n  \"mutation_controls_rejected\": 30,\n  \"isolated_candidate_execution\": \"PASS\",\n  \"task_exports_validated\": 8,\n  \"unit_integrity_validation\": \"PASS\"\n}\n",
       "stderr_tail": ""
     },
     {
       "command": [
-        "/var/folders/44/_vlhjh2x1fq6b1101pp_7f1w0000gn/T/senseline-release-verify-ypde38kc/venv/bin/python",
+        "/var/folders/44/_vlhjh2x1fq6b1101pp_7f1w0000gn/T/senseline-release-verify-yifjucmx/venv/bin/python",
         "scripts/run_docker_security_tests.py"
       ],
       "exit_code": 0,
-      "runtime_seconds": 16.595,
+      "runtime_seconds": 47.408,
       "stdout_tail": "{\n  \"status\": \"PASS\",\n  \"command\": [\n    \"python\",\n    \"-m\",\n    \"pytest\",\n    \"-q\",\n    \"tests/test_benchmark.py\",\n    \"-m\",\n    \"docker_integration\"\n  ],\n  \"exit_code\": 0,\n  \"test_cases_passed\": 12,\n  \"test_cases_skipped\": 0,\n  \"docker_image\": \"python:3.11.18-slim-bookworm@sha256:ef521de1d817dc92a6358c906bbadb9a0b7e38040038642833521b9d582c2233\",\n  \"docker_image_id\": \"sha256:ef521de1d817dc92a6358c906bbadb9a0b7e38040038642833521b9d582c2233\",\n  \"docker_isolation_probe\": \"PASS\",\n  \"checks\": [\n    \"host environment isolation\",\n    \"outside host path isolation\",\n    \"hidden fixture isolation\",\n    \"network disabled\",\n    \"evaluator/runtime files read-only and absent host path inaccessible\",\n    \"non-root UID\",\n    \"all capability sets dropped\",\n    \"no-new-privileges\",\n    \"read-only root and candidate mounts\",\n    \"CPU/memory/PID cgroup limits\",\n    \"host wall timeout\",\n    \"memory exhaustion is contained\",\n    \"PID limit under fork pressure\",\n    \"agent command not invoked if Docker preflight fails\",\n    \"trusted reference code uses the same isolated candidate interface\"\n  ],\n  \"checks_executed\": true\n}\n",
       "stderr_tail": ""
     },
     {
       "command": [
-        "/var/folders/44/_vlhjh2x1fq6b1101pp_7f1w0000gn/T/senseline-release-verify-ypde38kc/venv/bin/python",
+        "/var/folders/44/_vlhjh2x1fq6b1101pp_7f1w0000gn/T/senseline-release-verify-yifjucmx/venv/bin/python",
         "scripts/verify_agent_security.py"
       ],
       "exit_code": 0,
-      "runtime_seconds": 5.762,
+      "runtime_seconds": 9.077,
       "stdout_tail": "{\n  \"status\": \"PASS\",\n  \"codex_version\": \"codex-cli 0.164.0-alpha.11.1\",\n  \"codex_home_is_temporary\": true,\n  \"checks\": {\n    \"credential_variables_excluded_from_agent_environment\": true,\n    \"host_home_and_auth_not_inherited\": true,\n    \"task_workspace_write_allowed\": true,\n    \"host_credentials_hidden_graders_and_evaluator_inaccessible\": true,\n    \"agent_shell_network_disabled\": true,\n    \"shell_environment_does_not_inherit_provider_credentials\": true,\n    \"candidate_environment_is_not_used_here\": true\n  },\n  \"model_inference_performed\": false,\n  \"provider_credentials_injected\": false,\n  \"limitation\": \"This exercises Codex's actual macOS sandbox command without model inference. It does not test a provider API key; a dedicated scoped key remains exposed to the agent CLI process when inference is later enabled.\"\n}\n",
       "stderr_tail": ""
     },
     {
       "command": [
-        "/var/folders/44/_vlhjh2x1fq6b1101pp_7f1w0000gn/T/senseline-release-verify-ypde38kc/venv/bin/python",
+        "/var/folders/44/_vlhjh2x1fq6b1101pp_7f1w0000gn/T/senseline-release-verify-yifjucmx/venv/bin/python",
         "scripts/verify_opencode_permissions.py"
       ],
       "exit_code": 0,
-      "runtime_seconds": 50.406,
+      "runtime_seconds": 35.774,
       "stdout_tail": "{\n  \"status\": \"CLI_CONFIG_RESOLVED\",\n  \"opencode_version\": \"opencode v2.2.5\",\n  \"task_workspace_created_fresh\": true,\n  \"parent_sentinel_created_outside_workspace\": true,\n  \"permissions_config_sha256\": \"43771dcfd8ec4641fa3f6f4169a0c9ec96403a8f0cf2ce096c487da4194bcc29\",\n  \"permissions_loaded_by_actual_cli\": true,\n  \"external_directory_denied\": true,\n  \"shell_denied\": true,\n  \"solution_py_edit_allowed\": true,\n  \"model_inference_performed\": false,\n  \"dynamic_tool_denial_exercised\": false,\n  \"host_credential_environment_inherited\": false,\n  \"private_home_is_task_local\": true,\n  \"limitation\": \"This verifies v2 configuration loading in a disposable project with a task-local HOME and no host credentials; it does not claim an agent tool call was dynamically denied. Shell is disabled, and candidate execution is separately validated in Docker.\"\n}\n",
       "stderr_tail": ""
     }
@@ -82,6 +82,8 @@
   "docker_security_tests_passed": 12,
   "codex_security_status": "PASS",
   "opencode_config_status": "CLI_CONFIG_RESOLVED",
-  "runtime_seconds": 547.874,
+  "video_status": "PENDING_OWNER_ACTION",
+  "video_release_blocker": "video walkthrough URL pending (project-owner action); technical package validates, submission readiness is blocked",
+  "runtime_seconds": 585.583,
   "temporary_extraction_removed": true
 }

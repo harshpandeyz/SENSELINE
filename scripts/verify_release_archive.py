@@ -147,6 +147,13 @@ def verify(archive: Path = ARCHIVE, checksum: Path = CHECKSUM) -> dict:
             if security_records[2].get("status") != "CLI_CONFIG_RESOLVED":
                 raise RuntimeError("OpenCode permission config was not resolved by the installed CLI")
 
+            reference_report = json.loads((extracted / "results" / "reference_validation.json").read_text(encoding="utf-8"))
+            video_status = reference_report.get("video_status", {"status": "UNKNOWN"})
+            if video_status.get("status") != "PUBLISHED":
+                video_blocker = "video walkthrough URL pending (project-owner action); technical package validates, submission readiness is blocked"
+            else:
+                video_blocker = None
+
             return {
                 "status": "PASS", "archive": archive.name, "archive_size_bytes": size,
                 "archive_sha256": digest, "zip_crc_valid": True, "flat_root_readme": True,
@@ -156,6 +163,8 @@ def verify(archive: Path = ARCHIVE, checksum: Path = CHECKSUM) -> dict:
                 "docker_security_tests_passed": security_records[0]["test_cases_passed"],
                 "codex_security_status": security_records[1]["status"],
                 "opencode_config_status": security_records[2]["status"],
+                "video_status": video_status.get("status"),
+                "video_release_blocker": video_blocker,
                 "runtime_seconds": round(time.monotonic() - start, 3),
                 "temporary_extraction_removed": True,
             }

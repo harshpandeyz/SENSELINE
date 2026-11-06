@@ -8,8 +8,8 @@ Trial classes (never conflated):
   GENUINE      - agent produced candidate code that was graded.
 
 Model metrics (SCR, UAR, accuracy, pass@3/pass^3, ...) are computed ONLY over
-GENUINE trials. INFRA trials are excluded from every model numerator and
-denominator. TOOL_USE trials are reported as a separate behavioral rate.
+GENUINE trials. INFRA and BUDGET_BREACH trials are excluded from every model
+numerator and denominator. TOOL_USE trials are reported as a separate behavioral rate.
 """
 import argparse
 import csv
@@ -31,11 +31,26 @@ def _is_starter(src: str) -> bool:
 
 
 def classify(index: dict, transcript: dict, trial_dir=None) -> tuple[str, str]:
+    """One defensible status per trial, generated from raw evidence.
+
+    BUDGET_BREACH: the budget enforcer terminated the agent (token/cost cap hit,
+    exit before completion). The snapshot may still grade, but the trial did not
+    execute under its registered budget, so it is excluded from primary metrics
+    and reported as a budget finding with evidence preserved.
+    INFRA: provider/launch failure with no usage metadata (or a quota block before
+    any implementation).
+    TOOL_USE: agent ran with reported usage but produced no implementation.
+    GENUINE: candidate code was produced and Docker-graded.
+    """
     usage = index.get("usage", {}) or transcript.get("usage", {}) or {}
-    stdout = transcript.get("agent_stdout", "") or ""
+    stop = usage.get("budget_stop_reason")
+    if stop and stop != "not_monitored":
+        return "BUDGET_BREACH", "budget enforcer stopped the agent at %s tokens (%s); work cut off before completion" % (
+            usage.get("total_tokens"), stop)
     if index.get("candidate_source_snapshot_issue"):
         if not usage.get("reported"):
             return "INFRA", "no usage metadata and no candidate snapshot (%s)" % index.get("candidate_source_snapshot_issue")
+    stdout = transcript.get("agent_stdout", "") or ""
     if not usage.get("reported"):
         if '"type":"error"' in stdout and ("no-route" in stdout or "Model unavailable" in stdout or "rate-limit" in stdout.lower() or "rate_limit" in stdout.lower()):
             return "INFRA", "provider resolution/rate-limit error with no usage metadata"
@@ -103,7 +118,7 @@ def summarize(trials):
         reps = [t["score"]["grader"] for t in g]
         idxs = [t["index"] for t in g]
         per_model[f"{phase}|{model}|{agent}"] = {
-            "trial_classes": {c: sum(1 for t in group if t["class"] == c) for c in ("GENUINE", "TOOL_USE", "INFRA")},
+            "trial_classes": {c: sum(1 for t in group if t["class"] == c) for c in ("GENUINE", "TOOL_USE", "INFRA", "BUDGET_BREACH")},
             "metrics": compute_metrics(reps, idxs) if reps else None,
         }
     return {"trial_class_counts": dict(by_class), "overall_genuine_metrics": metrics, "per_model": per_model}

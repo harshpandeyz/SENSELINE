@@ -24,7 +24,12 @@ ROOT_FILES = (
     "docs/INDEPENDENT_REVIEW_PACKAGE.md", "presentation/SENSELINE_walkthrough.html",
     "configs/experiment_matrix.template.json", "configs/opencode_task_permissions.json",
     "scripts/package_submission.py", "scripts/verify_release_archive.py",
-    "results/submission_status.json",
+    "results/submission_status.json", "results/experiment_analysis.json",
+    "results/free_model_availability.json",
+    "reports/FINAL_RELEASE_AUDIT.md", "reports/FINAL_EXPERIMENT_ANALYSIS.md",
+    "reports/FINAL_VALIDATION_REPORT.md", "reports/MODEL_COMPARISON.md",
+    "reports/FINAL_EXECUTION_AUDIT.md", "reports/OWNER_REVIEW_REQUIRED.md",
+    "reports/COST_AND_USAGE_DISCLOSURE.md",
     "scripts/run_docker_security_tests.py", "scripts/verify_agent_security.py",
     "scripts/verify_opencode_permissions.py", "harness/secure_execution.py",
     "harness/candidate_runtime.py", "harness/agent_environment.py", "harness/agent_usage.py",
@@ -115,6 +120,22 @@ def main() -> int:
         print("WARNING: video walkthrough URL is pending (project-owner action); release is blocked on publication")
     else:
         raise SystemExit("FAIL: README video line must be a real 'https://' URL or an explicit 'PENDING' owner-action marker; placeholders are rejected")
+
+    secret_env = [p for p in [ROOT / ".env", *ROOT.glob(".env.*")] if p.is_file() and p.name != ".env.example"]
+    if secret_env:
+        raise SystemExit("FAIL: real environment-secret file present; only .env.example may exist: " + ", ".join(p.name for p in secret_env))
+    if "Model experiments: NOT RUN" in readme or "no model experiment has run" in readme.lower():
+        raise SystemExit("FAIL: README carries stale NOT-RUN experiment claims inconsistent with results/")
+    analysis_path = ROOT / "results" / "experiment_analysis.json"
+    try:
+        analysis = json.loads(analysis_path.read_text(encoding="utf-8"))
+    except (OSError, ValueError) as exc:
+        raise SystemExit(f"FAIL: results/experiment_analysis.json is missing or unparseable: {exc}")
+    classes = analysis.get("trial_class_counts", {})
+    if analysis.get("trial_count", 0) <= 0 or sum(classes.values()) != analysis["trial_count"]:
+        raise SystemExit("FAIL: experiment_analysis.json trial counts are inconsistent")
+    if classes.get("GENUINE", 0) <= 0:
+        raise SystemExit("FAIL: experiment_analysis.json reports zero genuine trials while docs claim results")
 
     if set(TASK_DIRS) != set(REFS) or set(SOLVERS) != set(REFS):
         raise SystemExit("FAIL: task packages, references, and independent oracle do not match S01-S08")

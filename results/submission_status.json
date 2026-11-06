@@ -1,1 +1,79 @@
-{"as_of": "2026-11-06", "statuses": {"CODE_COMPLETE": {"evidence": ["104 tests pass", "8 task packages, oracle, references, harness present"], "status": "COMPLETE"}, "GRADER_VALIDATED": {"evidence": ["266/266 reference cases pass in Docker isolation", "30/30 mutation controls rejected for intended dimensions", "unit-integrity regressions pass", "SCR/UAR definitions implemented and documented"], "status": "COMPLETE"}, "SECURITY_VALIDATED": {"evidence": ["12/12 Docker security checks pass, zero skips (2026-11-06)", "Codex CLI 0.164.0-alpha.11.1 sandbox checks pass", "OpenCode 2.2.5 resolves task-local permission policy", "no candidate code runs on host; no secrets in archive (secret scan in FINAL_RELEASE_AUDIT)"], "limitations": ["OpenCode dynamic tool denial not exercised (policy resolution only)"], "status": "COMPLETE_WITH_LIMITATION"}, "EXPERIMENTS_COMPLETED": {"blocker": "Nemotron S04-S08 block (17 trials) missing: OpenRouter 50-request/day free quota exhausted 2026-11-06; resets 00:00 UTC daily. Paid frontier models unavailable under $0 cap (credits exhausted, no verifiable limits).", "evidence": ["55/72 full-run trials executed (qwen 24, llama 24, nemotron 7)", "9/9 pilot trials PILOT_COMPLETE (operator-reviewed; owner review pending)", "24 pilot-history + 1 supplementary probe preserved with phases labeled", "89 trials classified: 16 GENUINE, 58 TOOL_USE, 16 INFRA"], "status": "PARTIAL"}, "FAILURE_ANALYSIS_COMPLETED": {"evidence": ["GENUINE-only metrics: nemotron S01-S03 acc 0.977, SCR 0.0; pilot S08 corruption 41/107, UAR 5/46", "tool-use vs infra vs reasoning separated with case IDs", "grader defects: none found"], "status": "COMPLETE"}, "REPRODUCIBILITY_VALIDATED": {"evidence": ["Release ZIP independently extracted, installed, tested, validated (see reports/FINAL_VALIDATION_REPORT.md)"], "status": "COMPLETE"}, "DOCUMENTATION_COMPLETED": {"evidence": ["README, METHODOLOGY, RELATED_WORK, FAILURE_ANALYSIS, review package, video script, slides, reports/ all consistent with evidence"], "status": "COMPLETE"}, "VIDEO_PUBLISHED": {"blocker": "Project owner must record and publish the five-minute walkthrough.", "evidence": ["Script + slides prepared (docs/video_walkthrough_script.md, presentation/)", "README carries explicit PENDING marker (no invented URL)"], "status": "NOT_PUBLISHED"}, "SUBMISSION_READY": {"blockers": ["Nemotron S04-S08 trials missing (quota).", "Public video URL pending (owner action).", "Owner review pending (operator review recorded)."], "readiness": "READY_WITH_DISCLOSED_LIMITATIONS", "status": "NOT_READY"}}}
+{
+  "as_of": "2026-11-06",
+  "statuses": {
+    "CODE_COMPLETE": {
+      "evidence": [
+        "104 tests pass",
+        "8 task packages, oracle, references, harness present"
+      ],
+      "status": "COMPLETE"
+    },
+    "GRADER_VALIDATED": {
+      "evidence": [
+        "266/266 reference cases pass in Docker isolation",
+        "30/30 mutation controls rejected for intended dimensions",
+        "unit-integrity regressions pass",
+        "SCR/UAR definitions implemented and documented"
+      ],
+      "status": "COMPLETE"
+    },
+    "SECURITY_VALIDATED": {
+      "evidence": [
+        "12/12 Docker security checks pass, zero skips (2026-11-06)",
+        "Codex CLI 0.164.0-alpha.11.1 sandbox checks pass",
+        "OpenCode 2.2.5 resolves task-local permission policy",
+        "no candidate code runs on host; no secrets in archive (secret scan in FINAL_RELEASE_AUDIT)"
+      ],
+      "limitations": [
+        "OpenCode dynamic tool denial not exercised (policy resolution only)"
+      ],
+      "status": "COMPLETE_WITH_LIMITATION"
+    },
+    "EXPERIMENTS_COMPLETED": {
+      "blocker": "Nemotron S04-S08 block (17 trials) missing: OpenRouter 50-request/day free quota exhausted 2026-11-05 and 2026-11-06; resets 00:00 UTC daily. opencode free pool (~2-4 requests) blocks beam/deepseek/GLM/lightning/MiMo/Flint. Paid frontier models unavailable under $0 cap.",
+      "evidence": [
+        "55/72 full-run trials (qwen 24, llama 24, nemotron 7); 9/9 pilot PILOT_COMPLETE (operator-reviewed; owner pending)",
+        "9/9 pilot PILOT_COMPLETE (operator-reviewed; owner review pending)",
+        "91 trials classified: 14 GENUINE, 58 TOOL_USE, 17 INFRA, 2 BUDGET_BREACH"
+      ],
+      "status": "PARTIAL"
+    },
+    "FAILURE_ANALYSIS_COMPLETED": {
+      "evidence": [
+        "GENUINE-only metrics (+BUDGET_BREACH exploratory section): nemotron S01-S03 acc 0.977, SCR 0.0; pilot S08 genuine 0/45 SCR 41/45 UAR 3/23; budget-breach S08 snapshot 32/45 UAR 2/23",
+        "tool-use vs infra vs reasoning vs budget separated with case IDs; grader defects: none"
+      ],
+      "status": "COMPLETE"
+    },
+    "REPRODUCIBILITY_VALIDATED": {
+      "evidence": [
+        "Release ZIP independently extracted, installed, tested, validated (see reports/FINAL_VALIDATION_REPORT.md)"
+      ],
+      "status": "COMPLETE"
+    },
+    "DOCUMENTATION_COMPLETED": {
+      "evidence": [
+        "README, METHODOLOGY, RELATED_WORK, FAILURE_ANALYSIS, review package, video script, slides, reports/ all consistent with evidence"
+      ],
+      "status": "COMPLETE"
+    },
+    "VIDEO_PUBLISHED": {
+      "blocker": "Project owner must record and publish the five-minute walkthrough.",
+      "evidence": [
+        "Script restructured to required 6-section format + slides prepared (docs/video_walkthrough_script.md, presentation/)",
+        "README carries explicit PENDING marker (no invented URL)"
+      ],
+      "status": "NOT_PUBLISHED"
+    },
+    "SUBMISSION_READY": {
+      "blockers": [
+        "Nemotron S04-S08 trials missing (quota).",
+        "Public video URL pending (owner action).",
+        "Owner review pending (operator review recorded).",
+        "Independent metrology review not obtained."
+      ],
+      "readiness": "READY_WITH_DISCLOSED_LIMITATIONS",
+      "status": "NOT_READY"
+    }
+  }
+}
