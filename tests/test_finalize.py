@@ -50,15 +50,26 @@ def temp_project(tmp_path):
     return dst
 
 
+def _unused_url_for(tree_readme_text: str) -> str:
+    """Pick a test URL not already present, so update tests stay state-proof."""
+    return REALISTIC_YOUTUBE_3 if REALISTIC_YOUTUBE in tree_readme_text else REALISTIC_YOUTUBE
+
+
 def test_candidate_cannot_be_mistaken_for_final():
     candidate = ROOT / "dist" / "SENSELINE_SUBMISSION_CANDIDATE.zip"
     final = ROOT / "dist" / FINAL_NAME
     assert candidate.name != final.name
     if not (ROOT / "dist").is_dir():
         # Extracted-archive context: dist/ is excluded from the ZIP by design.
-        # Assert this extracted copy is the placeholder candidate, not a final.
         readme_text = (ROOT / "README.md").read_text(encoding="utf-8")
-        assert PLACEHOLDER in readme_text
+        if PLACEHOLDER in readme_text:
+            return  # placeholder candidate extraction: correct state
+        video_lines = [
+            ln for ln in readme_text.splitlines() if ln.startswith("Video walkthrough:")
+        ]
+        # Finalized extraction: exactly one real video URL, no placeholder field.
+        assert len(video_lines) == 1 and "https://" in video_lines[0]
+        assert PLACEHOLDER not in video_lines[0]
         return
     assert candidate.is_file(), "candidate ZIP must exist"
     with zipfile.ZipFile(candidate) as zf:
@@ -116,14 +127,13 @@ def test_url_validation_accepts_supported_hosts():
 
 def test_youtube_url_updates_readme(temp_project):
     readme = temp_project / "README.md"
-    before = readme.read_text(encoding="utf-8")
-    assert PLACEHOLDER in before
-    report = update_readme(readme, REALISTIC_YOUTUBE)
+    url = _unused_url_for(readme.read_text(encoding="utf-8"))
+    report = update_readme(readme, url)
     assert report["updated"] is True
     after = readme.read_text(encoding="utf-8")
     video_lines = [ln for ln in after.splitlines() if ln.startswith("Video walkthrough:")]
     assert len(video_lines) == 1
-    assert REALISTIC_YOUTUBE in video_lines[0]
+    assert url in video_lines[0]
     assert PLACEHOLDER not in video_lines[0]
 
 
@@ -282,6 +292,28 @@ def test_finalization_does_not_modify_raw_results(temp_project):
     )
     for p in targets:
         assert hashlib.sha256(p.read_bytes()).hexdigest() == before[str(p)]
+
+
+def test_validation_report_update_is_repeatable(temp_project):
+    """Second application (on an already-final report) must not fail or duplicate."""
+    import scripts.finalize_submission as fin
+
+    report = temp_project / "reports" / "FINAL_VALIDATION_REPORT.md"
+    fake_verify = {
+        "file_count": 712,
+        "technical_package_validation": "PASS",
+        "video_publication": "PUBLISHED",
+        "owner_review": "PENDING",
+        "experiment_coverage": "PARTIAL",
+        "submission_readiness": "READY_WITH_DISCLOSED_LIMITATIONS",
+    }
+    fin.update_validation_report(report, REALISTIC_YOUTUBE, fake_verify)
+    first = report.read_text(encoding="utf-8")
+    second_report = fin.update_validation_report(report, REALISTIC_YOUTUBE, fake_verify)
+    second = report.read_text(encoding="utf-8")
+    assert first == second
+    assert second_report["updated"] is True
+    assert second.count("## Archive gate (Phase I") == 1
 
 
 def test_manifest_holds_no_self_referential_sha(temp_project):
@@ -592,3 +624,75 @@ def test_readme_has_single_video_url_field(temp_project):
     assert len(status_lines) == 1
     assert REALISTIC_YOUTUBE_2 in status_lines[0]
     assert "VIDEO_URL_PENDING" not in text
+
+
+REALISTIC_YOUTUBE_3 = "https://www.youtube.com/watch?v=9bZkp7q19f0"
+
+
+def test_checklist_marks_video_complete_preserves_limits(temp_project):
+    import scripts.finalize_submission as fin
+
+    checklist = temp_project / "SUBMISSION_CHECKLIST.md"
+    url = REALISTIC_YOUTUBE
+    if url in checklist.read_text(encoding="utf-8"):
+        url = REALISTIC_YOUTUBE_3
+    report = fin.update_checklist(checklist, url)
+    assert report["updated"] is True
+    text = (temp_project / "SUBMISSION_CHECKLIST.md").read_text(encoding="utf-8")
+    assert "- [x] Walkthrough video published at " + url in text
+    assert "- [ ] Complete owner review" in text
+    assert "S03×2" in text and "S08×3" in text
+    assert "independent review" in text.lower()
+    assert "the unpublished video" not in text
+    assert "- [ ] Publish the recording" not in text
+    # video script + slides must be described as excluded, not included
+    assert "intentionally excluded from the submission ZIP" in text
+
+
+def test_checklist_update_is_idempotent(temp_project):
+    import hashlib as _hashlib
+    import scripts.finalize_submission as fin
+
+    fin.update_checklist(temp_project / "SUBMISSION_CHECKLIST.md", REALISTIC_YOUTUBE)
+    first = _hashlib.sha256((temp_project / "SUBMISSION_CHECKLIST.md").read_bytes()).hexdigest()
+    report = fin.update_checklist(temp_project / "SUBMISSION_CHECKLIST.md", REALISTIC_YOUTUBE)
+    second = _hashlib.sha256((temp_project / "SUBMISSION_CHECKLIST.md").read_bytes()).hexdigest()
+    assert report["updated"] is False
+    assert first == second
+
+
+def test_checklist_corrected_url_replaces_previous(temp_project):
+    import scripts.finalize_submission as fin
+
+    fin.update_checklist(temp_project / "SUBMISSION_CHECKLIST.md", REALISTIC_YOUTUBE)
+    report = fin.update_checklist(temp_project / "SUBMISSION_CHECKLIST.md", REALISTIC_YOUTUBE_3)
+    assert report["updated"] is True
+    text = (temp_project / "SUBMISSION_CHECKLIST.md").read_text(encoding="utf-8")
+    assert REALISTIC_YOUTUBE not in text
+    assert text.count(REALISTIC_YOUTUBE_3) == 2  # checkbox + release-status line
+
+
+def test_published_readme_has_no_docs_script_link(temp_project):
+    import scripts.finalize_submission as fin
+
+    fin.update_readme(temp_project / "README.md", REALISTIC_YOUTUBE)
+    text = (temp_project / "README.md").read_text(encoding="utf-8")
+    assert "docs/video_walkthrough_script.md" not in text
+    assert REALISTIC_YOUTUBE in [
+        ln for ln in text.splitlines() if ln.startswith("Video walkthrough:")
+    ][0]
+
+
+def test_status_evidence_has_no_dangling_archive_refs(temp_project):
+    import scripts.finalize_submission as fin
+
+    fin.update_submission_status(
+        temp_project / "results" / "submission_status.json", REALISTIC_YOUTUBE
+    )
+    data = json.loads(
+        (temp_project / "results" / "submission_status.json").read_text(encoding="utf-8")
+    )
+    blob = json.dumps(data["statuses"]["VIDEO_PUBLISHED"])
+    assert "docs/video_walkthrough_script.md" not in blob
+    assert "presentation/" not in blob
+    assert REALISTIC_YOUTUBE in blob

@@ -65,7 +65,7 @@ evaluation material.
 - Fresh-extraction gate (`scripts/verify_release_archive.py --mode candidate --archive
   dist/SENSELINE_SUBMISSION_CANDIDATE.zip --checksum
   dist/SENSELINE_SUBMISSION_CANDIDATE.zip.sha256`) reinstalls deps, runs `pytest`
-  (134 passed: 104 benchmark + 30 finalizer), `validate_submission.py
+  (140 passed: 104 benchmark + 36 finalizer), `validate_submission.py
   --mode candidate` (266/266, 30/30), Docker security (12/12), Codex/OpenCode checks
   from the EXTRACTED candidate ZIP; reports TECHNICAL_PASS + PENDING_VIDEO.
 - Final mode (`--mode final --archive dist/SENSELINE_FINAL_SUBMISSION.zip --checksum

@@ -28,7 +28,7 @@ and excluded), validator placeholder rule (fixed to accept real URL / explicit P
 
 | Item | Evidence / result |
 |---|---|
-| Benchmark tests | `pytest`: **134 passed, 0 skipped** (104 benchmark + 30 finalizer) (2026-11-06; one run showed 11 docker-integration skips while the Docker daemon was down — daemon restarted, image verified, suite re-run green) |
+| Benchmark tests | `pytest`: **140 passed, 0 skipped** (104 benchmark + 36 finalizer) (2026-11-06; one run showed 11 docker-integration skips while the Docker daemon was down — daemon restarted, image verified, suite re-run green) |
 | Oracle | 266/266 hidden fixtures: reference and independent oracle agree exactly |
 | Mutation suite | **30/30 rejected** for an intended failure dimension |
 | Docker security | **12/12 PASS, 0 skipped**; Codex CLI 0.164.0-alpha.11.1 sandbox checks PASS; OpenCode 2.2.5 policy resolves (dynamic tool denial not exercised — disclosed) |

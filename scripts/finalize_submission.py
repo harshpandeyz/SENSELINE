@@ -13,11 +13,14 @@ Candidate state (before owner publishes):
 
 Final state (after owner supplies a real public https URL):
     1. Validate URL syntax + owner incognito confirmation.
-    2. Update README video line + release-status section.
+    2. Update README video line + release-status section (no docs/ link: the
+       walkthrough script is not shipped in the ZIP).
     3. Update results/submission_status.json (VIDEO_PUBLISHED, blockers, readiness).
-    4. Update results/reference_validation.json video_status (results preserved).
-    5. Update submission content manifest (inventory/count/rules, no SHA-256).
-    6. Update release audit + video walkthrough documentation.
+    4. Update SUBMISSION_CHECKLIST.md (video complete; owner review still pending;
+       17 missing slots + independent-review limitation retained).
+    5. Update results/reference_validation.json video_status (results preserved).
+    6. Update submission content manifest (inventory/count/rules, no SHA-256).
+    7. Update release audit + video walkthrough documentation.
     7. Build a STAGING archive in a temp dir and run the full
        scripts/verify_release_archive.py --mode final gate against it.
     8. Regenerate reports/FINAL_VALIDATION_REPORT.md from the staging results
@@ -181,8 +184,7 @@ def update_readme(readme_path: Path, url: str) -> dict:
     if video_idx is None:
         raise ValueError("README is missing its 'Video walkthrough:' line")
     new_video = (
-        f"Video walkthrough: {url} — five-minute public walkthrough "
-        "(see docs/video_walkthrough_script.md)."
+        f"Video walkthrough: {url} — five-minute public walkthrough."
     )
     status_idx = next(
         (i for i, line in enumerate(lines) if line.startswith("**Release status:**")),
@@ -243,7 +245,8 @@ def update_submission_status(status_path: Path, url: str) -> dict:
         f"Public walkthrough published at {url} (syntax-validated https URL; "
         "owner confirmed incognito/private playback; public accessibility "
         "is asserted by the owner, not auto-verified).",
-        "Script: docs/video_walkthrough_script.md; slides: presentation/.",
+        "Walkthrough script and slide deck prepared separately in the working "
+        "repository; intentionally excluded from the submitted archive.",
         "README video line carries the public URL; placeholder removed.",
     ]
     statuses["VIDEO_PUBLISHED"] = video
@@ -259,6 +262,75 @@ def update_submission_status(status_path: Path, url: str) -> dict:
     data["statuses"] = statuses
     status_path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
     return {"updated": not already, "video_status": "PUBLISHED"}
+
+
+def update_checklist(checklist_path: Path, url: str) -> dict:
+    """Mark video publication complete; preserve review/coverage limitations.
+
+    Idempotent: re-running with the same URL changes nothing. Supplying a
+    corrected URL replaces the previous URL wherever it appears. The pending
+    owner-review checkbox, the 17 missing full-run slots, and the independent
+    review limitation are always preserved.
+    """
+    import re as _re
+
+    text = checklist_path.read_text(encoding="utf-8")
+    new_text = text
+    # Docs line: script + slides are prepared separately, excluded from the ZIP.
+    new_text = new_text.replace(
+        "five-minute walkthrough script, independent-review package, standalone slide deck, and reports/",
+        "independent-review package and reports/",
+    )
+    if (
+        "walkthrough script and standalone slide deck are prepared separately"
+        not in new_text
+    ):
+        new_text = new_text.replace(
+            "are included and mutually consistent. No external reviewer or public video is claimed.",
+            "are included and mutually consistent. The five-minute walkthrough script "
+            "and standalone slide deck are prepared separately and intentionally "
+            "excluded from the submission ZIP. No external reviewer is claimed.",
+        )
+    # Video checkbox: mark complete with the supplied URL (replace any old URL).
+    new_text = _re.sub(
+        r"- \[ \] Publish the recording[^\n]*",
+        f"- [x] Walkthrough video published at {url} (syntax-validated; owner "
+        "confirmed incognito playback; public accessibility not auto-verified).",
+        new_text,
+    )
+    new_text = _re.sub(
+        r"(- \[x\] Walkthrough video published at )https://\S+",
+        rf"\g<1>{url}",
+        new_text,
+    )
+    # Release-status line: unpublished -> published (replace any old URL).
+    new_text = _re.sub(
+        r"the unpublished video",
+        f"the published walkthrough video at {url}",
+        new_text,
+    )
+    new_text = _re.sub(
+        r"(the published walkthrough video at )https://\S+",
+        rf"\g<1>{url}",
+        new_text,
+    )
+    changed = new_text != text
+    if changed:
+        checklist_path.write_text(new_text, encoding="utf-8")
+    result = checklist_path.read_text(encoding="utf-8")
+    if "the unpublished video" in result:
+        raise ValueError("checklist still claims the video is unpublished")
+    if "- [ ] Publish the recording" in result:
+        raise ValueError("checklist video-publication box was not marked complete")
+    if "- [ ] Complete owner review" not in result:
+        raise ValueError("owner-review pending checkbox must be preserved")
+    if "17" not in result or "independent review" not in result.lower():
+        raise ValueError("experiment-coverage limitations must be preserved")
+    if url not in result:
+        raise ValueError("supplied video URL missing from checklist")
+    if result.count(url) > 3:
+        raise ValueError("checklist contains duplicated video URLs")
+    return {"updated": changed}
 
 
 def update_reference_validation(ref_path: Path, url: str) -> dict:
@@ -372,7 +444,7 @@ def update_validation_report(report_path: Path, url: str, verify_report: dict) -
     stale by construction (the report itself ships inside the ZIP).
     """
     text = report_path.read_text(encoding="utf-8")
-    gate_start = text.find("## Archive gate (Phase I)")
+    gate_start = text.find("## Archive gate (Phase I")
     if gate_start == -1:
         raise ValueError("FINAL_VALIDATION_REPORT.md archive gate section not found")
     new_gate = (
@@ -600,6 +672,9 @@ def main() -> int:
         status_report = update_submission_status(
             ROOT / "results" / "submission_status.json", url
         )
+        checklist_report = update_checklist(
+            ROOT / "SUBMISSION_CHECKLIST.md", url
+        )
         ref_report = update_reference_validation(
             ROOT / "results" / "reference_validation.json", url
         )
@@ -653,6 +728,7 @@ def main() -> int:
         print(f"VIDEO_URL: {url} (syntax-validated; public access owner-confirmed, not auto-verified)")
         print(f"README_UPDATED: {readme_report['updated']}")
         print(f"STATUS_JSON_UPDATED: {status_report['updated']}")
+        print(f"CHECKLIST_UPDATED: {checklist_report['updated']}")
         print(f"REFERENCE_VALIDATION_UPDATED: {ref_report['updated']}")
         print(f"VIDEO_SCRIPT_UPDATED: {script_report['updated']}")
         print(f"AUDIT_UPDATED: {audit_report['updated']}")

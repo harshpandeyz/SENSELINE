@@ -12,7 +12,7 @@ Evidence dates: 2026-11-06. Source validation and experiment results are retaine
 
 ## Security and reproducibility
 
-- [x] `make test`: 134 passed, zero skipped (104 benchmark + 30 finalizer) (2026-11-06; an 11-skip run during a dead Docker daemon was re-run green after restart).
+- [x] `make test`: 140 passed, zero skipped (104 benchmark + 36 finalizer) (2026-11-06; an 11-skip run during a dead Docker daemon was re-run green after restart).
 - [x] `make validate`: test suite passed; 266/266 references, 30/30 mutations, eight task exports, and unit-integrity checks passed.
 - [x] `make security-test`: Docker isolation tests 12/12 passed, zero skipped; Codex CLI 0.164.0-alpha.11.1 (reinstalled pinned) workspace and network checks passed; OpenCode 2.2.5 loaded task-local permissions and resolved shell/external-directory denies.
 - [x] Candidate execution is Docker-isolated, network-disabled, non-root, read-only, resource-limited, and fail-closed. Each task export excludes hidden fixtures, graders, and reference solutions. Each trial starts in a new temporary workspace.
@@ -33,7 +33,7 @@ Evidence dates: 2026-11-06. Source validation and experiment results are retaine
 ## Documentation and submission
 
 - [x] Root README contains scope, all eight tasks, architecture, metrics, install/run instructions, dependencies, actual experiment status/results, runtime/cost, references, AI disclosures, and an explicit PENDING video marker (no invented URL).
-- [x] Methodology, related work, failure analysis (reconciled 91-trial evidence: 14 GENUINE / 58 TOOL_USE / 17 INFRA / 2 BUDGET_BREACH), five-minute walkthrough script, independent-review package, standalone slide deck, and reports/ (audit, experiment analysis, validation) are included and mutually consistent. No external reviewer or public video is claimed.
+- [x] Methodology, related work, failure analysis (reconciled 91-trial evidence: 14 GENUINE / 58 TOOL_USE / 17 INFRA / 2 BUDGET_BREACH), independent-review package, and reports/ (audit, experiment analysis, validation) are included and mutually consistent. The five-minute walkthrough script and standalone slide deck are prepared separately and intentionally excluded from the submission ZIP. No external reviewer or public video is claimed.
 - [x] `make package-candidate` creates `dist/SENSELINE_SUBMISSION_CANDIDATE.zip` (README with `VIDEO_URL_PENDING_OWNER_UPLOAD` at the ZIP root, SHA-256 sidecar); `scripts/finalize_submission.py --video-url "URL"` rebuilds `dist/SENSELINE_FINAL_SUBMISSION.zip` with the same inclusion/exclusion rules. The archive verifier checks a fresh extraction, install, tests, validation (candidate/final modes), security, archive contents, and the 50 MiB limit. Candidate validation reports TECHNICAL_PASS + PENDING_VIDEO; final validation rejects the placeholder.
 - [ ] Publish the recording and replace the PENDING video marker with its public link (project-owner action).
 - [ ] Complete owner review of pilot approval and this release (operator review recorded).

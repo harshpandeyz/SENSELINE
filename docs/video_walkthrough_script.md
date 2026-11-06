@@ -29,7 +29,7 @@ The README carries an explicit PENDING marker; never invent a URL.
 **On screen:** Terminal + transcript excerpt (redacted). Run the stored candidate from pilot S08 run B against one case, e.g. `S08-unclear-traceability`.
 
 **Demonstration commands (from a clean checkout):**
-1. `make setup && make test` — 134 tests green (104 benchmark + 30 finalizer).
+1. `make setup && make test` — 140 tests green (104 benchmark + 36 finalizer).
 2. `.venv/bin/python -m harness.aggregate --results results` — raw trial record.
 3. `.venv/bin/python scripts/analyze_results.py --results results --out /tmp/demo.json` — eligibility classification.
 4. Show the graded case: expected `calibration_validity.valid=false`, `disposition INDETERMINATE` (traceability not documented); model output `valid=true`, `ACCEPT`. Point at the two diverging fields.
