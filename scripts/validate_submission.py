@@ -33,7 +33,7 @@ ROOT_FILES = (
     "scripts/run_docker_security_tests.py", "scripts/verify_agent_security.py",
     "scripts/verify_opencode_permissions.py", "harness/secure_execution.py",
     "harness/candidate_runtime.py", "harness/agent_environment.py", "harness/agent_usage.py",
-    "mutations/MUTATION_MANIFEST.json", "tests/test_benchmark.py", "oracle/compute.py",
+    "mutations/MUTATION_MANIFEST.json", "tests/test_benchmark.py", "tests/test_finalize.py", "oracle/compute.py",
 )
 TASK_FILES = ("task.md", "input.schema.json", "output.schema.json", "public_examples.json", "solution.py")
 EXPORT_FILES = {*TASK_FILES, "AGENT_README.md"}
@@ -103,10 +103,22 @@ def _parse_video_line(video_line: str) -> dict:
     if "VIDEO_URL_PENDING_OWNER_RECORDING" in video_line:
         return {"status": "PENDING_OWNER_ACTION", "note": video_line.strip(), "placeholder": "VIDEO_URL_PENDING_OWNER_RECORDING"}
     if video_line.startswith("Video walkthrough: https://"):
+        from urllib.parse import urlparse as _urlparse
         url = video_line.split(":", 1)[1].strip().split()[0]
         lowered = url.lower()
-        banned = ("example.com", "example.org", "example.net", "localhost", "127.0.0.1", "placeholder", "pending", "todo", "xxx")
-        if any(token in lowered for token in banned) or len(url) < 12:
+        parsed = _urlparse(url)
+        if parsed.scheme != "https":
+            raise SystemExit(f"FAIL: README video URL is not a legitimate public link: {url}")
+        banned = ("example.com", "example.org", "example.net", "example.edu",
+                  "localhost", "127.0.0.1", "0.0.0.0", "::1",
+                  "placeholder", "pending", "todo", "xxx", "your-video",
+                  "insert-url", "change-me", "replace-me", "video_url_pending",
+                  "test_finalize", "test-video", "test_video", "fake", "dummy",
+                  "sample-video", ".local", ".invalid", ".test", "file://")
+        if any(token in lowered for token in banned) or len(url) < 20:
+            raise SystemExit(f"FAIL: README video URL is not a legitimate public link: {url}")
+        host = (parsed.hostname or "").lower()
+        if not host or "." not in host:
             raise SystemExit(f"FAIL: README video URL is not a legitimate public link: {url}")
         return {"status": "PUBLISHED", "url": url}
     if video_line.startswith("Video walkthrough: PENDING"):

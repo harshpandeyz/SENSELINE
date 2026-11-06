@@ -15,7 +15,7 @@ MAX_ARCHIVE_BYTES = 50 * 1024 * 1024
 
 EXCLUDED_DIRS = {
     ".git", ".venv", "__pycache__", ".pytest_cache", ".mypy_cache", ".ruff_cache",
-    ".tox", "node_modules", "build", "dist", "__MACOSX",
+    ".tox", "node_modules", "build", "dist", "dist-archive", "__MACOSX",
 }
 EXCLUDED_NAMES = {
     ".DS_Store", "auth.json", "credentials.json", "id_rsa", "id_ed25519",
@@ -33,7 +33,7 @@ REQUIRED = {
     "harness/candidate_runtime.py", "scripts/run_experiment.py", "scripts/validate_submission.py",
     "scripts/package_submission.py", "scripts/verify_release_archive.py", "scripts/finalize_submission.py",
     "mutations/MUTATION_MANIFEST.json",
-    "tests/test_benchmark.py", "docs/METHODOLOGY.md", "docs/RELATED_WORK.md",
+    "tests/test_benchmark.py", "tests/test_finalize.py", "docs/METHODOLOGY.md", "docs/RELATED_WORK.md",
     "docs/FAILURE_ANALYSIS.md", "docs/video_walkthrough_script.md",
     "docs/INDEPENDENT_REVIEW_PACKAGE.md", "presentation/SENSELINE_walkthrough.html",
     "results/experiment_status.json", "results/reference_validation.json",
@@ -127,13 +127,21 @@ def package(root: Path = ROOT, archive: Path = ARCHIVE) -> dict:
     digest = hashlib.sha256(archive.read_bytes()).hexdigest()
     checksum_path = archive.with_suffix(archive.suffix + ".sha256")
     checksum_path.write_text(f"{digest}  {archive.name}\n", encoding="ascii")
-    zips = sorted(p.name for p in archive.parent.glob("*.zip"))
-    allowed = {"SENSELINE_SUBMISSION_CANDIDATE.zip", "SENSELINE_FINAL_SUBMISSION.zip", "SENSELINE_submission.zip"}
-    unknown = [name for name in zips if name not in allowed]
-    if unknown:
-        raise ValueError(f"dist contains unknown archives: {unknown}")
-    if archive.name not in zips:
-        raise ValueError(f"dist must contain {archive.name}")
+    # In the real repository dist/, enforce the known artifact names so a
+    # placeholder final can never linger unnoticed. Temporary test copies
+    # build probe archives under tmp_path and are exempt from this check.
+    try:
+        real_dist = (ROOT / "dist").resolve()
+    except OSError:
+        real_dist = None
+    if real_dist is not None and archive.parent.resolve() == real_dist:
+        zips = sorted(p.name for p in archive.parent.glob("*.zip"))
+        allowed = {"SENSELINE_SUBMISSION_CANDIDATE.zip", "SENSELINE_FINAL_SUBMISSION.zip", "SENSELINE_submission.zip"}
+        unknown = [name for name in zips if name not in allowed]
+        if unknown:
+            raise ValueError(f"dist contains unknown archives: {unknown}")
+        if archive.name not in zips:
+            raise ValueError(f"dist must contain {archive.name}")
     return {
         "archive": str(archive), "archive_size_bytes": size,
         "archive_sha256": digest, "file_count": len(files),

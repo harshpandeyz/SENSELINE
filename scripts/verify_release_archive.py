@@ -32,7 +32,7 @@ REQUIRED = {
     "results/docker_security_validation.json", "results/agent_security_validation.json",
     "results/opencode_permission_verification.json",
 }
-FORBIDDEN_PARTS = {".git", ".venv", "__pycache__", ".pytest_cache", "node_modules", "__MACOSX"}
+FORBIDDEN_PARTS = {".git", ".venv", "__pycache__", ".pytest_cache", "node_modules", "__MACOSX", "dist", "dist-archive"}
 FORBIDDEN_SUFFIXES = {".zip", ".pyc", ".pyo", ".pem", ".p12", ".pfx", ".key", ".token"}
 FORBIDDEN_NAMES = {"auth.json", "credentials", "credentials.json", "secrets", "secrets.json", "secret.json", "id_rsa", "id_ed25519"}
 
