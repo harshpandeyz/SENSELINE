@@ -12,7 +12,7 @@ Evidence dates: 2026-11-06. Source validation and experiment results are retaine
 
 ## Security and reproducibility
 
-- [x] `make test`: 104 passed, zero skipped (2026-11-06; an 11-skip run during a dead Docker daemon was re-run green after restart).
+- [x] `make test`: 130 passed, zero skipped (104 benchmark + 26 finalizer) (2026-11-06; an 11-skip run during a dead Docker daemon was re-run green after restart).
 - [x] `make validate`: test suite passed; 266/266 references, 30/30 mutations, eight task exports, and unit-integrity checks passed.
 - [x] `make security-test`: Docker isolation tests 12/12 passed, zero skipped; Codex CLI 0.164.0-alpha.11.1 (reinstalled pinned) workspace and network checks passed; OpenCode 2.2.5 loaded task-local permissions and resolved shell/external-directory denies.
 - [x] Candidate execution is Docker-isolated, network-disabled, non-root, read-only, resource-limited, and fail-closed. Each task export excludes hidden fixtures, graders, and reference solutions. Each trial starts in a new temporary workspace.

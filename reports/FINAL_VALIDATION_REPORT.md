@@ -7,7 +7,7 @@ pinned sandbox image `python:3.11.18-slim-bookworm@sha256:ef521de1…` present l
 
 | Check | Command | Result |
 |---|---|---|
-| Unit/integration tests | `.venv/bin/python -m pytest -q` | **104 passed, 0 skipped** |
+| Unit/integration tests | `.venv/bin/python -m pytest -q` | **130 passed, 0 skipped** (104 benchmark + 26 finalizer) |
 | Reference + mutation validation | `.venv/bin/python scripts/validate_submission.py --mode candidate` | **PASS**: 266/266 references, 30/30 mutations rejected, 8 exports, unit-integrity PASS; video PENDING (candidate mode). Final mode (`--mode final`) correctly rejects the placeholder |
 | Docker security | `.venv/bin/python scripts/run_docker_security_tests.py` | **PASS**: 12/12, 0 skipped |
 | Agent workspace security | `.venv/bin/python scripts/verify_agent_security.py` | **PASS** (codex-cli 0.164.0-alpha.11.1, reinstalled pinned) |

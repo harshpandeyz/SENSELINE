@@ -160,14 +160,22 @@ def verify(archive: Path = ARCHIVE, checksum: Path = CHECKSUM, mode: str = "cand
             # never receive a final-submission PASS.
             if mode == "final" and video_status.get("status") != "PUBLISHED":
                 raise RuntimeError("final mode requires a published public video URL; placeholder rejected")
+            # Readiness is five separate dimensions. A passing technical gate plus
+            # a published video never implies unqualified READY: the 17 missing
+            # full-run slots, pending owner review and unobtained independent
+            # review remain disclosed blockers (see results/submission_status.json).
+            owner_review = "PENDING"
+            experiment_coverage = "PARTIAL (55/72 full-run; 17 S04-S08 slots missing)"
             if video_status.get("status") != "PUBLISHED":
                 video_blocker = "video walkthrough URL pending (project-owner action); technical package validates, submission readiness is blocked"
                 technical = "PASS"
                 readiness = "PENDING_VIDEO"
+                video_publication = "PENDING"
             else:
                 video_blocker = None
                 technical = "PASS"
-                readiness = "READY" if mode == "final" else "READY_CANDIDATE_VIDEO_PRESENT"
+                video_publication = "PUBLISHED"
+                readiness = "READY_WITH_DISCLOSED_LIMITATIONS"
 
             return {
                 "status": technical, "archive": archive.name, "archive_size_bytes": size,
@@ -181,6 +189,9 @@ def verify(archive: Path = ARCHIVE, checksum: Path = CHECKSUM, mode: str = "cand
                 "video_status": video_status.get("status"),
                 "video_release_blocker": video_blocker,
                 "technical_package_validation": technical,
+                "video_publication": video_publication,
+                "owner_review": owner_review,
+                "experiment_coverage": experiment_coverage,
                 "video_url": video_status.get("status"),
                 "submission_readiness": readiness,
                 "validation_mode": mode,

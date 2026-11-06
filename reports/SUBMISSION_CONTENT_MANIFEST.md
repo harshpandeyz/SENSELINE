@@ -62,7 +62,7 @@ RELATED_WORK, FAILURE_ANALYSIS, video_walkthrough_script, INDEPENDENT_REVIEW_PAC
 - Fresh-extraction gate (`scripts/verify_release_archive.py --mode candidate --archive
   dist/SENSELINE_SUBMISSION_CANDIDATE.zip --checksum
   dist/SENSELINE_SUBMISSION_CANDIDATE.zip.sha256`) reinstalls deps, runs `pytest`
-  (104 passed + 15 finalizer tests where applicable), `validate_submission.py
+  (130 passed: 104 benchmark + 26 finalizer), `validate_submission.py
   --mode candidate` (266/266, 30/30), Docker security (12/12), Codex/OpenCode checks
   from the EXTRACTED candidate ZIP; reports TECHNICAL_PASS + PENDING_VIDEO.
 - Final mode (`--mode final --archive dist/SENSELINE_FINAL_SUBMISSION.zip --checksum

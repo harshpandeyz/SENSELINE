@@ -43,6 +43,36 @@ REQUIRED = {
 }
 TASK_LEAVES = ("task.md", "input.schema.json", "output.schema.json", "public_examples.json", "solution.py")
 
+# Local-machine path prefixes are replaced with portable placeholders in the
+# published ZIP copies only. Raw experiment records in the working tree are
+# never modified. Rules apply in order; only UTF-8 decodable files are touched,
+# so model outputs, scores, timestamps, identifiers and grading results (which
+# contain no such prefixes) are byte-identical apart from the prefix swap.
+SANITIZE_RULES = (
+    ("/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE", "<PROJECT_ROOT>"),
+    ("/Users/harsh", "<HOME>"),
+)
+
+# Files larger than this are never decoded for sanitization (written raw).
+_SANITIZE_MAX_BYTES = 8 * 1024 * 1024
+
+
+def sanitized_bytes(data: bytes) -> tuple[bytes, bool]:
+    """Replace local path prefixes; return (bytes, changed)."""
+    if len(data) > _SANITIZE_MAX_BYTES:
+        return data, False
+    try:
+        text = data.decode("utf-8")
+    except UnicodeDecodeError:
+        return data, False
+    new_text = text
+    for old, new in SANITIZE_RULES:
+        if old in new_text:
+            new_text = new_text.replace(old, new)
+    if new_text == text:
+        return data, False
+    return new_text.encode("utf-8"), True
+
 
 def excluded(relative: Path) -> bool:
     if any(part in EXCLUDED_DIRS for part in relative.parts):
@@ -105,10 +135,19 @@ def package(root: Path = ROOT, archive: Path = ARCHIVE) -> dict:
         if stale.resolve() != archive and stale.name not in allowed:
             stale.unlink()
 
+    sanitized_count = 0
     with zipfile.ZipFile(archive, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9, allowZip64=False) as zf:
         for path in files:
             relative = path.relative_to(root).as_posix()
-            zf.write(path, arcname=relative)
+            raw = path.read_bytes()
+            clean, changed = sanitized_bytes(raw)
+            if changed:
+                sanitized_count += 1
+            info = zipfile.ZipInfo(filename=relative)
+            info.date_time = (2026, 11, 6, 0, 0, 0)
+            info.compress_type = zipfile.ZIP_DEFLATED
+            info.external_attr = (path.stat().st_mode & 0xFFFF) << 16
+            zf.writestr(info, clean)
 
     size = archive.stat().st_size
     if size >= MAX_ARCHIVE_BYTES:
@@ -145,6 +184,7 @@ def package(root: Path = ROOT, archive: Path = ARCHIVE) -> dict:
     return {
         "archive": str(archive), "archive_size_bytes": size,
         "archive_sha256": digest, "file_count": len(files),
+        "sanitized_files": sanitized_count,
         "flat_root_readme": True, "task_package_count": 8,
         "nested_archives": 0, "checksum_file": str(checksum_path),
     }

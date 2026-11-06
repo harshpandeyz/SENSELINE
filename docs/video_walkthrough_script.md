@@ -29,7 +29,7 @@ The README carries an explicit PENDING marker; never invent a URL.
 **On screen:** Terminal + transcript excerpt (redacted). Run the stored candidate from pilot S08 run B against one case, e.g. `S08-unclear-traceability`.
 
 **Demonstration commands (from a clean checkout):**
-1. `make setup && make test` — 104 tests green.
+1. `make setup && make test` — 130 tests green (104 benchmark + 26 finalizer).
 2. `.venv/bin/python -m harness.aggregate --results results` — raw trial record.
 3. `.venv/bin/python scripts/analyze_results.py --results results --out /tmp/demo.json` — eligibility classification.
 4. Show the graded case: expected `calibration_validity.valid=false`, `disposition INDETERMINATE` (traceability not documented); model output `valid=true`, `ACCEPT`. Point at the two diverging fields.
@@ -40,7 +40,7 @@ The README carries an explicit PENDING marker; never invent a URL.
 
 **On screen:** Slide 4. Per-model table from `results/experiment_analysis.json`.
 
-**Narration:** “Fifty-five of seventy-two planned trials plus nine pilot trials, twenty-four pilot-history trials, and three supplementary probes: ninety-one classified trials, fourteen genuine. Nemotron Super-VL, the only configuration that completed the tool-use loop, scores two-eleven of two-sixteen on sensor decoding, units, and calibration with zero silent corruption — its only misses are reason-string vocabulary on correctly rejected inputs. But its pilot end-to-end run shows the validity-propagation failure above. The two small local models never engaged the file tools: fifty-eight tool-use trials with zero implementations — a reproducible agent-capability boundary, not a reasoning score. Ten infrastructure trials and two budget-breach snapshots are excluded from every metric. Nemotron tasks S04 through S08 are missing — the free quota ran out — absent, not zero. Paid frontier models were unavailable under the zero-dollar cap, so no frontier claim is made.”
+**Narration:** “Fifty-five of seventy-two planned trials plus nine pilot trials, twenty-four pilot-history trials, and three supplementary probes: ninety-one classified trials, fourteen genuine. Nemotron Super-VL, the only configuration that completed the tool-use loop, scores two-eleven of two-sixteen on sensor decoding, units, and calibration with zero silent corruption — its only misses are reason-string vocabulary on correctly rejected inputs. But its pilot end-to-end run shows the validity-propagation failure above. The two small local models never engaged the file tools: fifty-eight tool-use trials with zero implementations — a reproducible agent-capability boundary, not a reasoning score. Seventeen infrastructure trials and two budget-breach snapshots are excluded from every metric. Nemotron tasks S04 through S08 are missing — the free quota ran out — absent, not zero. Paid frontier models were unavailable under the zero-dollar cap, so no frontier claim is made.”
 
 ## 4:30–5:00 — Research significance and limitations
 

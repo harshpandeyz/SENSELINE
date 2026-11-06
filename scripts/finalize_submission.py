@@ -12,17 +12,24 @@ Candidate state (before owner publishes):
     VIDEO_URL PENDING, SUBMISSION_READINESS PENDING_VIDEO)
 
 Final state (after owner supplies a real public https URL):
-    This script validates the URL syntax, requires owner incognito confirmation,
-    updates README video line + release-status heading, updates
-    results/submission_status.json (VIDEO_PUBLISHED, blockers, readiness), updates
-    reports/SUBMISSION_CONTENT_MANIFEST.md to final artifact state, rebuilds
-    dist/SENSELINE_FINAL_SUBMISSION.zip with the official package
-    inclusion/exclusion rules, enforces README-at-root + 50 MiB + SHA-256 sidecar,
-    runs scripts/verify_release_archive.py --mode final against the ACTUAL final
-    ZIP (fresh-temp extraction, reinstall, pytest, reference/oracle, mutations,
-    Docker security, exports, forbidden-file scan, video URL, SHA), regenerates
-    reports/FINAL_VALIDATION_REPORT.md from that verification, and reports the
-    five readiness dimensions separately.
+    1. Validate URL syntax + owner incognito confirmation.
+    2. Update README video line + release-status section.
+    3. Update results/submission_status.json (VIDEO_PUBLISHED, blockers, readiness).
+    4. Update results/reference_validation.json video_status (results preserved).
+    5. Update submission content manifest (inventory/count/rules, no SHA-256).
+    6. Update release audit + video walkthrough documentation.
+    7. Build a STAGING archive in a temp dir and run the full
+       scripts/verify_release_archive.py --mode final gate against it.
+    8. Regenerate reports/FINAL_VALIDATION_REPORT.md from the staging results
+       (no SHA/size embedded, so the report is stable across the final build).
+    9. Build dist/SENSELINE_FINAL_SUBMISSION.zip + sidecar (sidecar holds the
+       authoritative SHA-256, never the in-ZIP manifest).
+   10. Re-run the full --mode final gate against the dist final ZIP.
+   11. Report the five readiness dimensions separately.
+
+Atomicity: the dist final ZIP is written only in step 9. Any failure before the
+final gate passes removes a partial dist final ZIP and restores a previously
+valid one. The candidate ZIP is never touched.
 
 Never invents a URL. Never writes a test URL into the real README or final ZIP
 (test with a temporary copy only). Never modifies raw experiment results.
@@ -34,6 +41,7 @@ import argparse
 import hashlib
 import json
 import os
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -68,6 +76,8 @@ SUPPORTED_HOSTS = (
     "vimeo.com", "www.vimeo.com", "player.vimeo.com",
     "drive.google.com", "docs.google.com",
 )
+SUPPORTED_SUFFIXES = (".youtube.com", ".vimeo.com", ".loom.com", ".google.com")
+SUPPORTED_LABEL = "YouTube (youtube.comyoutu.be), Loom (loom.com), Vimeo (vimeo.com), public Google Drive (drive.google.com)"
 
 
 def validate_video_url(url: str) -> str:
@@ -98,22 +108,19 @@ def validate_video_url(url: str) -> str:
         raise ValueError(f"example domain is not a public video link: {cleaned}")
     if any(m in host for m in LOCAL_MARKERS) or host in ("localhost",):
         raise ValueError(f"local URL is not a public video link: {cleaned}")
-    path_query = (parsed.path or "") + ("?" + parsed.query if parsed.query else "")
     if any(token in lowered for token in PLACEHOLDER_MARKERS):
-        raise ValueError(
-            f"video URL looks like a placeholder link: {cleaned}"
-        )
+        raise ValueError(f"video URL looks like a placeholder link: {cleaned}")
     if any(token in lowered for token in FAKE_MARKERS):
+        raise ValueError(f"video URL looks like a fake/test link: {cleaned}")
+    if host not in SUPPORTED_HOSTS and not host.endswith(SUPPORTED_SUFFIXES):
         raise ValueError(
-            f"video URL looks like a fake/test link: {cleaned}"
+            f"unsupported video host {host!r}; supported platforms: {SUPPORTED_LABEL}"
         )
+    path_query = (parsed.path or "") + ("?" + parsed.query if parsed.query else "")
     if len(cleaned) < 20:
         raise ValueError("video URL is too short to be a legitimate video link")
     if len(path_query.strip("/")) < 2:
         raise ValueError("video URL is missing a video identifier path")
-    _ = host in SUPPORTED_HOSTS or host.endswith(
-        (".youtube.com", ".vimeo.com", ".loom.com", ".google.com")
-    )
     return cleaned
 
 
@@ -149,59 +156,70 @@ def require_owner_confirmation(args) -> None:
         )
 
 
+def _read_lines(path: Path) -> list[str]:
+    return path.read_text(encoding="utf-8").splitlines()
+
+
+def _write_lines(path: Path, lines: list[str]) -> None:
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
 def update_readme(readme_path: Path, url: str) -> dict:
-    text = readme_path.read_text(encoding="utf-8")
-    lines = text.splitlines()
-    target = next(
+    """Replace the video URL in the video + release-status lines, idempotently."""
+    lines = _read_lines(readme_path)
+    video_idx = next(
         (i for i, line in enumerate(lines) if line.startswith("Video walkthrough:")),
         None,
     )
-    if target is None:
+    if video_idx is None:
         raise ValueError("README is missing its 'Video walkthrough:' line")
-    old_video = lines[target]
     new_video = (
         f"Video walkthrough: {url} — five-minute public walkthrough "
         "(see docs/video_walkthrough_script.md)."
     )
-    changed = False
-    if old_video != new_video:
-        lines[target] = new_video
-        changed = True
     status_idx = next(
         (i for i, line in enumerate(lines) if line.startswith("**Release status:**")),
         None,
     )
     if status_idx is None:
         raise ValueError("README is missing its '**Release status:**' line")
-    old_status = lines[status_idx]
-    if "TECHNICALLY COMPLETE — AWAITING VIDEO" in old_status or PLACEHOLDER in old_status:
-        lines[status_idx] = (
-            "**Release status:** READY_WITH_DISCLOSED_LIMITATIONS — VIDEO PUBLISHED. "
-            "Code, grader, security, and reproducibility validation are complete. "
-            "55/72 full-run trials plus 9 pilot, 24 pilot-history, and 3 supplementary "
-            "trials (91 classified: 14 GENUINE, 58 TOOL_USE, 17 INFRA, 2 BUDGET_BREACH) "
-            "executed with transcript-backed failure analysis; nemotron S04–S08 "
-            "(17 slots: S03×2, S04×3, S05×3, S06×3, S07×3, S08×3) missing on free-quota "
-            "exhaustion (absent, not zero); owner review pending; independent metrology "
-            f"review not obtained. Walkthrough video published at {url} (syntax-validated; "
-            "owner confirmed incognito playback; public accessibility not auto-verified). "
-            "See [`results/submission_status.json`](results/submission_status.json) and "
-            "[`reports/FINAL_RELEASE_AUDIT.md`](reports/FINAL_RELEASE_AUDIT.md)."
-        )
+    new_status = (
+        "**Release status:** READY_WITH_DISCLOSED_LIMITATIONS — VIDEO PUBLISHED. "
+        "Code, grader, security, and reproducibility validation are complete. "
+        "55/72 full-run trials plus 9 pilot, 24 pilot-history, and 3 supplementary "
+        "trials (91 classified: 14 GENUINE, 58 TOOL_USE, 17 INFRA, 2 BUDGET_BREACH) "
+        "executed with transcript-backed failure analysis; nemotron S04–S08 "
+        "(17 slots: S03×2, S04×3, S05×3, S06×3, S07×3, S08×3) missing on free-quota "
+        "exhaustion (absent, not zero); owner review pending; independent metrology "
+        f"review not obtained. Walkthrough video published at {url} (syntax-validated; "
+        "owner confirmed incognito playback; public accessibility not auto-verified). "
+        "See [`results/submission_status.json`](results/submission_status.json) and "
+        "[`reports/FINAL_RELEASE_AUDIT.md`](reports/FINAL_RELEASE_AUDIT.md)."
+    )
+    changed = False
+    if lines[video_idx] != new_video:
+        lines[video_idx] = new_video
         changed = True
-    elif url not in old_status and "VIDEO PUBLISHED" in old_status:
-        lines[status_idx] = old_status.replace(
-            "Walkthrough video published at",
-            f"Walkthrough video published at {url} (superseded entry updated; ",
-        ) if "http" not in old_status else old_status
-        if url in old_status:
-            pass
-        else:
-            lines[status_idx] = old_status + f" Video: {url}."
-            changed = True
+    if lines[status_idx] != new_status:
+        lines[status_idx] = new_status
+        changed = True
     if changed:
-        readme_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
-    return {"updated": changed, "old_video": old_video, "new_video": new_video}
+        _write_lines(readme_path, lines)
+    # Verify exactly one distinct video URL across both managed lines.
+    managed = lines[video_idx] + "\n" + lines[status_idx]
+    found = set()
+    for token in managed.split():
+        if token.startswith("https://"):
+            found.add(token.rstrip(").,;"))
+    found = {u for u in found if PLACEHOLDER not in u}
+    if found != {url}:
+        raise ValueError(
+            "README video/status lines contain conflicting URLs: "
+            + ", ".join(sorted(found))
+        )
+    if PLACEHOLDER in lines[video_idx]:
+        raise ValueError("placeholder still present in README video line")
+    return {"updated": changed, "old_video": None, "new_video": new_video}
 
 
 def update_submission_status(status_path: Path, url: str) -> dict:
@@ -214,22 +232,20 @@ def update_submission_status(status_path: Path, url: str) -> dict:
     )
     video["status"] = "PUBLISHED"
     video.pop("blocker", None)
-    evidence = [
+    video["evidence"] = [
         f"Public walkthrough published at {url} (syntax-validated https URL; "
         "owner confirmed incognito/private playback; public accessibility "
         "is asserted by the owner, not auto-verified).",
         "Script: docs/video_walkthrough_script.md; slides: presentation/.",
         "README video line carries the public URL; placeholder removed.",
     ]
-    video["evidence"] = evidence
     statuses["VIDEO_PUBLISHED"] = video
     ready = statuses.get("SUBMISSION_READY", {})
-    blockers = [
+    ready["blockers"] = [
         "Nemotron S04-S08 trials missing (17 slots, free-quota exhaustion; absent, not zero).",
         "Owner review pending (operator review recorded; see results/pilot/pilot_approval.json).",
         "Independent metrology review not obtained.",
     ]
-    ready["blockers"] = blockers
     ready["readiness"] = "READY_WITH_DISCLOSED_LIMITATIONS"
     ready["status"] = "NOT_READY"
     statuses["SUBMISSION_READY"] = ready
@@ -238,7 +254,55 @@ def update_submission_status(status_path: Path, url: str) -> dict:
     return {"updated": not already, "video_status": "PUBLISHED"}
 
 
-def update_manifest(manifest_path: Path, url: str, archive_info: dict) -> dict:
+def update_reference_validation(ref_path: Path, url: str) -> dict:
+    """Record VIDEO_PUBLISHED; preserve every existing result field."""
+    data = json.loads(ref_path.read_text(encoding="utf-8"))
+    before = dict(data)
+    data["video_status"] = {"status": "PUBLISHED", "url": url}
+    ref_path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
+    preserved = all(
+        data.get(k) == before.get(k)
+        for k in (
+            "reference_cases_passed", "reference_case_count",
+            "mutation_controls_rejected", "mutation_control_count",
+            "task_case_counts",
+        )
+    )
+    if not preserved:
+        raise ValueError("reference validation results changed while updating video status")
+    return {"updated": True}
+
+
+def update_video_script(script_path: Path, url: str) -> dict:
+    text = script_path.read_text(encoding="utf-8")
+    new_text = text
+    new_text = new_text.replace("Ten infrastructure trials", "Seventeen infrastructure trials")
+    new_text = new_text.replace("ten infrastructure trials", "seventeen infrastructure trials")
+    old_status = (
+        "14 GENUINE, 58 TOOL_USE, 17 INFRA, 2 BUDGET_BREACH). "
+        "No recording or public URL exists."
+    )
+    if old_status in new_text:
+        new_text = new_text.replace(
+            old_status,
+            "14 GENUINE, 58 TOOL_USE, 17 INFRA, 2 BUDGET_BREACH). "
+            f"Walkthrough video published at {url}.",
+        )
+    old_readme = "The README carries an explicit PENDING marker; never invent a URL."
+    if old_readme in new_text:
+        new_text = new_text.replace(
+            old_readme,
+            f"The README carries the public URL {url}.",
+        )
+    if new_text != text:
+        script_path.write_text(new_text, encoding="utf-8")
+    if "Ten infrastructure trials" in new_text:
+        raise ValueError("video script still claims ten infrastructure trials")
+    return {"updated": new_text != text}
+
+
+def update_manifest(manifest_path: Path, url: str, file_count: int) -> dict:
+    """Manifest holds inventory/count/rules only — never the final SHA-256."""
     text = manifest_path.read_text(encoding="utf-8")
     lines = text.splitlines()
     header_end = next(
@@ -249,29 +313,28 @@ def update_manifest(manifest_path: Path, url: str, archive_info: dict) -> dict:
         "# SENSELINE Submission Content Manifest",
         "",
         f"Final artifact: `dist/{FINAL_NAME}` + `.sha256` "
-        f"({archive_info['file_count']} files, "
-        f"{archive_info['size_bytes'] / (1024 * 1024):.1f} MB, < 50 MiB,",
-        "README at ZIP root, SHA-256 sidecar). "
+        f"({file_count} files, < 50 MiB, README at ZIP root). "
+        "The authoritative SHA-256 lives exclusively in "
+        f"`dist/{FINAL_NAME}.sha256` (never inside this manifest, which would "
+        "make the manifest stale by construction). "
         f"Walkthrough video published at {url} (syntax-validated; owner "
         "confirmed incognito playback; public accessibility not auto-verified).",
-        f"SHA-256: `{archive_info['sha256']}`. Candidate rollback preserved in "
-        "`dist-archive/` (placeholder build, not submittable).",
         "",
     ]
     rest = lines[header_end:]
-    updated_verification = []
+    updated = []
     for line in rest:
         if line.startswith("- `unzip -l` shows README at root"):
-            updated_verification.append(
+            updated.append(
                 f"- `unzip -l` shows README at root, 8 task packages, "
-                f"{archive_info['file_count']} files, no outer directory."
+                f"{file_count} files, no outer directory."
             )
         elif line.startswith("- Fresh-extraction gate"):
-            updated_verification.append(
+            updated.append(
                 "- Fresh-extraction gate "
                 f"(`scripts/verify_release_archive.py --mode final --archive "
                 f"dist/{FINAL_NAME} --checksum dist/{FINAL_NAME}.sha256`) "
-                "reinstalls deps, runs `pytest` (104 passed), "
+                "reinstalls deps, runs `pytest`, "
                 "`validate_submission.py --mode final` (266/266, 30/30), "
                 "Docker security (12/12), Codex/OpenCode checks from the EXTRACTED "
                 "final ZIP; reports TECHNICAL_PASS + VIDEO PUBLISHED + "
@@ -279,18 +342,24 @@ def update_manifest(manifest_path: Path, url: str, archive_info: dict) -> dict:
                 "slots + independent review still outstanding)."
             )
         elif line.startswith("- Final mode"):
-            updated_verification.append(
+            updated.append(
                 "- Final mode (`--mode final`) rejects the "
                 "`VIDEO_URL_PENDING_OWNER_RECORDING` placeholder; this final ZIP "
                 "carries the public URL in the extracted README."
             )
         else:
-            updated_verification.append(line)
-    manifest_path.write_text("\n".join(new_header + updated_verification) + "\n", encoding="utf-8")
-    return {"updated": True, "file_count": archive_info["file_count"]}
+            updated.append(line)
+    manifest_path.write_text("\n".join(new_header + updated) + "\n", encoding="utf-8")
+    return {"updated": True, "file_count": file_count}
 
 
 def update_validation_report(report_path: Path, url: str, verify_report: dict) -> dict:
+    """Regenerate the archive-gate section from actual verification results.
+
+    The section carries qualitative results (PASS/PUBLISHED/readiness/counts)
+    but never the final SHA-256 or byte size, which would make the report
+    stale by construction (the report itself ships inside the ZIP).
+    """
     text = report_path.read_text(encoding="utf-8")
     gate_start = text.find("## Archive gate (Phase I)")
     if gate_start == -1:
@@ -299,19 +368,22 @@ def update_validation_report(report_path: Path, url: str, verify_report: dict) -
         "## Archive gate (Phase I — final, regenerated from the actual final ZIP)\n"
         "\n"
         f"Final artifact `dist/{FINAL_NAME}` + `.sha256` "
-        f"(SHA-256 `{verify_report['archive_sha256']}`, "
-        f"{verify_report['archive_size_bytes']} bytes, "
-        f"{verify_report['file_count']} files) verified by independent extraction:\n"
-        "fresh-directory extraction, clean dependency install, `pytest` (104 passed), "
+        f"({verify_report['file_count']} files) verified by independent extraction "
+        "(authoritative SHA-256 in the `.sha256` sidecar, never in this report):\n"
+        "fresh-directory extraction, clean dependency install, `pytest`, "
         "`validate_submission.py --mode final` (266/266 references, 30/30 mutations, "
         "8 exports, unit-integrity PASS), Docker security 12/12, Codex/OpenCode checks, "
         "all re-executed from the EXTRACTED final ZIP with PASS; "
         f"video status PUBLISHED at {url} (syntax-validated; owner confirmed incognito "
         "playback; public accessibility not auto-verified). README-at-root, 8 task "
-        "packages, 50 MB limit, and prohibited-file scan enforced by "
+        "packages, 50 MiB limit, and prohibited-file scan enforced by "
         f"`scripts/verify_release_archive.py --mode final --archive dist/{FINAL_NAME} "
         f"--checksum dist/{FINAL_NAME}.sha256`. Technical package: "
-        f"{verify_report.get('technical_package_validation', 'PASS')}; video: PUBLISHED; "
+        f"{verify_report.get('technical_package_validation', 'PASS')}; "
+        f"video: {verify_report.get('video_publication', 'PUBLISHED')}; "
+        f"owner review: {verify_report.get('owner_review', 'PENDING')}; "
+        f"experiment coverage: "
+        f"{verify_report.get('experiment_coverage', 'PARTIAL (17 slots missing)')}; "
         "readiness: READY_WITH_DISCLOSED_LIMITATIONS (owner review pending, 17 missing "
         "S04–S08 slots disclosed, independent review not obtained). "
         "Candidate placeholder validation (PENDING_VIDEO) is superseded for this artifact.\n"
@@ -368,77 +440,98 @@ def update_release_audit(audit_path: Path, url: str) -> dict:
     return {"updated": True}
 
 
-def build_final_archive() -> dict:
+def _build_archive_at(archive: Path) -> dict:
     from scripts.package_submission import package
 
-    archive = ROOT / "dist" / FINAL_NAME
-    os.environ["SENSELINE_ARCHIVE_NAME"] = FINAL_NAME
+    os.environ["SENSELINE_ARCHIVE_NAME"] = archive.name
     return package(root=ROOT, archive=archive)
 
 
-def archive_file_info() -> dict:
-    from scripts.package_submission import MAX_ARCHIVE_BYTES
+def _parse_verify_output(stdout: str) -> dict:
+    """Parse the complete JSON report from verify_release_archive output.
 
-    archive = ROOT / "dist" / FINAL_NAME
-    checksum_path = archive.with_suffix(archive.suffix + ".sha256")
-    if not archive.is_file() or not checksum_path.is_file():
-        raise ValueError("final ZIP or SHA-256 sidecar is missing after rebuild")
-    size = archive.stat().st_size
-    if size >= MAX_ARCHIVE_BYTES:
-        raise ValueError(f"final ZIP exceeds 50 MiB: {size} bytes")
-    digest = hashlib.sha256(archive.read_bytes()).hexdigest()
-    expected_digest, expected_name = (
-        checksum_path.read_text(encoding="ascii").strip().split(maxsplit=1)
-    )
-    if expected_digest != digest or expected_name != archive.name:
-        raise ValueError("SHA-256 sidecar does not match the final archive")
-    with zipfile.ZipFile(archive) as zf:
-        bad = zf.testzip()
-        if bad:
-            raise ValueError(f"ZIP CRC failure: {bad}")
-        names = zf.namelist()
-        if "README.md" not in names or any(n.startswith("SENSELINE/") for n in names):
-            raise ValueError("README.md must be at the flat ZIP root")
-    return {
-        "archive": archive.name,
-        "size_bytes": size,
-        "sha256": digest,
-        "file_count": len(names),
-    }
+    verify_release_archive.py prints one indented multi-line JSON document.
+    The last line alone (`}`) is never a valid report. Prefer a full-document
+    parse; fall back to scanning embedded JSON objects with raw_decode.
+    Empty, incomplete or malformed reports are rejected, as is any report
+    that is not an explicit PASS — a stray word PASS elsewhere in the logs
+    never counts as verification success.
+    """
+    text = (stdout or "").strip()
+    if not text:
+        raise ValueError("verification produced empty output")
+    try:
+        obj = json.loads(text)
+    except json.JSONDecodeError:
+        obj = None
+        decoder = json.JSONDecoder()
+        for i, ch in enumerate(text):
+            if ch != "{":
+                continue
+            try:
+                candidate, _ = decoder.raw_decode(text[i:])
+            except json.JSONDecodeError:
+                continue
+            if isinstance(candidate, dict) and (
+                "archive" in candidate or "status" in candidate
+            ):
+                obj = candidate
+                break
+        if obj is None:
+            raise ValueError("no complete JSON report found in verification output")
+    if not isinstance(obj, dict) or not obj:
+        raise ValueError("verification report is empty or malformed")
+    return obj
 
 
-def run_independent_final_validation() -> dict:
-    """Run the full extraction gate against the ACTUAL final ZIP."""
+def _require_pass_report(report: dict) -> dict:
+    if report.get("status") != "PASS":
+        raise ValueError(
+            "verification did not PASS: %s" % (report.get("reason") or report.get("status"))
+        )
+    if report.get("video_status") != "PUBLISHED":
+        raise ValueError("extracted final ZIP did not report PUBLISHED video")
+    if report.get("technical_package_validation") != "PASS":
+        raise ValueError("technical package validation did not PASS")
+    return report
+
+
+def run_independent_final_validation(archive: Path, checksum: Path) -> dict:
+    """Run the full extraction gate against the ACTUAL final ZIP in staging."""
     cmd = [
         sys.executable,
         "scripts/verify_release_archive.py",
         "--mode", "final",
-        "--archive", f"dist/{FINAL_NAME}",
-        "--checksum", f"dist/{FINAL_NAME}.sha256",
+        "--archive", str(archive),
+        "--checksum", str(checksum),
     ]
     proc = subprocess.run(
         cmd, cwd=str(ROOT), capture_output=True, text=True, timeout=1800
     )
+    report: dict = {}
+    parse_error = ""
     try:
-        payload = json.loads(proc.stdout.strip().splitlines()[-1])
-    except (ValueError, IndexError):
-        payload = {}
+        report = _require_pass_report(_parse_verify_output(proc.stdout))
+    except ValueError as exc:
+        parse_error = str(exc)
     return {
         "exit_code": proc.returncode,
         "stdout_tail": proc.stdout[-6000:],
         "stderr_tail": proc.stderr[-3000:],
-        "report": payload,
+        "report": report,
+        "parse_error": parse_error,
     }
 
 
 def report_readiness(verify_report: dict) -> str:
     lines = [
         f"TECHNICAL_PACKAGE_VALIDATION: {verify_report.get('technical_package_validation', 'UNKNOWN')}",
-        "VIDEO_PUBLICATION: PUBLISHED (syntax-validated; owner incognito-confirmed; "
+        f"VIDEO_PUBLICATION: {verify_report.get('video_publication', 'PUBLISHED')} "
+        "(syntax-validated; owner incognito-confirmed; "
         "public accessibility not auto-verified)",
-        "OWNER_REVIEW: PENDING (see results/pilot/pilot_approval.json; not manufactured)",
-        "EXPERIMENT_COVERAGE: PARTIAL (55/72 full; 17 S04–S08 slots missing, absent not zero; "
-        "91 classified: 14 GENUINE / 58 TOOL_USE / 17 INFRA / 2 BUDGET_BREACH)",
+        f"OWNER_REVIEW: {verify_report.get('owner_review', 'PENDING')} "
+        "(see results/pilot/pilot_approval.json; not manufactured)",
+        f"EXPERIMENT_COVERAGE: {verify_report.get('experiment_coverage', 'PARTIAL (17 slots missing)')}",
         "SUBMISSION_READINESS: READY_WITH_DISCLOSED_LIMITATIONS "
         "(video published; owner review + 17 missing slots + independent review outstanding)",
     ]
@@ -468,51 +561,106 @@ def main() -> int:
     except ValueError as exc:
         print(f"FINALIZATION_FAIL: {exc}")
         return 1
+    dist = ROOT / "dist"
+    final_archive = dist / FINAL_NAME
+    final_checksum = final_archive.with_suffix(final_archive.suffix + ".sha256")
+    backup: dict[str, bytes | None] = {"zip": None, "sha": None}
+    if final_archive.is_file():
+        backup["zip"] = final_archive.read_bytes()
+    if final_checksum.is_file():
+        backup["sha"] = final_checksum.read_bytes()
+
+    def _restore_or_clean() -> None:
+        try:
+            if backup["zip"] is not None:
+                final_archive.write_bytes(backup["zip"])
+            elif final_archive.is_file():
+                final_archive.unlink()
+            if backup["sha"] is not None:
+                final_checksum.write_bytes(backup["sha"])
+            elif final_checksum.is_file():
+                final_checksum.unlink()
+        except OSError:
+            pass
+
     try:
+        # 1–6. Update every release document BEFORE packaging anything.
         readme_report = update_readme(ROOT / "README.md", url)
         status_report = update_submission_status(
             ROOT / "results" / "submission_status.json", url
         )
-        build_report = build_final_archive()
-        info = archive_file_info()
-        if PLACEHOLDER in (ROOT / "README.md").read_text(encoding="utf-8").splitlines()[6]:
-            raise ValueError("placeholder still present in README video line")
-        update_manifest(
-            ROOT / "reports" / "SUBMISSION_CONTENT_MANIFEST.md", url, info
+        ref_report = update_reference_validation(
+            ROOT / "results" / "reference_validation.json", url
         )
-        update_release_audit(
+        script_report = update_video_script(
+            ROOT / "docs" / "video_walkthrough_script.md", url
+        )
+        audit_report = update_release_audit(
             ROOT / "reports" / "FINAL_RELEASE_AUDIT.md", url
         )
-        validation = run_independent_final_validation()
-        if validation["exit_code"] != 0:
-            print("FINALIZATION_FAIL: independent final-mode extraction gate failed")
-            print(validation["stdout_tail"])
-            print(validation["stderr_tail"])
-            return 1
-        verify_report = validation["report"]
-        if not verify_report or verify_report.get("video_status") != "PUBLISHED":
-            print("FINALIZATION_FAIL: extracted final ZIP did not report PUBLISHED video")
-            print(validation["stdout_tail"])
-            return 1
-        update_validation_report(
-            ROOT / "reports" / "FINAL_VALIDATION_REPORT.md", url, verify_report
+        from scripts.package_submission import archive_members
+
+        member_count = len(archive_members(ROOT))
+        manifest_report = update_manifest(
+            ROOT / "reports" / "SUBMISSION_CONTENT_MANIFEST.md", url, member_count
         )
+        # 7. Stage + fully verify in a temp dir (never dist).
+        with tempfile.TemporaryDirectory(prefix="senseline-finalize-stage-") as stage:
+            stage_archive = Path(stage) / FINAL_NAME
+            _build_archive_at(stage_archive)
+            staged = run_independent_final_validation(
+                stage_archive,
+                stage_archive.with_suffix(stage_archive.suffix + ".sha256"),
+            )
+            if staged["exit_code"] != 0 or not staged["report"]:
+                print("FINALIZATION_FAIL: staging final-mode extraction gate failed")
+                print(staged["stdout_tail"])
+                print(staged["stderr_tail"] or staged["parse_error"])
+                return 1
+            # 8. Regenerate the validation report from staging results
+            # (no SHA/size embedded, so the report is stable for the final build).
+            validation_report = update_validation_report(
+                ROOT / "reports" / "FINAL_VALIDATION_REPORT.md", url, staged["report"]
+            )
+            if member_count != len(archive_members(ROOT)):
+                manifest_report = update_manifest(
+                    ROOT / "reports" / "SUBMISSION_CONTENT_MANIFEST.md",
+                    url,
+                    len(archive_members(ROOT)),
+                )
+            # 9. Build the real final ZIP + sidecar in dist.
+            build_report = _build_archive_at(final_archive)
+            # 10. Re-run the full gate against the dist final ZIP.
+            final = run_independent_final_validation(final_archive, final_checksum)
+            if final["exit_code"] != 0 or not final["report"]:
+                print("FINALIZATION_FAIL: final-mode extraction gate failed on dist artifact")
+                print(final["stdout_tail"])
+                print(final["stderr_tail"] or final["parse_error"])
+                _restore_or_clean()
+                return 1
         print("FINALIZATION_PASS")
         print(f"VIDEO_URL: {url} (syntax-validated; public access owner-confirmed, not auto-verified)")
         print(f"README_UPDATED: {readme_report['updated']}")
         print(f"STATUS_JSON_UPDATED: {status_report['updated']}")
+        print(f"REFERENCE_VALIDATION_UPDATED: {ref_report['updated']}")
+        print(f"VIDEO_SCRIPT_UPDATED: {script_report['updated']}")
+        print(f"AUDIT_UPDATED: {audit_report['updated']}")
+        print(f"MANIFEST_UPDATED: {manifest_report['updated']}")
+        print(f"VALIDATION_REPORT_UPDATED: {validation_report['updated']}")
         print(
             f"ARCHIVE: {build_report['archive']} "
             f"({build_report['archive_size_bytes']} bytes, "
             f"sha256 {build_report['archive_sha256']}, "
-            f"{info['file_count']} files)"
+            f"{build_report['file_count']} files, "
+            f"sanitized {build_report.get('sanitized_files', 0)} files)"
         )
         print("INDEPENDENT_EXTRACTION_GATE: PASS (fresh temp dir, reinstall, "
               "pytest, reference/oracle, mutations, Docker, exports, SHA)")
-        print(report_readiness(verify_report))
+        print(report_readiness(final["report"]))
         return 0
     except Exception as exc:  # noqa: BLE001 - report and fail closed
         print(f"FINALIZATION_FAIL: {type(exc).__name__}: {exc}")
+        _restore_or_clean()
         return 1
 
 
