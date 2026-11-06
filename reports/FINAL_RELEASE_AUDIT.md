@@ -6,7 +6,7 @@ Release artifact: `dist/SENSELINE_FINAL_SUBMISSION.zip` (4,057,950 bytes, SHA-25
 `8696f877e0f87756693a23fdb6a368cb098818ad4e0c2489bb9978cf7e60cdc5`), 700 files,
 README at ZIP root, verified by independent fresh-extraction gate (PASS, 547.9 s).
 Earlier release `dist-archive/2026-11-02/SENSELINE_submission.zip` preserved for history.
-Git: commit `b33c966` (+ finalization), branch `main`, pushed to
+Git: commits `e950815` (evidence) + `1ecd853` (audit finalization), branch `main`, pushed to
 `https://github.com/harshpandeyz/SENSELINE` (no force-push; remote deletion of the
 stale `FINAL_AUDIT_REPORT.md` merged).
 
