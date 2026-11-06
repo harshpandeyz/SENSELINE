@@ -36,6 +36,10 @@ package:
 	$(VPY) scripts/package_submission.py
 	$(VPY) scripts/verify_release_archive.py
 
+package-final:
+	SENSELINE_ARCHIVE_NAME=SENSELINE_FINAL_SUBMISSION.zip $(VPY) scripts/package_submission.py
+	SENSELINE_ARCHIVE_NAME=SENSELINE_FINAL_SUBMISSION.zip $(VPY) scripts/verify_release_archive.py
+
 aggregate:
 	$(VPY) -m harness.aggregate --results results
 

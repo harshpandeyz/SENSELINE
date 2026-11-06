@@ -3,13 +3,14 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import stat
 import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / "dist"
-ARCHIVE = DIST / "SENSELINE_submission.zip"
+ARCHIVE = DIST / os.environ.get("SENSELINE_ARCHIVE_NAME", "SENSELINE_submission.zip")
 MAX_ARCHIVE_BYTES = 50 * 1024 * 1024
 
 EXCLUDED_DIRS = {

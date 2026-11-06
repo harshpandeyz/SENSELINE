@@ -4,7 +4,7 @@
 
 SENSELINE evaluates whether AI coding agents preserve the physical meaning of sensor data from raw register bytes through calibration, uncertainty, and engineering decisions. It is a deterministic software benchmark built from synthetic measurement data.
 
-Video walkthrough: TO BE ADDED BY PARTICIPANT
+Video walkthrough: PENDING — project owner to record and publish the five-minute walkthrough, then replace this line with the public https URL (see docs/video_walkthrough_script.md).
 
 ## Research question and scope
 
@@ -81,19 +81,60 @@ Copy [.env.example](.env.example) only as a template. Provider credentials are n
 
 ## Model experiment status and actual results
 
-**Model experiments: NOT RUN (2026-11-02).** No exact model IDs or experiment configurations were selected, and no owner-approved spend cap or provider hard cap was recorded. No inference calls were made; there are no model scores, transcripts, model runtimes, failure rates, or API costs to report. The inspected CLI versions were OpenCode 2.2.5 and Codex CLI 0.164.0-alpha.11.1; those are agent tools, not tested models.
+Executed 2026-11-05/06 UTC under a strict $0 API spending cap (no paid calls): 55
+full-run trials plus 9 pilot trials across three opencode v2.2.5 configurations —
+`ollama/qwen3:8b` and `ollama/llama3.2:1b` (local inference) and
+`openrouter/nvidia/nemotron-3.5-super-vl:free` (documented $0 free-tier model).
+Uniform budgets: 900 s agent wall time, 5 s per-input candidate limit, 120000
+tokens per trial (`configs/experiment_matrix.json`). The full run stopped by design
+with QUOTA_EXHAUSTED after 55 of 72 planned trials (OpenRouter 50-request/day free
+quota consumed at ~8-11 requests per agentic trial); the nemotron S04–S08 block is
+missing pending the daily reset — absent, not zero. The pilot (S01/S05/S08 × 3
+configurations) completed 9/9 with operator review (owner review pending).
 
-The configured plan starts with a 9-trial pilot (S01, S05, and S08 for three model configurations), then a reviewed and approved 72-trial experiment (eight tasks, three configurations, three trials). Each planned run has a 900-second agent wall limit and a 5-second per-input candidate limit; the pilot uses trial index 0 and the full run uses trials 1–3. Temperature and reasoning-effort settings are unset in the template. Use [configs/experiment_matrix.template.json](configs/experiment_matrix.template.json) to prepare a matrix. Inference requires the explicit `--execute` flag, exact model/agent IDs, dedicated provider credentials, and all spend controls; the full run also requires a completed, reviewed pilot.
+Every trial is classified GENUINE (graded candidate code), TOOL_USE (agent ran but
+never produced an implementation), or INFRA (provider failure, no evidence).
+Model metrics pool GENUINE trials only. Totals across all preserved phases (89
+classified trials): 16 GENUINE, 58 TOOL_USE, 16 INFRA
+(`results/experiment_analysis.json`, canonical; `results/experiment_status.json`
+is the harness's raw trial-presence record).
 
-No model was tested. The OpenCode CLI inventory exposed candidate IDs including `openai/gpt-5.6`, `openrouter/anthropic/claude-sonnet-4.6`, `nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b`, `meta/muse-spark-1.3`, and local `ollama/qwen3:8b`; none were selected for SENSELINE trials. Installed agent versions inspected were OpenCode 2.2.5 and Codex CLI 0.164.0-alpha.11.1. The host OpenCode auth store listed OpenAI, OpenRouter, NVIDIA, and Meta profiles, but the fresh trial environment does not inherit that store; dedicated provider API-key environment variables were absent. One local Ollama model was present. There is no owner-approved spend cap or provider hard-spend limit in the experiment matrix, so the harness correctly made zero inference calls. This is a configuration and authorization blocker, not a model failure.
+Headline genuine results: nemotron full-run S01–S03, 211/216 (accuracy 0.977, SCR
+0.0; the only 5 misses are reason-string vocabulary mismatches on correctly
+rejected inputs). S02 and S03 perfect (120/120). Pilot S08 nemotron runs show the
+core failure mode — correct arithmetic with dropped certificate-evidence and
+malformed-frame rules (attempt-4 run 32/45, UAR 2/23; pilot run 0/45, UAR 3/23;
+both silent corruption). Local models almost never engaged the file tools (qwen 0
+genuine in 24 full trials, with 1/30 and 0/30 in two early attempts; llama 0
+genuine; qwen2.5-coder supplementary probe 0 genuine) — a reproducible tool-use
+boundary, not a reasoning score. See docs/FAILURE_ANALYSIS.md for case-level
+evidence and docs/METHODOLOGY.md for denominators and eligibility rules.
 
-For future trials, the harness records the exact task instruction and prompt, trial seed, model and agent versions, sanitized profile and command, candidate source snapshot and hash, available structured agent events and stdout/stderr, per-case candidate outputs and grading reasons, runtime, usage metadata, and sandbox image digest. The JSONL transcript contains actual emitted events only; it does not request or capture private reasoning. Transcripts and run snapshots will be stored under results when trials occur.
+Paid frontier models were not tested: the OpenRouter account's paid credits are
+exhausted (paid calls fail closed with 402), the stored OpenAI-slot key is an
+OpenRouter key (invalid for OpenAI), and NVIDIA/Meta paid use has no verifiable
+balance or provider-side hard limit — so no paid spend could be authorized under
+the $0 cap. MuseSpark is the engineering model for this build; it was not tested
+as a benchmark model (not independently runnable through the harness).
 
-The reproducible validation outputs are kept in [results](results/). They report reference/oracle agreement, mutation rejection, S08 unit-integrity regressions, Docker isolation attacks, and agent workspace checks. Deliberately defective controls are validation fixtures, not observed model failures. The detectable failure families include signed decoding, incompatible units, calibration order, evidence mismatch, understated uncertainty, unsafe decisions, temporal errors, and cross-layer interactions. Since model experiments were not run, there is no empirical model failure analysis; [docs/FAILURE_ANALYSIS.md](docs/FAILURE_ANALYSIS.md) states that limitation and distinguishes mutation coverage from observations.
+The harness records the exact task instruction and prompt, trial seed, model and
+agent versions, profile and settings, candidate snapshot/hash, available
+structured agent events and stdout/stderr, per-case grading outputs and reasons,
+runtime, usage metadata, and sandbox image digest. The JSONL transcript contains
+actual emitted events only; it does not request or capture private reasoning.
+
+The reproducible validation outputs are kept in [results](results/). They report
+reference/oracle agreement, mutation rejection, S08 unit-integrity regressions,
+Docker isolation attacks, and agent workspace checks. Deliberately defective
+controls are validation fixtures, not observed model failures.
+
 
 ## Runtime and cost
 
-The local reference and grader use deterministic fixtures and make no provider calls. In this release run, `make test` passed 104 tests with zero skips in 11.73 seconds; the pytest phase of `make validate` passed 104 tests in 12.04 seconds, then validated 266 isolated reference cases and rejected all 30 mutations. The full `make validate` process took approximately 7 minutes 38 seconds on the current macOS/Docker environment. The dedicated Docker attack suite passed 12 of 12 checks with zero skips; the complete security target also resolved OpenCode 2.2.5 permissions and passed the installed Codex CLI sandbox checks. These are validation runtimes, not model performance. Model execution time and cost are NOT AVAILABLE because no inference occurred. The experiment harness records agent-reported token usage as an estimate and never labels it confirmed billing; only provider billing records can establish actual charges.
+The local reference and grader use deterministic fixtures and make no provider calls. Reference validation: 266/266 isolated reference cases pass; all 30 mutation controls rejected; 8 task exports and unit-integrity checks pass. Docker security: 12/12 checks pass with zero skips; Codex CLI sandbox checks pass; OpenCode 2.2.5 permission policy resolves.
+
+Model execution (actuals): 55 full-run trials — qwen 24 trials / 2.86 agent-hours / 136750 tokens; llama 24 trials / 0.37 agent-hours / 76163 tokens; nemotron 7 trials / 0.35 agent-hours / 268054 tokens — plus 9 pilot and 24 pilot-history trials. Estimated cost $0 for every trial (zero-cost tier: local inference and documented $0 free-tier pricing). Confirmed billing: not applicable — no paid API call was made. The OpenRouter account usage counter moved +$0.0008 across all free-tier probing (4.9868 → 4.9876 against $5 prepaid credits, usage now ~$5.02 so paid calls fail closed); free-model daily quota 50/day was exhausted twice and resets 00:00 UTC daily. The harness records agent-reported token usage as an estimate and never labels it confirmed billing; only provider billing records can establish actual charges.
+
 
 ## Prior work and technical references
 
@@ -103,6 +144,6 @@ Selected measurement-science sources are NIST [Technical Note 1297](https://www.
 
 ## AI-tool use and human review
 
-Codex assisted with implementation and documentation. No model was evaluated for benchmark performance during this build. Project-owner review and independent metrology review have not been completed or claimed.
+MuseSpark (Meta) is the engineering model for this build: it implemented the zero-cost harness extensions, the resume/quota controls, the analysis script, and this documentation. Codex assisted with the original implementation. No benchmark model was evaluated during the build itself. Pilot transcripts were reviewed by the release operator; project-owner review and independent metrology review are pending and explicitly not claimed (see results/pilot/pilot_approval.json).
 
-**Release status:** code, grader, and reproducibility validation are complete. Model experiments and transcript-backed failure analysis are NOT RUN because the required isolated provider credentials and approved spend controls are unavailable. The video is not published. Under the stated acceptance criteria, SENSELINE is not yet submission-ready; see [`results/submission_status.json`](results/submission_status.json).
+**Release status:** code, grader, security, and reproducibility validation are complete. 55/72 full-run trials plus 9 pilot trials executed with transcript-backed failure analysis; nemotron S04–S08 trials are missing (free-quota exhaustion) and the video is not published. See [`results/submission_status.json`](results/submission_status.json) and [`reports/FINAL_RELEASE_AUDIT.md`](reports/FINAL_RELEASE_AUDIT.md).

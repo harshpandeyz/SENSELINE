@@ -1,0 +1,1888 @@
+{
+  "run_id": "20261106T005554_607905Z_S04_opencode_trial2",
+  "task": "S04",
+  "trial": 2,
+  "trial_seed": 20465143,
+  "agent": "opencode",
+  "agent_version": {
+    "command": [
+      "npm",
+      "exec",
+      "--yes",
+      "--package=@opencode/cli@2.2.5",
+      "--",
+      "opencode",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "opencode v2.2.5\n",
+    "stderr": ""
+  },
+  "model_id": "ollama/llama3.2:1b",
+  "profile": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/configs/opencode.json",
+  "profile_configuration": {
+    "name": "opencode",
+    "command": [
+      "npm",
+      "exec",
+      "--yes",
+      "--package=@opencode/cli@2.2.5",
+      "--",
+      "opencode",
+      "--standalone",
+      "run",
+      "--model",
+      "{model}",
+      "--format",
+      "json",
+      "{prompt}"
+    ],
+    "version_command": [
+      "npm",
+      "exec",
+      "--yes",
+      "--package=@opencode/cli@2.2.5",
+      "--",
+      "opencode",
+      "--version"
+    ],
+    "structured_stdout_jsonl": true,
+    "environment_allowlist": [
+      "OPENCODE_CONFIG",
+      "OPENCODE_CONFIG_DIR",
+      "OPENCODE_DISABLE_PROJECT_CONFIG",
+      "OPENCODE_DISABLE_EXTERNAL_SKILLS",
+      "OPENCODE_DISABLE_CLAUDE_CODE",
+      "OPENCODE_DISABLE_AUTOUPDATE"
+    ],
+    "credential_env": "[REDACTED]",
+    "environment": {
+      "OPENCODE_CONFIG": "{opencode_policy_path}",
+      "OPENCODE_CONFIG_DIR": "{opencode_config_dir}",
+      "OPENCODE_DISABLE_PROJECT_CONFIG": "true",
+      "OPENCODE_DISABLE_EXTERNAL_SKILLS": "true",
+      "OPENCODE_DISABLE_CLAUDE_CODE": "true",
+      "OPENCODE_DISABLE_AUTOUPDATE": "true"
+    },
+    "settings": {
+      "mode": "OpenCode CLI 2.2.5 non-interactive run from the isolated task workspace",
+      "model_id": "exact provider/model ID supplied at run time with --model",
+      "isolation": "read-only task files and solution.py-only edits; external directories and all shell commands denied; candidate code separately runs in the network-disabled Docker sandbox",
+      "network": "the agent CLI requires outbound HTTPS to the selected model provider; candidate execution has no network",
+      "dynamic_permission_test": "not performed; the pinned CLI resolves this policy without inference, while shell is denied and candidate execution is separately sandboxed"
+    }
+  },
+  "experiment_configuration": {
+    "name": "ollama-llama3-2-1b",
+    "profile": "configs/opencode.json",
+    "model_id": "ollama/llama3.2:1b",
+    "agent_version_expected": "opencode v2.2.5",
+    "cost_tier": "zero_cost",
+    "budget": {
+      "agent_timeout_seconds": 900,
+      "candidate_timeout_seconds": 5,
+      "max_cost_per_trial_usd": 0,
+      "max_total_tokens_per_trial": "[REDACTED]",
+      "input_usd_per_million_tokens": "[REDACTED]",
+      "output_usd_per_million_tokens": "[REDACTED]",
+      "cost_capture": "local Ollama inference; provider-reported token usage is recorded, estimated cost is $0, confirmed billing is not applicable (raised from 60000 after pilot attempt 4 showed a reasoning model exceeding 60000 tokens)",
+      "reasoning_effort": null
+    },
+    "credential_env": "[REDACTED]",
+    "registered_cost_cap_usd": 0,
+    "provider_hard_spend_limit_usd": 0,
+    "sandbox_preflight": {
+      "docker_path": "/usr/local/bin/docker",
+      "image": "python:3.11.18-slim-bookworm@sha256:ef521de1d817dc92a6358c906bbadb9a0b7e38040038642833521b9d582c2233",
+      "image_id": "sha256:ef521de1d817dc92a6358c906bbadb9a0b7e38040038642833521b9d582c2233",
+      "isolation": "docker",
+      "isolation_probe": "PASS"
+    }
+  },
+  "started_at_utc": "2026-11-06T00:55:54.608193+00:00",
+  "runtime_seconds": 41.465837167110294,
+  "timeout_seconds": 900,
+  "candidate_timeout_seconds": 5,
+  "timed_out": false,
+  "exit_code": 0,
+  "cost_usd": null,
+  "cost_usd_estimated": "0",
+  "cost_usd_confirmed": null,
+  "usage": {
+    "input_tokens": 2214,
+    "output_tokens": 284,
+    "total_tokens": 2498,
+    "events": [
+      {
+        "input_tokens": 2214,
+        "output_tokens": 284,
+        "total_tokens": 2498,
+        "agent_reported_cost_usd": null,
+        "source_event_type": "step_finish",
+        "billing_cost_confirmed": false
+      }
+    ],
+    "reported": true,
+    "estimated_cost_complete": true,
+    "estimated_cost_usd": "0",
+    "confirmed_cost_usd": null,
+    "budget_stop_reason": null
+  },
+  "candidate_source_path": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/results/runs/20261106T005554_607905Z_S04_opencode_trial2/workspace/solution.py",
+  "candidate_source_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+  "candidate_source_snapshot_issue": null,
+  "task_accuracy": 0.0,
+  "score_path": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/results/runs/20261106T005554_607905Z_S04_opencode_trial2/score.json",
+  "workspace_path": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/results/runs/20261106T005554_607905Z_S04_opencode_trial2/workspace",
+  "sandbox": {
+    "docker_path": "/usr/local/bin/docker",
+    "image": "python:3.11.18-slim-bookworm@sha256:ef521de1d817dc92a6358c906bbadb9a0b7e38040038642833521b9d582c2233",
+    "image_id": "sha256:ef521de1d817dc92a6358c906bbadb9a0b7e38040038642833521b9d582c2233",
+    "isolation": "docker",
+    "isolation_probe": "PASS"
+  },
+  "structured_agent_event_count": 0,
+  "exact_task_instruction": "# S04 — Calibration Applicability and Validity\n\n## Problem\n\nCheck whether synthetic calibration evidence applies to one measurement under explicit task rules.\n\n## Complete specification\n\nCheck serial, measurand, CURRENT status, exact YYYY-MM-DD validity dates (inclusive), inclusive measurement range, finite nonnegative uncertainty, exact unit, and DOCUMENTED traceability. Collect every independently checkable reason in fixed order: missing certificate fields in serial_number, measurand, status, valid_from, valid_to, range_min, range_max, uncertainty, unit, traceability_chain_status order; serial_mismatch; measurand_mismatch; calibration_not_current; invalid_validity_interval; outside_validity_dates; invalid_date; invalid_range; outside_calibration_range; invalid_range_or_value; invalid_uncertainty or missing_or_invalid_uncertainty; unit_mismatch; traceability_not_documented. Skip checks requiring absent certificate values; a separately malformed measurement date/value remains reportable. A missing certificate field is not duplicated as malformed. Malformed outer objects return invalid_structure. DOCUMENTED is synthetic evidence only and establishes neither accreditation nor legal compliance.\n\n## Interface\n\nImplement exactly `def solve(payload: dict) -> dict` in `solution.py`. Input and output use JSON objects. Do not read files outside this task workspace or assume hidden-test values. Preserve explicit errors; do not silently default required parameters. Public examples and their expected outputs are in `public_examples.json`.\n\n## Grading contract\n\nThe grader checks schema and exact validity/disposition fields, then checks every numeric field using task-specific absolute tolerances documented in the grading methodology. Invalid-input cases are part of the score. Hidden tests are deterministic and remain outside this exported workspace.\n",
+  "prompt": "# S04 — Calibration Applicability and Validity\n\n## Problem\n\nCheck whether synthetic calibration evidence applies to one measurement under explicit task rules.\n\n## Complete specification\n\nCheck serial, measurand, CURRENT status, exact YYYY-MM-DD validity dates (inclusive), inclusive measurement range, finite nonnegative uncertainty, exact unit, and DOCUMENTED traceability. Collect every independently checkable reason in fixed order: missing certificate fields in serial_number, measurand, status, valid_from, valid_to, range_min, range_max, uncertainty, unit, traceability_chain_status order; serial_mismatch; measurand_mismatch; calibration_not_current; invalid_validity_interval; outside_validity_dates; invalid_date; invalid_range; outside_calibration_range; invalid_range_or_value; invalid_uncertainty or missing_or_invalid_uncertainty; unit_mismatch; traceability_not_documented. Skip checks requiring absent certificate values; a separately malformed measurement date/value remains reportable. A missing certificate field is not duplicated as malformed. Malformed outer objects return invalid_structure. DOCUMENTED is synthetic evidence only and establishes neither accreditation nor legal compliance.\n\n## Interface\n\nImplement exactly `def solve(payload: dict) -> dict` in `solution.py`. Input and output use JSON objects. Do not read files outside this task workspace or assume hidden-test values. Preserve explicit errors; do not silently default required parameters. Public examples and their expected outputs are in `public_examples.json`.\n\n## Grading contract\n\nThe grader checks schema and exact validity/disposition fields, then checks every numeric field using task-specific absolute tolerances documented in the grading methodology. Invalid-input cases are part of the score. Hidden tests are deterministic and remain outside this exported workspace.\n\n\nImplementation instruction: edit only solution.py in the current task workspace. Implement solve(payload: dict) -> dict. Do not add dependencies. The evaluator runs each test input in a network-disabled Docker container using the pinned Python 3.11.18 runtime. Trial reproducibility seed: 20465143.\n",
+  "agent_command": [
+    "npm",
+    "exec",
+    "--yes",
+    "--package=@opencode/cli@2.2.5",
+    "--",
+    "opencode",
+    "--standalone",
+    "run",
+    "--model",
+    "ollama/llama3.2:1b",
+    "--format",
+    "json",
+    "# S04 — Calibration Applicability and Validity\n\n## Problem\n\nCheck whether synthetic calibration evidence applies to one measurement under explicit task rules.\n\n## Complete specification\n\nCheck serial, measurand, CURRENT status, exact YYYY-MM-DD validity dates (inclusive), inclusive measurement range, finite nonnegative uncertainty, exact unit, and DOCUMENTED traceability. Collect every independently checkable reason in fixed order: missing certificate fields in serial_number, measurand, status, valid_from, valid_to, range_min, range_max, uncertainty, unit, traceability_chain_status order; serial_mismatch; measurand_mismatch; calibration_not_current; invalid_validity_interval; outside_validity_dates; invalid_date; invalid_range; outside_calibration_range; invalid_range_or_value; invalid_uncertainty or missing_or_invalid_uncertainty; unit_mismatch; traceability_not_documented. Skip checks requiring absent certificate values; a separately malformed measurement date/value remains reportable. A missing certificate field is not duplicated as malformed. Malformed outer objects return invalid_structure. DOCUMENTED is synthetic evidence only and establishes neither accreditation nor legal compliance.\n\n## Interface\n\nImplement exactly `def solve(payload: dict) -> dict` in `solution.py`. Input and output use JSON objects. Do not read files outside this task workspace or assume hidden-test values. Preserve explicit errors; do not silently default required parameters. Public examples and their expected outputs are in `public_examples.json`.\n\n## Grading contract\n\nThe grader checks schema and exact validity/disposition fields, then checks every numeric field using task-specific absolute tolerances documented in the grading methodology. Invalid-input cases are part of the score. Hidden tests are deterministic and remain outside this exported workspace.\n\n\nImplementation instruction: edit only solution.py in the current task workspace. Implement solve(payload: dict) -> dict. Do not add dependencies. The evaluator runs each test input in a network-disabled Docker container using the pinned Python 3.11.18 runtime. Trial reproducibility seed: 20465143.\n"
+  ],
+  "agent_stdout": "{\"type\":\"step_start\",\"timestamp\":1793926592082,\"sessionID\":\"ses_e51a49d70ffeZyTcNBBN64OFWi\",\"part\":{\"id\":\"prt_1ae5b7652001fSfB20z8c0drck\",\"sessionID\":\"ses_e51a49d70ffeZyTcNBBN64OFWi\",\"messageID\":\"msg_1ae5b62e8001NZVBx9Bqf30nI0\",\"type\":\"step-start\"}}\n{\"type\":\"text\",\"timestamp\":1793926595935,\"sessionID\":\"ses_e51a49d70ffeZyTcNBBN64OFWi\",\"part\":{\"id\":\"prt_1ae5b62e8001NZVBx9Bqf30nI0_text-0\",\"sessionID\":\"ses_e51a49d70ffeZyTcNBBN64OFWi\",\"messageID\":\"msg_1ae5b62e8001NZVBx9Bqf30nI0\",\"type\":\"text\",\"text\":\"Here are the function calls that return JSON responses suitable for meeting the prompt:\\n\\n```\\n{\\\"type\\\":\\\"function\\\",\\\"name\\\":\\\"edit\\\",\\\"parameters\\\":{\\\"path\\\":\\\"S04 — Calibration Applicability and Validity/skills/sensitivity/skill.yaml#section:measurusandcalibration,\\\"oldString\\\":\\\"invalid_validity_dates \\\",\\\"newString\\\":\\\"\\\",\\\"replaceAll\\\":true},\\\"parameters\\\":{\\\"type\\\":\\\"object\\\",\\\"required\\\":[\\\"root\\\",\\\"validity_dates\\\",\\\"datetime\\\"],\\\"properties\\\":{\\\"validity_dates\\\":{\\\"type\\\":\\\"array\\\",\\\"description\\\":\\\"Valid dates. The array is sorted in chronological order, inclusive.\\\",\\\"items\\\":{\\\"type\\\":\\\"string\\\",\\\"description\\\":\\\"YYYY-MM-DD datetime\\\"}},\\\"root\\\":{\\\"type\\\":\\\"string\\\",\\\"description\\\":\\\"Base root of the input dictionary.\\\",\\\"/items\\\":[]}}}}\\n```\\n\\nExplanation:\\n\\nThe prompt explicitly mentions `S04` which refers to a specific calibration application and its subtasks.\\nIt asks us to execute function `solve(payload: dict)` in task workspace where an empty `solution.py` file is currently expected.\\nWe also need to update the validation date format from `YYYY-MM-DD` to `\\\"exact YYYY-MM-DD\\\"` as specified.\\nAlso, we should include one reason related to invalid validity dates which checks for validdate formats.\\n\\nNote: This code assumes that you have already defined function `solve(payload: dict)` in your `solution.py` module. If not, please create it and provide its contents according to the prompt requirements.\",\"time\":{\"start\":1793926587114,\"end\":1793926595935}}}\n{\"type\":\"step_finish\",\"timestamp\":1793926595935,\"sessionID\":\"ses_e51a49d70ffeZyTcNBBN64OFWi\",\"part\":{\"id\":\"prt_1ae5b62e8001NZVBx9Bqf30nI0_step-finish\",\"sessionID\":\"ses_e51a49d70ffeZyTcNBBN64OFWi\",\"messageID\":\"msg_1ae5b62e8001NZVBx9Bqf30nI0\",\"type\":\"step-finish\",\"reason\":\"stop\",\"cost\":0,\"tokens\":{\"input\":2214,\"output\":284,\"reasoning\":0,\"cache\":{\"read\":0,\"write\":0}}}}\n",
+  "agent_stderr": "npm notice\nnpm notice New major version of npm available! 11.16.0 -> 12.2.2\nnpm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2\nnpm notice To update run: npm install -g npm@12.2.2\nnpm notice\n",
+  "agent_version_record": {
+    "command": [
+      "npm",
+      "exec",
+      "--yes",
+      "--package=@opencode/cli@2.2.5",
+      "--",
+      "opencode",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "opencode v2.2.5\n",
+    "stderr": ""
+  },
+  "metrics": {
+    "case_count": 37,
+    "functional_correctness": {
+      "numerator": 0,
+      "denominator": 37,
+      "value": 0.0
+    },
+    "schema_compliance": {
+      "numerator": 0,
+      "denominator": 37,
+      "value": 0.0
+    },
+    "numerical_correctness": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "physical_unit_correctness": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "physical_equivalence_correctness": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "physical_integrity_correctness": {
+      "numerator": 37,
+      "denominator": 37,
+      "value": 1.0
+    },
+    "semantic_integrity_failures": {
+      "numerator": 0,
+      "denominator": 37,
+      "value": 0.0
+    },
+    "validity_state_correctness": {
+      "numerator": 0,
+      "denominator": 37,
+      "value": 0.0
+    },
+    "engineering_decision_correctness": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "execution_failures": {
+      "numerator": 37,
+      "denominator": 37,
+      "value": 1.0
+    },
+    "malformed_response_rate": {
+      "numerator": 0,
+      "denominator": 37,
+      "value": 0.0
+    },
+    "contract_violations": {
+      "numerator": 37,
+      "denominator": 37,
+      "value": 1.0
+    },
+    "end_to_end_correctness": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "silent_corruption_rate": {
+      "numerator": 0,
+      "denominator": 37,
+      "value": 0.0
+    },
+    "unsafe_acceptance_rate": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "numerical_error_by_field_unit": {},
+    "calibration_validity_recall": {
+      "numerator": 0,
+      "denominator": 22,
+      "value": 0.0
+    },
+    "uncertainty_calculation_accuracy": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "false_rejection_rate": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "boundary_decision_accuracy": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "macro_average_task_accuracy": 0.0,
+    "per_task": {
+      "S04": {
+        "functional_correctness": {
+          "numerator": 0,
+          "denominator": 37,
+          "value": 0.0
+        },
+        "schema_compliance": {
+          "numerator": 0,
+          "denominator": 37,
+          "value": 0.0
+        },
+        "numerical_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "physical_unit_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "physical_integrity_correctness": {
+          "numerator": 37,
+          "denominator": 37,
+          "value": 1.0
+        },
+        "semantic_integrity_failures": {
+          "numerator": 0,
+          "denominator": 37,
+          "value": 0.0
+        },
+        "validity_state_correctness": {
+          "numerator": 0,
+          "denominator": 37,
+          "value": 0.0
+        },
+        "engineering_decision_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "execution_failures": {
+          "numerator": 37,
+          "denominator": 37,
+          "value": 1.0
+        },
+        "malformed_response_rate": {
+          "numerator": 0,
+          "denominator": 37,
+          "value": 0.0
+        },
+        "contract_violations": {
+          "numerator": 37,
+          "denominator": 37,
+          "value": 1.0
+        },
+        "silent_corruption_rate": {
+          "numerator": 0,
+          "denominator": 37,
+          "value": 0.0
+        },
+        "unsafe_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        }
+      }
+    },
+    "pass_at_3": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "pass_cubed": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    }
+  },
+  "grader": {
+    "task": "S04",
+    "candidate": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/results/runs/20261106T005554_607905Z_S04_opencode_trial2/workspace/solution.py",
+    "case_count": 37,
+    "passed": 0,
+    "accuracy": 0.0,
+    "cases": [
+      {
+        "id": "S04-seeded-00",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-seeded-01",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-seeded-02",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-seeded-03",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-seeded-04",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-seeded-05",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-seeded-06",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-seeded-07",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-seeded-08",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-seeded-09",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-seeded-10",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-seeded-11",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-seeded-12",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-seeded-13",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-seeded-14",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-seeded-15",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-seeded-16",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-seeded-17",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-valid-start",
+        "category": "boundary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-valid-end",
+        "category": "boundary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-outside-start",
+        "category": "adversarial",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [
+            "outside_validity_dates"
+          ],
+          "valid": false
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-serial-mismatch",
+        "category": "adversarial",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [
+            "serial_mismatch"
+          ],
+          "valid": false
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-measurand-mismatch",
+        "category": "adversarial",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [
+            "measurand_mismatch"
+          ],
+          "valid": false
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-expired-status",
+        "category": "adversarial",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [
+            "calibration_not_current"
+          ],
+          "valid": false
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-range-low",
+        "category": "boundary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-range-high",
+        "category": "boundary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-outside-range",
+        "category": "adversarial",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [
+            "outside_calibration_range"
+          ],
+          "valid": false
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-negative-u",
+        "category": "adversarial",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [
+            "invalid_uncertainty"
+          ],
+          "valid": false
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-unit-mismatch",
+        "category": "adversarial",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [
+            "unit_mismatch"
+          ],
+          "valid": false
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-traceability-unknown",
+        "category": "adversarial",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [
+            "traceability_not_documented"
+          ],
+          "valid": false
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-malformed-date",
+        "category": "adversarial",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [
+            "invalid_date"
+          ],
+          "valid": false
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-week-date",
+        "category": "adversarial",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [
+            "invalid_date"
+          ],
+          "valid": false
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-reversed-range",
+        "category": "adversarial",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [
+            "invalid_range"
+          ],
+          "valid": false
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-missing-valid-from-plus-measurand",
+        "category": "adversarial",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [
+            "missing_valid_from",
+            "measurand_mismatch"
+          ],
+          "valid": false
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-missing-range-max-plus-bad-value",
+        "category": "adversarial",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [
+            "missing_range_max",
+            "invalid_range_or_value"
+          ],
+          "valid": false
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-missing-serial-and-unit",
+        "category": "adversarial",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [
+            "missing_serial_number",
+            "missing_unit"
+          ],
+          "valid": false
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S04-simultaneous-independent-defects",
+        "category": "adversarial",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not of type 'object'"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reasons": [
+            "missing_serial_number",
+            "measurand_mismatch",
+            "calibration_not_current",
+            "outside_validity_dates",
+            "invalid_uncertainty",
+            "unit_mismatch",
+            "traceability_not_documented"
+          ],
+          "valid": false
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      }
+    ]
+  },
+  "event_log_path": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/results/runs/20261106T005554_607905Z_S04_opencode_trial2/events.jsonl",
+  "tool_event_capture": "agent-reported structured events only; no private reasoning is captured",
+  "transcript_path": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/results/transcripts/20261106T005554_607905Z_S04_opencode_trial2.jsonl"
+}

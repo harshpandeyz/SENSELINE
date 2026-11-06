@@ -1,0 +1,2998 @@
+{
+  "run_id": "20261105T204211_967324Z_S05_opencode_trial0",
+  "task": "S05",
+  "trial": 0,
+  "trial_seed": 20266146,
+  "agent": "opencode",
+  "agent_version": {
+    "command": [
+      "npm",
+      "exec",
+      "--yes",
+      "--package=@opencode/cli@2.2.5",
+      "--",
+      "opencode",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "opencode v2.2.5\n",
+    "stderr": ""
+  },
+  "model_id": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+  "profile": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/configs/opencode.json",
+  "profile_configuration": {
+    "name": "opencode",
+    "command": [
+      "npm",
+      "exec",
+      "--yes",
+      "--package=@opencode/cli@2.2.5",
+      "--",
+      "opencode",
+      "--standalone",
+      "run",
+      "--model",
+      "{model}",
+      "--format",
+      "json",
+      "{prompt}"
+    ],
+    "version_command": [
+      "npm",
+      "exec",
+      "--yes",
+      "--package=@opencode/cli@2.2.5",
+      "--",
+      "opencode",
+      "--version"
+    ],
+    "structured_stdout_jsonl": true,
+    "environment_allowlist": [
+      "OPENCODE_CONFIG",
+      "OPENCODE_CONFIG_DIR",
+      "OPENCODE_DISABLE_PROJECT_CONFIG",
+      "OPENCODE_DISABLE_EXTERNAL_SKILLS",
+      "OPENCODE_DISABLE_CLAUDE_CODE",
+      "OPENCODE_DISABLE_AUTOUPDATE"
+    ],
+    "credential_env": "[REDACTED]",
+    "environment": {
+      "OPENCODE_CONFIG": "{opencode_policy_path}",
+      "OPENCODE_CONFIG_DIR": "{opencode_config_dir}",
+      "OPENCODE_DISABLE_PROJECT_CONFIG": "true",
+      "OPENCODE_DISABLE_EXTERNAL_SKILLS": "true",
+      "OPENCODE_DISABLE_CLAUDE_CODE": "true",
+      "OPENCODE_DISABLE_AUTOUPDATE": "true"
+    },
+    "settings": {
+      "mode": "OpenCode CLI 2.2.5 non-interactive run from the isolated task workspace",
+      "model_id": "exact provider/model ID supplied at run time with --model",
+      "isolation": "read-only task files and solution.py-only edits; external directories and all shell commands denied; candidate code separately runs in the network-disabled Docker sandbox",
+      "network": "the agent CLI requires outbound HTTPS to the selected model provider; candidate execution has no network",
+      "dynamic_permission_test": "not performed; the pinned CLI resolves this policy without inference, while shell is denied and candidate execution is separately sandboxed"
+    }
+  },
+  "experiment_configuration": {
+    "name": "openrouter-nemotron-vl-free",
+    "profile": "configs/opencode.json",
+    "model_id": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+    "agent_version_expected": "opencode v2.2.5",
+    "cost_tier": "zero_cost",
+    "budget": {
+      "agent_timeout_seconds": 900,
+      "candidate_timeout_seconds": 5,
+      "max_cost_per_trial_usd": 0,
+      "max_total_tokens_per_trial": "[REDACTED]",
+      "input_usd_per_million_tokens": "[REDACTED]",
+      "output_usd_per_million_tokens": "[REDACTED]",
+      "cost_capture": "documented $0 OpenRouter free-tier model served under the 50/day free-model quota; provider-reported token usage is recorded, estimated cost is $0, confirmed billing is not applicable",
+      "reasoning_effort": null
+    },
+    "credential_env": "[REDACTED]",
+    "registered_cost_cap_usd": 0,
+    "provider_hard_spend_limit_usd": 0,
+    "sandbox_preflight": {
+      "docker_path": "/usr/local/bin/docker",
+      "image": "python:3.11.18-slim-bookworm@sha256:ef521de1d817dc92a6358c906bbadb9a0b7e38040038642833521b9d582c2233",
+      "image_id": "sha256:ef521de1d817dc92a6358c906bbadb9a0b7e38040038642833521b9d582c2233",
+      "isolation": "docker",
+      "isolation_probe": "PASS"
+    }
+  },
+  "started_at_utc": "2026-11-05T20:42:11.968058+00:00",
+  "runtime_seconds": 394.607903749682,
+  "timeout_seconds": 900,
+  "candidate_timeout_seconds": 5,
+  "timed_out": false,
+  "exit_code": 0,
+  "cost_usd": null,
+  "cost_usd_estimated": "0",
+  "cost_usd_confirmed": null,
+  "usage": {
+    "input_tokens": 37011,
+    "output_tokens": 5938,
+    "total_tokens": 42949,
+    "events": [
+      {
+        "input_tokens": 3143,
+        "output_tokens": 165,
+        "total_tokens": 3308,
+        "agent_reported_cost_usd": null,
+        "source_event_type": "step_finish",
+        "billing_cost_confirmed": false
+      },
+      {
+        "input_tokens": 3827,
+        "output_tokens": 387,
+        "total_tokens": 4214,
+        "agent_reported_cost_usd": null,
+        "source_event_type": "step_finish",
+        "billing_cost_confirmed": false
+      },
+      {
+        "input_tokens": 7893,
+        "output_tokens": 82,
+        "total_tokens": 7975,
+        "agent_reported_cost_usd": null,
+        "source_event_type": "step_finish",
+        "billing_cost_confirmed": false
+      },
+      {
+        "input_tokens": 8230,
+        "output_tokens": 2102,
+        "total_tokens": 10332,
+        "agent_reported_cost_usd": null,
+        "source_event_type": "step_finish",
+        "billing_cost_confirmed": false
+      },
+      {
+        "input_tokens": 213,
+        "output_tokens": 1540,
+        "total_tokens": 1753,
+        "agent_reported_cost_usd": null,
+        "source_event_type": "step_finish",
+        "billing_cost_confirmed": false
+      },
+      {
+        "input_tokens": 1803,
+        "output_tokens": 343,
+        "total_tokens": 2146,
+        "agent_reported_cost_usd": null,
+        "source_event_type": "step_finish",
+        "billing_cost_confirmed": false
+      },
+      {
+        "input_tokens": 5435,
+        "output_tokens": 497,
+        "total_tokens": 5932,
+        "agent_reported_cost_usd": null,
+        "source_event_type": "step_finish",
+        "billing_cost_confirmed": false
+      },
+      {
+        "input_tokens": 1631,
+        "output_tokens": 82,
+        "total_tokens": 1713,
+        "agent_reported_cost_usd": null,
+        "source_event_type": "step_finish",
+        "billing_cost_confirmed": false
+      },
+      {
+        "input_tokens": 4836,
+        "output_tokens": 740,
+        "total_tokens": 5576,
+        "agent_reported_cost_usd": null,
+        "source_event_type": "step_finish",
+        "billing_cost_confirmed": false
+      }
+    ],
+    "reported": true,
+    "estimated_cost_complete": true,
+    "estimated_cost_usd": "0",
+    "confirmed_cost_usd": null,
+    "budget_stop_reason": null
+  },
+  "candidate_source_path": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/results/pilot/openrouter-nemotron-vl-free/S05/runs/20261105T204211_967324Z_S05_opencode_trial0/workspace/solution.py",
+  "candidate_source_sha256": "af4d6e28491caa8635710595cd89bb0612087330816b5206cf7ec4dd765e5246",
+  "candidate_source_snapshot_issue": null,
+  "task_accuracy": 1.0,
+  "score_path": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/results/pilot/openrouter-nemotron-vl-free/S05/runs/20261105T204211_967324Z_S05_opencode_trial0/score.json",
+  "workspace_path": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/results/pilot/openrouter-nemotron-vl-free/S05/runs/20261105T204211_967324Z_S05_opencode_trial0/workspace",
+  "sandbox": {
+    "docker_path": "/usr/local/bin/docker",
+    "image": "python:3.11.18-slim-bookworm@sha256:ef521de1d817dc92a6358c906bbadb9a0b7e38040038642833521b9d582c2233",
+    "image_id": "sha256:ef521de1d817dc92a6358c906bbadb9a0b7e38040038642833521b9d582c2233",
+    "isolation": "docker",
+    "isolation_probe": "PASS"
+  },
+  "structured_agent_event_count": 0,
+  "metrics": {
+    "case_count": 30,
+    "functional_correctness": {
+      "numerator": 30,
+      "denominator": 30,
+      "value": 1.0
+    },
+    "schema_compliance": {
+      "numerator": 30,
+      "denominator": 30,
+      "value": 1.0
+    },
+    "numerical_correctness": {
+      "numerator": 22,
+      "denominator": 22,
+      "value": 1.0
+    },
+    "physical_unit_correctness": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "physical_equivalence_correctness": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "physical_integrity_correctness": {
+      "numerator": 30,
+      "denominator": 30,
+      "value": 1.0
+    },
+    "semantic_integrity_failures": {
+      "numerator": 0,
+      "denominator": 30,
+      "value": 0.0
+    },
+    "validity_state_correctness": {
+      "numerator": 30,
+      "denominator": 30,
+      "value": 1.0
+    },
+    "engineering_decision_correctness": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "execution_failures": {
+      "numerator": 0,
+      "denominator": 30,
+      "value": 0.0
+    },
+    "malformed_response_rate": {
+      "numerator": 0,
+      "denominator": 30,
+      "value": 0.0
+    },
+    "contract_violations": {
+      "numerator": 0,
+      "denominator": 30,
+      "value": 0.0
+    },
+    "end_to_end_correctness": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "silent_corruption_rate": {
+      "numerator": 0,
+      "denominator": 30,
+      "value": 0.0
+    },
+    "unsafe_acceptance_rate": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "numerical_error_by_field_unit": {
+      "S05.combined_standard_uncertainty [MU (task-defined measurand unit)]": {
+        "field": "combined_standard_uncertainty",
+        "task": "S05",
+        "unit": "MU (task-defined measurand unit)",
+        "case_count": 22,
+        "numeric_actual_count": 22,
+        "within_tolerance_count": 22,
+        "mean_absolute_error": "4.136363636363636363636363636E-40",
+        "maximum_absolute_error": "3E-39",
+        "maximum_normalized_error": "3E-23",
+        "permitted_tolerance": "1E-16"
+      },
+      "S05.expanded_uncertainty [MU (task-defined measurand unit)]": {
+        "field": "expanded_uncertainty",
+        "task": "S05",
+        "unit": "MU (task-defined measurand unit)",
+        "case_count": 22,
+        "numeric_actual_count": 22,
+        "within_tolerance_count": 22,
+        "mean_absolute_error": "1.181818181818181818181818182E-39",
+        "maximum_absolute_error": "1E-38",
+        "maximum_normalized_error": "1E-22",
+        "permitted_tolerance": "1E-16"
+      },
+      "S05.standard_uncertainties.0 [MU (task-defined measurand unit)]": {
+        "field": "standard_uncertainties.0",
+        "task": "S05",
+        "unit": "MU (task-defined measurand unit)",
+        "case_count": 22,
+        "numeric_actual_count": 22,
+        "within_tolerance_count": 22,
+        "mean_absolute_error": "2.772727272727272727272727273E-40",
+        "maximum_absolute_error": "1E-39",
+        "maximum_normalized_error": "1E-23",
+        "permitted_tolerance": "1E-16"
+      },
+      "S05.standard_uncertainties.1 [MU (task-defined measurand unit)]": {
+        "field": "standard_uncertainties.1",
+        "task": "S05",
+        "unit": "MU (task-defined measurand unit)",
+        "case_count": 20,
+        "numeric_actual_count": 20,
+        "within_tolerance_count": 20,
+        "mean_absolute_error": "0E-41",
+        "maximum_absolute_error": "0E-40",
+        "maximum_normalized_error": "0E-24",
+        "permitted_tolerance": "1E-16"
+      }
+    },
+    "calibration_validity_recall": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "uncertainty_calculation_accuracy": {
+      "numerator": 22,
+      "denominator": 22,
+      "value": 1.0
+    },
+    "false_rejection_rate": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "boundary_decision_accuracy": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "macro_average_task_accuracy": 1.0,
+    "per_task": {
+      "S05": {
+        "functional_correctness": {
+          "numerator": 30,
+          "denominator": 30,
+          "value": 1.0
+        },
+        "schema_compliance": {
+          "numerator": 30,
+          "denominator": 30,
+          "value": 1.0
+        },
+        "numerical_correctness": {
+          "numerator": 22,
+          "denominator": 22,
+          "value": 1.0
+        },
+        "physical_unit_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "physical_integrity_correctness": {
+          "numerator": 30,
+          "denominator": 30,
+          "value": 1.0
+        },
+        "semantic_integrity_failures": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "validity_state_correctness": {
+          "numerator": 30,
+          "denominator": 30,
+          "value": 1.0
+        },
+        "engineering_decision_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "execution_failures": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "malformed_response_rate": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "contract_violations": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "silent_corruption_rate": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "unsafe_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        }
+      }
+    },
+    "pass_at_3": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "pass_cubed": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    }
+  },
+  "grader": {
+    "task": "S05",
+    "candidate": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/results/pilot/openrouter-nemotron-vl-free/S05/runs/20261105T204211_967324Z_S05_opencode_trial0/workspace/solution.py",
+    "case_count": 30,
+    "passed": 30,
+    "accuracy": 1.0,
+    "cases": [
+      {
+        "id": "S05-seeded-00",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "3.223450288755927527418205362944923057564",
+          "expanded_uncertainty": "6.446900577511855054836410725889846115128",
+          "standard_uncertainties": [
+            "3.473110997362451127108136760257138607329",
+            "0.2886751345948128822545743902509787278238"
+          ],
+          "valid": true
+        },
+        "actual": {
+          "valid": true,
+          "standard_uncertainties": [
+            "3.473110997362451127108136760257138607330",
+            "0.2886751345948128822545743902509787278238"
+          ],
+          "combined_standard_uncertainty": "3.223450288755927527418205362944923057564",
+          "expanded_uncertainty": "6.446900577511855054836410725889846115128"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "3.223450288755927527418205362944923057564",
+            "actual": "3.223450288755927527418205362944923057564",
+            "comparison_actual": "3.223450288755927527418205362944923057564",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "6.446900577511855054836410725889846115128",
+            "actual": "6.446900577511855054836410725889846115128",
+            "comparison_actual": "6.446900577511855054836410725889846115128",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "3.473110997362451127108136760257138607329",
+            "actual": "3.473110997362451127108136760257138607330",
+            "comparison_actual": "3.473110997362451127108136760257138607330",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "1E-39",
+            "relative_error": "2.879263002994778136462704050E-40",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "1E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.2886751345948128822545743902509787278238",
+            "actual": "0.2886751345948128822545743902509787278238",
+            "comparison_actual": "0.2886751345948128822545743902509787278238",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-40",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-24",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-seeded-01",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "8.09963990969145903466290448579803098253",
+          "expanded_uncertainty": "16.19927981938291806932580897159606196506",
+          "standard_uncertainties": [
+            "4.049176871085447328478286184425513231198",
+            "0.2886751345948128822545743902509787278238"
+          ],
+          "valid": true
+        },
+        "actual": {
+          "valid": true,
+          "standard_uncertainties": [
+            "4.049176871085447328478286184425513231198",
+            "0.2886751345948128822545743902509787278238"
+          ],
+          "combined_standard_uncertainty": "8.099639909691459034662904485798030982530",
+          "expanded_uncertainty": "16.19927981938291806932580897159606196506"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "8.09963990969145903466290448579803098253",
+            "actual": "8.099639909691459034662904485798030982530",
+            "comparison_actual": "8.099639909691459034662904485798030982530",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "16.19927981938291806932580897159606196506",
+            "actual": "16.19927981938291806932580897159606196506",
+            "comparison_actual": "16.19927981938291806932580897159606196506",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-38",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-22",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "4.049176871085447328478286184425513231198",
+            "actual": "4.049176871085447328478286184425513231198",
+            "comparison_actual": "4.049176871085447328478286184425513231198",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.2886751345948128822545743902509787278238",
+            "actual": "0.2886751345948128822545743902509787278238",
+            "comparison_actual": "0.2886751345948128822545743902509787278238",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-40",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-24",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-seeded-02",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "4.877330049864475834307861344784619736427",
+          "expanded_uncertainty": "9.754660099728951668615722689569239472854",
+          "standard_uncertainties": [
+            "3.774917217635374848618342403473058529111",
+            "0.8660254037844386467637231707529361834713"
+          ],
+          "valid": true
+        },
+        "actual": {
+          "valid": true,
+          "standard_uncertainties": [
+            "3.774917217635374848618342403473058529111",
+            "0.8660254037844386467637231707529361834713"
+          ],
+          "combined_standard_uncertainty": "4.877330049864475834307861344784619736427",
+          "expanded_uncertainty": "9.754660099728951668615722689569239472854"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "4.877330049864475834307861344784619736427",
+            "actual": "4.877330049864475834307861344784619736427",
+            "comparison_actual": "4.877330049864475834307861344784619736427",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "9.754660099728951668615722689569239472854",
+            "actual": "9.754660099728951668615722689569239472854",
+            "comparison_actual": "9.754660099728951668615722689569239472854",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "3.774917217635374848618342403473058529111",
+            "actual": "3.774917217635374848618342403473058529111",
+            "comparison_actual": "3.774917217635374848618342403473058529111",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.8660254037844386467637231707529361834713",
+            "actual": "0.8660254037844386467637231707529361834713",
+            "comparison_actual": "0.8660254037844386467637231707529361834713",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-40",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-24",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-seeded-03",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "6.474308199851677331845637735687207290877",
+          "expanded_uncertainty": "12.94861639970335466369127547137441458175",
+          "standard_uncertainties": [
+            "3.22425702035885056911569655237637879517",
+            "0.2886751345948128822545743902509787278238"
+          ],
+          "valid": true
+        },
+        "actual": {
+          "valid": true,
+          "standard_uncertainties": [
+            "3.224257020358850569115696552376378795170",
+            "0.2886751345948128822545743902509787278238"
+          ],
+          "combined_standard_uncertainty": "6.474308199851677331845637735687207290877",
+          "expanded_uncertainty": "12.94861639970335466369127547137441458175"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "6.474308199851677331845637735687207290877",
+            "actual": "6.474308199851677331845637735687207290877",
+            "comparison_actual": "6.474308199851677331845637735687207290877",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "12.94861639970335466369127547137441458175",
+            "actual": "12.94861639970335466369127547137441458175",
+            "comparison_actual": "12.94861639970335466369127547137441458175",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-38",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-22",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "3.22425702035885056911569655237637879517",
+            "actual": "3.224257020358850569115696552376378795170",
+            "comparison_actual": "3.224257020358850569115696552376378795170",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.2886751345948128822545743902509787278238",
+            "actual": "0.2886751345948128822545743902509787278238",
+            "comparison_actual": "0.2886751345948128822545743902509787278238",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-40",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-24",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-seeded-04",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "2.390198642395992507930327508507664728765",
+          "expanded_uncertainty": "4.78039728479198501586065501701532945753",
+          "standard_uncertainties": [
+            "2.625991876098121772963875203360255761607",
+            "0.2886751345948128822545743902509787278238"
+          ],
+          "valid": true
+        },
+        "actual": {
+          "valid": true,
+          "standard_uncertainties": [
+            "2.625991876098121772963875203360255761606",
+            "0.2886751345948128822545743902509787278238"
+          ],
+          "combined_standard_uncertainty": "2.390198642395992507930327508507664728763",
+          "expanded_uncertainty": "4.780397284791985015860655017015329457526"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "2.390198642395992507930327508507664728765",
+            "actual": "2.390198642395992507930327508507664728763",
+            "comparison_actual": "2.390198642395992507930327508507664728763",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "2E-39",
+            "relative_error": "8.367505380202006892184193069E-40",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "2E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "4.78039728479198501586065501701532945753",
+            "actual": "4.780397284791985015860655017015329457526",
+            "comparison_actual": "4.780397284791985015860655017015329457526",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "4E-39",
+            "relative_error": "8.367505380202006892184193071E-40",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "4E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "2.625991876098121772963875203360255761607",
+            "actual": "2.625991876098121772963875203360255761606",
+            "comparison_actual": "2.625991876098121772963875203360255761606",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "1E-39",
+            "relative_error": "3.808084895852261181337341685E-40",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "1E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.2886751345948128822545743902509787278238",
+            "actual": "0.2886751345948128822545743902509787278238",
+            "comparison_actual": "0.2886751345948128822545743902509787278238",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-40",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-24",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-seeded-05",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "3.145764348029479040515285336227548774259",
+          "expanded_uncertainty": "7.864410870073697601288213340568871935648",
+          "standard_uncertainties": [
+            "3.09232921921324541236605739198055776886",
+            "0.2886751345948128822545743902509787278238"
+          ],
+          "valid": true
+        },
+        "actual": {
+          "valid": true,
+          "standard_uncertainties": [
+            "3.092329219213245412366057391980557768860",
+            "0.2886751345948128822545743902509787278238"
+          ],
+          "combined_standard_uncertainty": "3.145764348029479040515285336227548774259",
+          "expanded_uncertainty": "7.864410870073697601288213340568871935648"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "3.145764348029479040515285336227548774259",
+            "actual": "3.145764348029479040515285336227548774259",
+            "comparison_actual": "3.145764348029479040515285336227548774259",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "7.864410870073697601288213340568871935648",
+            "actual": "7.864410870073697601288213340568871935648",
+            "comparison_actual": "7.864410870073697601288213340568871935648",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "3.09232921921324541236605739198055776886",
+            "actual": "3.092329219213245412366057391980557768860",
+            "comparison_actual": "3.092329219213245412366057391980557768860",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.2886751345948128822545743902509787278238",
+            "actual": "0.2886751345948128822545743902509787278238",
+            "comparison_actual": "0.2886751345948128822545743902509787278238",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-40",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-24",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-seeded-06",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "5.680082159030213652084994468876750295147",
+          "expanded_uncertainty": "14.20020539757553413021248617219187573787",
+          "standard_uncertainties": [
+            "2.839454172900136805446168991996178220571",
+            "0.05773502691896257645091487805019574556475"
+          ],
+          "valid": true
+        },
+        "actual": {
+          "valid": true,
+          "standard_uncertainties": [
+            "2.839454172900136805446168991996178220570",
+            "0.05773502691896257645091487805019574556475"
+          ],
+          "combined_standard_uncertainty": "5.680082159030213652084994468876750295144",
+          "expanded_uncertainty": "14.20020539757553413021248617219187573786"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "5.680082159030213652084994468876750295147",
+            "actual": "5.680082159030213652084994468876750295144",
+            "comparison_actual": "5.680082159030213652084994468876750295144",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "3E-39",
+            "relative_error": "5.281613744319859786007330325E-40",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "3E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "14.20020539757553413021248617219187573787",
+            "actual": "14.20020539757553413021248617219187573786",
+            "comparison_actual": "14.20020539757553413021248617219187573786",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "1E-38",
+            "relative_error": "7.042151659093146381343107102E-40",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "1E-22",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "2.839454172900136805446168991996178220571",
+            "actual": "2.839454172900136805446168991996178220570",
+            "comparison_actual": "2.839454172900136805446168991996178220570",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "1E-39",
+            "relative_error": "3.521803625302495262568891773E-40",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "1E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.05773502691896257645091487805019574556475",
+            "actual": "0.05773502691896257645091487805019574556475",
+            "comparison_actual": "0.05773502691896257645091487805019574556475",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-41",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-25",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-seeded-07",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "5.965246572160003066059434775491644741524",
+          "expanded_uncertainty": "5.965246572160003066059434775491644741524",
+          "standard_uncertainties": [
+            "2.982588361362213411755839473967143269438",
+            "0.05773502691896257645091487805019574556475"
+          ],
+          "valid": true
+        },
+        "actual": {
+          "valid": true,
+          "standard_uncertainties": [
+            "2.982588361362213411755839473967143269438",
+            "0.05773502691896257645091487805019574556475"
+          ],
+          "combined_standard_uncertainty": "5.965246572160003066059434775491644741524",
+          "expanded_uncertainty": "5.965246572160003066059434775491644741524"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "5.965246572160003066059434775491644741524",
+            "actual": "5.965246572160003066059434775491644741524",
+            "comparison_actual": "5.965246572160003066059434775491644741524",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "5.965246572160003066059434775491644741524",
+            "actual": "5.965246572160003066059434775491644741524",
+            "comparison_actual": "5.965246572160003066059434775491644741524",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "2.982588361362213411755839473967143269438",
+            "actual": "2.982588361362213411755839473967143269438",
+            "comparison_actual": "2.982588361362213411755839473967143269438",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.05773502691896257645091487805019574556475",
+            "actual": "0.05773502691896257645091487805019574556475",
+            "comparison_actual": "0.05773502691896257645091487805019574556475",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-41",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-25",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-seeded-08",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "4.108036221281896102403018590519865149448",
+          "expanded_uncertainty": "4.108036221281896102403018590519865149448",
+          "standard_uncertainties": [
+            "2.345207879911714777282815056772233140294",
+            "0.8660254037844386467637231707529361834713"
+          ],
+          "valid": true
+        },
+        "actual": {
+          "valid": true,
+          "standard_uncertainties": [
+            "2.345207879911714777282815056772233140294",
+            "0.8660254037844386467637231707529361834713"
+          ],
+          "combined_standard_uncertainty": "4.108036221281896102403018590519865149448",
+          "expanded_uncertainty": "4.108036221281896102403018590519865149448"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "4.108036221281896102403018590519865149448",
+            "actual": "4.108036221281896102403018590519865149448",
+            "comparison_actual": "4.108036221281896102403018590519865149448",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "4.108036221281896102403018590519865149448",
+            "actual": "4.108036221281896102403018590519865149448",
+            "comparison_actual": "4.108036221281896102403018590519865149448",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "2.345207879911714777282815056772233140294",
+            "actual": "2.345207879911714777282815056772233140294",
+            "comparison_actual": "2.345207879911714777282815056772233140294",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.8660254037844386467637231707529361834713",
+            "actual": "0.8660254037844386467637231707529361834713",
+            "comparison_actual": "0.8660254037844386467637231707529361834713",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-40",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-24",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-seeded-09",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "4.203569911396740407494390432782454207138",
+          "expanded_uncertainty": "4.203569911396740407494390432782454207138",
+          "standard_uncertainties": [
+            "2.101586702153081921871437639088852049955",
+            "0.05773502691896257645091487805019574556475"
+          ],
+          "valid": true
+        },
+        "actual": {
+          "valid": true,
+          "standard_uncertainties": [
+            "2.101586702153081921871437639088852049955",
+            "0.05773502691896257645091487805019574556475"
+          ],
+          "combined_standard_uncertainty": "4.203569911396740407494390432782454207138",
+          "expanded_uncertainty": "4.203569911396740407494390432782454207138"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "4.203569911396740407494390432782454207138",
+            "actual": "4.203569911396740407494390432782454207138",
+            "comparison_actual": "4.203569911396740407494390432782454207138",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "4.203569911396740407494390432782454207138",
+            "actual": "4.203569911396740407494390432782454207138",
+            "comparison_actual": "4.203569911396740407494390432782454207138",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "2.101586702153081921871437639088852049955",
+            "actual": "2.101586702153081921871437639088852049955",
+            "comparison_actual": "2.101586702153081921871437639088852049955",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.05773502691896257645091487805019574556475",
+            "actual": "0.05773502691896257645091487805019574556475",
+            "comparison_actual": "0.05773502691896257645091487805019574556475",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-41",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-25",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-seeded-10",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "2.915475947422650235437076438772791538261",
+          "expanded_uncertainty": "7.288689868556625588592691096931978845652",
+          "standard_uncertainties": [
+            "2.901149197588201713453740278452275455204",
+            "0.2886751345948128822545743902509787278238"
+          ],
+          "valid": true
+        },
+        "actual": {
+          "valid": true,
+          "standard_uncertainties": [
+            "2.901149197588201713453740278452275455204",
+            "0.2886751345948128822545743902509787278238"
+          ],
+          "combined_standard_uncertainty": "2.915475947422650235437076438772791538261",
+          "expanded_uncertainty": "7.288689868556625588592691096931978845652"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "2.915475947422650235437076438772791538261",
+            "actual": "2.915475947422650235437076438772791538261",
+            "comparison_actual": "2.915475947422650235437076438772791538261",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "7.288689868556625588592691096931978845652",
+            "actual": "7.288689868556625588592691096931978845652",
+            "comparison_actual": "7.288689868556625588592691096931978845652",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "2.901149197588201713453740278452275455204",
+            "actual": "2.901149197588201713453740278452275455204",
+            "comparison_actual": "2.901149197588201713453740278452275455204",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.2886751345948128822545743902509787278238",
+            "actual": "0.2886751345948128822545743902509787278238",
+            "comparison_actual": "0.2886751345948128822545743902509787278238",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-40",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-24",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-seeded-11",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "7.406359879634979408165987380713385873615",
+          "expanded_uncertainty": "7.406359879634979408165987380713385873615",
+          "standard_uncertainties": [
+            "3.696845502136472387350533367536644306155",
+            "0.8660254037844386467637231707529361834713"
+          ],
+          "valid": true
+        },
+        "actual": {
+          "valid": true,
+          "standard_uncertainties": [
+            "3.696845502136472387350533367536644306154",
+            "0.8660254037844386467637231707529361834713"
+          ],
+          "combined_standard_uncertainty": "7.406359879634979408165987380713385873613",
+          "expanded_uncertainty": "7.406359879634979408165987380713385873613"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "7.406359879634979408165987380713385873615",
+            "actual": "7.406359879634979408165987380713385873613",
+            "comparison_actual": "7.406359879634979408165987380713385873613",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "2E-39",
+            "relative_error": "2.700381877876787023106474700E-40",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "2E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "7.406359879634979408165987380713385873615",
+            "actual": "7.406359879634979408165987380713385873613",
+            "comparison_actual": "7.406359879634979408165987380713385873613",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "2E-39",
+            "relative_error": "2.700381877876787023106474700E-40",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "2E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "3.696845502136472387350533367536644306155",
+            "actual": "3.696845502136472387350533367536644306154",
+            "comparison_actual": "3.696845502136472387350533367536644306154",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "1E-39",
+            "relative_error": "2.705008904002296868793073195E-40",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "1E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.8660254037844386467637231707529361834713",
+            "actual": "0.8660254037844386467637231707529361834713",
+            "comparison_actual": "0.8660254037844386467637231707529361834713",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-40",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-24",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-seeded-12",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "3.811444330825658171336583050313266079366",
+          "expanded_uncertainty": "9.528610827064145428341457625783165198415",
+          "standard_uncertainties": [
+            "3.796928583298172421219037697382342814609",
+            "0.05773502691896257645091487805019574556475"
+          ],
+          "valid": true
+        },
+        "actual": {
+          "valid": true,
+          "standard_uncertainties": [
+            "3.796928583298172421219037697382342814608",
+            "0.05773502691896257645091487805019574556475"
+          ],
+          "combined_standard_uncertainty": "3.811444330825658171336583050313266079366",
+          "expanded_uncertainty": "9.528610827064145428341457625783165198415"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "3.811444330825658171336583050313266079366",
+            "actual": "3.811444330825658171336583050313266079366",
+            "comparison_actual": "3.811444330825658171336583050313266079366",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "9.528610827064145428341457625783165198415",
+            "actual": "9.528610827064145428341457625783165198415",
+            "comparison_actual": "9.528610827064145428341457625783165198415",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "3.796928583298172421219037697382342814609",
+            "actual": "3.796928583298172421219037697382342814608",
+            "comparison_actual": "3.796928583298172421219037697382342814608",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "1E-39",
+            "relative_error": "2.633707687836882604313783374E-40",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "1E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.05773502691896257645091487805019574556475",
+            "actual": "0.05773502691896257645091487805019574556475",
+            "comparison_actual": "0.05773502691896257645091487805019574556475",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-41",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-25",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-seeded-13",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "6.583059066016851915533639439443661961852",
+          "expanded_uncertainty": "13.1661181320337038310672788788873239237",
+          "standard_uncertainties": [
+            "3.291402943021916502906410173953849844347",
+            "0.05773502691896257645091487805019574556475"
+          ],
+          "valid": true
+        },
+        "actual": {
+          "valid": true,
+          "standard_uncertainties": [
+            "3.291402943021916502906410173953849844348",
+            "0.05773502691896257645091487805019574556475"
+          ],
+          "combined_standard_uncertainty": "6.583059066016851915533639439443661961854",
+          "expanded_uncertainty": "13.16611813203370383106727887888732392371"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "6.583059066016851915533639439443661961852",
+            "actual": "6.583059066016851915533639439443661961854",
+            "comparison_actual": "6.583059066016851915533639439443661961854",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "2E-39",
+            "relative_error": "3.038101253449820128697933747E-40",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "2E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "13.1661181320337038310672788788873239237",
+            "actual": "13.16611813203370383106727887888732392371",
+            "comparison_actual": "13.16611813203370383106727887888732392371",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "1E-38",
+            "relative_error": "7.595253133624550321744834365E-40",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "1E-22",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "3.291402943021916502906410173953849844347",
+            "actual": "3.291402943021916502906410173953849844348",
+            "comparison_actual": "3.291402943021916502906410173953849844348",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "1E-39",
+            "relative_error": "3.038218101250999848836686314E-40",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "1E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.05773502691896257645091487805019574556475",
+            "actual": "0.05773502691896257645091487805019574556475",
+            "comparison_actual": "0.05773502691896257645091487805019574556475",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-41",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-25",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-seeded-14",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "1.974176068394782753549697930566410004666",
+          "expanded_uncertainty": "3.948352136789565507099395861132820009332",
+          "standard_uncertainties": [
+            "2.198484326378819861822801288787056622381",
+            "0.2886751345948128822545743902509787278238"
+          ],
+          "valid": true
+        },
+        "actual": {
+          "valid": true,
+          "standard_uncertainties": [
+            "2.198484326378819861822801288787056622381",
+            "0.2886751345948128822545743902509787278238"
+          ],
+          "combined_standard_uncertainty": "1.974176068394782753549697930566410004666",
+          "expanded_uncertainty": "3.948352136789565507099395861132820009332"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "1.974176068394782753549697930566410004666",
+            "actual": "1.974176068394782753549697930566410004666",
+            "comparison_actual": "1.974176068394782753549697930566410004666",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "3.948352136789565507099395861132820009332",
+            "actual": "3.948352136789565507099395861132820009332",
+            "comparison_actual": "3.948352136789565507099395861132820009332",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "2.198484326378819861822801288787056622381",
+            "actual": "2.198484326378819861822801288787056622381",
+            "comparison_actual": "2.198484326378819861822801288787056622381",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.2886751345948128822545743902509787278238",
+            "actual": "0.2886751345948128822545743902509787278238",
+            "comparison_actual": "0.2886751345948128822545743902509787278238",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-40",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-24",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-seeded-15",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "3.418698582794335789643041226337070238799",
+          "expanded_uncertainty": "6.837397165588671579286082452674140477598",
+          "standard_uncertainties": [
+            "1.70782512765993306387017311342017533179",
+            "0.2886751345948128822545743902509787278238"
+          ],
+          "valid": true
+        },
+        "actual": {
+          "valid": true,
+          "standard_uncertainties": [
+            "1.707825127659933063870173113420175331790",
+            "0.2886751345948128822545743902509787278238"
+          ],
+          "combined_standard_uncertainty": "3.418698582794335789643041226337070238799",
+          "expanded_uncertainty": "6.837397165588671579286082452674140477598"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "3.418698582794335789643041226337070238799",
+            "actual": "3.418698582794335789643041226337070238799",
+            "comparison_actual": "3.418698582794335789643041226337070238799",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "6.837397165588671579286082452674140477598",
+            "actual": "6.837397165588671579286082452674140477598",
+            "comparison_actual": "6.837397165588671579286082452674140477598",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "1.70782512765993306387017311342017533179",
+            "actual": "1.707825127659933063870173113420175331790",
+            "comparison_actual": "1.707825127659933063870173113420175331790",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.2886751345948128822545743902509787278238",
+            "actual": "0.2886751345948128822545743902509787278238",
+            "comparison_actual": "0.2886751345948128822545743902509787278238",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-40",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-24",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-seeded-16",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "3.318565858849094767400635390429919624981",
+          "expanded_uncertainty": "8.296414647122736918501588476074799062452",
+          "standard_uncertainties": [
+            "3.304037933599834847190730606960368019592",
+            "0.05773502691896257645091487805019574556475"
+          ],
+          "valid": true
+        },
+        "actual": {
+          "valid": true,
+          "standard_uncertainties": [
+            "3.304037933599834847190730606960368019592",
+            "0.05773502691896257645091487805019574556475"
+          ],
+          "combined_standard_uncertainty": "3.318565858849094767400635390429919624981",
+          "expanded_uncertainty": "8.296414647122736918501588476074799062452"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "3.318565858849094767400635390429919624981",
+            "actual": "3.318565858849094767400635390429919624981",
+            "comparison_actual": "3.318565858849094767400635390429919624981",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "8.296414647122736918501588476074799062452",
+            "actual": "8.296414647122736918501588476074799062452",
+            "comparison_actual": "8.296414647122736918501588476074799062452",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "3.304037933599834847190730606960368019592",
+            "actual": "3.304037933599834847190730606960368019592",
+            "comparison_actual": "3.304037933599834847190730606960368019592",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.05773502691896257645091487805019574556475",
+            "actual": "0.05773502691896257645091487805019574556475",
+            "comparison_actual": "0.05773502691896257645091487805019574556475",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-41",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-25",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-seeded-17",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "6.726812023536855158581542731085202096935",
+          "expanded_uncertainty": "13.45362404707371031716308546217040419387",
+          "standard_uncertainties": [
+            "3.25",
+            "0.8660254037844386467637231707529361834713"
+          ],
+          "valid": true
+        },
+        "actual": {
+          "valid": true,
+          "standard_uncertainties": [
+            "3.25",
+            "0.8660254037844386467637231707529361834713"
+          ],
+          "combined_standard_uncertainty": "6.726812023536855158581542731085202096935",
+          "expanded_uncertainty": "13.45362404707371031716308546217040419387"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "6.726812023536855158581542731085202096935",
+            "actual": "6.726812023536855158581542731085202096935",
+            "comparison_actual": "6.726812023536855158581542731085202096935",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "13.45362404707371031716308546217040419387",
+            "actual": "13.45362404707371031716308546217040419387",
+            "comparison_actual": "13.45362404707371031716308546217040419387",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-38",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-22",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "3.25",
+            "actual": "3.25",
+            "comparison_actual": "3.25",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0.00",
+            "relative_error": "0",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E+14",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.8660254037844386467637231707529361834713",
+            "actual": "0.8660254037844386467637231707529361834713",
+            "comparison_actual": "0.8660254037844386467637231707529361834713",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-40",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-24",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-type-a-known",
+        "category": "boundary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "0.5773502691896257645091487805019574556476",
+          "expanded_uncertainty": "1.154700538379251529018297561003914911295",
+          "standard_uncertainties": [
+            "0.5773502691896257645091487805019574556476"
+          ],
+          "valid": true
+        },
+        "actual": {
+          "valid": true,
+          "standard_uncertainties": [
+            "0.5773502691896257645091487805019574556475"
+          ],
+          "combined_standard_uncertainty": "0.5773502691896257645091487805019574556475",
+          "expanded_uncertainty": "1.154700538379251529018297561003914911295"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.5773502691896257645091487805019574556476",
+            "actual": "0.5773502691896257645091487805019574556475",
+            "comparison_actual": "0.5773502691896257645091487805019574556475",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "1E-40",
+            "relative_error": "1.732050807568877293527446342E-40",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "1E-24",
+            "within_tolerance": true
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "1.154700538379251529018297561003914911295",
+            "actual": "1.154700538379251529018297561003914911295",
+            "comparison_actual": "1.154700538379251529018297561003914911295",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.5773502691896257645091487805019574556476",
+            "actual": "0.5773502691896257645091487805019574556475",
+            "comparison_actual": "0.5773502691896257645091487805019574556475",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "1E-40",
+            "relative_error": "1.732050807568877293527446342E-40",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "1E-24",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-type-b-known",
+        "category": "boundary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "1",
+          "expanded_uncertainty": "2",
+          "standard_uncertainties": [
+            "1"
+          ],
+          "valid": true
+        },
+        "actual": {
+          "valid": true,
+          "standard_uncertainties": [
+            "1"
+          ],
+          "combined_standard_uncertainty": "1",
+          "expanded_uncertainty": "2"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "1",
+            "actual": "1",
+            "comparison_actual": "1",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0",
+            "relative_error": "0",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E+16",
+            "within_tolerance": true
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "2",
+            "actual": "2",
+            "comparison_actual": "2",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0",
+            "relative_error": "0",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E+16",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "1",
+            "actual": "1",
+            "comparison_actual": "1",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0",
+            "relative_error": "0",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E+16",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-correlation-positive",
+        "category": "boundary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "1.732050807568877293527446341505872366943",
+          "expanded_uncertainty": "3.464101615137754587054892683011744733886",
+          "standard_uncertainties": [
+            "1",
+            "1"
+          ],
+          "valid": true
+        },
+        "actual": {
+          "valid": true,
+          "standard_uncertainties": [
+            "1",
+            "1"
+          ],
+          "combined_standard_uncertainty": "1.732050807568877293527446341505872366943",
+          "expanded_uncertainty": "3.464101615137754587054892683011744733886"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "1.732050807568877293527446341505872366943",
+            "actual": "1.732050807568877293527446341505872366943",
+            "comparison_actual": "1.732050807568877293527446341505872366943",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "3.464101615137754587054892683011744733886",
+            "actual": "3.464101615137754587054892683011744733886",
+            "comparison_actual": "3.464101615137754587054892683011744733886",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0E-39",
+            "relative_error": "0E-12",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E-23",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "1",
+            "actual": "1",
+            "comparison_actual": "1",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0",
+            "relative_error": "0",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E+16",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "1",
+            "actual": "1",
+            "comparison_actual": "1",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0",
+            "relative_error": "0",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E+16",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-correlation-negative",
+        "category": "boundary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "1",
+          "expanded_uncertainty": "2",
+          "standard_uncertainties": [
+            "1",
+            "1"
+          ],
+          "valid": true
+        },
+        "actual": {
+          "valid": true,
+          "standard_uncertainties": [
+            "1",
+            "1"
+          ],
+          "combined_standard_uncertainty": "1.0",
+          "expanded_uncertainty": "2.0"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "1",
+            "actual": "1.0",
+            "comparison_actual": "1.0",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0.0",
+            "relative_error": "0.0",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E+15",
+            "within_tolerance": true
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "2",
+            "actual": "2.0",
+            "comparison_actual": "2.0",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0.0",
+            "relative_error": "0.0",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E+15",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "1",
+            "actual": "1",
+            "comparison_actual": "1",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0",
+            "relative_error": "0",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E+16",
+            "within_tolerance": true
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "1",
+            "actual": "1",
+            "comparison_actual": "1",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0",
+            "relative_error": "0",
+            "permitted_tolerance": "1E-16",
+            "normalized_error": "0E+16",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-non-psd",
+        "category": "adversarial",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "non_psd_correlation_matrix",
+          "valid": false
+        },
+        "actual": {
+          "valid": false,
+          "reason": "non_psd_correlation_matrix"
+        },
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-asymmetric",
+        "category": "adversarial",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "invalid_correlation_matrix",
+          "valid": false
+        },
+        "actual": {
+          "valid": false,
+          "reason": "invalid_correlation_matrix"
+        },
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-out-of-bounds-rho",
+        "category": "adversarial",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "invalid_correlation_matrix",
+          "valid": false
+        },
+        "actual": {
+          "valid": false,
+          "reason": "invalid_correlation_matrix"
+        },
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-nonunit-diagonal",
+        "category": "adversarial",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "invalid_correlation_diagonal",
+          "valid": false
+        },
+        "actual": {
+          "valid": false,
+          "reason": "invalid_correlation_diagonal"
+        },
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-zero-factor",
+        "category": "adversarial",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "invalid_coverage_factor",
+          "valid": false
+        },
+        "actual": {
+          "valid": false,
+          "reason": "invalid_coverage_factor"
+        },
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-negative-half-width",
+        "category": "adversarial",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "negative_half_width",
+          "valid": false
+        },
+        "actual": {
+          "valid": false,
+          "reason": "negative_half_width"
+        },
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-one-observation",
+        "category": "adversarial",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "type_a_requires_two_observations",
+          "valid": false
+        },
+        "actual": {
+          "valid": false,
+          "reason": "type_a_requires_two_observations"
+        },
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-too-many-components",
+        "category": "adversarial",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "unsupported_component_count",
+          "valid": false
+        },
+        "actual": {
+          "valid": false,
+          "reason": "unsupported_component_count"
+        },
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      }
+    ]
+  }
+}

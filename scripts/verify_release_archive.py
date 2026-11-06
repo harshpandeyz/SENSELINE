@@ -13,7 +13,7 @@ import zipfile
 from pathlib import Path, PurePosixPath
 
 ROOT = Path(__file__).resolve().parents[1]
-ARCHIVE = ROOT / "dist" / "SENSELINE_submission.zip"
+ARCHIVE = ROOT / "dist" / os.environ.get("SENSELINE_ARCHIVE_NAME", "SENSELINE_submission.zip")
 CHECKSUM = ARCHIVE.with_suffix(ARCHIVE.suffix + ".sha256")
 MAX_BYTES = 50 * 1024 * 1024
 REQUIRED = {

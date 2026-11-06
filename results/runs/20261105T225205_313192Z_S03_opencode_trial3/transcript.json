@@ -1,0 +1,1973 @@
+{
+  "run_id": "20261105T225205_313192Z_S03_opencode_trial3",
+  "task": "S03",
+  "trial": 3,
+  "trial_seed": 20564137,
+  "agent": "opencode",
+  "agent_version": {
+    "command": [
+      "npm",
+      "exec",
+      "--yes",
+      "--package=@opencode/cli@2.2.5",
+      "--",
+      "opencode",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "opencode v2.2.5\n",
+    "stderr": ""
+  },
+  "model_id": "ollama/qwen3:8b",
+  "profile": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/configs/opencode.json",
+  "profile_configuration": {
+    "name": "opencode",
+    "command": [
+      "npm",
+      "exec",
+      "--yes",
+      "--package=@opencode/cli@2.2.5",
+      "--",
+      "opencode",
+      "--standalone",
+      "run",
+      "--model",
+      "{model}",
+      "--format",
+      "json",
+      "{prompt}"
+    ],
+    "version_command": [
+      "npm",
+      "exec",
+      "--yes",
+      "--package=@opencode/cli@2.2.5",
+      "--",
+      "opencode",
+      "--version"
+    ],
+    "structured_stdout_jsonl": true,
+    "environment_allowlist": [
+      "OPENCODE_CONFIG",
+      "OPENCODE_CONFIG_DIR",
+      "OPENCODE_DISABLE_PROJECT_CONFIG",
+      "OPENCODE_DISABLE_EXTERNAL_SKILLS",
+      "OPENCODE_DISABLE_CLAUDE_CODE",
+      "OPENCODE_DISABLE_AUTOUPDATE"
+    ],
+    "credential_env": "[REDACTED]",
+    "environment": {
+      "OPENCODE_CONFIG": "{opencode_policy_path}",
+      "OPENCODE_CONFIG_DIR": "{opencode_config_dir}",
+      "OPENCODE_DISABLE_PROJECT_CONFIG": "true",
+      "OPENCODE_DISABLE_EXTERNAL_SKILLS": "true",
+      "OPENCODE_DISABLE_CLAUDE_CODE": "true",
+      "OPENCODE_DISABLE_AUTOUPDATE": "true"
+    },
+    "settings": {
+      "mode": "OpenCode CLI 2.2.5 non-interactive run from the isolated task workspace",
+      "model_id": "exact provider/model ID supplied at run time with --model",
+      "isolation": "read-only task files and solution.py-only edits; external directories and all shell commands denied; candidate code separately runs in the network-disabled Docker sandbox",
+      "network": "the agent CLI requires outbound HTTPS to the selected model provider; candidate execution has no network",
+      "dynamic_permission_test": "not performed; the pinned CLI resolves this policy without inference, while shell is denied and candidate execution is separately sandboxed"
+    }
+  },
+  "experiment_configuration": {
+    "name": "ollama-qwen3-8b",
+    "profile": "configs/opencode.json",
+    "model_id": "ollama/qwen3:8b",
+    "agent_version_expected": "opencode v2.2.5",
+    "cost_tier": "zero_cost",
+    "budget": {
+      "agent_timeout_seconds": 900,
+      "candidate_timeout_seconds": 5,
+      "max_cost_per_trial_usd": 0,
+      "max_total_tokens_per_trial": "[REDACTED]",
+      "input_usd_per_million_tokens": "[REDACTED]",
+      "output_usd_per_million_tokens": "[REDACTED]",
+      "cost_capture": "local Ollama inference; provider-reported token usage is recorded, estimated cost is $0, confirmed billing is not applicable (raised from 60000 after pilot attempt 4 showed a reasoning model exceeding 60000 tokens)",
+      "reasoning_effort": null
+    },
+    "credential_env": "[REDACTED]",
+    "registered_cost_cap_usd": 0,
+    "provider_hard_spend_limit_usd": 0,
+    "sandbox_preflight": {
+      "docker_path": "/usr/local/bin/docker",
+      "image": "python:3.11.18-slim-bookworm@sha256:ef521de1d817dc92a6358c906bbadb9a0b7e38040038642833521b9d582c2233",
+      "image_id": "sha256:ef521de1d817dc92a6358c906bbadb9a0b7e38040038642833521b9d582c2233",
+      "isolation": "docker",
+      "isolation_probe": "PASS"
+    }
+  },
+  "started_at_utc": "2026-11-05T22:52:05.313725+00:00",
+  "runtime_seconds": 153.94816979207098,
+  "timeout_seconds": 900,
+  "candidate_timeout_seconds": 5,
+  "timed_out": false,
+  "exit_code": 1,
+  "cost_usd": null,
+  "cost_usd_estimated": null,
+  "cost_usd_confirmed": null,
+  "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "total_tokens": 0,
+    "events": [],
+    "reported": false,
+    "estimated_cost_complete": false,
+    "estimated_cost_usd": null,
+    "confirmed_cost_usd": null,
+    "budget_stop_reason": null
+  },
+  "candidate_source_path": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/results/runs/20261105T225205_313192Z_S03_opencode_trial3/workspace/solution.py",
+  "candidate_source_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+  "candidate_source_snapshot_issue": null,
+  "task_accuracy": 0.0,
+  "score_path": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/results/runs/20261105T225205_313192Z_S03_opencode_trial3/score.json",
+  "workspace_path": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/results/runs/20261105T225205_313192Z_S03_opencode_trial3/workspace",
+  "sandbox": {
+    "docker_path": "/usr/local/bin/docker",
+    "image": "python:3.11.18-slim-bookworm@sha256:ef521de1d817dc92a6358c906bbadb9a0b7e38040038642833521b9d582c2233",
+    "image_id": "sha256:ef521de1d817dc92a6358c906bbadb9a0b7e38040038642833521b9d582c2233",
+    "isolation": "docker",
+    "isolation_probe": "PASS"
+  },
+  "structured_agent_event_count": 0,
+  "exact_task_instruction": "# S03 — Calibration and Environmental Compensation\n\n## Problem\n\nApply the declared affine calibration and temperature compensation exactly once.\n\n## Complete specification\n\nCompute corrected = gain*raw_value + offset + temp_coefficient*(ambient_temperature_c-reference_temperature_c), in that order. This task uses the explicit symbolic measurand unit `MU`: raw_value, offset, and corrected_value are MU; temp_coefficient is MU/°C; both temperatures are °C; gain is dimensionless. `MU` is a benchmark unit label, not a claim that the quantity is SI or a particular real-world unit. All coefficients and inputs are exact decimal strings or integers. correction_state must equal RAW; any other state is rejected as already_corrected. Coefficients are all required, finite; no defaults. Output rounds by ROUND_HALF_EVEN to rounding_places 0..12. Return {valid:false,reason:already_corrected} for another correction state, invalid_gain for gain<=0, and invalid_parameters for malformed, missing, or nonfinite values or precision.\n\n## Interface\n\nImplement exactly `def solve(payload: dict) -> dict` in `solution.py`. Input and output use JSON objects. Do not read files outside this task workspace or assume hidden-test values. Preserve explicit errors; do not silently default required parameters. Public examples and their expected outputs are in `public_examples.json`.\n\n## Grading contract\n\nThe grader checks schema and exact validity/disposition fields, then checks every numeric field using task-specific absolute tolerances documented in the grading methodology. Invalid-input cases are part of the score. Hidden tests are deterministic and remain outside this exported workspace.\n",
+  "prompt": "# S03 — Calibration and Environmental Compensation\n\n## Problem\n\nApply the declared affine calibration and temperature compensation exactly once.\n\n## Complete specification\n\nCompute corrected = gain*raw_value + offset + temp_coefficient*(ambient_temperature_c-reference_temperature_c), in that order. This task uses the explicit symbolic measurand unit `MU`: raw_value, offset, and corrected_value are MU; temp_coefficient is MU/°C; both temperatures are °C; gain is dimensionless. `MU` is a benchmark unit label, not a claim that the quantity is SI or a particular real-world unit. All coefficients and inputs are exact decimal strings or integers. correction_state must equal RAW; any other state is rejected as already_corrected. Coefficients are all required, finite; no defaults. Output rounds by ROUND_HALF_EVEN to rounding_places 0..12. Return {valid:false,reason:already_corrected} for another correction state, invalid_gain for gain<=0, and invalid_parameters for malformed, missing, or nonfinite values or precision.\n\n## Interface\n\nImplement exactly `def solve(payload: dict) -> dict` in `solution.py`. Input and output use JSON objects. Do not read files outside this task workspace or assume hidden-test values. Preserve explicit errors; do not silently default required parameters. Public examples and their expected outputs are in `public_examples.json`.\n\n## Grading contract\n\nThe grader checks schema and exact validity/disposition fields, then checks every numeric field using task-specific absolute tolerances documented in the grading methodology. Invalid-input cases are part of the score. Hidden tests are deterministic and remain outside this exported workspace.\n\n\nImplementation instruction: edit only solution.py in the current task workspace. Implement solve(payload: dict) -> dict. Do not add dependencies. The evaluator runs each test input in a network-disabled Docker container using the pinned Python 3.11.18 runtime. Trial reproducibility seed: 20564137.\n",
+  "agent_command": [
+    "npm",
+    "exec",
+    "--yes",
+    "--package=@opencode/cli@2.2.5",
+    "--",
+    "opencode",
+    "--standalone",
+    "run",
+    "--model",
+    "ollama/qwen3:8b",
+    "--format",
+    "json",
+    "# S03 — Calibration and Environmental Compensation\n\n## Problem\n\nApply the declared affine calibration and temperature compensation exactly once.\n\n## Complete specification\n\nCompute corrected = gain*raw_value + offset + temp_coefficient*(ambient_temperature_c-reference_temperature_c), in that order. This task uses the explicit symbolic measurand unit `MU`: raw_value, offset, and corrected_value are MU; temp_coefficient is MU/°C; both temperatures are °C; gain is dimensionless. `MU` is a benchmark unit label, not a claim that the quantity is SI or a particular real-world unit. All coefficients and inputs are exact decimal strings or integers. correction_state must equal RAW; any other state is rejected as already_corrected. Coefficients are all required, finite; no defaults. Output rounds by ROUND_HALF_EVEN to rounding_places 0..12. Return {valid:false,reason:already_corrected} for another correction state, invalid_gain for gain<=0, and invalid_parameters for malformed, missing, or nonfinite values or precision.\n\n## Interface\n\nImplement exactly `def solve(payload: dict) -> dict` in `solution.py`. Input and output use JSON objects. Do not read files outside this task workspace or assume hidden-test values. Preserve explicit errors; do not silently default required parameters. Public examples and their expected outputs are in `public_examples.json`.\n\n## Grading contract\n\nThe grader checks schema and exact validity/disposition fields, then checks every numeric field using task-specific absolute tolerances documented in the grading methodology. Invalid-input cases are part of the score. Hidden tests are deterministic and remain outside this exported workspace.\n\n\nImplementation instruction: edit only solution.py in the current task workspace. Implement solve(payload: dict) -> dict. Do not add dependencies. The evaluator runs each test input in a network-disabled Docker container using the pinned Python 3.11.18 runtime. Trial reproducibility seed: 20564137.\n"
+  ],
+  "agent_stdout": "{\"type\":\"error\",\"timestamp\":1793919279219,\"sessionID\":\"ses_e52142051ffemhfCLbBQcIDOln\",\"error\":{\"type\":\"provider.no-route\",\"message\":\"Model unavailable: ollama/qwen3:8b\"}}\n",
+  "agent_stderr": "",
+  "agent_version_record": {
+    "command": [
+      "npm",
+      "exec",
+      "--yes",
+      "--package=@opencode/cli@2.2.5",
+      "--",
+      "opencode",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "opencode v2.2.5\n",
+    "stderr": ""
+  },
+  "metrics": {
+    "case_count": 30,
+    "functional_correctness": {
+      "numerator": 0,
+      "denominator": 30,
+      "value": 0.0
+    },
+    "schema_compliance": {
+      "numerator": 0,
+      "denominator": 30,
+      "value": 0.0
+    },
+    "numerical_correctness": {
+      "numerator": 0,
+      "denominator": 25,
+      "value": 0.0
+    },
+    "physical_unit_correctness": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "physical_equivalence_correctness": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "physical_integrity_correctness": {
+      "numerator": 5,
+      "denominator": 30,
+      "value": 0.16666666666666666
+    },
+    "semantic_integrity_failures": {
+      "numerator": 0,
+      "denominator": 30,
+      "value": 0.0
+    },
+    "validity_state_correctness": {
+      "numerator": 0,
+      "denominator": 30,
+      "value": 0.0
+    },
+    "engineering_decision_correctness": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "execution_failures": {
+      "numerator": 30,
+      "denominator": 30,
+      "value": 1.0
+    },
+    "malformed_response_rate": {
+      "numerator": 0,
+      "denominator": 30,
+      "value": 0.0
+    },
+    "contract_violations": {
+      "numerator": 30,
+      "denominator": 30,
+      "value": 1.0
+    },
+    "end_to_end_correctness": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "silent_corruption_rate": {
+      "numerator": 0,
+      "denominator": 30,
+      "value": 0.0
+    },
+    "unsafe_acceptance_rate": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "numerical_error_by_field_unit": {
+      "S03.corrected_value [MU (task-defined measurand unit)]": {
+        "field": "corrected_value",
+        "task": "S03",
+        "unit": "MU (task-defined measurand unit)",
+        "case_count": 25,
+        "numeric_actual_count": 0,
+        "within_tolerance_count": 0,
+        "mean_absolute_error": null,
+        "maximum_absolute_error": null,
+        "maximum_normalized_error": null,
+        "permitted_tolerance": "0"
+      }
+    },
+    "calibration_validity_recall": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "uncertainty_calculation_accuracy": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "false_rejection_rate": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "boundary_decision_accuracy": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "macro_average_task_accuracy": 0.0,
+    "per_task": {
+      "S03": {
+        "functional_correctness": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "schema_compliance": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "numerical_correctness": {
+          "numerator": 0,
+          "denominator": 25,
+          "value": 0.0
+        },
+        "physical_unit_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "physical_integrity_correctness": {
+          "numerator": 5,
+          "denominator": 30,
+          "value": 0.16666666666666666
+        },
+        "semantic_integrity_failures": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "validity_state_correctness": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "engineering_decision_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "execution_failures": {
+          "numerator": 30,
+          "denominator": 30,
+          "value": 1.0
+        },
+        "malformed_response_rate": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "contract_violations": {
+          "numerator": 30,
+          "denominator": 30,
+          "value": 1.0
+        },
+        "silent_corruption_rate": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "unsafe_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        }
+      }
+    },
+    "pass_at_3": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "pass_cubed": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    }
+  },
+  "grader": {
+    "task": "S03",
+    "candidate": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/results/runs/20261105T225205_313192Z_S03_opencode_trial3/workspace/solution.py",
+    "case_count": 30,
+    "passed": 0,
+    "accuracy": 0.0,
+    "cases": [
+      {
+        "id": "S03-seeded-00",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "corrected_value": "90.0000",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "corrected_value",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "90.0000",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S03-seeded-01",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "corrected_value": "-53.1000",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "corrected_value",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "-53.1000",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S03-seeded-02",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "corrected_value": "-68.0000",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "corrected_value",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "-68.0000",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S03-seeded-03",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "corrected_value": "207.9200",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "corrected_value",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "207.9200",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S03-seeded-04",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "corrected_value": "16.7600",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "corrected_value",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "16.7600",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S03-seeded-05",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "corrected_value": "8.7500",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "corrected_value",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "8.7500",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S03-seeded-06",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "corrected_value": "17.8400",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "corrected_value",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "17.8400",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S03-seeded-07",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "corrected_value": "225.0000",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "corrected_value",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "225.0000",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S03-seeded-08",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "corrected_value": "-7.0000",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "corrected_value",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "-7.0000",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S03-seeded-09",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "corrected_value": "-80.6100",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "corrected_value",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "-80.6100",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S03-seeded-10",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "corrected_value": "71.2100",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "corrected_value",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "71.2100",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S03-seeded-11",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "corrected_value": "21.0000",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "corrected_value",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "21.0000",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S03-seeded-12",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "corrected_value": "79.6600",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "corrected_value",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "79.6600",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S03-seeded-13",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "corrected_value": "50.6900",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "corrected_value",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "50.6900",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S03-seeded-14",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "corrected_value": "-6.2600",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "corrected_value",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "-6.2600",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S03-seeded-15",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "corrected_value": "-93.6900",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "corrected_value",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "-93.6900",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S03-seeded-16",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "corrected_value": "-98.9600",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "corrected_value",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "-98.9600",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S03-seeded-17",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "corrected_value": "95.2600",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "corrected_value",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "95.2600",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S03-seeded-18",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "corrected_value": "21.5000",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "corrected_value",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "21.5000",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S03-seeded-19",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "corrected_value": "-85.7400",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "corrected_value",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "-85.7400",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S03-zero-temp-delta",
+        "category": "boundary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "corrected_value": "10.00",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "corrected_value",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "10.00",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S03-temp-compensation",
+        "category": "boundary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "corrected_value": "11.00",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "corrected_value",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "11.00",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S03-negative-gain",
+        "category": "adversarial",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "invalid_gain",
+          "valid": false
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S03-zero-gain",
+        "category": "adversarial",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "invalid_gain",
+          "valid": false
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S03-double-correction",
+        "category": "adversarial",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "already_corrected",
+          "valid": false
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S03-missing-coefficient",
+        "category": "adversarial",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "invalid_parameters",
+          "valid": false
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S03-nonfinite",
+        "category": "adversarial",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "invalid_parameters",
+          "valid": false
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S03-round-half-even",
+        "category": "boundary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "corrected_value": "1.24",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "corrected_value",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "1.24",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S03-negative-temps",
+        "category": "boundary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "corrected_value": "6.00",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "corrected_value",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "6.00",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S03-large-offset",
+        "category": "boundary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "corrected_value": "1000000010.00",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "corrected_value",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "1000000010.00",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      }
+    ]
+  },
+  "event_log_path": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/results/runs/20261105T225205_313192Z_S03_opencode_trial3/events.jsonl",
+  "tool_event_capture": "agent-reported structured events only; no private reasoning is captured",
+  "transcript_path": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/results/transcripts/20261105T225205_313192Z_S03_opencode_trial3.jsonl"
+}

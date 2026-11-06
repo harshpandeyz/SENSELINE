@@ -33,5 +33,5 @@
     "trusted reference code uses the same isolated candidate interface"
   ],
   "checks_executed": true,
-  "stdout_stderr": "............                                                             [100%]\n12 passed, 92 deselected in 11.21s\n"
+  "stdout_stderr": "............                                                             [100%]\n12 passed, 92 deselected in 13.99s\n"
 }

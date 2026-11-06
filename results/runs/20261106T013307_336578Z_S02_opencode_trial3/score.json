@@ -1,0 +1,2299 @@
+{
+  "run_id": "20261106T013307_336578Z_S02_opencode_trial3",
+  "task": "S02",
+  "trial": 3,
+  "trial_seed": 20563128,
+  "agent": "opencode",
+  "agent_version": {
+    "command": [
+      "npm",
+      "exec",
+      "--yes",
+      "--package=@opencode/cli@2.2.5",
+      "--",
+      "opencode",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "opencode v2.2.5\n",
+    "stderr": ""
+  },
+  "model_id": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+  "quota_exhausted": false,
+  "profile": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/configs/opencode.json",
+  "profile_configuration": {
+    "name": "opencode",
+    "command": [
+      "npm",
+      "exec",
+      "--yes",
+      "--package=@opencode/cli@2.2.5",
+      "--",
+      "opencode",
+      "--standalone",
+      "run",
+      "--model",
+      "{model}",
+      "--format",
+      "json",
+      "{prompt}"
+    ],
+    "version_command": [
+      "npm",
+      "exec",
+      "--yes",
+      "--package=@opencode/cli@2.2.5",
+      "--",
+      "opencode",
+      "--version"
+    ],
+    "structured_stdout_jsonl": true,
+    "environment_allowlist": [
+      "OPENCODE_CONFIG",
+      "OPENCODE_CONFIG_DIR",
+      "OPENCODE_DISABLE_PROJECT_CONFIG",
+      "OPENCODE_DISABLE_EXTERNAL_SKILLS",
+      "OPENCODE_DISABLE_CLAUDE_CODE",
+      "OPENCODE_DISABLE_AUTOUPDATE"
+    ],
+    "credential_env": "[REDACTED]",
+    "environment": {
+      "OPENCODE_CONFIG": "{opencode_policy_path}",
+      "OPENCODE_CONFIG_DIR": "{opencode_config_dir}",
+      "OPENCODE_DISABLE_PROJECT_CONFIG": "true",
+      "OPENCODE_DISABLE_EXTERNAL_SKILLS": "true",
+      "OPENCODE_DISABLE_CLAUDE_CODE": "true",
+      "OPENCODE_DISABLE_AUTOUPDATE": "true"
+    },
+    "settings": {
+      "mode": "OpenCode CLI 2.2.5 non-interactive run from the isolated task workspace",
+      "model_id": "exact provider/model ID supplied at run time with --model",
+      "isolation": "read-only task files and solution.py-only edits; external directories and all shell commands denied; candidate code separately runs in the network-disabled Docker sandbox",
+      "network": "the agent CLI requires outbound HTTPS to the selected model provider; candidate execution has no network",
+      "dynamic_permission_test": "not performed; the pinned CLI resolves this policy without inference, while shell is denied and candidate execution is separately sandboxed"
+    }
+  },
+  "experiment_configuration": {
+    "name": "openrouter-nemotron-vl-free",
+    "profile": "configs/opencode.json",
+    "model_id": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+    "agent_version_expected": "opencode v2.2.5",
+    "cost_tier": "zero_cost",
+    "budget": {
+      "agent_timeout_seconds": 900,
+      "candidate_timeout_seconds": 5,
+      "max_cost_per_trial_usd": 0,
+      "max_total_tokens_per_trial": "[REDACTED]",
+      "input_usd_per_million_tokens": "[REDACTED]",
+      "output_usd_per_million_tokens": "[REDACTED]",
+      "cost_capture": "documented $0 OpenRouter free-tier model served under the 50/day free-model quota; provider-reported token usage is recorded, estimated cost is $0, confirmed billing is not applicable (CORRECTED 2026-11-06: 60000 in pilot5/full-run was an editing error; uniform 120000 token budget now applies to all three configurations; the single truncated 60k trial is preserved as evidence and excluded from analysis)",
+      "reasoning_effort": null
+    },
+    "credential_env": "[REDACTED]",
+    "registered_cost_cap_usd": 0,
+    "provider_hard_spend_limit_usd": 0,
+    "sandbox_preflight": {
+      "docker_path": "/usr/local/bin/docker",
+      "image": "python:3.11.18-slim-bookworm@sha256:ef521de1d817dc92a6358c906bbadb9a0b7e38040038642833521b9d582c2233",
+      "image_id": "sha256:ef521de1d817dc92a6358c906bbadb9a0b7e38040038642833521b9d582c2233",
+      "isolation": "docker",
+      "isolation_probe": "PASS"
+    }
+  },
+  "started_at_utc": "2026-11-06T01:33:07.336870+00:00",
+  "runtime_seconds": 225.74060045788065,
+  "timeout_seconds": 900,
+  "candidate_timeout_seconds": 5,
+  "timed_out": false,
+  "exit_code": 0,
+  "cost_usd": null,
+  "cost_usd_estimated": "0",
+  "cost_usd_confirmed": null,
+  "usage": {
+    "input_tokens": 40398,
+    "output_tokens": 4728,
+    "total_tokens": 45126,
+    "events": [
+      {
+        "input_tokens": 2947,
+        "output_tokens": 163,
+        "total_tokens": 3110,
+        "agent_reported_cost_usd": null,
+        "source_event_type": "step_finish",
+        "billing_cost_confirmed": false
+      },
+      {
+        "input_tokens": 3713,
+        "output_tokens": 474,
+        "total_tokens": 4187,
+        "agent_reported_cost_usd": null,
+        "source_event_type": "step_finish",
+        "billing_cost_confirmed": false
+      },
+      {
+        "input_tokens": 6204,
+        "output_tokens": 1137,
+        "total_tokens": 7341,
+        "agent_reported_cost_usd": null,
+        "source_event_type": "step_finish",
+        "billing_cost_confirmed": false
+      },
+      {
+        "input_tokens": 2610,
+        "output_tokens": 1459,
+        "total_tokens": 4069,
+        "agent_reported_cost_usd": null,
+        "source_event_type": "step_finish",
+        "billing_cost_confirmed": false
+      },
+      {
+        "input_tokens": 4131,
+        "output_tokens": 234,
+        "total_tokens": 4365,
+        "agent_reported_cost_usd": null,
+        "source_event_type": "step_finish",
+        "billing_cost_confirmed": false
+      },
+      {
+        "input_tokens": 11681,
+        "output_tokens": 597,
+        "total_tokens": 12278,
+        "agent_reported_cost_usd": null,
+        "source_event_type": "step_finish",
+        "billing_cost_confirmed": false
+      },
+      {
+        "input_tokens": 3643,
+        "output_tokens": 81,
+        "total_tokens": 3724,
+        "agent_reported_cost_usd": null,
+        "source_event_type": "step_finish",
+        "billing_cost_confirmed": false
+      },
+      {
+        "input_tokens": 5469,
+        "output_tokens": 583,
+        "total_tokens": 6052,
+        "agent_reported_cost_usd": null,
+        "source_event_type": "step_finish",
+        "billing_cost_confirmed": false
+      }
+    ],
+    "reported": true,
+    "estimated_cost_complete": true,
+    "estimated_cost_usd": "0",
+    "confirmed_cost_usd": null,
+    "budget_stop_reason": null
+  },
+  "candidate_source_path": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/results/runs/20261106T013307_336578Z_S02_opencode_trial3/workspace/solution.py",
+  "candidate_source_sha256": "570f3b40d00ec49c23e6fb2cdec39326f75ac4e5959ee1fc6c8715dbe311deb2",
+  "candidate_source_snapshot_issue": null,
+  "task_accuracy": 1.0,
+  "score_path": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/results/runs/20261106T013307_336578Z_S02_opencode_trial3/score.json",
+  "workspace_path": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/results/runs/20261106T013307_336578Z_S02_opencode_trial3/workspace",
+  "sandbox": {
+    "docker_path": "/usr/local/bin/docker",
+    "image": "python:3.11.18-slim-bookworm@sha256:ef521de1d817dc92a6358c906bbadb9a0b7e38040038642833521b9d582c2233",
+    "image_id": "sha256:ef521de1d817dc92a6358c906bbadb9a0b7e38040038642833521b9d582c2233",
+    "isolation": "docker",
+    "isolation_probe": "PASS"
+  },
+  "structured_agent_event_count": 0,
+  "metrics": {
+    "case_count": 30,
+    "functional_correctness": {
+      "numerator": 30,
+      "denominator": 30,
+      "value": 1.0
+    },
+    "schema_compliance": {
+      "numerator": 30,
+      "denominator": 30,
+      "value": 1.0
+    },
+    "numerical_correctness": {
+      "numerator": 26,
+      "denominator": 26,
+      "value": 1.0
+    },
+    "physical_unit_correctness": {
+      "numerator": 26,
+      "denominator": 26,
+      "value": 1.0
+    },
+    "physical_equivalence_correctness": {
+      "numerator": 26,
+      "denominator": 26,
+      "value": 1.0
+    },
+    "physical_integrity_correctness": {
+      "numerator": 30,
+      "denominator": 30,
+      "value": 1.0
+    },
+    "semantic_integrity_failures": {
+      "numerator": 0,
+      "denominator": 30,
+      "value": 0.0
+    },
+    "validity_state_correctness": {
+      "numerator": 30,
+      "denominator": 30,
+      "value": 1.0
+    },
+    "engineering_decision_correctness": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "execution_failures": {
+      "numerator": 0,
+      "denominator": 30,
+      "value": 0.0
+    },
+    "malformed_response_rate": {
+      "numerator": 0,
+      "denominator": 30,
+      "value": 0.0
+    },
+    "contract_violations": {
+      "numerator": 0,
+      "denominator": 30,
+      "value": 0.0
+    },
+    "end_to_end_correctness": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "silent_corruption_rate": {
+      "numerator": 0,
+      "denominator": 30,
+      "value": 0.0
+    },
+    "unsafe_acceptance_rate": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "numerical_error_by_field_unit": {
+      "S02.value [C]": {
+        "field": "value",
+        "task": "S02",
+        "unit": "C",
+        "case_count": 6,
+        "numeric_actual_count": 6,
+        "within_tolerance_count": 6,
+        "mean_absolute_error": "0.00000",
+        "maximum_absolute_error": "0.00000",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S02.value [F]": {
+        "field": "value",
+        "task": "S02",
+        "unit": "F",
+        "case_count": 2,
+        "numeric_actual_count": 2,
+        "within_tolerance_count": 2,
+        "mean_absolute_error": "0.00000",
+        "maximum_absolute_error": "0.00000",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S02.value [K]": {
+        "field": "value",
+        "task": "S02",
+        "unit": "K",
+        "case_count": 2,
+        "numeric_actual_count": 2,
+        "within_tolerance_count": 2,
+        "mean_absolute_error": "0.00000",
+        "maximum_absolute_error": "0.00000",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S02.value [Pa]": {
+        "field": "value",
+        "task": "S02",
+        "unit": "Pa",
+        "case_count": 4,
+        "numeric_actual_count": 4,
+        "within_tolerance_count": 4,
+        "mean_absolute_error": "0.00000",
+        "maximum_absolute_error": "0.00000",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S02.value [V]": {
+        "field": "value",
+        "task": "S02",
+        "unit": "V",
+        "case_count": 5,
+        "numeric_actual_count": 5,
+        "within_tolerance_count": 5,
+        "mean_absolute_error": "0.00000",
+        "maximum_absolute_error": "0.00000",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S02.value [bar]": {
+        "field": "value",
+        "task": "S02",
+        "unit": "bar",
+        "case_count": 2,
+        "numeric_actual_count": 2,
+        "within_tolerance_count": 2,
+        "mean_absolute_error": "0.00000",
+        "maximum_absolute_error": "0.00000",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S02.value [kPa]": {
+        "field": "value",
+        "task": "S02",
+        "unit": "kPa",
+        "case_count": 3,
+        "numeric_actual_count": 3,
+        "within_tolerance_count": 3,
+        "mean_absolute_error": "0.00000",
+        "maximum_absolute_error": "0.00000",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S02.value [mV]": {
+        "field": "value",
+        "task": "S02",
+        "unit": "mV",
+        "case_count": 2,
+        "numeric_actual_count": 2,
+        "within_tolerance_count": 2,
+        "mean_absolute_error": "0.00000",
+        "maximum_absolute_error": "0.00000",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      }
+    },
+    "calibration_validity_recall": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "uncertainty_calculation_accuracy": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "false_rejection_rate": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "boundary_decision_accuracy": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "macro_average_task_accuracy": 1.0,
+    "per_task": {
+      "S02": {
+        "functional_correctness": {
+          "numerator": 30,
+          "denominator": 30,
+          "value": 1.0
+        },
+        "schema_compliance": {
+          "numerator": 30,
+          "denominator": 30,
+          "value": 1.0
+        },
+        "numerical_correctness": {
+          "numerator": 26,
+          "denominator": 26,
+          "value": 1.0
+        },
+        "physical_unit_correctness": {
+          "numerator": 26,
+          "denominator": 26,
+          "value": 1.0
+        },
+        "physical_integrity_correctness": {
+          "numerator": 30,
+          "denominator": 30,
+          "value": 1.0
+        },
+        "semantic_integrity_failures": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "validity_state_correctness": {
+          "numerator": 30,
+          "denominator": 30,
+          "value": 1.0
+        },
+        "engineering_decision_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "execution_failures": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "malformed_response_rate": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "contract_violations": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "silent_corruption_rate": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "unsafe_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        }
+      }
+    },
+    "pass_at_3": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "pass_cubed": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    }
+  },
+  "grader": {
+    "task": "S02",
+    "candidate": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/results/runs/20261106T013307_336578Z_S02_opencode_trial3/workspace/solution.py",
+    "case_count": 30,
+    "passed": 30,
+    "accuracy": 1.0,
+    "cases": [
+      {
+        "id": "S02-seeded-00",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": true,
+        "physical_equivalence_correct": true,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [
+          {
+            "field": "result",
+            "expected_unit": "F",
+            "actual_unit": "F",
+            "unit_correct": true,
+            "physically_equivalent": true,
+            "actual_in_expected_unit": "-40.00000",
+            "comparison_actual": "-40.00000"
+          }
+        ],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "unit": "F",
+          "valid": true,
+          "value": "-40.00000"
+        },
+        "actual": {
+          "valid": true,
+          "value": "-40.00000",
+          "unit": "F"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "value",
+            "unit": "F",
+            "expected": "-40.00000",
+            "actual": "-40.00000",
+            "comparison_actual": "-40.00000",
+            "actual_unit": "F",
+            "actual_in_expected_unit": "-40.00000",
+            "absolute_error": "0.00000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S02-seeded-01",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": true,
+        "physical_equivalence_correct": true,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [
+          {
+            "field": "result",
+            "expected_unit": "C",
+            "actual_unit": "C",
+            "unit_correct": true,
+            "physically_equivalent": true,
+            "actual_in_expected_unit": "-17.78056",
+            "comparison_actual": "-17.78056"
+          }
+        ],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "unit": "C",
+          "valid": true,
+          "value": "-17.78056"
+        },
+        "actual": {
+          "valid": true,
+          "value": "-17.78056",
+          "unit": "C"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "value",
+            "unit": "C",
+            "expected": "-17.78056",
+            "actual": "-17.78056",
+            "comparison_actual": "-17.78056",
+            "actual_unit": "C",
+            "actual_in_expected_unit": "-17.78056",
+            "absolute_error": "0.00000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S02-seeded-02",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": true,
+        "physical_equivalence_correct": true,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [
+          {
+            "field": "result",
+            "expected_unit": "K",
+            "actual_unit": "K",
+            "unit_correct": true,
+            "physically_equivalent": true,
+            "actual_in_expected_unit": "233.15000",
+            "comparison_actual": "233.15000"
+          }
+        ],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "unit": "K",
+          "valid": true,
+          "value": "233.15000"
+        },
+        "actual": {
+          "valid": true,
+          "value": "233.15000",
+          "unit": "K"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "value",
+            "unit": "K",
+            "expected": "233.15000",
+            "actual": "233.15000",
+            "comparison_actual": "233.15000",
+            "actual_unit": "K",
+            "actual_in_expected_unit": "233.15000",
+            "absolute_error": "0.00000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S02-seeded-03",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": true,
+        "physical_equivalence_correct": true,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [
+          {
+            "field": "result",
+            "expected_unit": "C",
+            "actual_unit": "C",
+            "unit_correct": true,
+            "physically_equivalent": true,
+            "actual_in_expected_unit": "-313.15000",
+            "comparison_actual": "-313.15000"
+          }
+        ],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "unit": "C",
+          "valid": true,
+          "value": "-313.15000"
+        },
+        "actual": {
+          "valid": true,
+          "value": "-313.15000",
+          "unit": "C"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "value",
+            "unit": "C",
+            "expected": "-313.15000",
+            "actual": "-313.15000",
+            "comparison_actual": "-313.15000",
+            "actual_unit": "C",
+            "actual_in_expected_unit": "-313.15000",
+            "absolute_error": "0.00000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S02-seeded-04",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": true,
+        "physical_equivalence_correct": true,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [
+          {
+            "field": "result",
+            "expected_unit": "kPa",
+            "actual_unit": "kPa",
+            "unit_correct": true,
+            "physically_equivalent": true,
+            "actual_in_expected_unit": "1000.00000",
+            "comparison_actual": "1000.00000"
+          }
+        ],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "unit": "kPa",
+          "valid": true,
+          "value": "1000.00000"
+        },
+        "actual": {
+          "valid": true,
+          "value": "1000.00000",
+          "unit": "kPa"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "value",
+            "unit": "kPa",
+            "expected": "1000.00000",
+            "actual": "1000.00000",
+            "comparison_actual": "1000.00000",
+            "actual_unit": "kPa",
+            "actual_in_expected_unit": "1000.00000",
+            "absolute_error": "0.00000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S02-seeded-05",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": true,
+        "physical_equivalence_correct": true,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [
+          {
+            "field": "result",
+            "expected_unit": "Pa",
+            "actual_unit": "Pa",
+            "unit_correct": true,
+            "physically_equivalent": true,
+            "actual_in_expected_unit": "32000.00000",
+            "comparison_actual": "32000.00000"
+          }
+        ],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "unit": "Pa",
+          "valid": true,
+          "value": "32000.00000"
+        },
+        "actual": {
+          "valid": true,
+          "value": "32000.00000",
+          "unit": "Pa"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "value",
+            "unit": "Pa",
+            "expected": "32000.00000",
+            "actual": "32000.00000",
+            "comparison_actual": "32000.00000",
+            "actual_unit": "Pa",
+            "actual_in_expected_unit": "32000.00000",
+            "absolute_error": "0.00000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S02-seeded-06",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": true,
+        "physical_equivalence_correct": true,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [
+          {
+            "field": "result",
+            "expected_unit": "Pa",
+            "actual_unit": "Pa",
+            "unit_correct": true,
+            "physically_equivalent": true,
+            "actual_in_expected_unit": "27315000.00000",
+            "comparison_actual": "27315000.00000"
+          }
+        ],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "unit": "Pa",
+          "valid": true,
+          "value": "27315000.00000"
+        },
+        "actual": {
+          "valid": true,
+          "value": "27315000.00000",
+          "unit": "Pa"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "value",
+            "unit": "Pa",
+            "expected": "27315000.00000",
+            "actual": "27315000.00000",
+            "comparison_actual": "27315000.00000",
+            "actual_unit": "Pa",
+            "actual_in_expected_unit": "27315000.00000",
+            "absolute_error": "0.00000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S02-seeded-07",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": true,
+        "physical_equivalence_correct": true,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [
+          {
+            "field": "result",
+            "expected_unit": "bar",
+            "actual_unit": "bar",
+            "unit_correct": true,
+            "physically_equivalent": true,
+            "actual_in_expected_unit": "0.00273",
+            "comparison_actual": "0.00273"
+          }
+        ],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "unit": "bar",
+          "valid": true,
+          "value": "0.00273"
+        },
+        "actual": {
+          "valid": true,
+          "value": "0.00273",
+          "unit": "bar"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "value",
+            "unit": "bar",
+            "expected": "0.00273",
+            "actual": "0.00273",
+            "comparison_actual": "0.00273",
+            "actual_unit": "bar",
+            "actual_in_expected_unit": "0.00273",
+            "absolute_error": "0.00000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S02-seeded-08",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": true,
+        "physical_equivalence_correct": true,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [
+          {
+            "field": "result",
+            "expected_unit": "mV",
+            "actual_unit": "mV",
+            "unit_correct": true,
+            "physically_equivalent": true,
+            "actual_in_expected_unit": "32000.00000",
+            "comparison_actual": "32000.00000"
+          }
+        ],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "unit": "mV",
+          "valid": true,
+          "value": "32000.00000"
+        },
+        "actual": {
+          "valid": true,
+          "value": "32000.00000",
+          "unit": "mV"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "value",
+            "unit": "mV",
+            "expected": "32000.00000",
+            "actual": "32000.00000",
+            "comparison_actual": "32000.00000",
+            "actual_unit": "mV",
+            "actual_in_expected_unit": "32000.00000",
+            "absolute_error": "0.00000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S02-seeded-09",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": true,
+        "physical_equivalence_correct": true,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [
+          {
+            "field": "result",
+            "expected_unit": "V",
+            "actual_unit": "V",
+            "unit_correct": true,
+            "physically_equivalent": true,
+            "actual_in_expected_unit": "-0.04000",
+            "comparison_actual": "-0.04000"
+          }
+        ],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "unit": "V",
+          "valid": true,
+          "value": "-0.04000"
+        },
+        "actual": {
+          "valid": true,
+          "value": "-0.04000",
+          "unit": "V"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "value",
+            "unit": "V",
+            "expected": "-0.04000",
+            "actual": "-0.04000",
+            "comparison_actual": "-0.04000",
+            "actual_unit": "V",
+            "actual_in_expected_unit": "-0.04000",
+            "absolute_error": "0.00000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S02-seeded-10",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": true,
+        "physical_equivalence_correct": true,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [
+          {
+            "field": "result",
+            "expected_unit": "F",
+            "actual_unit": "F",
+            "unit_correct": true,
+            "physically_equivalent": true,
+            "actual_in_expected_unit": "89.60000",
+            "comparison_actual": "89.60000"
+          }
+        ],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "unit": "F",
+          "valid": true,
+          "value": "89.60000"
+        },
+        "actual": {
+          "valid": true,
+          "value": "89.60000",
+          "unit": "F"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "value",
+            "unit": "F",
+            "expected": "89.60000",
+            "actual": "89.60000",
+            "comparison_actual": "89.60000",
+            "actual_unit": "F",
+            "actual_in_expected_unit": "89.60000",
+            "absolute_error": "0.00000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S02-seeded-11",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": true,
+        "physical_equivalence_correct": true,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [
+          {
+            "field": "result",
+            "expected_unit": "C",
+            "actual_unit": "C",
+            "unit_correct": true,
+            "physically_equivalent": true,
+            "actual_in_expected_unit": "0.00000",
+            "comparison_actual": "0.00000"
+          }
+        ],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "unit": "C",
+          "valid": true,
+          "value": "0.00000"
+        },
+        "actual": {
+          "valid": true,
+          "value": "0.00000",
+          "unit": "C"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "value",
+            "unit": "C",
+            "expected": "0.00000",
+            "actual": "0.00000",
+            "comparison_actual": "0.00000",
+            "actual_unit": "C",
+            "actual_in_expected_unit": "0.00000",
+            "absolute_error": "0.00000",
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S02-seeded-12",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": true,
+        "physical_equivalence_correct": true,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [
+          {
+            "field": "result",
+            "expected_unit": "K",
+            "actual_unit": "K",
+            "unit_correct": true,
+            "physically_equivalent": true,
+            "actual_in_expected_unit": "274.15000",
+            "comparison_actual": "274.15000"
+          }
+        ],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "unit": "K",
+          "valid": true,
+          "value": "274.15000"
+        },
+        "actual": {
+          "valid": true,
+          "value": "274.15000",
+          "unit": "K"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "value",
+            "unit": "K",
+            "expected": "274.15000",
+            "actual": "274.15000",
+            "comparison_actual": "274.15000",
+            "actual_unit": "K",
+            "actual_in_expected_unit": "274.15000",
+            "absolute_error": "0.00000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S02-seeded-13",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": true,
+        "physical_equivalence_correct": true,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [
+          {
+            "field": "result",
+            "expected_unit": "C",
+            "actual_unit": "C",
+            "unit_correct": true,
+            "physically_equivalent": true,
+            "actual_in_expected_unit": "-272.15000",
+            "comparison_actual": "-272.15000"
+          }
+        ],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "unit": "C",
+          "valid": true,
+          "value": "-272.15000"
+        },
+        "actual": {
+          "valid": true,
+          "value": "-272.15000",
+          "unit": "C"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "value",
+            "unit": "C",
+            "expected": "-272.15000",
+            "actual": "-272.15000",
+            "comparison_actual": "-272.15000",
+            "actual_unit": "C",
+            "actual_in_expected_unit": "-272.15000",
+            "absolute_error": "0.00000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S02-seeded-14",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": true,
+        "physical_equivalence_correct": true,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [
+          {
+            "field": "result",
+            "expected_unit": "kPa",
+            "actual_unit": "kPa",
+            "unit_correct": true,
+            "physically_equivalent": true,
+            "actual_in_expected_unit": "0.00125",
+            "comparison_actual": "0.00125"
+          }
+        ],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "unit": "kPa",
+          "valid": true,
+          "value": "0.00125"
+        },
+        "actual": {
+          "valid": true,
+          "value": "0.00125",
+          "unit": "kPa"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "value",
+            "unit": "kPa",
+            "expected": "0.00125",
+            "actual": "0.00125",
+            "comparison_actual": "0.00125",
+            "actual_unit": "kPa",
+            "actual_in_expected_unit": "0.00125",
+            "absolute_error": "0.00000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S02-seeded-15",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": true,
+        "physical_equivalence_correct": true,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [
+          {
+            "field": "result",
+            "expected_unit": "Pa",
+            "actual_unit": "Pa",
+            "unit_correct": true,
+            "physically_equivalent": true,
+            "actual_in_expected_unit": "273150.00000",
+            "comparison_actual": "273150.00000"
+          }
+        ],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "unit": "Pa",
+          "valid": true,
+          "value": "273150.00000"
+        },
+        "actual": {
+          "valid": true,
+          "value": "273150.00000",
+          "unit": "Pa"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "value",
+            "unit": "Pa",
+            "expected": "273150.00000",
+            "actual": "273150.00000",
+            "comparison_actual": "273150.00000",
+            "actual_unit": "Pa",
+            "actual_in_expected_unit": "273150.00000",
+            "absolute_error": "0.00000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S02-seeded-16",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": true,
+        "physical_equivalence_correct": true,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [
+          {
+            "field": "result",
+            "expected_unit": "Pa",
+            "actual_unit": "Pa",
+            "unit_correct": true,
+            "physically_equivalent": true,
+            "actual_in_expected_unit": "3200000.00000",
+            "comparison_actual": "3200000.00000"
+          }
+        ],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "unit": "Pa",
+          "valid": true,
+          "value": "3200000.00000"
+        },
+        "actual": {
+          "valid": true,
+          "value": "3200000.00000",
+          "unit": "Pa"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "value",
+            "unit": "Pa",
+            "expected": "3200000.00000",
+            "actual": "3200000.00000",
+            "comparison_actual": "3200000.00000",
+            "actual_unit": "Pa",
+            "actual_in_expected_unit": "3200000.00000",
+            "absolute_error": "0.00000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S02-seeded-17",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": true,
+        "physical_equivalence_correct": true,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [
+          {
+            "field": "result",
+            "expected_unit": "bar",
+            "actual_unit": "bar",
+            "unit_correct": true,
+            "physically_equivalent": true,
+            "actual_in_expected_unit": "0.00000",
+            "comparison_actual": "0.00000"
+          }
+        ],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "unit": "bar",
+          "valid": true,
+          "value": "0.00000"
+        },
+        "actual": {
+          "valid": true,
+          "value": "0.00000",
+          "unit": "bar"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "value",
+            "unit": "bar",
+            "expected": "0.00000",
+            "actual": "0.00000",
+            "comparison_actual": "0.00000",
+            "actual_unit": "bar",
+            "actual_in_expected_unit": "0.00000",
+            "absolute_error": "0.00000",
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S02-seeded-18",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": true,
+        "physical_equivalence_correct": true,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [
+          {
+            "field": "result",
+            "expected_unit": "mV",
+            "actual_unit": "mV",
+            "unit_correct": true,
+            "physically_equivalent": true,
+            "actual_in_expected_unit": "-5.00000",
+            "comparison_actual": "-5.00000"
+          }
+        ],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "unit": "mV",
+          "valid": true,
+          "value": "-5.00000"
+        },
+        "actual": {
+          "valid": true,
+          "value": "-5.00000",
+          "unit": "mV"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "value",
+            "unit": "mV",
+            "expected": "-5.00000",
+            "actual": "-5.00000",
+            "comparison_actual": "-5.00000",
+            "actual_unit": "mV",
+            "actual_in_expected_unit": "-5.00000",
+            "absolute_error": "0.00000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S02-seeded-19",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": true,
+        "physical_equivalence_correct": true,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [
+          {
+            "field": "result",
+            "expected_unit": "V",
+            "actual_unit": "V",
+            "unit_correct": true,
+            "physically_equivalent": true,
+            "actual_in_expected_unit": "0.03200",
+            "comparison_actual": "0.03200"
+          }
+        ],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "unit": "V",
+          "valid": true,
+          "value": "0.03200"
+        },
+        "actual": {
+          "valid": true,
+          "value": "0.03200",
+          "unit": "V"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "value",
+            "unit": "V",
+            "expected": "0.03200",
+            "actual": "0.03200",
+            "comparison_actual": "0.03200",
+            "actual_unit": "V",
+            "actual_in_expected_unit": "0.03200",
+            "absolute_error": "0.00000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S02-same-unit",
+        "category": "boundary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": true,
+        "physical_equivalence_correct": true,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [
+          {
+            "field": "result",
+            "expected_unit": "C",
+            "actual_unit": "C",
+            "unit_correct": true,
+            "physically_equivalent": true,
+            "actual_in_expected_unit": "-273.15",
+            "comparison_actual": "-273.15"
+          }
+        ],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "unit": "C",
+          "valid": true,
+          "value": "-273.15"
+        },
+        "actual": {
+          "valid": true,
+          "value": "-273.15",
+          "unit": "C"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "value",
+            "unit": "C",
+            "expected": "-273.15",
+            "actual": "-273.15",
+            "comparison_actual": "-273.15",
+            "actual_unit": "C",
+            "actual_in_expected_unit": "-273.15",
+            "absolute_error": "0.00",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S02-incompatible",
+        "category": "adversarial",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "incompatible_or_unknown_unit",
+          "valid": false
+        },
+        "actual": {
+          "valid": false,
+          "reason": "incompatible_or_unknown_unit"
+        },
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S02-unknown-unit",
+        "category": "adversarial",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "incompatible_or_unknown_unit",
+          "valid": false
+        },
+        "actual": {
+          "valid": false,
+          "reason": "incompatible_or_unknown_unit"
+        },
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S02-half-even-down",
+        "category": "boundary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": true,
+        "physical_equivalence_correct": true,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [
+          {
+            "field": "result",
+            "expected_unit": "V",
+            "actual_unit": "V",
+            "unit_correct": true,
+            "physically_equivalent": true,
+            "actual_in_expected_unit": "1.24",
+            "comparison_actual": "1.24"
+          }
+        ],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "unit": "V",
+          "valid": true,
+          "value": "1.24"
+        },
+        "actual": {
+          "valid": true,
+          "value": "1.24",
+          "unit": "V"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "value",
+            "unit": "V",
+            "expected": "1.24",
+            "actual": "1.24",
+            "comparison_actual": "1.24",
+            "actual_unit": "V",
+            "actual_in_expected_unit": "1.24",
+            "absolute_error": "0.00",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S02-half-even-up",
+        "category": "boundary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": true,
+        "physical_equivalence_correct": true,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [
+          {
+            "field": "result",
+            "expected_unit": "V",
+            "actual_unit": "V",
+            "unit_correct": true,
+            "physically_equivalent": true,
+            "actual_in_expected_unit": "1.26",
+            "comparison_actual": "1.26"
+          }
+        ],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "unit": "V",
+          "valid": true,
+          "value": "1.26"
+        },
+        "actual": {
+          "valid": true,
+          "value": "1.26",
+          "unit": "V"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "value",
+            "unit": "V",
+            "expected": "1.26",
+            "actual": "1.26",
+            "comparison_actual": "1.26",
+            "actual_unit": "V",
+            "actual_in_expected_unit": "1.26",
+            "absolute_error": "0.00",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S02-bad-decimal",
+        "category": "adversarial",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "invalid_parameters",
+          "valid": false
+        },
+        "actual": {
+          "valid": false,
+          "reason": "invalid_parameters"
+        },
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S02-bad-precision",
+        "category": "adversarial",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "invalid_parameters",
+          "valid": false
+        },
+        "actual": {
+          "valid": false,
+          "reason": "invalid_parameters"
+        },
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S02-absolute-zero",
+        "category": "boundary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": true,
+        "physical_equivalence_correct": true,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [
+          {
+            "field": "result",
+            "expected_unit": "C",
+            "actual_unit": "C",
+            "unit_correct": true,
+            "physically_equivalent": true,
+            "actual_in_expected_unit": "-273.15",
+            "comparison_actual": "-273.15"
+          }
+        ],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "unit": "C",
+          "valid": true,
+          "value": "-273.15"
+        },
+        "actual": {
+          "valid": true,
+          "value": "-273.15",
+          "unit": "C"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "value",
+            "unit": "C",
+            "expected": "-273.15",
+            "actual": "-273.15",
+            "comparison_actual": "-273.15",
+            "actual_unit": "C",
+            "actual_in_expected_unit": "-273.15",
+            "absolute_error": "0.00",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S02-negative-pressure",
+        "category": "boundary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": true,
+        "physical_equivalence_correct": true,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [
+          {
+            "field": "result",
+            "expected_unit": "kPa",
+            "actual_unit": "kPa",
+            "unit_correct": true,
+            "physically_equivalent": true,
+            "actual_in_expected_unit": "-200.000",
+            "comparison_actual": "-200.000"
+          }
+        ],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "unit": "kPa",
+          "valid": true,
+          "value": "-200.000"
+        },
+        "actual": {
+          "valid": true,
+          "value": "-200.000",
+          "unit": "kPa"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "value",
+            "unit": "kPa",
+            "expected": "-200.000",
+            "actual": "-200.000",
+            "comparison_actual": "-200.000",
+            "actual_unit": "kPa",
+            "actual_in_expected_unit": "-200.000",
+            "absolute_error": "0.000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S02-milli",
+        "category": "boundary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": true,
+        "physical_equivalence_correct": true,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [
+          {
+            "field": "result",
+            "expected_unit": "V",
+            "actual_unit": "V",
+            "unit_correct": true,
+            "physically_equivalent": true,
+            "actual_in_expected_unit": "2.500",
+            "comparison_actual": "2.500"
+          }
+        ],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "unit": "V",
+          "valid": true,
+          "value": "2.500"
+        },
+        "actual": {
+          "valid": true,
+          "value": "2.500",
+          "unit": "V"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "value",
+            "unit": "V",
+            "expected": "2.500",
+            "actual": "2.500",
+            "comparison_actual": "2.500",
+            "actual_unit": "V",
+            "actual_in_expected_unit": "2.500",
+            "absolute_error": "0.000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      }
+    ]
+  }
+}

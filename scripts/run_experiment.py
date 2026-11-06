@@ -11,6 +11,24 @@ from harness.run_trial import run_trial
 from harness.secure_execution import SANDBOX_IMAGE, docker_preflight
 
 
+def _is_zero_cost(config: dict) -> bool:
+    """A configuration is zero-cost only when explicitly declared and fully zero-rated.
+
+    Zero-cost tiers cover local models (no credential) and documented $0/free-tier
+    provider models. They still require token budgets and reported usage metadata;
+    only the monetary caps and credential requirements are relaxed to exact zero.
+    """
+    if config.get("cost_tier") != "zero_cost":
+        return False
+    budget = config.get("budget", {})
+    for key in ("input_usd_per_million_tokens", "output_usd_per_million_tokens"):
+        value = budget.get(key)
+        if not isinstance(value, (int, float)) or isinstance(value, bool) or value != 0:
+            return False
+    per_run = budget.get("max_cost_per_trial_usd")
+    return isinstance(per_run, (int, float)) and not isinstance(per_run, bool) and per_run == 0
+
+
 def load_matrix(path: Path, require_models: bool = True) -> dict:
     matrix = json.loads(path.read_text(encoding="utf-8"))
     configs = matrix.get("configurations", [])
@@ -25,6 +43,9 @@ def load_matrix(path: Path, require_models: bool = True) -> dict:
             raise ValueError(f"{item['name']} needs an exact model_id before execution")
         if require_models and (not item.get("agent_version_expected") or not isinstance(item["agent_version_expected"], str)):
             raise ValueError(f"{item['name']} needs an exact agent_version_expected from its configured version command")
+        if _is_zero_cost(item):
+            if not isinstance(item.get("budget", {}).get("max_total_tokens_per_trial"), int) or isinstance(item["budget"]["max_total_tokens_per_trial"], bool) or item["budget"]["max_total_tokens_per_trial"] <= 0:
+                raise ValueError(f"{item['name']} needs a positive max_total_tokens_per_trial even at zero cost")
         profile = ROOT / item["profile"]
         if not profile.is_file():
             raise ValueError(f"agent profile does not exist: {profile}")
@@ -72,22 +93,60 @@ def _require_pilot_review() -> None:
         raise RuntimeError("full experiment blocked: pilot approval must record approved=true, reviewer, and reviewed_at_utc")
 
 
-def execute(matrix: dict, mode: str) -> dict:
+def _completed_triples(results_dir: Path) -> set:
+    triples = set()
+    for idx_path in sorted(results_dir.glob("runs/*/trial_index.json")):
+        try:
+            item = json.loads(idx_path.read_text(encoding="utf-8"))
+        except (ValueError, OSError):
+            continue
+        triples.add((item.get("model_id"), item.get("task"), item.get("trial")))
+    return triples
+
+
+def execute(matrix: dict, mode: str, only_config: str | None = None, skip_completed: bool = False) -> dict:
     spend = matrix.get("spend_control", {})
     cap = spend.get("max_total_cost_usd")
-    if not isinstance(cap, (int, float)) or isinstance(cap, bool) or cap <= 0:
-        raise RuntimeError("paid experiment blocked: set an explicit positive spend_control.max_total_cost_usd")
-    if spend.get("provider_hard_spend_limit_configured") is not True:
-        raise RuntimeError("paid experiment blocked: enable a provider-side hard spend limit no greater than the registered cap")
-    provider_cap = spend.get("provider_hard_spend_limit_usd")
-    if not isinstance(provider_cap, (int, float)) or isinstance(provider_cap, bool) or not (0 < provider_cap <= cap):
-        raise RuntimeError("paid experiment blocked: provider_hard_spend_limit_usd must be positive and no greater than the registered total cap")
-    if not spend.get("provider_hard_spend_limit_evidence") or not spend.get("owner_authorization_record"):
-        raise RuntimeError("paid experiment blocked: record provider hard-limit evidence and explicit owner budget authorization")
+    all_zero = len(matrix.get("configurations", [])) == 3 and all(_is_zero_cost(item) for item in matrix["configurations"])
+    if all_zero:
+        # Explicit zero-spend run: no provider can charge (local models and
+        # documented $0/free-tier models only). Caps are exactly zero and the
+        # evidence/authorization records must still be present and non-empty.
+        if cap != 0:
+            raise RuntimeError("zero-cost experiment requires an explicit spend_control.max_total_cost_usd of exactly 0")
+        provider_cap = spend.get("provider_hard_spend_limit_usd")
+        if provider_cap != 0:
+            raise RuntimeError("zero-cost experiment requires provider_hard_spend_limit_usd of exactly 0")
+        if not spend.get("provider_hard_spend_limit_evidence") or not spend.get("owner_authorization_record"):
+            raise RuntimeError("zero-cost experiment still requires hard-limit evidence and explicit owner authorization")
+    else:
+        if not isinstance(cap, (int, float)) or isinstance(cap, bool) or cap <= 0:
+            raise RuntimeError("paid experiment blocked: set an explicit positive spend_control.max_total_cost_usd")
+        if spend.get("provider_hard_spend_limit_configured") is not True:
+            raise RuntimeError("paid experiment blocked: enable a provider-side hard spend limit no greater than the registered cap")
+        provider_cap = spend.get("provider_hard_spend_limit_usd")
+        if not isinstance(provider_cap, (int, float)) or isinstance(provider_cap, bool) or not (0 < provider_cap <= cap):
+            raise RuntimeError("paid experiment blocked: provider_hard_spend_limit_usd must be positive and no greater than the registered total cap")
+        if not spend.get("provider_hard_spend_limit_evidence") or not spend.get("owner_authorization_record"):
+            raise RuntimeError("paid experiment blocked: record provider hard-limit evidence and explicit owner budget authorization")
     trial_count = len(matrix["configurations"]) * len(matrix["pilot"]["tasks"]) if mode == "pilot" else len(matrix["configurations"]) * len(matrix["tasks"]) * len(matrix["trials"])
     reserved_total = 0.0
     for config in matrix["configurations"]:
         budget = config.get("budget", {})
+        if _is_zero_cost(config):
+            if not isinstance(budget.get("max_total_tokens_per_trial"), int) or isinstance(budget.get("max_total_tokens_per_trial"), bool) or budget["max_total_tokens_per_trial"] <= 0:
+                raise RuntimeError(f"paid experiment blocked: {config['name']} needs a positive max_total_tokens_per_trial")
+            for key in ("input_usd_per_million_tokens", "output_usd_per_million_tokens"):
+                value = budget.get(key)
+                if value != 0:
+                    raise RuntimeError(f"zero-cost {config['name']} must keep {key} at exactly 0")
+            for name in config.get("credential_env", []):
+                if not os.environ.get(name):
+                    raise RuntimeError(f"zero-cost {config['name']} names credential {name}, but it is missing from the execution environment")
+            profile = json.loads((ROOT / config["profile"]).read_text(encoding="utf-8"))
+            if not profile.get("structured_stdout_jsonl"):
+                raise RuntimeError(f"paid experiment blocked: {config['name']} profile must emit structured stdout usage events")
+            continue
         per_run = budget.get("max_cost_per_trial_usd")
         if not isinstance(per_run, (int, float)) or isinstance(per_run, bool) or per_run <= 0:
             raise RuntimeError(f"paid experiment blocked: {config['name']} needs a positive max_cost_per_trial_usd")
@@ -128,10 +187,10 @@ def execute(matrix: dict, mode: str) -> dict:
                     },
                 )
                 outputs.append(result)
-                if not result.get("usage", {}).get("reported") or not result.get("usage", {}).get("estimated_cost_complete") or result.get("usage", {}).get("budget_stop_reason"):
+                if _trial_budget_breached(result, config):
                     status = {
                         "status": "BUDGET_STOPPED", "trial_count": len(outputs),
-                        "reason": "provider usage metadata was absent/incomplete or a configured budget limit was exceeded; no further trials were started",
+                        "reason": "a configured budget limit was exceeded, or provider usage metadata was absent/incomplete for a non-zero-cost trial; no further trials were started",
                         "tasks": matrix["pilot"]["tasks"], "results": outputs,
                     }
                     status_path = ROOT / "results" / "pilot" / "pilot_status.json"
@@ -144,10 +203,17 @@ def execute(matrix: dict, mode: str) -> dict:
         status_path.write_text(json.dumps(status, indent=2, default=str) + "\n", encoding="utf-8")
         return status
 
+    done = _completed_triples(ROOT / "results") if skip_completed else set()
+    skipped = 0
     for config in matrix["configurations"]:
+        if only_config and config["name"] != only_config:
+            continue
         budget = config["budget"]
         for task in matrix["tasks"]:
             for trial in matrix["trials"]:
+                if skip_completed and (config["model_id"], task, trial) in done:
+                    skipped += 1
+                    continue
                 result = run_trial(
                     task, ROOT / config["profile"], config["model_id"], trial,
                     budget["agent_timeout_seconds"], ROOT / "results",
@@ -159,20 +225,51 @@ def execute(matrix: dict, mode: str) -> dict:
                     },
                 )
                 outputs.append(result)
-                if not result.get("usage", {}).get("reported") or not result.get("usage", {}).get("estimated_cost_complete") or result.get("usage", {}).get("budget_stop_reason"):
+                if result.get("quota_exhausted") and _is_zero_cost(config):
+                    path = ROOT / "results" / "experiment_launch.json"
+                    stopped = {
+                        "status": "QUOTA_EXHAUSTED", "trial_count": len(outputs),
+                        "required_trial_count": 72,
+                        "reason": "provider free-tier quota exhausted for a zero-cost configuration; further trials would fail without producing evidence, so no further trials were started",
+                        "registered_cost_cap_usd": cap, "trials": outputs,
+                        "scope": {"only_config": only_config, "skip_completed": skip_completed, "skipped_completed_triples": skipped},
+                    }
+                    path.write_text(json.dumps(stopped, indent=2, default=str) + "\n", encoding="utf-8")
+                    return stopped
+                if _trial_budget_breached(result, config):
                     path = ROOT / "results" / "experiment_launch.json"
                     stopped = {
                         "status": "BUDGET_STOPPED", "trial_count": len(outputs),
                         "required_trial_count": 72,
-                        "reason": "provider usage metadata was absent/incomplete or a configured budget limit was exceeded; no further trials were started",
+                        "reason": "a configured budget limit was exceeded, or provider usage metadata was absent/incomplete for a non-zero-cost trial; no further trials were started",
                         "registered_cost_cap_usd": cap, "trials": outputs,
                     }
                     path.write_text(json.dumps(stopped, indent=2, default=str) + "\n", encoding="utf-8")
                     return stopped
-    status = {"status": "FULL_RUNS_RECORDED", "trial_count": len(outputs), "required_trial_count": 72, "registered_cost_cap_usd": cap, "trials": outputs}
+    status = {"status": "FULL_RUNS_RECORDED", "trial_count": len(outputs), "required_trial_count": 72, "registered_cost_cap_usd": cap, "trials": outputs,
+              "scope": {"only_config": only_config, "skip_completed": skip_completed, "skipped_completed_triples": skipped}}
     path = ROOT / "results" / "experiment_launch.json"
     path.write_text(json.dumps(status, indent=2, default=str) + "\n", encoding="utf-8")
     return status
+
+
+def _trial_budget_breached(result: dict, config: dict) -> bool:
+    """Fail closed on real budget breaches; tolerate transient infra errors only at zero cost.
+
+    Any trial with a token/estimated-cost budget stop always halts the run. A trial
+    with absent/incomplete usage metadata halts the run unless its configuration is
+    a declared zero-cost tier (local models or documented $0 models), where no
+    charge is possible by construction and the wall timeout still bounds the
+    attempt. Such trials are still recorded with reported:false and graded, so no
+    evidence is hidden; the failure analysis must classify them as execution
+    failures, not model behavior.
+    """
+    usage = result.get("usage", {})
+    if usage.get("budget_stop_reason"):
+        return True
+    if not usage.get("reported") or not usage.get("estimated_cost_complete"):
+        return not _is_zero_cost(config)
+    return False
 
 
 def main():
@@ -180,13 +277,17 @@ def main():
     parser.add_argument("--matrix", type=Path, default=ROOT / "configs" / "experiment_matrix.json")
     parser.add_argument("--mode", choices=["pilot", "full"], required=True)
     parser.add_argument("--execute", action="store_true", help="explicitly authorize configured agent calls")
+    parser.add_argument("--only-config", default=None, help="resume/supplement: run only the named configuration (must exist in the matrix)")
+    parser.add_argument("--skip-completed", action="store_true", help="resume/supplement: skip (model,task,trial) triples that already have a trial_index.json under results/runs")
     args = parser.parse_args()
     try:
         matrix = load_matrix(args.matrix.resolve(), require_models=args.execute)
+        if args.only_config and args.only_config not in [c["name"] for c in matrix["configurations"]]:
+            raise ValueError(f"unknown configuration: {args.only_config}")
         if not args.execute:
             print(json.dumps(plan(matrix, args.mode), indent=2))
             return
-        print(json.dumps(execute(matrix, args.mode), indent=2, default=str))
+        print(json.dumps(execute(matrix, args.mode, only_config=args.only_config, skip_completed=args.skip_completed), indent=2, default=str))
     except Exception as exc:
         print(json.dumps({"status": "NOT_STARTED", "reason": f"{type(exc).__name__}: {exc}"}, indent=2), file=sys.stderr)
         raise SystemExit(2)

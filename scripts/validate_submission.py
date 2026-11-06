@@ -104,8 +104,17 @@ def main() -> int:
     if readmes != [ROOT / "README.md"]:
         raise SystemExit(f"FAIL: expected exactly one project README at the root; found {readmes}")
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    if "Video walkthrough: TO BE ADDED BY PARTICIPANT" not in readme:
-        raise SystemExit("FAIL: README video placeholder is missing or changed")
+    video_markers = [line for line in readme.splitlines() if line.startswith("Video walkthrough:")]
+    if not video_markers:
+        raise SystemExit("FAIL: README is missing its 'Video walkthrough:' line")
+    video_line = video_markers[0]
+    if video_line.startswith("Video walkthrough: https://"):
+        video_status = {"status": "PUBLISHED", "url": video_line.split(":", 1)[1].strip()}
+    elif video_line.startswith("Video walkthrough: PENDING"):
+        video_status = {"status": "PENDING_OWNER_ACTION", "note": video_line.split(":", 1)[1].strip()}
+        print("WARNING: video walkthrough URL is pending (project-owner action); release is blocked on publication")
+    else:
+        raise SystemExit("FAIL: README video line must be a real 'https://' URL or an explicit 'PENDING' owner-action marker; placeholders are rejected")
 
     if set(TASK_DIRS) != set(REFS) or set(SOLVERS) != set(REFS):
         raise SystemExit("FAIL: task packages, references, and independent oracle do not match S01-S08")
@@ -188,6 +197,7 @@ def main() -> int:
     report = {
         "status": "PASS",
         "classification": "reference/oracle and deliberate mutation validation; not model results",
+        "video_status": video_status,
         "task_case_counts": case_counts,
         "reference_cases_passed": total_reference,
         "reference_case_count": sum(case_counts.values()),

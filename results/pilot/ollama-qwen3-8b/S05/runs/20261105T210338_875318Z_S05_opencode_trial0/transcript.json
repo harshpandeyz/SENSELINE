@@ -1,0 +1,2974 @@
+{
+  "run_id": "20261105T210338_875318Z_S05_opencode_trial0",
+  "task": "S05",
+  "trial": 0,
+  "trial_seed": 20266146,
+  "agent": "opencode",
+  "agent_version": {
+    "command": [
+      "npm",
+      "exec",
+      "--yes",
+      "--package=@opencode/cli@2.2.5",
+      "--",
+      "opencode",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "opencode v2.2.5\n",
+    "stderr": ""
+  },
+  "model_id": "ollama/qwen3:8b",
+  "profile": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/configs/opencode.json",
+  "profile_configuration": {
+    "name": "opencode",
+    "command": [
+      "npm",
+      "exec",
+      "--yes",
+      "--package=@opencode/cli@2.2.5",
+      "--",
+      "opencode",
+      "--standalone",
+      "run",
+      "--model",
+      "{model}",
+      "--format",
+      "json",
+      "{prompt}"
+    ],
+    "version_command": [
+      "npm",
+      "exec",
+      "--yes",
+      "--package=@opencode/cli@2.2.5",
+      "--",
+      "opencode",
+      "--version"
+    ],
+    "structured_stdout_jsonl": true,
+    "environment_allowlist": [
+      "OPENCODE_CONFIG",
+      "OPENCODE_CONFIG_DIR",
+      "OPENCODE_DISABLE_PROJECT_CONFIG",
+      "OPENCODE_DISABLE_EXTERNAL_SKILLS",
+      "OPENCODE_DISABLE_CLAUDE_CODE",
+      "OPENCODE_DISABLE_AUTOUPDATE"
+    ],
+    "credential_env": "[REDACTED]",
+    "environment": {
+      "OPENCODE_CONFIG": "{opencode_policy_path}",
+      "OPENCODE_CONFIG_DIR": "{opencode_config_dir}",
+      "OPENCODE_DISABLE_PROJECT_CONFIG": "true",
+      "OPENCODE_DISABLE_EXTERNAL_SKILLS": "true",
+      "OPENCODE_DISABLE_CLAUDE_CODE": "true",
+      "OPENCODE_DISABLE_AUTOUPDATE": "true"
+    },
+    "settings": {
+      "mode": "OpenCode CLI 2.2.5 non-interactive run from the isolated task workspace",
+      "model_id": "exact provider/model ID supplied at run time with --model",
+      "isolation": "read-only task files and solution.py-only edits; external directories and all shell commands denied; candidate code separately runs in the network-disabled Docker sandbox",
+      "network": "the agent CLI requires outbound HTTPS to the selected model provider; candidate execution has no network",
+      "dynamic_permission_test": "not performed; the pinned CLI resolves this policy without inference, while shell is denied and candidate execution is separately sandboxed"
+    }
+  },
+  "experiment_configuration": {
+    "name": "ollama-qwen3-8b",
+    "profile": "configs/opencode.json",
+    "model_id": "ollama/qwen3:8b",
+    "agent_version_expected": "opencode v2.2.5",
+    "cost_tier": "zero_cost",
+    "budget": {
+      "agent_timeout_seconds": 900,
+      "candidate_timeout_seconds": 5,
+      "max_cost_per_trial_usd": 0,
+      "max_total_tokens_per_trial": "[REDACTED]",
+      "input_usd_per_million_tokens": "[REDACTED]",
+      "output_usd_per_million_tokens": "[REDACTED]",
+      "cost_capture": "local Ollama inference; provider-reported token usage is recorded, estimated cost is $0, confirmed billing is not applicable (raised from 60000 after pilot attempt 4 showed a reasoning model exceeding 60000 tokens)",
+      "reasoning_effort": null
+    },
+    "credential_env": "[REDACTED]",
+    "registered_cost_cap_usd": 0,
+    "provider_hard_spend_limit_usd": 0,
+    "sandbox_preflight": {
+      "docker_path": "/usr/local/bin/docker",
+      "image": "python:3.11.18-slim-bookworm@sha256:ef521de1d817dc92a6358c906bbadb9a0b7e38040038642833521b9d582c2233",
+      "image_id": "sha256:ef521de1d817dc92a6358c906bbadb9a0b7e38040038642833521b9d582c2233",
+      "isolation": "docker",
+      "isolation_probe": "PASS"
+    }
+  },
+  "started_at_utc": "2026-11-05T21:03:38.875779+00:00",
+  "runtime_seconds": 517.0178333749063,
+  "timeout_seconds": 900,
+  "candidate_timeout_seconds": 5,
+  "timed_out": false,
+  "exit_code": 0,
+  "cost_usd": null,
+  "cost_usd_estimated": "0",
+  "cost_usd_confirmed": null,
+  "usage": {
+    "input_tokens": 2369,
+    "output_tokens": 8129,
+    "total_tokens": 10498,
+    "events": [
+      {
+        "input_tokens": 2369,
+        "output_tokens": 8129,
+        "total_tokens": 10498,
+        "agent_reported_cost_usd": null,
+        "source_event_type": "step_finish",
+        "billing_cost_confirmed": false
+      }
+    ],
+    "reported": true,
+    "estimated_cost_complete": true,
+    "estimated_cost_usd": "0",
+    "confirmed_cost_usd": null,
+    "budget_stop_reason": null
+  },
+  "candidate_source_path": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/results/pilot/ollama-qwen3-8b/S05/runs/20261105T210338_875318Z_S05_opencode_trial0/workspace/solution.py",
+  "candidate_source_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+  "candidate_source_snapshot_issue": null,
+  "task_accuracy": 0.0,
+  "score_path": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/results/pilot/ollama-qwen3-8b/S05/runs/20261105T210338_875318Z_S05_opencode_trial0/score.json",
+  "workspace_path": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/results/pilot/ollama-qwen3-8b/S05/runs/20261105T210338_875318Z_S05_opencode_trial0/workspace",
+  "sandbox": {
+    "docker_path": "/usr/local/bin/docker",
+    "image": "python:3.11.18-slim-bookworm@sha256:ef521de1d817dc92a6358c906bbadb9a0b7e38040038642833521b9d582c2233",
+    "image_id": "sha256:ef521de1d817dc92a6358c906bbadb9a0b7e38040038642833521b9d582c2233",
+    "isolation": "docker",
+    "isolation_probe": "PASS"
+  },
+  "structured_agent_event_count": 0,
+  "exact_task_instruction": "# S05 — Measurement Uncertainty Propagation\n\n## Problem\n\nEvaluate Type A and Type B standard uncertainties and propagate them through a linear measurement model.\n\n## Complete specification\n\nProvide 1..3 components. Every observation and half_width is expressed in one shared symbolic task unit `MU`; sensitivity coefficients are dimensionless, and every reported standard uncertainty is MU. `MU` is a benchmark unit label, not a claim that the measurand is SI or a particular real-world quantity. Type A component observations must contain >=2 finite decimal values; standard uncertainty of the mean is sample standard deviation (ddof=1) divided by sqrt(n). Type B kind `type_b_rectangular` supplies nonnegative symmetric half_width a; u=a/sqrt(3). Every component has a sensitivity coefficient. If correlation_matrix is omitted, and only then, use identity. If supplied, require a square n×n symmetric matrix, exact diagonal 1, coefficients in [-1,1], and positive semidefinite (all principal minors nonnegative within 1e-24). cov(i,j)=rho(i,j)*u_i*u_j. Calculate uc²=sum(c_i²u_i²)+2 sum(i<j)c_i*c_j*cov(i,j); reject materially negative variance. coverage_factor k must be finite and >0; U=k*uc. Use Decimal arithmetic, 40-digit working precision, report decimal strings. Grading tolerance: 1e-16 MU absolute for uncertainty outputs; component validity/status and list lengths are exact. Errors return {valid:false,reason:code}; codes: unsupported_component_count, type_a_requires_two_observations, negative_half_width, invalid_component_kind, invalid_correlation_shape, invalid_correlation_diagonal, invalid_correlation_matrix, non_psd_correlation_matrix, negative_propagated_variance, invalid_coverage_factor, invalid_parameters. This is the specified linear propagation model, not an assertion that all uncertainty sources in practice fit it.\n\n## Interface\n\nImplement exactly `def solve(payload: dict) -> dict` in `solution.py`. Input and output use JSON objects. Do not read files outside this task workspace or assume hidden-test values. Preserve explicit errors; do not silently default required parameters. Public examples and their expected outputs are in `public_examples.json`.\n\n## Grading contract\n\nThe grader checks schema and exact validity/disposition fields, then checks every numeric field using task-specific absolute tolerances documented in the grading methodology. Invalid-input cases are part of the score. Hidden tests are deterministic and remain outside this exported workspace.\n",
+  "prompt": "# S05 — Measurement Uncertainty Propagation\n\n## Problem\n\nEvaluate Type A and Type B standard uncertainties and propagate them through a linear measurement model.\n\n## Complete specification\n\nProvide 1..3 components. Every observation and half_width is expressed in one shared symbolic task unit `MU`; sensitivity coefficients are dimensionless, and every reported standard uncertainty is MU. `MU` is a benchmark unit label, not a claim that the measurand is SI or a particular real-world quantity. Type A component observations must contain >=2 finite decimal values; standard uncertainty of the mean is sample standard deviation (ddof=1) divided by sqrt(n). Type B kind `type_b_rectangular` supplies nonnegative symmetric half_width a; u=a/sqrt(3). Every component has a sensitivity coefficient. If correlation_matrix is omitted, and only then, use identity. If supplied, require a square n×n symmetric matrix, exact diagonal 1, coefficients in [-1,1], and positive semidefinite (all principal minors nonnegative within 1e-24). cov(i,j)=rho(i,j)*u_i*u_j. Calculate uc²=sum(c_i²u_i²)+2 sum(i<j)c_i*c_j*cov(i,j); reject materially negative variance. coverage_factor k must be finite and >0; U=k*uc. Use Decimal arithmetic, 40-digit working precision, report decimal strings. Grading tolerance: 1e-16 MU absolute for uncertainty outputs; component validity/status and list lengths are exact. Errors return {valid:false,reason:code}; codes: unsupported_component_count, type_a_requires_two_observations, negative_half_width, invalid_component_kind, invalid_correlation_shape, invalid_correlation_diagonal, invalid_correlation_matrix, non_psd_correlation_matrix, negative_propagated_variance, invalid_coverage_factor, invalid_parameters. This is the specified linear propagation model, not an assertion that all uncertainty sources in practice fit it.\n\n## Interface\n\nImplement exactly `def solve(payload: dict) -> dict` in `solution.py`. Input and output use JSON objects. Do not read files outside this task workspace or assume hidden-test values. Preserve explicit errors; do not silently default required parameters. Public examples and their expected outputs are in `public_examples.json`.\n\n## Grading contract\n\nThe grader checks schema and exact validity/disposition fields, then checks every numeric field using task-specific absolute tolerances documented in the grading methodology. Invalid-input cases are part of the score. Hidden tests are deterministic and remain outside this exported workspace.\n\n\nImplementation instruction: edit only solution.py in the current task workspace. Implement solve(payload: dict) -> dict. Do not add dependencies. The evaluator runs each test input in a network-disabled Docker container using the pinned Python 3.11.18 runtime. Trial reproducibility seed: 20266146.\n",
+  "agent_command": [
+    "npm",
+    "exec",
+    "--yes",
+    "--package=@opencode/cli@2.2.5",
+    "--",
+    "opencode",
+    "--standalone",
+    "run",
+    "--model",
+    "ollama/qwen3:8b",
+    "--format",
+    "json",
+    "# S05 — Measurement Uncertainty Propagation\n\n## Problem\n\nEvaluate Type A and Type B standard uncertainties and propagate them through a linear measurement model.\n\n## Complete specification\n\nProvide 1..3 components. Every observation and half_width is expressed in one shared symbolic task unit `MU`; sensitivity coefficients are dimensionless, and every reported standard uncertainty is MU. `MU` is a benchmark unit label, not a claim that the measurand is SI or a particular real-world quantity. Type A component observations must contain >=2 finite decimal values; standard uncertainty of the mean is sample standard deviation (ddof=1) divided by sqrt(n). Type B kind `type_b_rectangular` supplies nonnegative symmetric half_width a; u=a/sqrt(3). Every component has a sensitivity coefficient. If correlation_matrix is omitted, and only then, use identity. If supplied, require a square n×n symmetric matrix, exact diagonal 1, coefficients in [-1,1], and positive semidefinite (all principal minors nonnegative within 1e-24). cov(i,j)=rho(i,j)*u_i*u_j. Calculate uc²=sum(c_i²u_i²)+2 sum(i<j)c_i*c_j*cov(i,j); reject materially negative variance. coverage_factor k must be finite and >0; U=k*uc. Use Decimal arithmetic, 40-digit working precision, report decimal strings. Grading tolerance: 1e-16 MU absolute for uncertainty outputs; component validity/status and list lengths are exact. Errors return {valid:false,reason:code}; codes: unsupported_component_count, type_a_requires_two_observations, negative_half_width, invalid_component_kind, invalid_correlation_shape, invalid_correlation_diagonal, invalid_correlation_matrix, non_psd_correlation_matrix, negative_propagated_variance, invalid_coverage_factor, invalid_parameters. This is the specified linear propagation model, not an assertion that all uncertainty sources in practice fit it.\n\n## Interface\n\nImplement exactly `def solve(payload: dict) -> dict` in `solution.py`. Input and output use JSON objects. Do not read files outside this task workspace or assume hidden-test values. Preserve explicit errors; do not silently default required parameters. Public examples and their expected outputs are in `public_examples.json`.\n\n## Grading contract\n\nThe grader checks schema and exact validity/disposition fields, then checks every numeric field using task-specific absolute tolerances documented in the grading methodology. Invalid-input cases are part of the score. Hidden tests are deterministic and remain outside this exported workspace.\n\n\nImplementation instruction: edit only solution.py in the current task workspace. Implement solve(payload: dict) -> dict. Do not add dependencies. The evaluator runs each test input in a network-disabled Docker container using the pinned Python 3.11.18 runtime. Trial reproducibility seed: 20266146.\n"
+  ],
+  "agent_stdout": "{\"type\":\"step_start\",\"timestamp\":1793912690640,\"sessionID\":\"ses_e527955d0ffeuMxExa8RlE1A1m\",\"part\":{\"id\":\"prt_1ad8757d0001z8typuz2MXaCl6\",\"sessionID\":\"ses_e527955d0ffeuMxExa8RlE1A1m\",\"messageID\":\"msg_1ad86aa7f001n74F4HOENVu5KQ\",\"type\":\"step-start\"}}\n{\"type\":\"text\",\"timestamp\":1793913135652,\"sessionID\":\"ses_e527955d0ffeuMxExa8RlE1A1m\",\"part\":{\"id\":\"prt_1ad8c5c38001NccZUS7EdDubea\",\"sessionID\":\"ses_e527955d0ffeuMxExa8RlE1A1m\",\"messageID\":\"msg_1ad86aa7f001n74F4HOENVu5KQ\",\"type\":\"text\",\"text\":\"To accurately compute uncertainties in a system where each component has a sensitivity and uncertainty (or related values), we need to:\\n\\n1. **Validate Input Components**:\\n   - Each component must have a `sensitivity` and a `type` (`type_a` or `type_b_rectangular`).\\n   - For `type_a`, it must also contain valid `observations` (numerical values).\\n   - For `type_b_rectangular`, it must have a `half_width`.\\n\\n2. **Compute Uncertainties**:\\n   - For `type_a`, compute the standard deviation (as uncertainty) from the provided observations.\\n   - For `type_b_rectangular`, compute the uncertainty as a function of the `half_width`.\\n\\n3. **Handle Correlation** (Optional):\\n   - If a `correlation_matrix` is provided, use it to account for inter-component correlation.\\n\\n4. **Calculate Combined Uncertainty**:\\n   - Use the formula for combined uncertainty in a multivariate setting, considering both individual and cross-term correlations.\\n\\n5. **Apply Multiplication Factor** (Optional):\\n   - Multiply the final uncertainty by an optional `coverage_factor` to adjust for confidence levels or scaling.\\n\\n---\\n\\n### ✅ Final Implementation\\n\\n```python\\nimport numpy as np\\nfrom decimal import Decimal, getcontext, InvalidOperation\\n\\ndef solve(payload):\\n    \\\"\\\"\\\"\\n    Compute combined uncertainty across multiple components\\n    with optional correlation and scaling factors.\\n\\n    Args:\\n        payload: A dictionary containing:\\n            - components: List of component dictionaries.\\n            - correlation_matrix: Optional numpy-like 2D array for inter-component correlation.\\n            - coverage_factor: Optional scalar value to scale the final uncertainty.\\n\\n    Returns:\\n        A dictionary with:\\n        - valid: Boolean indicating if the computation was valid.\\n        - uncertainty: Combined uncertainty (float).\\n        - components: List of component details (sensitivity and uncertainty).\\n    \\\"\\\"\\\"\\n\\n    components = payload.get(\\\"components\\\", [])\\n    correlation_matrix = payload.get(\\\"correlation_matrix\\\")\\n    coverage_factor = payload.get(\\\"coverage_factor\\\")\\n\\n    # Validate components\\n    if not components:\\n        return {\\\"valid\\\": False, \\\"reason\\\": \\\"unsupported_component_count\\\"}\\n\\n    n = len(components)\\n    sensitivities = []\\n    u_i_list = []\\n\\n    for comp in components:\\n        if \\\"type\\\" not in comp:\\n            return {\\\"valid\\\": False, \\\"reason\\\": \\\"invalid_component_kind\\\"}\\n\\n        if \\\"sensitivity\\\" not in comp:\\n            return {\\\"valid\\\": False, \\\"reason\\\": \\\"invalid_component_kind\\\"}\\n\\n        try:\\n            sensitivity = Decimal(str(comp[\\\"sensitivity\\\"]))\\n        except:\\n            return {\\\"valid\\\": False, \\\"reason\\\": \\\"invalid_sensitivity\\\"}\\n\\n        if comp[\\\"type\\\"] == \\\"type_a\\\":\\n            if \\\"observations\\\" not in comp:\\n                return {\\\"valid\\\": False, \\\"reason\\\": \\\"missing_required_field_for_type_a\\\"}\\n\\n            try:\\n                obs = [Decimal(str(x)) for x in comp[\\\"observations\\\"]]\\n            except:\\n                return {\\\"valid\\\": False, \\\"reason\\\": \\\"invalid_observations_data_type\\\"}\\n\\n            if len(obs) < 2:\\n                return {\\\"valid\\\": False, \\\"reason\\\": \\\"insufficient_observations_for_type_a\\\"}\\n\\n            mean = sum(obs) / Decimal(len(obs))\\n            variance = sum((x - mean) ** 2 for x in obs) / Decimal(len(obs) - 1)\\n            std = variance ** Decimal(0.5)\\n            u_i = std / Decimal(len(obs)) ** Decimal(0.5)\\n            u_i_list.append(u_i)\\n        elif comp[\\\"type\\\"] == \\\"type_b_rectangular\\\":\\n            if \\\"half_width\\\" not in comp:\\n                return {\\\"valid\\\": False, \\\"reason\\\": \\\"missing_required_field_for_type_b\\\"}\\n\\n            half_width = Decimal(str(comp[\\\"half_width\\\"]))\\n            if half_width < 0:\\n                return {\\\"valid\\\": False, \\\"reason\\\": \\\"negative_half_width\\\"}\\n            u_i = half_width / Decimal(3) ** Decimal(0.5)\\n            u_i_list.append(u_i)\\n        else:\\n            return {\\\"valid\\\": False, \\\"reason\\\": \\\"invalid_component_type\\\"}\\n\\n        sensitivities.append(sensitivity)\\n\\n    # Validate correlation matrix\\n    if correlation_matrix is not None:\\n        if len(correlation_matrix) != n:\\n            return {\\\"valid\\\": False, \\\"reason\\\": \\\"invalid_correlation_shape\\\"}\\n        for row in correlation_matrix:\\n            if len(row) != n:\\n                return {\\\"valid\\\": False, \\\"reason\\\": \\\"invalid_correlation_shape\\\"}\\n\\n        # Check symmetry\\n        for i in range(n):\\n            for j in range(i + 1, n):\\n                if abs(correlation_matrix[i][j] - correlation_matrix[j][i]) > 1e-10:\\n                    return {\\\"valid\\\": False, \\\"reason\\\": \\\"invalid_correlation_matrix\\\"}\\n\\n        # Check diagonal entries\\n        for i in range(n):\\n            if abs(correlation_matrix[i][i] - 1) > 1e-10:\\n                return {\\\"valid\\\": False, \\\"reason\\\": \\\"invalid_correlation_diagonal\\\"}\\n\\n        # Check all entries are within [-1, 1]\\n        for i in range(n):\\n            for j in range(n):\\n                val = correlation_matrix[i][j]\\n                if val < -1 - 1e-10 or val > 1 + 1e-10:\\n                    return {\\\"valid\\\": False, \\\"reason\\\": \\\"invalid_correlation_matrix\\\"}\\n\\n        # Check for positive semi-definite\\n        try:\\n            corr_np = np.array(correlation_matrix, dtype=np.float64)\\n            eigenvalues = np.linalg.eigvals(corr_np)\\n            for eig in eigenvalues:\\n                if eig < -1e-10:\\n                    return {\\\"valid\\\": False, \\\"reason\\\": \\\"non_psd_correlation_matrix\\\"}\\n        except:\\n            return {\\\"valid\\\": False, \\\"reason\\\": \\\"invalid_correlation_matrix\\\"}\\n\\n    # Calculate combined uncertainty (with or without correlation)\\n    uc_squared = Decimal(0)\\n    for i in range(n):\\n        sensitivity_i = sensitivities[i]\\n        u_i = u_i_list[i]\\n        term = sensitivity_i ** 2 * u_i ** 2\\n        uc_squared += term\\n\\n    if correlation_matrix is not None:\\n        for i in range(n):\\n            for j in range(i + 1, n):\\n                sensitivity_i = sensitivities[i]\\n                sensitivity_j = sensitivities[j]\\n                rho_ij = Decimal(correlation_matrix[i][j])\\n                u_i = u_i_list[i]\\n                u_j = u_i_list[j]\\n                term = 2 * sensitivity_i * sensitivity_j * rho_ij * u_i * u_j\\n                uc_squared += term\\n\\n    if uc_squared < 0:\\n        return {\\\"valid\\\": False, \\\"reason\\\": \\\"negative_propagated_variance\\\"}\\n\\n    uc = uc_squared ** Decimal(0.5)\\n\\n    # Handle scaling (coverage factor)\\n    if coverage_factor is None:\\n        return {\\\"valid\\\": False, \\\"reason\\\": \\\"invalid_coverage_factor\\\"}\\n\\n    try:\\n        coverage_factor = Decimal(str(coverage_factor))\\n    except InvalidOperation:\\n        return {\\\"valid\\\": False, \\\"reason\\\": \\\"invalid_coverage_factor\\\"}\\n\\n    if coverage_factor <= 0:\\n        return {\\\"valid\\\": False, \\\"reason\\\": \\\"invalid_coverage_factor\\\"}\\n\\n    final_uncertainty = uc * coverage_factor\\n\\n    # Return the structured result\\n    return {\\n        \\\"valid\\\": True,\\n        \\\"uncertainty\\\": float(final_uncertainty),\\n        \\\"components\\\": [\\n            {\\n                \\\"sensitivity\\\": float(sensitivities[i]),\\n                \\\"u\\\": float(u_i_list[i])\\n            }\\n            for i in range(n)\\n        ]\\n    }\\n```\\n\\n---\\n\\n### 📌 Example Usage\\n\\n```python\\nimport json\\n\\npayload = {\\n    \\\"components\\\": [\\n        {\\\"type\\\": \\\"type_a\\\", \\\"sensitivity\\\": 2.0, \\\"observations\\\": [1.0, 3.0, 5.0]},\\n        {\\\"type\\\": \\\"type_b_rectangular\\\", \\\"sensitivity\\\": 1.5, \\\"half_width\\\": 1.0}\\n    ],\\n    \\\"correlation_matrix\\\": [[1.0, 0.5], [0.5, 1.0]],\\n    \\\"coverage_factor\\\": 1.96\\n}\\n\\nresult = solve(payload)\\nprint(json.dumps(result, indent=2))\\n```\\n\\n---\\n\\n### ✅ Output Structure\\n\\n```json\\n{\\n  \\\"valid\\\": true,\\n  \\\"uncertainty\\\": 3.153309482110448,\\n  \\\"components\\\": [\\n    {\\n      \\\"sensitivity\\\": 2.0,\\n      \\\"u\\\": 1.0992972824110206\\n    },\\n    {\\n      \\\"sensitivity\\\": 1.5,\\n      \\\"u\\\": 0.5773502691896257\\n    }\\n  ]\\n}\\n```\\n\\n---\\n\\n### ✅ Key Notes\\n\\n- **`Decimal` is used for precision**, especially for `type_b_rectangular` uncertainty and for correlation handling.\\n- The correlation matrix is **optional** and only used if provided.\\n- The final result includes both **sensitivity** and **uncertainty** for each component, and the **combined uncertainty** scaled by an optional `coverage_factor`.\",\"time\":{\"start\":1793913019448,\"end\":1793913135652}}}\n{\"type\":\"step_finish\",\"timestamp\":1793913135664,\"sessionID\":\"ses_e527955d0ffeuMxExa8RlE1A1m\",\"part\":{\"id\":\"prt_1ad8e2230001sKYI9kGjBeV8w3\",\"sessionID\":\"ses_e527955d0ffeuMxExa8RlE1A1m\",\"messageID\":\"msg_1ad86aa7f001n74F4HOENVu5KQ\",\"type\":\"step-finish\",\"reason\":\"stop\",\"cost\":0,\"tokens\":{\"input\":2369,\"output\":8129,\"reasoning\":0,\"cache\":{\"read\":0,\"write\":0}}}}\n",
+  "agent_stderr": "npm notice\nnpm notice New major version of npm available! 11.16.0 -> 12.2.2\nnpm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2\nnpm notice To update run: npm install -g npm@12.2.2\nnpm notice\n",
+  "agent_version_record": {
+    "command": [
+      "npm",
+      "exec",
+      "--yes",
+      "--package=@opencode/cli@2.2.5",
+      "--",
+      "opencode",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "opencode v2.2.5\n",
+    "stderr": ""
+  },
+  "metrics": {
+    "case_count": 30,
+    "functional_correctness": {
+      "numerator": 0,
+      "denominator": 30,
+      "value": 0.0
+    },
+    "schema_compliance": {
+      "numerator": 0,
+      "denominator": 30,
+      "value": 0.0
+    },
+    "numerical_correctness": {
+      "numerator": 0,
+      "denominator": 22,
+      "value": 0.0
+    },
+    "physical_unit_correctness": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "physical_equivalence_correctness": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "physical_integrity_correctness": {
+      "numerator": 8,
+      "denominator": 30,
+      "value": 0.26666666666666666
+    },
+    "semantic_integrity_failures": {
+      "numerator": 0,
+      "denominator": 30,
+      "value": 0.0
+    },
+    "validity_state_correctness": {
+      "numerator": 0,
+      "denominator": 30,
+      "value": 0.0
+    },
+    "engineering_decision_correctness": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "execution_failures": {
+      "numerator": 30,
+      "denominator": 30,
+      "value": 1.0
+    },
+    "malformed_response_rate": {
+      "numerator": 0,
+      "denominator": 30,
+      "value": 0.0
+    },
+    "contract_violations": {
+      "numerator": 30,
+      "denominator": 30,
+      "value": 1.0
+    },
+    "end_to_end_correctness": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "silent_corruption_rate": {
+      "numerator": 0,
+      "denominator": 30,
+      "value": 0.0
+    },
+    "unsafe_acceptance_rate": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "numerical_error_by_field_unit": {
+      "S05.combined_standard_uncertainty [MU (task-defined measurand unit)]": {
+        "field": "combined_standard_uncertainty",
+        "task": "S05",
+        "unit": "MU (task-defined measurand unit)",
+        "case_count": 22,
+        "numeric_actual_count": 0,
+        "within_tolerance_count": 0,
+        "mean_absolute_error": null,
+        "maximum_absolute_error": null,
+        "maximum_normalized_error": null,
+        "permitted_tolerance": "1E-16"
+      },
+      "S05.expanded_uncertainty [MU (task-defined measurand unit)]": {
+        "field": "expanded_uncertainty",
+        "task": "S05",
+        "unit": "MU (task-defined measurand unit)",
+        "case_count": 22,
+        "numeric_actual_count": 0,
+        "within_tolerance_count": 0,
+        "mean_absolute_error": null,
+        "maximum_absolute_error": null,
+        "maximum_normalized_error": null,
+        "permitted_tolerance": "1E-16"
+      },
+      "S05.standard_uncertainties.0 [MU (task-defined measurand unit)]": {
+        "field": "standard_uncertainties.0",
+        "task": "S05",
+        "unit": "MU (task-defined measurand unit)",
+        "case_count": 22,
+        "numeric_actual_count": 0,
+        "within_tolerance_count": 0,
+        "mean_absolute_error": null,
+        "maximum_absolute_error": null,
+        "maximum_normalized_error": null,
+        "permitted_tolerance": "1E-16"
+      },
+      "S05.standard_uncertainties.1 [MU (task-defined measurand unit)]": {
+        "field": "standard_uncertainties.1",
+        "task": "S05",
+        "unit": "MU (task-defined measurand unit)",
+        "case_count": 20,
+        "numeric_actual_count": 0,
+        "within_tolerance_count": 0,
+        "mean_absolute_error": null,
+        "maximum_absolute_error": null,
+        "maximum_normalized_error": null,
+        "permitted_tolerance": "1E-16"
+      }
+    },
+    "calibration_validity_recall": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "uncertainty_calculation_accuracy": {
+      "numerator": 0,
+      "denominator": 22,
+      "value": 0.0
+    },
+    "false_rejection_rate": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "boundary_decision_accuracy": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "macro_average_task_accuracy": 0.0,
+    "per_task": {
+      "S05": {
+        "functional_correctness": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "schema_compliance": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "numerical_correctness": {
+          "numerator": 0,
+          "denominator": 22,
+          "value": 0.0
+        },
+        "physical_unit_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "physical_integrity_correctness": {
+          "numerator": 8,
+          "denominator": 30,
+          "value": 0.26666666666666666
+        },
+        "semantic_integrity_failures": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "validity_state_correctness": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "engineering_decision_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "execution_failures": {
+          "numerator": 30,
+          "denominator": 30,
+          "value": 1.0
+        },
+        "malformed_response_rate": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "contract_violations": {
+          "numerator": 30,
+          "denominator": 30,
+          "value": 1.0
+        },
+        "silent_corruption_rate": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "unsafe_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        }
+      }
+    },
+    "pass_at_3": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "pass_cubed": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    }
+  },
+  "grader": {
+    "task": "S05",
+    "candidate": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/results/pilot/ollama-qwen3-8b/S05/runs/20261105T210338_875318Z_S05_opencode_trial0/workspace/solution.py",
+    "case_count": 30,
+    "passed": 0,
+    "accuracy": 0.0,
+    "cases": [
+      {
+        "id": "S05-seeded-00",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "3.223450288755927527418205362944923057564",
+          "expanded_uncertainty": "6.446900577511855054836410725889846115128",
+          "standard_uncertainties": [
+            "3.473110997362451127108136760257138607329",
+            "0.2886751345948128822545743902509787278238"
+          ],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "3.223450288755927527418205362944923057564",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "6.446900577511855054836410725889846115128",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "3.473110997362451127108136760257138607329",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.2886751345948128822545743902509787278238",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-seeded-01",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "8.09963990969145903466290448579803098253",
+          "expanded_uncertainty": "16.19927981938291806932580897159606196506",
+          "standard_uncertainties": [
+            "4.049176871085447328478286184425513231198",
+            "0.2886751345948128822545743902509787278238"
+          ],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "8.09963990969145903466290448579803098253",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "16.19927981938291806932580897159606196506",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "4.049176871085447328478286184425513231198",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.2886751345948128822545743902509787278238",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-seeded-02",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "4.877330049864475834307861344784619736427",
+          "expanded_uncertainty": "9.754660099728951668615722689569239472854",
+          "standard_uncertainties": [
+            "3.774917217635374848618342403473058529111",
+            "0.8660254037844386467637231707529361834713"
+          ],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "4.877330049864475834307861344784619736427",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "9.754660099728951668615722689569239472854",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "3.774917217635374848618342403473058529111",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.8660254037844386467637231707529361834713",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-seeded-03",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "6.474308199851677331845637735687207290877",
+          "expanded_uncertainty": "12.94861639970335466369127547137441458175",
+          "standard_uncertainties": [
+            "3.22425702035885056911569655237637879517",
+            "0.2886751345948128822545743902509787278238"
+          ],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "6.474308199851677331845637735687207290877",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "12.94861639970335466369127547137441458175",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "3.22425702035885056911569655237637879517",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.2886751345948128822545743902509787278238",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-seeded-04",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "2.390198642395992507930327508507664728765",
+          "expanded_uncertainty": "4.78039728479198501586065501701532945753",
+          "standard_uncertainties": [
+            "2.625991876098121772963875203360255761607",
+            "0.2886751345948128822545743902509787278238"
+          ],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "2.390198642395992507930327508507664728765",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "4.78039728479198501586065501701532945753",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "2.625991876098121772963875203360255761607",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.2886751345948128822545743902509787278238",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-seeded-05",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "3.145764348029479040515285336227548774259",
+          "expanded_uncertainty": "7.864410870073697601288213340568871935648",
+          "standard_uncertainties": [
+            "3.09232921921324541236605739198055776886",
+            "0.2886751345948128822545743902509787278238"
+          ],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "3.145764348029479040515285336227548774259",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "7.864410870073697601288213340568871935648",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "3.09232921921324541236605739198055776886",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.2886751345948128822545743902509787278238",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-seeded-06",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "5.680082159030213652084994468876750295147",
+          "expanded_uncertainty": "14.20020539757553413021248617219187573787",
+          "standard_uncertainties": [
+            "2.839454172900136805446168991996178220571",
+            "0.05773502691896257645091487805019574556475"
+          ],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "5.680082159030213652084994468876750295147",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "14.20020539757553413021248617219187573787",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "2.839454172900136805446168991996178220571",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.05773502691896257645091487805019574556475",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-seeded-07",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "5.965246572160003066059434775491644741524",
+          "expanded_uncertainty": "5.965246572160003066059434775491644741524",
+          "standard_uncertainties": [
+            "2.982588361362213411755839473967143269438",
+            "0.05773502691896257645091487805019574556475"
+          ],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "5.965246572160003066059434775491644741524",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "5.965246572160003066059434775491644741524",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "2.982588361362213411755839473967143269438",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.05773502691896257645091487805019574556475",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-seeded-08",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "4.108036221281896102403018590519865149448",
+          "expanded_uncertainty": "4.108036221281896102403018590519865149448",
+          "standard_uncertainties": [
+            "2.345207879911714777282815056772233140294",
+            "0.8660254037844386467637231707529361834713"
+          ],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "4.108036221281896102403018590519865149448",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "4.108036221281896102403018590519865149448",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "2.345207879911714777282815056772233140294",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.8660254037844386467637231707529361834713",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-seeded-09",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "4.203569911396740407494390432782454207138",
+          "expanded_uncertainty": "4.203569911396740407494390432782454207138",
+          "standard_uncertainties": [
+            "2.101586702153081921871437639088852049955",
+            "0.05773502691896257645091487805019574556475"
+          ],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "4.203569911396740407494390432782454207138",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "4.203569911396740407494390432782454207138",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "2.101586702153081921871437639088852049955",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.05773502691896257645091487805019574556475",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-seeded-10",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "2.915475947422650235437076438772791538261",
+          "expanded_uncertainty": "7.288689868556625588592691096931978845652",
+          "standard_uncertainties": [
+            "2.901149197588201713453740278452275455204",
+            "0.2886751345948128822545743902509787278238"
+          ],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "2.915475947422650235437076438772791538261",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "7.288689868556625588592691096931978845652",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "2.901149197588201713453740278452275455204",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.2886751345948128822545743902509787278238",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-seeded-11",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "7.406359879634979408165987380713385873615",
+          "expanded_uncertainty": "7.406359879634979408165987380713385873615",
+          "standard_uncertainties": [
+            "3.696845502136472387350533367536644306155",
+            "0.8660254037844386467637231707529361834713"
+          ],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "7.406359879634979408165987380713385873615",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "7.406359879634979408165987380713385873615",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "3.696845502136472387350533367536644306155",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.8660254037844386467637231707529361834713",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-seeded-12",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "3.811444330825658171336583050313266079366",
+          "expanded_uncertainty": "9.528610827064145428341457625783165198415",
+          "standard_uncertainties": [
+            "3.796928583298172421219037697382342814609",
+            "0.05773502691896257645091487805019574556475"
+          ],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "3.811444330825658171336583050313266079366",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "9.528610827064145428341457625783165198415",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "3.796928583298172421219037697382342814609",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.05773502691896257645091487805019574556475",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-seeded-13",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "6.583059066016851915533639439443661961852",
+          "expanded_uncertainty": "13.1661181320337038310672788788873239237",
+          "standard_uncertainties": [
+            "3.291402943021916502906410173953849844347",
+            "0.05773502691896257645091487805019574556475"
+          ],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "6.583059066016851915533639439443661961852",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "13.1661181320337038310672788788873239237",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "3.291402943021916502906410173953849844347",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.05773502691896257645091487805019574556475",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-seeded-14",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "1.974176068394782753549697930566410004666",
+          "expanded_uncertainty": "3.948352136789565507099395861132820009332",
+          "standard_uncertainties": [
+            "2.198484326378819861822801288787056622381",
+            "0.2886751345948128822545743902509787278238"
+          ],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "1.974176068394782753549697930566410004666",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "3.948352136789565507099395861132820009332",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "2.198484326378819861822801288787056622381",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.2886751345948128822545743902509787278238",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-seeded-15",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "3.418698582794335789643041226337070238799",
+          "expanded_uncertainty": "6.837397165588671579286082452674140477598",
+          "standard_uncertainties": [
+            "1.70782512765993306387017311342017533179",
+            "0.2886751345948128822545743902509787278238"
+          ],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "3.418698582794335789643041226337070238799",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "6.837397165588671579286082452674140477598",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "1.70782512765993306387017311342017533179",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.2886751345948128822545743902509787278238",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-seeded-16",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "3.318565858849094767400635390429919624981",
+          "expanded_uncertainty": "8.296414647122736918501588476074799062452",
+          "standard_uncertainties": [
+            "3.304037933599834847190730606960368019592",
+            "0.05773502691896257645091487805019574556475"
+          ],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "3.318565858849094767400635390429919624981",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "8.296414647122736918501588476074799062452",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "3.304037933599834847190730606960368019592",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.05773502691896257645091487805019574556475",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-seeded-17",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "6.726812023536855158581542731085202096935",
+          "expanded_uncertainty": "13.45362404707371031716308546217040419387",
+          "standard_uncertainties": [
+            "3.25",
+            "0.8660254037844386467637231707529361834713"
+          ],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "6.726812023536855158581542731085202096935",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "13.45362404707371031716308546217040419387",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "3.25",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.8660254037844386467637231707529361834713",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-type-a-known",
+        "category": "boundary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "0.5773502691896257645091487805019574556476",
+          "expanded_uncertainty": "1.154700538379251529018297561003914911295",
+          "standard_uncertainties": [
+            "0.5773502691896257645091487805019574556476"
+          ],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.5773502691896257645091487805019574556476",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "1.154700538379251529018297561003914911295",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "0.5773502691896257645091487805019574556476",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-type-b-known",
+        "category": "boundary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "1",
+          "expanded_uncertainty": "2",
+          "standard_uncertainties": [
+            "1"
+          ],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "1",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "2",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "1",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-correlation-positive",
+        "category": "boundary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "1.732050807568877293527446341505872366943",
+          "expanded_uncertainty": "3.464101615137754587054892683011744733886",
+          "standard_uncertainties": [
+            "1",
+            "1"
+          ],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "1.732050807568877293527446341505872366943",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "3.464101615137754587054892683011744733886",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "1",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "1",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-correlation-negative",
+        "category": "boundary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "combined_standard_uncertainty": "1",
+          "expanded_uncertainty": "2",
+          "standard_uncertainties": [
+            "1",
+            "1"
+          ],
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "combined_standard_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "1",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "expanded_uncertainty",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "2",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.0",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "1",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "standard_uncertainties.1",
+            "unit": "MU (task-defined measurand unit)",
+            "expected": "1",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "1E-16",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-non-psd",
+        "category": "adversarial",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "non_psd_correlation_matrix",
+          "valid": false
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-asymmetric",
+        "category": "adversarial",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "invalid_correlation_matrix",
+          "valid": false
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-out-of-bounds-rho",
+        "category": "adversarial",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "invalid_correlation_matrix",
+          "valid": false
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-nonunit-diagonal",
+        "category": "adversarial",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "invalid_correlation_diagonal",
+          "valid": false
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-zero-factor",
+        "category": "adversarial",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "invalid_coverage_factor",
+          "valid": false
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-negative-half-width",
+        "category": "adversarial",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "negative_half_width",
+          "valid": false
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-one-observation",
+        "category": "adversarial",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "type_a_requires_two_observations",
+          "valid": false
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S05-too-many-components",
+        "category": "adversarial",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "unsupported_component_count",
+          "valid": false
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      }
+    ]
+  },
+  "event_log_path": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/results/pilot/ollama-qwen3-8b/S05/runs/20261105T210338_875318Z_S05_opencode_trial0/events.jsonl",
+  "tool_event_capture": "agent-reported structured events only; no private reasoning is captured",
+  "transcript_path": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/results/pilot/ollama-qwen3-8b/S05/transcripts/20261105T210338_875318Z_S05_opencode_trial0.jsonl"
+}

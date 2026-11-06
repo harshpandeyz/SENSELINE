@@ -1,0 +1,4146 @@
+{
+  "trial_count": 55,
+  "pass_at_3": {
+    "numerator": 1,
+    "denominator": 18,
+    "value": 0.05555555555555555
+  },
+  "pass_cubed": {
+    "numerator": 1,
+    "denominator": 18,
+    "value": 0.05555555555555555
+  },
+  "model_metrics": {
+    "ollama/qwen3:8b|opencode": {
+      "case_count": 798,
+      "functional_correctness": {
+        "numerator": 0,
+        "denominator": 798,
+        "value": 0.0
+      },
+      "schema_compliance": {
+        "numerator": 0,
+        "denominator": 798,
+        "value": 0.0
+      },
+      "numerical_correctness": {
+        "numerator": 0,
+        "denominator": 501,
+        "value": 0.0
+      },
+      "physical_unit_correctness": {
+        "numerator": 0,
+        "denominator": 456,
+        "value": 0.0
+      },
+      "physical_equivalence_correctness": {
+        "numerator": 0,
+        "denominator": 456,
+        "value": 0.0
+      },
+      "physical_integrity_correctness": {
+        "numerator": 297,
+        "denominator": 798,
+        "value": 0.37218045112781956
+      },
+      "semantic_integrity_failures": {
+        "numerator": 0,
+        "denominator": 798,
+        "value": 0.0
+      },
+      "validity_state_correctness": {
+        "numerator": 0,
+        "denominator": 798,
+        "value": 0.0
+      },
+      "engineering_decision_correctness": {
+        "numerator": 0,
+        "denominator": 219,
+        "value": 0.0
+      },
+      "execution_failures": {
+        "numerator": 798,
+        "denominator": 798,
+        "value": 1.0
+      },
+      "malformed_response_rate": {
+        "numerator": 0,
+        "denominator": 798,
+        "value": 0.0
+      },
+      "contract_violations": {
+        "numerator": 798,
+        "denominator": 798,
+        "value": 1.0
+      },
+      "end_to_end_correctness": {
+        "numerator": 0,
+        "denominator": 135,
+        "value": 0.0
+      },
+      "silent_corruption_rate": {
+        "numerator": 0,
+        "denominator": 798,
+        "value": 0.0
+      },
+      "unsafe_acceptance_rate": {
+        "numerator": 0,
+        "denominator": 120,
+        "value": 0.0
+      },
+      "numerical_error_by_field_unit": {
+        "S01.raw_count [scaled sensor count]": {
+          "field": "raw_count",
+          "task": "S01",
+          "unit": "scaled sensor count",
+          "case_count": 69,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S01.value [scaled sensor count]": {
+          "field": "value",
+          "task": "S01",
+          "unit": "scaled sensor count",
+          "case_count": 69,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S02.value [C]": {
+          "field": "value",
+          "task": "S02",
+          "unit": "C",
+          "case_count": 18,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S02.value [F]": {
+          "field": "value",
+          "task": "S02",
+          "unit": "F",
+          "case_count": 6,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S02.value [K]": {
+          "field": "value",
+          "task": "S02",
+          "unit": "K",
+          "case_count": 6,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S02.value [Pa]": {
+          "field": "value",
+          "task": "S02",
+          "unit": "Pa",
+          "case_count": 12,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S02.value [V]": {
+          "field": "value",
+          "task": "S02",
+          "unit": "V",
+          "case_count": 15,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S02.value [bar]": {
+          "field": "value",
+          "task": "S02",
+          "unit": "bar",
+          "case_count": 6,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S02.value [kPa]": {
+          "field": "value",
+          "task": "S02",
+          "unit": "kPa",
+          "case_count": 9,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S02.value [mV]": {
+          "field": "value",
+          "task": "S02",
+          "unit": "mV",
+          "case_count": 6,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S03.corrected_value [MU (task-defined measurand unit)]": {
+          "field": "corrected_value",
+          "task": "S03",
+          "unit": "MU (task-defined measurand unit)",
+          "case_count": 75,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S05.combined_standard_uncertainty [MU (task-defined measurand unit)]": {
+          "field": "combined_standard_uncertainty",
+          "task": "S05",
+          "unit": "MU (task-defined measurand unit)",
+          "case_count": 66,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "1E-16"
+        },
+        "S05.expanded_uncertainty [MU (task-defined measurand unit)]": {
+          "field": "expanded_uncertainty",
+          "task": "S05",
+          "unit": "MU (task-defined measurand unit)",
+          "case_count": 66,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "1E-16"
+        },
+        "S05.standard_uncertainties.0 [MU (task-defined measurand unit)]": {
+          "field": "standard_uncertainties.0",
+          "task": "S05",
+          "unit": "MU (task-defined measurand unit)",
+          "case_count": 66,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "1E-16"
+        },
+        "S05.standard_uncertainties.1 [MU (task-defined measurand unit)]": {
+          "field": "standard_uncertainties.1",
+          "task": "S05",
+          "unit": "MU (task-defined measurand unit)",
+          "case_count": 60,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "1E-16"
+        },
+        "S06.lower [MU (task-defined specification unit)]": {
+          "field": "lower",
+          "task": "S06",
+          "unit": "MU (task-defined specification unit)",
+          "case_count": 84,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S06.upper [MU (task-defined specification unit)]": {
+          "field": "upper",
+          "task": "S06",
+          "unit": "MU (task-defined specification unit)",
+          "case_count": 84,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S08.conformity_interval.lower [C]": {
+          "field": "conformity_interval.lower",
+          "task": "S08",
+          "unit": "C",
+          "case_count": 96,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "1E-16"
+        },
+        "S08.conformity_interval.lower [F]": {
+          "field": "conformity_interval.lower",
+          "task": "S08",
+          "unit": "F",
+          "case_count": 3,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "1E-16"
+        },
+        "S08.conformity_interval.upper [C]": {
+          "field": "conformity_interval.upper",
+          "task": "S08",
+          "unit": "C",
+          "case_count": 96,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "1E-16"
+        },
+        "S08.conformity_interval.upper [F]": {
+          "field": "conformity_interval.upper",
+          "task": "S08",
+          "unit": "F",
+          "case_count": 3,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "1E-16"
+        },
+        "S08.corrected_measurement.value [C]": {
+          "field": "corrected_measurement.value",
+          "task": "S08",
+          "unit": "C",
+          "case_count": 120,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S08.corrected_measurement.value [F]": {
+          "field": "corrected_measurement.value",
+          "task": "S08",
+          "unit": "F",
+          "case_count": 3,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S08.decoded_measurement.raw_count [register count]": {
+          "field": "decoded_measurement.raw_count",
+          "task": "S08",
+          "unit": "register count",
+          "case_count": 129,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S08.decoded_measurement.value [C]": {
+          "field": "decoded_measurement.value",
+          "task": "S08",
+          "unit": "C",
+          "case_count": 123,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S08.decoded_measurement.value [F]": {
+          "field": "decoded_measurement.value",
+          "task": "S08",
+          "unit": "F",
+          "case_count": 3,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S08.decoded_measurement.value [V]": {
+          "field": "decoded_measurement.value",
+          "task": "S08",
+          "unit": "V",
+          "case_count": 3,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S08.expanded_uncertainty [C]": {
+          "field": "expanded_uncertainty",
+          "task": "S08",
+          "unit": "C",
+          "case_count": 117,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "1E-16"
+        },
+        "S08.expanded_uncertainty [F]": {
+          "field": "expanded_uncertainty",
+          "task": "S08",
+          "unit": "F",
+          "case_count": 3,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "1E-16"
+        },
+        "S08.physical_quantity.value [C]": {
+          "field": "physical_quantity.value",
+          "task": "S08",
+          "unit": "C",
+          "case_count": 123,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S08.physical_quantity.value [F]": {
+          "field": "physical_quantity.value",
+          "task": "S08",
+          "unit": "F",
+          "case_count": 3,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S08.standard_uncertainty [C]": {
+          "field": "standard_uncertainty",
+          "task": "S08",
+          "unit": "C",
+          "case_count": 117,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "1E-16"
+        },
+        "S08.standard_uncertainty [F]": {
+          "field": "standard_uncertainty",
+          "task": "S08",
+          "unit": "F",
+          "case_count": 3,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "1E-16"
+        }
+      },
+      "calibration_validity_recall": {
+        "numerator": 0,
+        "denominator": 171,
+        "value": 0.0
+      },
+      "uncertainty_calculation_accuracy": {
+        "numerator": 0,
+        "denominator": 186,
+        "value": 0.0
+      },
+      "false_rejection_rate": {
+        "numerator": 0,
+        "denominator": 105,
+        "value": 0.0
+      },
+      "boundary_decision_accuracy": {
+        "numerator": 0,
+        "denominator": 51,
+        "value": 0.0
+      },
+      "macro_average_task_accuracy": 0.0,
+      "per_task": {
+        "S01": {
+          "functional_correctness": {
+            "numerator": 0,
+            "denominator": 96,
+            "value": 0.0
+          },
+          "schema_compliance": {
+            "numerator": 0,
+            "denominator": 96,
+            "value": 0.0
+          },
+          "numerical_correctness": {
+            "numerator": 0,
+            "denominator": 69,
+            "value": 0.0
+          },
+          "physical_unit_correctness": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "physical_integrity_correctness": {
+            "numerator": 27,
+            "denominator": 96,
+            "value": 0.28125
+          },
+          "semantic_integrity_failures": {
+            "numerator": 0,
+            "denominator": 96,
+            "value": 0.0
+          },
+          "validity_state_correctness": {
+            "numerator": 0,
+            "denominator": 96,
+            "value": 0.0
+          },
+          "engineering_decision_correctness": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "execution_failures": {
+            "numerator": 96,
+            "denominator": 96,
+            "value": 1.0
+          },
+          "malformed_response_rate": {
+            "numerator": 0,
+            "denominator": 96,
+            "value": 0.0
+          },
+          "contract_violations": {
+            "numerator": 96,
+            "denominator": 96,
+            "value": 1.0
+          },
+          "silent_corruption_rate": {
+            "numerator": 0,
+            "denominator": 96,
+            "value": 0.0
+          },
+          "unsafe_acceptance_rate": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          }
+        },
+        "S02": {
+          "functional_correctness": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "schema_compliance": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "numerical_correctness": {
+            "numerator": 0,
+            "denominator": 78,
+            "value": 0.0
+          },
+          "physical_unit_correctness": {
+            "numerator": 0,
+            "denominator": 78,
+            "value": 0.0
+          },
+          "physical_integrity_correctness": {
+            "numerator": 12,
+            "denominator": 90,
+            "value": 0.13333333333333333
+          },
+          "semantic_integrity_failures": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "validity_state_correctness": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "engineering_decision_correctness": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "execution_failures": {
+            "numerator": 90,
+            "denominator": 90,
+            "value": 1.0
+          },
+          "malformed_response_rate": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "contract_violations": {
+            "numerator": 90,
+            "denominator": 90,
+            "value": 1.0
+          },
+          "silent_corruption_rate": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "unsafe_acceptance_rate": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          }
+        },
+        "S03": {
+          "functional_correctness": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "schema_compliance": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "numerical_correctness": {
+            "numerator": 0,
+            "denominator": 75,
+            "value": 0.0
+          },
+          "physical_unit_correctness": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "physical_integrity_correctness": {
+            "numerator": 15,
+            "denominator": 90,
+            "value": 0.16666666666666666
+          },
+          "semantic_integrity_failures": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "validity_state_correctness": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "engineering_decision_correctness": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "execution_failures": {
+            "numerator": 90,
+            "denominator": 90,
+            "value": 1.0
+          },
+          "malformed_response_rate": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "contract_violations": {
+            "numerator": 90,
+            "denominator": 90,
+            "value": 1.0
+          },
+          "silent_corruption_rate": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "unsafe_acceptance_rate": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          }
+        },
+        "S04": {
+          "functional_correctness": {
+            "numerator": 0,
+            "denominator": 111,
+            "value": 0.0
+          },
+          "schema_compliance": {
+            "numerator": 0,
+            "denominator": 111,
+            "value": 0.0
+          },
+          "numerical_correctness": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "physical_unit_correctness": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "physical_integrity_correctness": {
+            "numerator": 111,
+            "denominator": 111,
+            "value": 1.0
+          },
+          "semantic_integrity_failures": {
+            "numerator": 0,
+            "denominator": 111,
+            "value": 0.0
+          },
+          "validity_state_correctness": {
+            "numerator": 0,
+            "denominator": 111,
+            "value": 0.0
+          },
+          "engineering_decision_correctness": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "execution_failures": {
+            "numerator": 111,
+            "denominator": 111,
+            "value": 1.0
+          },
+          "malformed_response_rate": {
+            "numerator": 0,
+            "denominator": 111,
+            "value": 0.0
+          },
+          "contract_violations": {
+            "numerator": 111,
+            "denominator": 111,
+            "value": 1.0
+          },
+          "silent_corruption_rate": {
+            "numerator": 0,
+            "denominator": 111,
+            "value": 0.0
+          },
+          "unsafe_acceptance_rate": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          }
+        },
+        "S05": {
+          "functional_correctness": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "schema_compliance": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "numerical_correctness": {
+            "numerator": 0,
+            "denominator": 66,
+            "value": 0.0
+          },
+          "physical_unit_correctness": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "physical_integrity_correctness": {
+            "numerator": 24,
+            "denominator": 90,
+            "value": 0.26666666666666666
+          },
+          "semantic_integrity_failures": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "validity_state_correctness": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "engineering_decision_correctness": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "execution_failures": {
+            "numerator": 90,
+            "denominator": 90,
+            "value": 1.0
+          },
+          "malformed_response_rate": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "contract_violations": {
+            "numerator": 90,
+            "denominator": 90,
+            "value": 1.0
+          },
+          "silent_corruption_rate": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "unsafe_acceptance_rate": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          }
+        },
+        "S06": {
+          "functional_correctness": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "schema_compliance": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "numerical_correctness": {
+            "numerator": 0,
+            "denominator": 84,
+            "value": 0.0
+          },
+          "physical_unit_correctness": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "physical_integrity_correctness": {
+            "numerator": 6,
+            "denominator": 90,
+            "value": 0.06666666666666667
+          },
+          "semantic_integrity_failures": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "validity_state_correctness": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "engineering_decision_correctness": {
+            "numerator": 0,
+            "denominator": 84,
+            "value": 0.0
+          },
+          "execution_failures": {
+            "numerator": 90,
+            "denominator": 90,
+            "value": 1.0
+          },
+          "malformed_response_rate": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "contract_violations": {
+            "numerator": 90,
+            "denominator": 90,
+            "value": 1.0
+          },
+          "silent_corruption_rate": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "unsafe_acceptance_rate": {
+            "numerator": 0,
+            "denominator": 51,
+            "value": 0.0
+          }
+        },
+        "S07": {
+          "functional_correctness": {
+            "numerator": 0,
+            "denominator": 96,
+            "value": 0.0
+          },
+          "schema_compliance": {
+            "numerator": 0,
+            "denominator": 96,
+            "value": 0.0
+          },
+          "numerical_correctness": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "physical_unit_correctness": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "physical_integrity_correctness": {
+            "numerator": 96,
+            "denominator": 96,
+            "value": 1.0
+          },
+          "semantic_integrity_failures": {
+            "numerator": 0,
+            "denominator": 96,
+            "value": 0.0
+          },
+          "validity_state_correctness": {
+            "numerator": 0,
+            "denominator": 96,
+            "value": 0.0
+          },
+          "engineering_decision_correctness": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "execution_failures": {
+            "numerator": 96,
+            "denominator": 96,
+            "value": 1.0
+          },
+          "malformed_response_rate": {
+            "numerator": 0,
+            "denominator": 96,
+            "value": 0.0
+          },
+          "contract_violations": {
+            "numerator": 96,
+            "denominator": 96,
+            "value": 1.0
+          },
+          "silent_corruption_rate": {
+            "numerator": 0,
+            "denominator": 96,
+            "value": 0.0
+          },
+          "unsafe_acceptance_rate": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          }
+        },
+        "S08": {
+          "functional_correctness": {
+            "numerator": 0,
+            "denominator": 135,
+            "value": 0.0
+          },
+          "schema_compliance": {
+            "numerator": 0,
+            "denominator": 135,
+            "value": 0.0
+          },
+          "numerical_correctness": {
+            "numerator": 0,
+            "denominator": 129,
+            "value": 0.0
+          },
+          "physical_unit_correctness": {
+            "numerator": 0,
+            "denominator": 129,
+            "value": 0.0
+          },
+          "physical_integrity_correctness": {
+            "numerator": 6,
+            "denominator": 135,
+            "value": 0.044444444444444446
+          },
+          "semantic_integrity_failures": {
+            "numerator": 0,
+            "denominator": 135,
+            "value": 0.0
+          },
+          "validity_state_correctness": {
+            "numerator": 0,
+            "denominator": 135,
+            "value": 0.0
+          },
+          "engineering_decision_correctness": {
+            "numerator": 0,
+            "denominator": 135,
+            "value": 0.0
+          },
+          "execution_failures": {
+            "numerator": 135,
+            "denominator": 135,
+            "value": 1.0
+          },
+          "malformed_response_rate": {
+            "numerator": 0,
+            "denominator": 135,
+            "value": 0.0
+          },
+          "contract_violations": {
+            "numerator": 135,
+            "denominator": 135,
+            "value": 1.0
+          },
+          "silent_corruption_rate": {
+            "numerator": 0,
+            "denominator": 135,
+            "value": 0.0
+          },
+          "unsafe_acceptance_rate": {
+            "numerator": 0,
+            "denominator": 69,
+            "value": 0.0
+          }
+        }
+      },
+      "pass_at_3": {
+        "numerator": 0,
+        "denominator": 8,
+        "value": 0.0
+      },
+      "pass_cubed": {
+        "numerator": 0,
+        "denominator": 8,
+        "value": 0.0
+      }
+    },
+    "ollama/llama3.2:1b|opencode": {
+      "case_count": 798,
+      "functional_correctness": {
+        "numerator": 0,
+        "denominator": 798,
+        "value": 0.0
+      },
+      "schema_compliance": {
+        "numerator": 0,
+        "denominator": 798,
+        "value": 0.0
+      },
+      "numerical_correctness": {
+        "numerator": 0,
+        "denominator": 501,
+        "value": 0.0
+      },
+      "physical_unit_correctness": {
+        "numerator": 0,
+        "denominator": 456,
+        "value": 0.0
+      },
+      "physical_equivalence_correctness": {
+        "numerator": 0,
+        "denominator": 456,
+        "value": 0.0
+      },
+      "physical_integrity_correctness": {
+        "numerator": 297,
+        "denominator": 798,
+        "value": 0.37218045112781956
+      },
+      "semantic_integrity_failures": {
+        "numerator": 0,
+        "denominator": 798,
+        "value": 0.0
+      },
+      "validity_state_correctness": {
+        "numerator": 0,
+        "denominator": 798,
+        "value": 0.0
+      },
+      "engineering_decision_correctness": {
+        "numerator": 0,
+        "denominator": 219,
+        "value": 0.0
+      },
+      "execution_failures": {
+        "numerator": 798,
+        "denominator": 798,
+        "value": 1.0
+      },
+      "malformed_response_rate": {
+        "numerator": 0,
+        "denominator": 798,
+        "value": 0.0
+      },
+      "contract_violations": {
+        "numerator": 798,
+        "denominator": 798,
+        "value": 1.0
+      },
+      "end_to_end_correctness": {
+        "numerator": 0,
+        "denominator": 135,
+        "value": 0.0
+      },
+      "silent_corruption_rate": {
+        "numerator": 0,
+        "denominator": 798,
+        "value": 0.0
+      },
+      "unsafe_acceptance_rate": {
+        "numerator": 0,
+        "denominator": 120,
+        "value": 0.0
+      },
+      "numerical_error_by_field_unit": {
+        "S01.raw_count [scaled sensor count]": {
+          "field": "raw_count",
+          "task": "S01",
+          "unit": "scaled sensor count",
+          "case_count": 69,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S01.value [scaled sensor count]": {
+          "field": "value",
+          "task": "S01",
+          "unit": "scaled sensor count",
+          "case_count": 69,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S02.value [C]": {
+          "field": "value",
+          "task": "S02",
+          "unit": "C",
+          "case_count": 18,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S02.value [F]": {
+          "field": "value",
+          "task": "S02",
+          "unit": "F",
+          "case_count": 6,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S02.value [K]": {
+          "field": "value",
+          "task": "S02",
+          "unit": "K",
+          "case_count": 6,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S02.value [Pa]": {
+          "field": "value",
+          "task": "S02",
+          "unit": "Pa",
+          "case_count": 12,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S02.value [V]": {
+          "field": "value",
+          "task": "S02",
+          "unit": "V",
+          "case_count": 15,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S02.value [bar]": {
+          "field": "value",
+          "task": "S02",
+          "unit": "bar",
+          "case_count": 6,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S02.value [kPa]": {
+          "field": "value",
+          "task": "S02",
+          "unit": "kPa",
+          "case_count": 9,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S02.value [mV]": {
+          "field": "value",
+          "task": "S02",
+          "unit": "mV",
+          "case_count": 6,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S03.corrected_value [MU (task-defined measurand unit)]": {
+          "field": "corrected_value",
+          "task": "S03",
+          "unit": "MU (task-defined measurand unit)",
+          "case_count": 75,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S05.combined_standard_uncertainty [MU (task-defined measurand unit)]": {
+          "field": "combined_standard_uncertainty",
+          "task": "S05",
+          "unit": "MU (task-defined measurand unit)",
+          "case_count": 66,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "1E-16"
+        },
+        "S05.expanded_uncertainty [MU (task-defined measurand unit)]": {
+          "field": "expanded_uncertainty",
+          "task": "S05",
+          "unit": "MU (task-defined measurand unit)",
+          "case_count": 66,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "1E-16"
+        },
+        "S05.standard_uncertainties.0 [MU (task-defined measurand unit)]": {
+          "field": "standard_uncertainties.0",
+          "task": "S05",
+          "unit": "MU (task-defined measurand unit)",
+          "case_count": 66,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "1E-16"
+        },
+        "S05.standard_uncertainties.1 [MU (task-defined measurand unit)]": {
+          "field": "standard_uncertainties.1",
+          "task": "S05",
+          "unit": "MU (task-defined measurand unit)",
+          "case_count": 60,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "1E-16"
+        },
+        "S06.lower [MU (task-defined specification unit)]": {
+          "field": "lower",
+          "task": "S06",
+          "unit": "MU (task-defined specification unit)",
+          "case_count": 84,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S06.upper [MU (task-defined specification unit)]": {
+          "field": "upper",
+          "task": "S06",
+          "unit": "MU (task-defined specification unit)",
+          "case_count": 84,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S08.conformity_interval.lower [C]": {
+          "field": "conformity_interval.lower",
+          "task": "S08",
+          "unit": "C",
+          "case_count": 96,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "1E-16"
+        },
+        "S08.conformity_interval.lower [F]": {
+          "field": "conformity_interval.lower",
+          "task": "S08",
+          "unit": "F",
+          "case_count": 3,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "1E-16"
+        },
+        "S08.conformity_interval.upper [C]": {
+          "field": "conformity_interval.upper",
+          "task": "S08",
+          "unit": "C",
+          "case_count": 96,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "1E-16"
+        },
+        "S08.conformity_interval.upper [F]": {
+          "field": "conformity_interval.upper",
+          "task": "S08",
+          "unit": "F",
+          "case_count": 3,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "1E-16"
+        },
+        "S08.corrected_measurement.value [C]": {
+          "field": "corrected_measurement.value",
+          "task": "S08",
+          "unit": "C",
+          "case_count": 120,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S08.corrected_measurement.value [F]": {
+          "field": "corrected_measurement.value",
+          "task": "S08",
+          "unit": "F",
+          "case_count": 3,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S08.decoded_measurement.raw_count [register count]": {
+          "field": "decoded_measurement.raw_count",
+          "task": "S08",
+          "unit": "register count",
+          "case_count": 129,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S08.decoded_measurement.value [C]": {
+          "field": "decoded_measurement.value",
+          "task": "S08",
+          "unit": "C",
+          "case_count": 123,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S08.decoded_measurement.value [F]": {
+          "field": "decoded_measurement.value",
+          "task": "S08",
+          "unit": "F",
+          "case_count": 3,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S08.decoded_measurement.value [V]": {
+          "field": "decoded_measurement.value",
+          "task": "S08",
+          "unit": "V",
+          "case_count": 3,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S08.expanded_uncertainty [C]": {
+          "field": "expanded_uncertainty",
+          "task": "S08",
+          "unit": "C",
+          "case_count": 117,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "1E-16"
+        },
+        "S08.expanded_uncertainty [F]": {
+          "field": "expanded_uncertainty",
+          "task": "S08",
+          "unit": "F",
+          "case_count": 3,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "1E-16"
+        },
+        "S08.physical_quantity.value [C]": {
+          "field": "physical_quantity.value",
+          "task": "S08",
+          "unit": "C",
+          "case_count": 123,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S08.physical_quantity.value [F]": {
+          "field": "physical_quantity.value",
+          "task": "S08",
+          "unit": "F",
+          "case_count": 3,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "0"
+        },
+        "S08.standard_uncertainty [C]": {
+          "field": "standard_uncertainty",
+          "task": "S08",
+          "unit": "C",
+          "case_count": 117,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "1E-16"
+        },
+        "S08.standard_uncertainty [F]": {
+          "field": "standard_uncertainty",
+          "task": "S08",
+          "unit": "F",
+          "case_count": 3,
+          "numeric_actual_count": 0,
+          "within_tolerance_count": 0,
+          "mean_absolute_error": null,
+          "maximum_absolute_error": null,
+          "maximum_normalized_error": null,
+          "permitted_tolerance": "1E-16"
+        }
+      },
+      "calibration_validity_recall": {
+        "numerator": 0,
+        "denominator": 171,
+        "value": 0.0
+      },
+      "uncertainty_calculation_accuracy": {
+        "numerator": 0,
+        "denominator": 186,
+        "value": 0.0
+      },
+      "false_rejection_rate": {
+        "numerator": 0,
+        "denominator": 105,
+        "value": 0.0
+      },
+      "boundary_decision_accuracy": {
+        "numerator": 0,
+        "denominator": 51,
+        "value": 0.0
+      },
+      "macro_average_task_accuracy": 0.0,
+      "per_task": {
+        "S01": {
+          "functional_correctness": {
+            "numerator": 0,
+            "denominator": 96,
+            "value": 0.0
+          },
+          "schema_compliance": {
+            "numerator": 0,
+            "denominator": 96,
+            "value": 0.0
+          },
+          "numerical_correctness": {
+            "numerator": 0,
+            "denominator": 69,
+            "value": 0.0
+          },
+          "physical_unit_correctness": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "physical_integrity_correctness": {
+            "numerator": 27,
+            "denominator": 96,
+            "value": 0.28125
+          },
+          "semantic_integrity_failures": {
+            "numerator": 0,
+            "denominator": 96,
+            "value": 0.0
+          },
+          "validity_state_correctness": {
+            "numerator": 0,
+            "denominator": 96,
+            "value": 0.0
+          },
+          "engineering_decision_correctness": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "execution_failures": {
+            "numerator": 96,
+            "denominator": 96,
+            "value": 1.0
+          },
+          "malformed_response_rate": {
+            "numerator": 0,
+            "denominator": 96,
+            "value": 0.0
+          },
+          "contract_violations": {
+            "numerator": 96,
+            "denominator": 96,
+            "value": 1.0
+          },
+          "silent_corruption_rate": {
+            "numerator": 0,
+            "denominator": 96,
+            "value": 0.0
+          },
+          "unsafe_acceptance_rate": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          }
+        },
+        "S02": {
+          "functional_correctness": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "schema_compliance": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "numerical_correctness": {
+            "numerator": 0,
+            "denominator": 78,
+            "value": 0.0
+          },
+          "physical_unit_correctness": {
+            "numerator": 0,
+            "denominator": 78,
+            "value": 0.0
+          },
+          "physical_integrity_correctness": {
+            "numerator": 12,
+            "denominator": 90,
+            "value": 0.13333333333333333
+          },
+          "semantic_integrity_failures": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "validity_state_correctness": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "engineering_decision_correctness": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "execution_failures": {
+            "numerator": 90,
+            "denominator": 90,
+            "value": 1.0
+          },
+          "malformed_response_rate": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "contract_violations": {
+            "numerator": 90,
+            "denominator": 90,
+            "value": 1.0
+          },
+          "silent_corruption_rate": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "unsafe_acceptance_rate": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          }
+        },
+        "S03": {
+          "functional_correctness": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "schema_compliance": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "numerical_correctness": {
+            "numerator": 0,
+            "denominator": 75,
+            "value": 0.0
+          },
+          "physical_unit_correctness": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "physical_integrity_correctness": {
+            "numerator": 15,
+            "denominator": 90,
+            "value": 0.16666666666666666
+          },
+          "semantic_integrity_failures": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "validity_state_correctness": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "engineering_decision_correctness": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "execution_failures": {
+            "numerator": 90,
+            "denominator": 90,
+            "value": 1.0
+          },
+          "malformed_response_rate": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "contract_violations": {
+            "numerator": 90,
+            "denominator": 90,
+            "value": 1.0
+          },
+          "silent_corruption_rate": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "unsafe_acceptance_rate": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          }
+        },
+        "S04": {
+          "functional_correctness": {
+            "numerator": 0,
+            "denominator": 111,
+            "value": 0.0
+          },
+          "schema_compliance": {
+            "numerator": 0,
+            "denominator": 111,
+            "value": 0.0
+          },
+          "numerical_correctness": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "physical_unit_correctness": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "physical_integrity_correctness": {
+            "numerator": 111,
+            "denominator": 111,
+            "value": 1.0
+          },
+          "semantic_integrity_failures": {
+            "numerator": 0,
+            "denominator": 111,
+            "value": 0.0
+          },
+          "validity_state_correctness": {
+            "numerator": 0,
+            "denominator": 111,
+            "value": 0.0
+          },
+          "engineering_decision_correctness": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "execution_failures": {
+            "numerator": 111,
+            "denominator": 111,
+            "value": 1.0
+          },
+          "malformed_response_rate": {
+            "numerator": 0,
+            "denominator": 111,
+            "value": 0.0
+          },
+          "contract_violations": {
+            "numerator": 111,
+            "denominator": 111,
+            "value": 1.0
+          },
+          "silent_corruption_rate": {
+            "numerator": 0,
+            "denominator": 111,
+            "value": 0.0
+          },
+          "unsafe_acceptance_rate": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          }
+        },
+        "S05": {
+          "functional_correctness": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "schema_compliance": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "numerical_correctness": {
+            "numerator": 0,
+            "denominator": 66,
+            "value": 0.0
+          },
+          "physical_unit_correctness": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "physical_integrity_correctness": {
+            "numerator": 24,
+            "denominator": 90,
+            "value": 0.26666666666666666
+          },
+          "semantic_integrity_failures": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "validity_state_correctness": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "engineering_decision_correctness": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "execution_failures": {
+            "numerator": 90,
+            "denominator": 90,
+            "value": 1.0
+          },
+          "malformed_response_rate": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "contract_violations": {
+            "numerator": 90,
+            "denominator": 90,
+            "value": 1.0
+          },
+          "silent_corruption_rate": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "unsafe_acceptance_rate": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          }
+        },
+        "S06": {
+          "functional_correctness": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "schema_compliance": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "numerical_correctness": {
+            "numerator": 0,
+            "denominator": 84,
+            "value": 0.0
+          },
+          "physical_unit_correctness": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "physical_integrity_correctness": {
+            "numerator": 6,
+            "denominator": 90,
+            "value": 0.06666666666666667
+          },
+          "semantic_integrity_failures": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "validity_state_correctness": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "engineering_decision_correctness": {
+            "numerator": 0,
+            "denominator": 84,
+            "value": 0.0
+          },
+          "execution_failures": {
+            "numerator": 90,
+            "denominator": 90,
+            "value": 1.0
+          },
+          "malformed_response_rate": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "contract_violations": {
+            "numerator": 90,
+            "denominator": 90,
+            "value": 1.0
+          },
+          "silent_corruption_rate": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "unsafe_acceptance_rate": {
+            "numerator": 0,
+            "denominator": 51,
+            "value": 0.0
+          }
+        },
+        "S07": {
+          "functional_correctness": {
+            "numerator": 0,
+            "denominator": 96,
+            "value": 0.0
+          },
+          "schema_compliance": {
+            "numerator": 0,
+            "denominator": 96,
+            "value": 0.0
+          },
+          "numerical_correctness": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "physical_unit_correctness": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "physical_integrity_correctness": {
+            "numerator": 96,
+            "denominator": 96,
+            "value": 1.0
+          },
+          "semantic_integrity_failures": {
+            "numerator": 0,
+            "denominator": 96,
+            "value": 0.0
+          },
+          "validity_state_correctness": {
+            "numerator": 0,
+            "denominator": 96,
+            "value": 0.0
+          },
+          "engineering_decision_correctness": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "execution_failures": {
+            "numerator": 96,
+            "denominator": 96,
+            "value": 1.0
+          },
+          "malformed_response_rate": {
+            "numerator": 0,
+            "denominator": 96,
+            "value": 0.0
+          },
+          "contract_violations": {
+            "numerator": 96,
+            "denominator": 96,
+            "value": 1.0
+          },
+          "silent_corruption_rate": {
+            "numerator": 0,
+            "denominator": 96,
+            "value": 0.0
+          },
+          "unsafe_acceptance_rate": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          }
+        },
+        "S08": {
+          "functional_correctness": {
+            "numerator": 0,
+            "denominator": 135,
+            "value": 0.0
+          },
+          "schema_compliance": {
+            "numerator": 0,
+            "denominator": 135,
+            "value": 0.0
+          },
+          "numerical_correctness": {
+            "numerator": 0,
+            "denominator": 129,
+            "value": 0.0
+          },
+          "physical_unit_correctness": {
+            "numerator": 0,
+            "denominator": 129,
+            "value": 0.0
+          },
+          "physical_integrity_correctness": {
+            "numerator": 6,
+            "denominator": 135,
+            "value": 0.044444444444444446
+          },
+          "semantic_integrity_failures": {
+            "numerator": 0,
+            "denominator": 135,
+            "value": 0.0
+          },
+          "validity_state_correctness": {
+            "numerator": 0,
+            "denominator": 135,
+            "value": 0.0
+          },
+          "engineering_decision_correctness": {
+            "numerator": 0,
+            "denominator": 135,
+            "value": 0.0
+          },
+          "execution_failures": {
+            "numerator": 135,
+            "denominator": 135,
+            "value": 1.0
+          },
+          "malformed_response_rate": {
+            "numerator": 0,
+            "denominator": 135,
+            "value": 0.0
+          },
+          "contract_violations": {
+            "numerator": 135,
+            "denominator": 135,
+            "value": 1.0
+          },
+          "silent_corruption_rate": {
+            "numerator": 0,
+            "denominator": 135,
+            "value": 0.0
+          },
+          "unsafe_acceptance_rate": {
+            "numerator": 0,
+            "denominator": 69,
+            "value": 0.0
+          }
+        }
+      },
+      "pass_at_3": {
+        "numerator": 0,
+        "denominator": 8,
+        "value": 0.0
+      },
+      "pass_cubed": {
+        "numerator": 0,
+        "denominator": 8,
+        "value": 0.0
+      }
+    },
+    "openrouter/nvidia/nemotron-3.5-super-vl:free|opencode": {
+      "case_count": 216,
+      "functional_correctness": {
+        "numerator": 211,
+        "denominator": 216,
+        "value": 0.9768518518518519
+      },
+      "schema_compliance": {
+        "numerator": 216,
+        "denominator": 216,
+        "value": 1.0
+      },
+      "numerical_correctness": {
+        "numerator": 172,
+        "denominator": 172,
+        "value": 1.0
+      },
+      "physical_unit_correctness": {
+        "numerator": 78,
+        "denominator": 78,
+        "value": 1.0
+      },
+      "physical_equivalence_correctness": {
+        "numerator": 78,
+        "denominator": 78,
+        "value": 1.0
+      },
+      "physical_integrity_correctness": {
+        "numerator": 216,
+        "denominator": 216,
+        "value": 1.0
+      },
+      "semantic_integrity_failures": {
+        "numerator": 0,
+        "denominator": 216,
+        "value": 0.0
+      },
+      "validity_state_correctness": {
+        "numerator": 216,
+        "denominator": 216,
+        "value": 1.0
+      },
+      "engineering_decision_correctness": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "execution_failures": {
+        "numerator": 0,
+        "denominator": 216,
+        "value": 0.0
+      },
+      "malformed_response_rate": {
+        "numerator": 0,
+        "denominator": 216,
+        "value": 0.0
+      },
+      "contract_violations": {
+        "numerator": 5,
+        "denominator": 216,
+        "value": 0.023148148148148147
+      },
+      "end_to_end_correctness": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "silent_corruption_rate": {
+        "numerator": 0,
+        "denominator": 216,
+        "value": 0.0
+      },
+      "unsafe_acceptance_rate": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "numerical_error_by_field_unit": {
+        "S01.raw_count [scaled sensor count]": {
+          "field": "raw_count",
+          "task": "S01",
+          "unit": "scaled sensor count",
+          "case_count": 69,
+          "numeric_actual_count": 69,
+          "within_tolerance_count": 69,
+          "mean_absolute_error": "0",
+          "maximum_absolute_error": "0",
+          "maximum_normalized_error": "0",
+          "permitted_tolerance": "0"
+        },
+        "S01.value [scaled sensor count]": {
+          "field": "value",
+          "task": "S01",
+          "unit": "scaled sensor count",
+          "case_count": 69,
+          "numeric_actual_count": 69,
+          "within_tolerance_count": 69,
+          "mean_absolute_error": "0.000",
+          "maximum_absolute_error": "0.000",
+          "maximum_normalized_error": "0",
+          "permitted_tolerance": "0"
+        },
+        "S02.value [C]": {
+          "field": "value",
+          "task": "S02",
+          "unit": "C",
+          "case_count": 18,
+          "numeric_actual_count": 18,
+          "within_tolerance_count": 18,
+          "mean_absolute_error": "0.00000",
+          "maximum_absolute_error": "0.00000",
+          "maximum_normalized_error": "0",
+          "permitted_tolerance": "0"
+        },
+        "S02.value [F]": {
+          "field": "value",
+          "task": "S02",
+          "unit": "F",
+          "case_count": 6,
+          "numeric_actual_count": 6,
+          "within_tolerance_count": 6,
+          "mean_absolute_error": "0.00000",
+          "maximum_absolute_error": "0.00000",
+          "maximum_normalized_error": "0",
+          "permitted_tolerance": "0"
+        },
+        "S02.value [K]": {
+          "field": "value",
+          "task": "S02",
+          "unit": "K",
+          "case_count": 6,
+          "numeric_actual_count": 6,
+          "within_tolerance_count": 6,
+          "mean_absolute_error": "0.00000",
+          "maximum_absolute_error": "0.00000",
+          "maximum_normalized_error": "0",
+          "permitted_tolerance": "0"
+        },
+        "S02.value [Pa]": {
+          "field": "value",
+          "task": "S02",
+          "unit": "Pa",
+          "case_count": 12,
+          "numeric_actual_count": 12,
+          "within_tolerance_count": 12,
+          "mean_absolute_error": "0.00000",
+          "maximum_absolute_error": "0.00000",
+          "maximum_normalized_error": "0",
+          "permitted_tolerance": "0"
+        },
+        "S02.value [V]": {
+          "field": "value",
+          "task": "S02",
+          "unit": "V",
+          "case_count": 15,
+          "numeric_actual_count": 15,
+          "within_tolerance_count": 15,
+          "mean_absolute_error": "0.00000",
+          "maximum_absolute_error": "0.00000",
+          "maximum_normalized_error": "0",
+          "permitted_tolerance": "0"
+        },
+        "S02.value [bar]": {
+          "field": "value",
+          "task": "S02",
+          "unit": "bar",
+          "case_count": 6,
+          "numeric_actual_count": 6,
+          "within_tolerance_count": 6,
+          "mean_absolute_error": "0.00000",
+          "maximum_absolute_error": "0.00000",
+          "maximum_normalized_error": "0",
+          "permitted_tolerance": "0"
+        },
+        "S02.value [kPa]": {
+          "field": "value",
+          "task": "S02",
+          "unit": "kPa",
+          "case_count": 9,
+          "numeric_actual_count": 9,
+          "within_tolerance_count": 9,
+          "mean_absolute_error": "0.00000",
+          "maximum_absolute_error": "0.00000",
+          "maximum_normalized_error": "0",
+          "permitted_tolerance": "0"
+        },
+        "S02.value [mV]": {
+          "field": "value",
+          "task": "S02",
+          "unit": "mV",
+          "case_count": 6,
+          "numeric_actual_count": 6,
+          "within_tolerance_count": 6,
+          "mean_absolute_error": "0.00000",
+          "maximum_absolute_error": "0.00000",
+          "maximum_normalized_error": "0",
+          "permitted_tolerance": "0"
+        },
+        "S03.corrected_value [MU (task-defined measurand unit)]": {
+          "field": "corrected_value",
+          "task": "S03",
+          "unit": "MU (task-defined measurand unit)",
+          "case_count": 25,
+          "numeric_actual_count": 25,
+          "within_tolerance_count": 25,
+          "mean_absolute_error": "0.0000",
+          "maximum_absolute_error": "0.0000",
+          "maximum_normalized_error": "0",
+          "permitted_tolerance": "0"
+        }
+      },
+      "calibration_validity_recall": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "uncertainty_calculation_accuracy": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "false_rejection_rate": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "boundary_decision_accuracy": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "macro_average_task_accuracy": 0.9826388888888888,
+      "per_task": {
+        "S01": {
+          "functional_correctness": {
+            "numerator": 91,
+            "denominator": 96,
+            "value": 0.9479166666666666
+          },
+          "schema_compliance": {
+            "numerator": 96,
+            "denominator": 96,
+            "value": 1.0
+          },
+          "numerical_correctness": {
+            "numerator": 69,
+            "denominator": 69,
+            "value": 1.0
+          },
+          "physical_unit_correctness": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "physical_integrity_correctness": {
+            "numerator": 96,
+            "denominator": 96,
+            "value": 1.0
+          },
+          "semantic_integrity_failures": {
+            "numerator": 0,
+            "denominator": 96,
+            "value": 0.0
+          },
+          "validity_state_correctness": {
+            "numerator": 96,
+            "denominator": 96,
+            "value": 1.0
+          },
+          "engineering_decision_correctness": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "execution_failures": {
+            "numerator": 0,
+            "denominator": 96,
+            "value": 0.0
+          },
+          "malformed_response_rate": {
+            "numerator": 0,
+            "denominator": 96,
+            "value": 0.0
+          },
+          "contract_violations": {
+            "numerator": 5,
+            "denominator": 96,
+            "value": 0.052083333333333336
+          },
+          "silent_corruption_rate": {
+            "numerator": 0,
+            "denominator": 96,
+            "value": 0.0
+          },
+          "unsafe_acceptance_rate": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          }
+        },
+        "S02": {
+          "functional_correctness": {
+            "numerator": 90,
+            "denominator": 90,
+            "value": 1.0
+          },
+          "schema_compliance": {
+            "numerator": 90,
+            "denominator": 90,
+            "value": 1.0
+          },
+          "numerical_correctness": {
+            "numerator": 78,
+            "denominator": 78,
+            "value": 1.0
+          },
+          "physical_unit_correctness": {
+            "numerator": 78,
+            "denominator": 78,
+            "value": 1.0
+          },
+          "physical_integrity_correctness": {
+            "numerator": 90,
+            "denominator": 90,
+            "value": 1.0
+          },
+          "semantic_integrity_failures": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "validity_state_correctness": {
+            "numerator": 90,
+            "denominator": 90,
+            "value": 1.0
+          },
+          "engineering_decision_correctness": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "execution_failures": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "malformed_response_rate": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "contract_violations": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "silent_corruption_rate": {
+            "numerator": 0,
+            "denominator": 90,
+            "value": 0.0
+          },
+          "unsafe_acceptance_rate": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          }
+        },
+        "S03": {
+          "functional_correctness": {
+            "numerator": 30,
+            "denominator": 30,
+            "value": 1.0
+          },
+          "schema_compliance": {
+            "numerator": 30,
+            "denominator": 30,
+            "value": 1.0
+          },
+          "numerical_correctness": {
+            "numerator": 25,
+            "denominator": 25,
+            "value": 1.0
+          },
+          "physical_unit_correctness": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "physical_integrity_correctness": {
+            "numerator": 30,
+            "denominator": 30,
+            "value": 1.0
+          },
+          "semantic_integrity_failures": {
+            "numerator": 0,
+            "denominator": 30,
+            "value": 0.0
+          },
+          "validity_state_correctness": {
+            "numerator": 30,
+            "denominator": 30,
+            "value": 1.0
+          },
+          "engineering_decision_correctness": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "execution_failures": {
+            "numerator": 0,
+            "denominator": 30,
+            "value": 0.0
+          },
+          "malformed_response_rate": {
+            "numerator": 0,
+            "denominator": 30,
+            "value": 0.0
+          },
+          "contract_violations": {
+            "numerator": 0,
+            "denominator": 30,
+            "value": 0.0
+          },
+          "silent_corruption_rate": {
+            "numerator": 0,
+            "denominator": 30,
+            "value": 0.0
+          },
+          "unsafe_acceptance_rate": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          }
+        }
+      },
+      "pass_at_3": {
+        "numerator": 1,
+        "denominator": 2,
+        "value": 0.5
+      },
+      "pass_cubed": {
+        "numerator": 1,
+        "denominator": 2,
+        "value": 0.5
+      }
+    }
+  },
+  "trials": [
+    {
+      "run_id": "20261105T214234_938009Z_S01_opencode_trial1",
+      "task": "S01",
+      "trial": 1,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/qwen3:8b",
+      "started_at_utc": "2026-11-05T21:42:34.942615+00:00",
+      "runtime_seconds": 782.4100511670113,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261105T215554_091942Z_S01_opencode_trial2",
+      "task": "S01",
+      "trial": 2,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/qwen3:8b",
+      "started_at_utc": "2026-11-05T21:55:54.092384+00:00",
+      "runtime_seconds": 450.6356203327887,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261105T220342_117482Z_S01_opencode_trial3",
+      "task": "S01",
+      "trial": 3,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/qwen3:8b",
+      "started_at_utc": "2026-11-05T22:03:42.118155+00:00",
+      "runtime_seconds": 544.6485381252132,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261105T221303_154344Z_S02_opencode_trial1",
+      "task": "S02",
+      "trial": 1,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/qwen3:8b",
+      "started_at_utc": "2026-11-05T22:13:03.155249+00:00",
+      "runtime_seconds": 541.9603563747369,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261105T222219_794811Z_S02_opencode_trial2",
+      "task": "S02",
+      "trial": 2,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/qwen3:8b",
+      "started_at_utc": "2026-11-05T22:22:19.795416+00:00",
+      "runtime_seconds": 528.0179206253961,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261105T223121_755457Z_S02_opencode_trial3",
+      "task": "S02",
+      "trial": 3,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/qwen3:8b",
+      "started_at_utc": "2026-11-05T22:31:21.756117+00:00",
+      "runtime_seconds": 639.0377155002207,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261105T224216_320030Z_S03_opencode_trial1",
+      "task": "S03",
+      "trial": 1,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/qwen3:8b",
+      "started_at_utc": "2026-11-05T22:42:16.320472+00:00",
+      "runtime_seconds": 169.49406270775944,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "timed_out": false,
+      "exit_code": 1
+    },
+    {
+      "run_id": "20261105T224518_188613Z_S03_opencode_trial2",
+      "task": "S03",
+      "trial": 2,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/qwen3:8b",
+      "started_at_utc": "2026-11-05T22:45:18.189270+00:00",
+      "runtime_seconds": 381.51127704186365,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261105T225205_313192Z_S03_opencode_trial3",
+      "task": "S03",
+      "trial": 3,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/qwen3:8b",
+      "started_at_utc": "2026-11-05T22:52:05.313725+00:00",
+      "runtime_seconds": 153.94816979207098,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "timed_out": false,
+      "exit_code": 1
+    },
+    {
+      "run_id": "20261105T225450_607122Z_S04_opencode_trial1",
+      "task": "S04",
+      "trial": 1,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/qwen3:8b",
+      "started_at_utc": "2026-11-05T22:54:50.607888+00:00",
+      "runtime_seconds": 154.2575945421122,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 37,
+      "timed_out": false,
+      "exit_code": 1
+    },
+    {
+      "run_id": "20261105T225737_075084Z_S04_opencode_trial2",
+      "task": "S04",
+      "trial": 2,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/qwen3:8b",
+      "started_at_utc": "2026-11-05T22:57:37.076508+00:00",
+      "runtime_seconds": 390.205630291719,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 37,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261105T230428_485273Z_S04_opencode_trial3",
+      "task": "S04",
+      "trial": 3,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/qwen3:8b",
+      "started_at_utc": "2026-11-05T23:04:28.485977+00:00",
+      "runtime_seconds": 157.03269725013524,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 37,
+      "timed_out": false,
+      "exit_code": 1
+    },
+    {
+      "run_id": "20261105T230717_866331Z_S05_opencode_trial1",
+      "task": "S05",
+      "trial": 1,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/qwen3:8b",
+      "started_at_utc": "2026-11-05T23:07:17.867305+00:00",
+      "runtime_seconds": 306.78312979079783,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261105T231241_469995Z_S05_opencode_trial2",
+      "task": "S05",
+      "trial": 2,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/qwen3:8b",
+      "started_at_utc": "2026-11-05T23:12:41.471078+00:00",
+      "runtime_seconds": 696.6208188328892,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261105T232436_611498Z_S05_opencode_trial3",
+      "task": "S05",
+      "trial": 3,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/qwen3:8b",
+      "started_at_utc": "2026-11-05T23:24:36.612922+00:00",
+      "runtime_seconds": 622.8268327079713,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261105T233514_269119Z_S06_opencode_trial1",
+      "task": "S06",
+      "trial": 1,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/qwen3:8b",
+      "started_at_utc": "2026-11-05T23:35:14.270929+00:00",
+      "runtime_seconds": 303.3631615000777,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261105T234033_195668Z_S06_opencode_trial2",
+      "task": "S06",
+      "trial": 2,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/qwen3:8b",
+      "started_at_utc": "2026-11-05T23:40:33.196592+00:00",
+      "runtime_seconds": 419.21031220816076,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261105T234748_300286Z_S06_opencode_trial3",
+      "task": "S06",
+      "trial": 3,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/qwen3:8b",
+      "started_at_utc": "2026-11-05T23:47:48.301026+00:00",
+      "runtime_seconds": 372.9517526673153,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261105T235420_283213Z_S07_opencode_trial1",
+      "task": "S07",
+      "trial": 1,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/qwen3:8b",
+      "started_at_utc": "2026-11-05T23:54:20.284442+00:00",
+      "runtime_seconds": 743.0394656248391,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "timed_out": false,
+      "exit_code": 1
+    },
+    {
+      "run_id": "20261106T000700_468661Z_S07_opencode_trial2",
+      "task": "S07",
+      "trial": 2,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "error": "Command '['npm', 'exec', '--yes', '--package=@opencode/cli@2.2.5', '--', 'opencode', '--version']' timed out after 10 seconds"
+      },
+      "model_id": "ollama/qwen3:8b",
+      "started_at_utc": "2026-11-06T00:07:00.469025+00:00",
+      "runtime_seconds": 139.054962082766,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "timed_out": false,
+      "exit_code": 1
+    },
+    {
+      "run_id": "20261106T000945_524988Z_S07_opencode_trial3",
+      "task": "S07",
+      "trial": 3,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/qwen3:8b",
+      "started_at_utc": "2026-11-06T00:09:45.525479+00:00",
+      "runtime_seconds": 817.8270915411413,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261106T002336_738383Z_S08_opencode_trial1",
+      "task": "S08",
+      "trial": 1,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/qwen3:8b",
+      "started_at_utc": "2026-11-06T00:23:36.739248+00:00",
+      "runtime_seconds": 473.967919500079,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 45,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261106T003149_916206Z_S08_opencode_trial2",
+      "task": "S08",
+      "trial": 2,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/qwen3:8b",
+      "started_at_utc": "2026-11-06T00:31:49.917084+00:00",
+      "runtime_seconds": 180.0385272912681,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 45,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261106T003510_465302Z_S08_opencode_trial3",
+      "task": "S08",
+      "trial": 3,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/qwen3:8b",
+      "started_at_utc": "2026-11-06T00:35:10.467295+00:00",
+      "runtime_seconds": 337.0659442092292,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 45,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261106T004111_617977Z_S01_opencode_trial1",
+      "task": "S01",
+      "trial": 1,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/llama3.2:1b",
+      "started_at_utc": "2026-11-06T00:41:11.619143+00:00",
+      "runtime_seconds": 477.68898820783943,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261106T004919_917370Z_S01_opencode_trial2",
+      "task": "S01",
+      "trial": 2,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/llama3.2:1b",
+      "started_at_utc": "2026-11-06T00:49:19.918068+00:00",
+      "runtime_seconds": 39.34258204186335,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261106T005008_647575Z_S01_opencode_trial3",
+      "task": "S01",
+      "trial": 3,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/llama3.2:1b",
+      "started_at_utc": "2026-11-06T00:50:08.647954+00:00",
+      "runtime_seconds": 30.26493641594425,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261106T005048_704856Z_S02_opencode_trial1",
+      "task": "S02",
+      "trial": 1,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/llama3.2:1b",
+      "started_at_utc": "2026-11-06T00:50:48.705131+00:00",
+      "runtime_seconds": 38.16849908279255,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261106T005136_209640Z_S02_opencode_trial2",
+      "task": "S02",
+      "trial": 2,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/llama3.2:1b",
+      "started_at_utc": "2026-11-06T00:51:36.210093+00:00",
+      "runtime_seconds": 29.80495937494561,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261106T005214_683070Z_S02_opencode_trial3",
+      "task": "S02",
+      "trial": 3,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/llama3.2:1b",
+      "started_at_utc": "2026-11-06T00:52:14.683379+00:00",
+      "runtime_seconds": 34.04611225007102,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261106T005257_373498Z_S03_opencode_trial1",
+      "task": "S03",
+      "trial": 1,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/llama3.2:1b",
+      "started_at_utc": "2026-11-06T00:52:57.373758+00:00",
+      "runtime_seconds": 39.87866962514818,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261106T005346_481319Z_S03_opencode_trial2",
+      "task": "S03",
+      "trial": 2,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/llama3.2:1b",
+      "started_at_utc": "2026-11-06T00:53:46.481582+00:00",
+      "runtime_seconds": 29.064394417218864,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261106T005424_764046Z_S03_opencode_trial3",
+      "task": "S03",
+      "trial": 3,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/llama3.2:1b",
+      "started_at_utc": "2026-11-06T00:54:24.764313+00:00",
+      "runtime_seconds": 32.68661233317107,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261106T005506_076920Z_S04_opencode_trial1",
+      "task": "S04",
+      "trial": 1,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/llama3.2:1b",
+      "started_at_utc": "2026-11-06T00:55:06.077254+00:00",
+      "runtime_seconds": 36.525375582743436,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 37,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261106T005554_607905Z_S04_opencode_trial2",
+      "task": "S04",
+      "trial": 2,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/llama3.2:1b",
+      "started_at_utc": "2026-11-06T00:55:54.608193+00:00",
+      "runtime_seconds": 41.465837167110294,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 37,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261106T005647_797745Z_S04_opencode_trial3",
+      "task": "S04",
+      "trial": 3,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/llama3.2:1b",
+      "started_at_utc": "2026-11-06T00:56:47.798055+00:00",
+      "runtime_seconds": 67.21184662496671,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 37,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261106T005806_839460Z_S05_opencode_trial1",
+      "task": "S05",
+      "trial": 1,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/llama3.2:1b",
+      "started_at_utc": "2026-11-06T00:58:06.839773+00:00",
+      "runtime_seconds": 31.70964154228568,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261106T005848_694461Z_S05_opencode_trial2",
+      "task": "S05",
+      "trial": 2,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/llama3.2:1b",
+      "started_at_utc": "2026-11-06T00:58:48.694715+00:00",
+      "runtime_seconds": 29.927934707608074,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261106T005928_929952Z_S05_opencode_trial3",
+      "task": "S05",
+      "trial": 3,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/llama3.2:1b",
+      "started_at_utc": "2026-11-06T00:59:28.930209+00:00",
+      "runtime_seconds": 47.57701670797542,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261106T010029_467968Z_S06_opencode_trial1",
+      "task": "S06",
+      "trial": 1,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/llama3.2:1b",
+      "started_at_utc": "2026-11-06T01:00:29.468233+00:00",
+      "runtime_seconds": 35.36202412471175,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261106T010118_912858Z_S06_opencode_trial2",
+      "task": "S06",
+      "trial": 2,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/llama3.2:1b",
+      "started_at_utc": "2026-11-06T01:01:18.913139+00:00",
+      "runtime_seconds": 30.853343875147402,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261106T010204_342442Z_S06_opencode_trial3",
+      "task": "S06",
+      "trial": 3,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/llama3.2:1b",
+      "started_at_utc": "2026-11-06T01:02:04.342753+00:00",
+      "runtime_seconds": 33.17548391688615,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261106T010253_643870Z_S07_opencode_trial1",
+      "task": "S07",
+      "trial": 1,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/llama3.2:1b",
+      "started_at_utc": "2026-11-06T01:02:53.644397+00:00",
+      "runtime_seconds": 45.20185529207811,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261106T010350_583750Z_S07_opencode_trial2",
+      "task": "S07",
+      "trial": 2,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/llama3.2:1b",
+      "started_at_utc": "2026-11-06T01:03:50.584115+00:00",
+      "runtime_seconds": 40.52209199965,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261106T010441_802454Z_S07_opencode_trial3",
+      "task": "S07",
+      "trial": 3,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/llama3.2:1b",
+      "started_at_utc": "2026-11-06T01:04:41.802769+00:00",
+      "runtime_seconds": 35.613842082675546,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261106T010528_145947Z_S08_opencode_trial1",
+      "task": "S08",
+      "trial": 1,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/llama3.2:1b",
+      "started_at_utc": "2026-11-06T01:05:28.146253+00:00",
+      "runtime_seconds": 34.62806124985218,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 45,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261106T010617_025883Z_S08_opencode_trial2",
+      "task": "S08",
+      "trial": 2,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/llama3.2:1b",
+      "started_at_utc": "2026-11-06T01:06:17.026118+00:00",
+      "runtime_seconds": 42.5331627917476,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 45,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261106T010713_897768Z_S08_opencode_trial3",
+      "task": "S08",
+      "trial": 3,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "ollama/llama3.2:1b",
+      "started_at_utc": "2026-11-06T01:07:13.898188+00:00",
+      "runtime_seconds": 30.42434525024146,
+      "cost_usd": null,
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 45,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261106T011551_444367Z_S01_opencode_trial1",
+      "task": "S01",
+      "trial": 1,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+      "started_at_utc": "2026-11-06T01:15:51.445090+00:00",
+      "runtime_seconds": 189.76699866680428,
+      "cost_usd": null,
+      "task_accuracy": 0.96875,
+      "cases_passed": 31,
+      "case_count": 32,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261106T011909_934974Z_S01_opencode_trial2",
+      "task": "S01",
+      "trial": 2,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+      "started_at_utc": "2026-11-06T01:19:09.935164+00:00",
+      "runtime_seconds": 164.38122550025582,
+      "cost_usd": null,
+      "task_accuracy": 0.9375,
+      "cases_passed": 30,
+      "case_count": 32,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261106T012203_414544Z_S01_opencode_trial3",
+      "task": "S01",
+      "trial": 3,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+      "started_at_utc": "2026-11-06T01:22:03.414726+00:00",
+      "runtime_seconds": 154.84400062495843,
+      "cost_usd": null,
+      "task_accuracy": 0.9375,
+      "cases_passed": 30,
+      "case_count": 32,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261106T012757_437920Z_S02_opencode_trial1",
+      "task": "S02",
+      "trial": 1,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+      "started_at_utc": "2026-11-06T01:27:57.438416+00:00",
+      "runtime_seconds": 176.40405149990693,
+      "cost_usd": null,
+      "task_accuracy": 1.0,
+      "cases_passed": 30,
+      "case_count": 30,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261106T013102_599141Z_S02_opencode_trial2",
+      "task": "S02",
+      "trial": 2,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+      "started_at_utc": "2026-11-06T01:31:02.599437+00:00",
+      "runtime_seconds": 116.37663054233417,
+      "cost_usd": null,
+      "task_accuracy": 1.0,
+      "cases_passed": 30,
+      "case_count": 30,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261106T013307_336578Z_S02_opencode_trial3",
+      "task": "S02",
+      "trial": 3,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+      "started_at_utc": "2026-11-06T01:33:07.336870+00:00",
+      "runtime_seconds": 225.74060045788065,
+      "cost_usd": null,
+      "task_accuracy": 1.0,
+      "cases_passed": 30,
+      "case_count": 30,
+      "timed_out": false,
+      "exit_code": 0
+    },
+    {
+      "run_id": "20261106T013702_131089Z_S03_opencode_trial1",
+      "task": "S03",
+      "trial": 1,
+      "agent": "opencode",
+      "agent_version": {
+        "command": [
+          "npm",
+          "exec",
+          "--yes",
+          "--package=@opencode/cli@2.2.5",
+          "--",
+          "opencode",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "opencode v2.2.5\n",
+        "stderr": ""
+      },
+      "model_id": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+      "started_at_utc": "2026-11-06T01:37:02.131378+00:00",
+      "runtime_seconds": 229.06525516603142,
+      "cost_usd": null,
+      "task_accuracy": 1.0,
+      "cases_passed": 30,
+      "case_count": 30,
+      "timed_out": false,
+      "exit_code": 1
+    }
+  ]
+}

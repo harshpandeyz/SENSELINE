@@ -1,0 +1,4188 @@
+{
+  "trial_count": 90,
+  "eligible_model_trial_count": 16,
+  "trial_class_counts": {
+    "INFRA": 16,
+    "TOOL_USE": 58,
+    "GENUINE": 16
+  },
+  "overall_genuine_metrics": {
+    "case_count": 522,
+    "functional_correctness": {
+      "numerator": 396,
+      "denominator": 522,
+      "value": 0.7586206896551724
+    },
+    "schema_compliance": {
+      "numerator": 492,
+      "denominator": 522,
+      "value": 0.9425287356321839
+    },
+    "numerical_correctness": {
+      "numerator": 338,
+      "denominator": 415,
+      "value": 0.8144578313253013
+    },
+    "physical_unit_correctness": {
+      "numerator": 330,
+      "denominator": 330,
+      "value": 1.0
+    },
+    "physical_equivalence_correctness": {
+      "numerator": 330,
+      "denominator": 330,
+      "value": 1.0
+    },
+    "physical_integrity_correctness": {
+      "numerator": 445,
+      "denominator": 522,
+      "value": 0.8524904214559387
+    },
+    "semantic_integrity_failures": {
+      "numerator": 0,
+      "denominator": 522,
+      "value": 0.0
+    },
+    "validity_state_correctness": {
+      "numerator": 455,
+      "denominator": 522,
+      "value": 0.8716475095785441
+    },
+    "engineering_decision_correctness": {
+      "numerator": 85,
+      "denominator": 90,
+      "value": 0.9444444444444444
+    },
+    "execution_failures": {
+      "numerator": 30,
+      "denominator": 522,
+      "value": 0.05747126436781609
+    },
+    "malformed_response_rate": {
+      "numerator": 0,
+      "denominator": 522,
+      "value": 0.0
+    },
+    "contract_violations": {
+      "numerator": 126,
+      "denominator": 522,
+      "value": 0.2413793103448276
+    },
+    "end_to_end_correctness": {
+      "numerator": 32,
+      "denominator": 90,
+      "value": 0.35555555555555557
+    },
+    "silent_corruption_rate": {
+      "numerator": 48,
+      "denominator": 522,
+      "value": 0.09195402298850575
+    },
+    "unsafe_acceptance_rate": {
+      "numerator": 5,
+      "denominator": 46,
+      "value": 0.10869565217391304
+    },
+    "numerical_error_by_field_unit": {
+      "S01.raw_count [scaled sensor count]": {
+        "field": "raw_count",
+        "task": "S01",
+        "unit": "scaled sensor count",
+        "case_count": 138,
+        "numeric_actual_count": 138,
+        "within_tolerance_count": 138,
+        "mean_absolute_error": "0",
+        "maximum_absolute_error": "0",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S01.value [scaled sensor count]": {
+        "field": "value",
+        "task": "S01",
+        "unit": "scaled sensor count",
+        "case_count": 138,
+        "numeric_actual_count": 138,
+        "within_tolerance_count": 138,
+        "mean_absolute_error": "0.000",
+        "maximum_absolute_error": "0.000",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S02.value [C]": {
+        "field": "value",
+        "task": "S02",
+        "unit": "C",
+        "case_count": 18,
+        "numeric_actual_count": 18,
+        "within_tolerance_count": 18,
+        "mean_absolute_error": "0.00000",
+        "maximum_absolute_error": "0.00000",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S02.value [F]": {
+        "field": "value",
+        "task": "S02",
+        "unit": "F",
+        "case_count": 6,
+        "numeric_actual_count": 6,
+        "within_tolerance_count": 6,
+        "mean_absolute_error": "0.00000",
+        "maximum_absolute_error": "0.00000",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S02.value [K]": {
+        "field": "value",
+        "task": "S02",
+        "unit": "K",
+        "case_count": 6,
+        "numeric_actual_count": 6,
+        "within_tolerance_count": 6,
+        "mean_absolute_error": "0.00000",
+        "maximum_absolute_error": "0.00000",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S02.value [Pa]": {
+        "field": "value",
+        "task": "S02",
+        "unit": "Pa",
+        "case_count": 12,
+        "numeric_actual_count": 12,
+        "within_tolerance_count": 12,
+        "mean_absolute_error": "0.00000",
+        "maximum_absolute_error": "0.00000",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S02.value [V]": {
+        "field": "value",
+        "task": "S02",
+        "unit": "V",
+        "case_count": 15,
+        "numeric_actual_count": 15,
+        "within_tolerance_count": 15,
+        "mean_absolute_error": "0.00000",
+        "maximum_absolute_error": "0.00000",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S02.value [bar]": {
+        "field": "value",
+        "task": "S02",
+        "unit": "bar",
+        "case_count": 6,
+        "numeric_actual_count": 6,
+        "within_tolerance_count": 6,
+        "mean_absolute_error": "0.00000",
+        "maximum_absolute_error": "0.00000",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S02.value [kPa]": {
+        "field": "value",
+        "task": "S02",
+        "unit": "kPa",
+        "case_count": 9,
+        "numeric_actual_count": 9,
+        "within_tolerance_count": 9,
+        "mean_absolute_error": "0.00000",
+        "maximum_absolute_error": "0.00000",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S02.value [mV]": {
+        "field": "value",
+        "task": "S02",
+        "unit": "mV",
+        "case_count": 6,
+        "numeric_actual_count": 6,
+        "within_tolerance_count": 6,
+        "mean_absolute_error": "0.00000",
+        "maximum_absolute_error": "0.00000",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S03.corrected_value [MU (task-defined measurand unit)]": {
+        "field": "corrected_value",
+        "task": "S03",
+        "unit": "MU (task-defined measurand unit)",
+        "case_count": 25,
+        "numeric_actual_count": 25,
+        "within_tolerance_count": 25,
+        "mean_absolute_error": "0.0000",
+        "maximum_absolute_error": "0.0000",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S05.combined_standard_uncertainty [MU (task-defined measurand unit)]": {
+        "field": "combined_standard_uncertainty",
+        "task": "S05",
+        "unit": "MU (task-defined measurand unit)",
+        "case_count": 88,
+        "numeric_actual_count": 44,
+        "within_tolerance_count": 44,
+        "mean_absolute_error": "4.818181818181818181818181818E-40",
+        "maximum_absolute_error": "3E-39",
+        "maximum_normalized_error": "3E-23",
+        "permitted_tolerance": "1E-16"
+      },
+      "S05.expanded_uncertainty [MU (task-defined measurand unit)]": {
+        "field": "expanded_uncertainty",
+        "task": "S05",
+        "unit": "MU (task-defined measurand unit)",
+        "case_count": 88,
+        "numeric_actual_count": 44,
+        "within_tolerance_count": 44,
+        "mean_absolute_error": "1.431818181818181818181818182E-39",
+        "maximum_absolute_error": "1E-38",
+        "maximum_normalized_error": "1E-22",
+        "permitted_tolerance": "1E-16"
+      },
+      "S05.standard_uncertainties.0 [MU (task-defined measurand unit)]": {
+        "field": "standard_uncertainties.0",
+        "task": "S05",
+        "unit": "MU (task-defined measurand unit)",
+        "case_count": 88,
+        "numeric_actual_count": 44,
+        "within_tolerance_count": 44,
+        "mean_absolute_error": "2.772727272727272727272727273E-40",
+        "maximum_absolute_error": "1E-39",
+        "maximum_normalized_error": "1E-23",
+        "permitted_tolerance": "1E-16"
+      },
+      "S05.standard_uncertainties.1 [MU (task-defined measurand unit)]": {
+        "field": "standard_uncertainties.1",
+        "task": "S05",
+        "unit": "MU (task-defined measurand unit)",
+        "case_count": 80,
+        "numeric_actual_count": 40,
+        "within_tolerance_count": 40,
+        "mean_absolute_error": "0E-41",
+        "maximum_absolute_error": "0E-40",
+        "maximum_normalized_error": "0E-24",
+        "permitted_tolerance": "1E-16"
+      },
+      "S08.conformity_interval.lower [C]": {
+        "field": "conformity_interval.lower",
+        "task": "S08",
+        "unit": "C",
+        "case_count": 64,
+        "numeric_actual_count": 64,
+        "within_tolerance_count": 32,
+        "mean_absolute_error": "0.08063299651018015696500596797",
+        "maximum_absolute_error": "1.000000000000000000000000000",
+        "maximum_normalized_error": "10000000000000000.00000000000",
+        "permitted_tolerance": "1E-16"
+      },
+      "S08.conformity_interval.lower [F]": {
+        "field": "conformity_interval.lower",
+        "task": "S08",
+        "unit": "F",
+        "case_count": 2,
+        "numeric_actual_count": 2,
+        "within_tolerance_count": 1,
+        "mean_absolute_error": "0.0866025403784438646763723171",
+        "maximum_absolute_error": "0.1732050807568877293527446342",
+        "maximum_normalized_error": "1732050807568877.293527446342",
+        "permitted_tolerance": "1E-16"
+      },
+      "S08.conformity_interval.upper [C]": {
+        "field": "conformity_interval.upper",
+        "task": "S08",
+        "unit": "C",
+        "case_count": 64,
+        "numeric_actual_count": 64,
+        "within_tolerance_count": 32,
+        "mean_absolute_error": "0.08063299651018015696500596797",
+        "maximum_absolute_error": "1.000000000000000000000000000",
+        "maximum_normalized_error": "10000000000000000.00000000000",
+        "permitted_tolerance": "1E-16"
+      },
+      "S08.conformity_interval.upper [F]": {
+        "field": "conformity_interval.upper",
+        "task": "S08",
+        "unit": "F",
+        "case_count": 2,
+        "numeric_actual_count": 2,
+        "within_tolerance_count": 1,
+        "mean_absolute_error": "0.0866025403784438646763723171",
+        "maximum_absolute_error": "0.1732050807568877293527446342",
+        "maximum_normalized_error": "1732050807568877.293527446342",
+        "permitted_tolerance": "1E-16"
+      },
+      "S08.corrected_measurement.value [C]": {
+        "field": "corrected_measurement.value",
+        "task": "S08",
+        "unit": "C",
+        "case_count": 80,
+        "numeric_actual_count": 80,
+        "within_tolerance_count": 80,
+        "mean_absolute_error": "0.00",
+        "maximum_absolute_error": "0.0",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S08.corrected_measurement.value [F]": {
+        "field": "corrected_measurement.value",
+        "task": "S08",
+        "unit": "F",
+        "case_count": 2,
+        "numeric_actual_count": 2,
+        "within_tolerance_count": 2,
+        "mean_absolute_error": "0.0",
+        "maximum_absolute_error": "0.0",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S08.decoded_measurement.raw_count [register count]": {
+        "field": "decoded_measurement.raw_count",
+        "task": "S08",
+        "unit": "register count",
+        "case_count": 86,
+        "numeric_actual_count": 86,
+        "within_tolerance_count": 86,
+        "mean_absolute_error": "0",
+        "maximum_absolute_error": "0",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S08.decoded_measurement.value [C]": {
+        "field": "decoded_measurement.value",
+        "task": "S08",
+        "unit": "C",
+        "case_count": 82,
+        "numeric_actual_count": 82,
+        "within_tolerance_count": 82,
+        "mean_absolute_error": "0.00",
+        "maximum_absolute_error": "0",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S08.decoded_measurement.value [F]": {
+        "field": "decoded_measurement.value",
+        "task": "S08",
+        "unit": "F",
+        "case_count": 2,
+        "numeric_actual_count": 2,
+        "within_tolerance_count": 2,
+        "mean_absolute_error": "0.0",
+        "maximum_absolute_error": "0.0",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S08.decoded_measurement.value [V]": {
+        "field": "decoded_measurement.value",
+        "task": "S08",
+        "unit": "V",
+        "case_count": 2,
+        "numeric_actual_count": 2,
+        "within_tolerance_count": 2,
+        "mean_absolute_error": "0",
+        "maximum_absolute_error": "0",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S08.expanded_uncertainty [C]": {
+        "field": "expanded_uncertainty",
+        "task": "S08",
+        "unit": "C",
+        "case_count": 78,
+        "numeric_actual_count": 78,
+        "within_tolerance_count": 78,
+        "mean_absolute_error": "3.677245613246500978241025641E-41",
+        "maximum_absolute_error": "2.0350254025375203720E-40",
+        "maximum_normalized_error": "2.0350254025375203720E-24",
+        "permitted_tolerance": "1E-16"
+      },
+      "S08.expanded_uncertainty [F]": {
+        "field": "expanded_uncertainty",
+        "task": "S08",
+        "unit": "F",
+        "case_count": 2,
+        "numeric_actual_count": 2,
+        "within_tolerance_count": 2,
+        "mean_absolute_error": "3.8949237921937194420E-41",
+        "maximum_absolute_error": "3.8949237923874388840E-41",
+        "maximum_normalized_error": "3.8949237923874388840E-25",
+        "permitted_tolerance": "1E-16"
+      },
+      "S08.physical_quantity.value [C]": {
+        "field": "physical_quantity.value",
+        "task": "S08",
+        "unit": "C",
+        "case_count": 82,
+        "numeric_actual_count": 82,
+        "within_tolerance_count": 82,
+        "mean_absolute_error": "0.00",
+        "maximum_absolute_error": "0",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S08.physical_quantity.value [F]": {
+        "field": "physical_quantity.value",
+        "task": "S08",
+        "unit": "F",
+        "case_count": 2,
+        "numeric_actual_count": 2,
+        "within_tolerance_count": 2,
+        "mean_absolute_error": "0",
+        "maximum_absolute_error": "0",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S08.standard_uncertainty [C]": {
+        "field": "standard_uncertainty",
+        "task": "S08",
+        "unit": "C",
+        "case_count": 78,
+        "numeric_actual_count": 78,
+        "within_tolerance_count": 78,
+        "mean_absolute_error": "2.146315114355301771171666667E-41",
+        "maximum_absolute_error": "1.99999999999999999998E-40",
+        "maximum_normalized_error": "1.99999999999999999998E-24",
+        "permitted_tolerance": "1E-16"
+      },
+      "S08.standard_uncertainty [F]": {
+        "field": "standard_uncertainty",
+        "task": "S08",
+        "unit": "F",
+        "case_count": 2,
+        "numeric_actual_count": 2,
+        "within_tolerance_count": 2,
+        "mean_absolute_error": "1.9474618960968597210E-41",
+        "maximum_absolute_error": "1.9474618961937194420E-41",
+        "maximum_normalized_error": "1.9474618961937194420E-25",
+        "permitted_tolerance": "1E-16"
+      }
+    },
+    "calibration_validity_recall": {
+      "numerator": 70,
+      "denominator": 70,
+      "value": 1.0
+    },
+    "uncertainty_calculation_accuracy": {
+      "numerator": 124,
+      "denominator": 168,
+      "value": 0.7380952380952381
+    },
+    "false_rejection_rate": {
+      "numerator": 0,
+      "denominator": 44,
+      "value": 0.0
+    },
+    "boundary_decision_accuracy": {
+      "numerator": 18,
+      "denominator": 18,
+      "value": 1.0
+    },
+    "macro_average_task_accuracy": 0.7634027777777778,
+    "per_task": {
+      "S01": {
+        "functional_correctness": {
+          "numerator": 183,
+          "denominator": 192,
+          "value": 0.953125
+        },
+        "schema_compliance": {
+          "numerator": 192,
+          "denominator": 192,
+          "value": 1.0
+        },
+        "numerical_correctness": {
+          "numerator": 138,
+          "denominator": 138,
+          "value": 1.0
+        },
+        "physical_unit_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "physical_integrity_correctness": {
+          "numerator": 192,
+          "denominator": 192,
+          "value": 1.0
+        },
+        "semantic_integrity_failures": {
+          "numerator": 0,
+          "denominator": 192,
+          "value": 0.0
+        },
+        "validity_state_correctness": {
+          "numerator": 192,
+          "denominator": 192,
+          "value": 1.0
+        },
+        "engineering_decision_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "execution_failures": {
+          "numerator": 0,
+          "denominator": 192,
+          "value": 0.0
+        },
+        "malformed_response_rate": {
+          "numerator": 0,
+          "denominator": 192,
+          "value": 0.0
+        },
+        "contract_violations": {
+          "numerator": 9,
+          "denominator": 192,
+          "value": 0.046875
+        },
+        "silent_corruption_rate": {
+          "numerator": 0,
+          "denominator": 192,
+          "value": 0.0
+        },
+        "unsafe_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        }
+      },
+      "S02": {
+        "functional_correctness": {
+          "numerator": 90,
+          "denominator": 90,
+          "value": 1.0
+        },
+        "schema_compliance": {
+          "numerator": 90,
+          "denominator": 90,
+          "value": 1.0
+        },
+        "numerical_correctness": {
+          "numerator": 78,
+          "denominator": 78,
+          "value": 1.0
+        },
+        "physical_unit_correctness": {
+          "numerator": 78,
+          "denominator": 78,
+          "value": 1.0
+        },
+        "physical_integrity_correctness": {
+          "numerator": 90,
+          "denominator": 90,
+          "value": 1.0
+        },
+        "semantic_integrity_failures": {
+          "numerator": 0,
+          "denominator": 90,
+          "value": 0.0
+        },
+        "validity_state_correctness": {
+          "numerator": 90,
+          "denominator": 90,
+          "value": 1.0
+        },
+        "engineering_decision_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "execution_failures": {
+          "numerator": 0,
+          "denominator": 90,
+          "value": 0.0
+        },
+        "malformed_response_rate": {
+          "numerator": 0,
+          "denominator": 90,
+          "value": 0.0
+        },
+        "contract_violations": {
+          "numerator": 0,
+          "denominator": 90,
+          "value": 0.0
+        },
+        "silent_corruption_rate": {
+          "numerator": 0,
+          "denominator": 90,
+          "value": 0.0
+        },
+        "unsafe_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        }
+      },
+      "S03": {
+        "functional_correctness": {
+          "numerator": 30,
+          "denominator": 30,
+          "value": 1.0
+        },
+        "schema_compliance": {
+          "numerator": 30,
+          "denominator": 30,
+          "value": 1.0
+        },
+        "numerical_correctness": {
+          "numerator": 25,
+          "denominator": 25,
+          "value": 1.0
+        },
+        "physical_unit_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "physical_integrity_correctness": {
+          "numerator": 30,
+          "denominator": 30,
+          "value": 1.0
+        },
+        "semantic_integrity_failures": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "validity_state_correctness": {
+          "numerator": 30,
+          "denominator": 30,
+          "value": 1.0
+        },
+        "engineering_decision_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "execution_failures": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "malformed_response_rate": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "contract_violations": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "silent_corruption_rate": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "unsafe_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        }
+      },
+      "S05": {
+        "functional_correctness": {
+          "numerator": 61,
+          "denominator": 120,
+          "value": 0.5083333333333333
+        },
+        "schema_compliance": {
+          "numerator": 90,
+          "denominator": 120,
+          "value": 0.75
+        },
+        "numerical_correctness": {
+          "numerator": 44,
+          "denominator": 88,
+          "value": 0.5
+        },
+        "physical_unit_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "physical_integrity_correctness": {
+          "numerator": 76,
+          "denominator": 120,
+          "value": 0.6333333333333333
+        },
+        "semantic_integrity_failures": {
+          "numerator": 0,
+          "denominator": 120,
+          "value": 0.0
+        },
+        "validity_state_correctness": {
+          "numerator": 68,
+          "denominator": 120,
+          "value": 0.5666666666666667
+        },
+        "engineering_decision_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "execution_failures": {
+          "numerator": 30,
+          "denominator": 120,
+          "value": 0.25
+        },
+        "malformed_response_rate": {
+          "numerator": 0,
+          "denominator": 120,
+          "value": 0.0
+        },
+        "contract_violations": {
+          "numerator": 59,
+          "denominator": 120,
+          "value": 0.49166666666666664
+        },
+        "silent_corruption_rate": {
+          "numerator": 0,
+          "denominator": 120,
+          "value": 0.0
+        },
+        "unsafe_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        }
+      },
+      "S08": {
+        "functional_correctness": {
+          "numerator": 32,
+          "denominator": 90,
+          "value": 0.35555555555555557
+        },
+        "schema_compliance": {
+          "numerator": 90,
+          "denominator": 90,
+          "value": 1.0
+        },
+        "numerical_correctness": {
+          "numerator": 53,
+          "denominator": 86,
+          "value": 0.6162790697674418
+        },
+        "physical_unit_correctness": {
+          "numerator": 86,
+          "denominator": 86,
+          "value": 1.0
+        },
+        "physical_integrity_correctness": {
+          "numerator": 57,
+          "denominator": 90,
+          "value": 0.6333333333333333
+        },
+        "semantic_integrity_failures": {
+          "numerator": 0,
+          "denominator": 90,
+          "value": 0.0
+        },
+        "validity_state_correctness": {
+          "numerator": 75,
+          "denominator": 90,
+          "value": 0.8333333333333334
+        },
+        "engineering_decision_correctness": {
+          "numerator": 85,
+          "denominator": 90,
+          "value": 0.9444444444444444
+        },
+        "execution_failures": {
+          "numerator": 0,
+          "denominator": 90,
+          "value": 0.0
+        },
+        "malformed_response_rate": {
+          "numerator": 0,
+          "denominator": 90,
+          "value": 0.0
+        },
+        "contract_violations": {
+          "numerator": 58,
+          "denominator": 90,
+          "value": 0.6444444444444445
+        },
+        "silent_corruption_rate": {
+          "numerator": 48,
+          "denominator": 90,
+          "value": 0.5333333333333333
+        },
+        "unsafe_acceptance_rate": {
+          "numerator": 5,
+          "denominator": 46,
+          "value": 0.10869565217391304
+        }
+      }
+    },
+    "pass_at_3": {
+      "numerator": 1,
+      "denominator": 5,
+      "value": 0.2
+    },
+    "pass_cubed": {
+      "numerator": 1,
+      "denominator": 5,
+      "value": 0.2
+    }
+  },
+  "per_model": {
+    "pilot|ollama/llama3.2:1b|opencode": {
+      "trial_classes": {
+        "GENUINE": 0,
+        "TOOL_USE": 1,
+        "INFRA": 2
+      },
+      "metrics": null
+    },
+    "pilot|ollama/qwen3:8b|opencode": {
+      "trial_classes": {
+        "GENUINE": 0,
+        "TOOL_USE": 1,
+        "INFRA": 2
+      },
+      "metrics": null
+    },
+    "pilot|openrouter/nvidia/nemotron-3.5-super-vl:free|opencode": {
+      "trial_classes": {
+        "GENUINE": 3,
+        "TOOL_USE": 0,
+        "INFRA": 0
+      },
+      "metrics": {
+        "case_count": 107,
+        "functional_correctness": {
+          "numerator": 60,
+          "denominator": 107,
+          "value": 0.5607476635514018
+        },
+        "schema_compliance": {
+          "numerator": 107,
+          "denominator": 107,
+          "value": 1.0
+        },
+        "numerical_correctness": {
+          "numerator": 55,
+          "denominator": 88,
+          "value": 0.625
+        },
+        "physical_unit_correctness": {
+          "numerator": 126,
+          "denominator": 126,
+          "value": 1.0
+        },
+        "physical_equivalence_correctness": {
+          "numerator": 126,
+          "denominator": 126,
+          "value": 1.0
+        },
+        "physical_integrity_correctness": {
+          "numerator": 74,
+          "denominator": 107,
+          "value": 0.6915887850467289
+        },
+        "semantic_integrity_failures": {
+          "numerator": 0,
+          "denominator": 107,
+          "value": 0.0
+        },
+        "validity_state_correctness": {
+          "numerator": 99,
+          "denominator": 107,
+          "value": 0.9252336448598131
+        },
+        "engineering_decision_correctness": {
+          "numerator": 42,
+          "denominator": 45,
+          "value": 0.9333333333333333
+        },
+        "execution_failures": {
+          "numerator": 0,
+          "denominator": 107,
+          "value": 0.0
+        },
+        "malformed_response_rate": {
+          "numerator": 0,
+          "denominator": 107,
+          "value": 0.0
+        },
+        "contract_violations": {
+          "numerator": 47,
+          "denominator": 107,
+          "value": 0.4392523364485981
+        },
+        "end_to_end_correctness": {
+          "numerator": 0,
+          "denominator": 45,
+          "value": 0.0
+        },
+        "silent_corruption_rate": {
+          "numerator": 41,
+          "denominator": 107,
+          "value": 0.38317757009345793
+        },
+        "unsafe_acceptance_rate": {
+          "numerator": 3,
+          "denominator": 23,
+          "value": 0.13043478260869565
+        },
+        "numerical_error_by_field_unit": {
+          "S01.raw_count [scaled sensor count]": {
+            "field": "raw_count",
+            "task": "S01",
+            "unit": "scaled sensor count",
+            "case_count": 23,
+            "numeric_actual_count": 23,
+            "within_tolerance_count": 23,
+            "mean_absolute_error": "0",
+            "maximum_absolute_error": "0",
+            "maximum_normalized_error": "0",
+            "permitted_tolerance": "0"
+          },
+          "S01.value [scaled sensor count]": {
+            "field": "value",
+            "task": "S01",
+            "unit": "scaled sensor count",
+            "case_count": 23,
+            "numeric_actual_count": 23,
+            "within_tolerance_count": 23,
+            "mean_absolute_error": "0.000",
+            "maximum_absolute_error": "0.000",
+            "maximum_normalized_error": "0",
+            "permitted_tolerance": "0"
+          },
+          "S05.combined_standard_uncertainty [MU (task-defined measurand unit)]": {
+            "field": "combined_standard_uncertainty",
+            "task": "S05",
+            "unit": "MU (task-defined measurand unit)",
+            "case_count": 22,
+            "numeric_actual_count": 22,
+            "within_tolerance_count": 22,
+            "mean_absolute_error": "5.5E-40",
+            "maximum_absolute_error": "3E-39",
+            "maximum_normalized_error": "3E-23",
+            "permitted_tolerance": "1E-16"
+          },
+          "S05.expanded_uncertainty [MU (task-defined measurand unit)]": {
+            "field": "expanded_uncertainty",
+            "task": "S05",
+            "unit": "MU (task-defined measurand unit)",
+            "case_count": 22,
+            "numeric_actual_count": 22,
+            "within_tolerance_count": 22,
+            "mean_absolute_error": "1.681818181818181818181818182E-39",
+            "maximum_absolute_error": "1E-38",
+            "maximum_normalized_error": "1E-22",
+            "permitted_tolerance": "1E-16"
+          },
+          "S05.standard_uncertainties.0 [MU (task-defined measurand unit)]": {
+            "field": "standard_uncertainties.0",
+            "task": "S05",
+            "unit": "MU (task-defined measurand unit)",
+            "case_count": 22,
+            "numeric_actual_count": 22,
+            "within_tolerance_count": 22,
+            "mean_absolute_error": "2.772727272727272727272727273E-40",
+            "maximum_absolute_error": "1E-39",
+            "maximum_normalized_error": "1E-23",
+            "permitted_tolerance": "1E-16"
+          },
+          "S05.standard_uncertainties.1 [MU (task-defined measurand unit)]": {
+            "field": "standard_uncertainties.1",
+            "task": "S05",
+            "unit": "MU (task-defined measurand unit)",
+            "case_count": 20,
+            "numeric_actual_count": 20,
+            "within_tolerance_count": 20,
+            "mean_absolute_error": "0E-41",
+            "maximum_absolute_error": "0E-40",
+            "maximum_normalized_error": "0E-24",
+            "permitted_tolerance": "1E-16"
+          },
+          "S08.conformity_interval.lower [C]": {
+            "field": "conformity_interval.lower",
+            "task": "S08",
+            "unit": "C",
+            "case_count": 32,
+            "numeric_actual_count": 32,
+            "within_tolerance_count": 0,
+            "mean_absolute_error": "0.1612659930203603139300119359",
+            "maximum_absolute_error": "1.000000000000000000000000000",
+            "maximum_normalized_error": "10000000000000000.00000000000",
+            "permitted_tolerance": "1E-16"
+          },
+          "S08.conformity_interval.lower [F]": {
+            "field": "conformity_interval.lower",
+            "task": "S08",
+            "unit": "F",
+            "case_count": 1,
+            "numeric_actual_count": 1,
+            "within_tolerance_count": 0,
+            "mean_absolute_error": "0.1732050807568877293527446342",
+            "maximum_absolute_error": "0.1732050807568877293527446342",
+            "maximum_normalized_error": "1732050807568877.293527446342",
+            "permitted_tolerance": "1E-16"
+          },
+          "S08.conformity_interval.upper [C]": {
+            "field": "conformity_interval.upper",
+            "task": "S08",
+            "unit": "C",
+            "case_count": 32,
+            "numeric_actual_count": 32,
+            "within_tolerance_count": 0,
+            "mean_absolute_error": "0.1612659930203603139300119359",
+            "maximum_absolute_error": "1.000000000000000000000000000",
+            "maximum_normalized_error": "10000000000000000.00000000000",
+            "permitted_tolerance": "1E-16"
+          },
+          "S08.conformity_interval.upper [F]": {
+            "field": "conformity_interval.upper",
+            "task": "S08",
+            "unit": "F",
+            "case_count": 1,
+            "numeric_actual_count": 1,
+            "within_tolerance_count": 0,
+            "mean_absolute_error": "0.1732050807568877293527446342",
+            "maximum_absolute_error": "0.1732050807568877293527446342",
+            "maximum_normalized_error": "1732050807568877.293527446342",
+            "permitted_tolerance": "1E-16"
+          },
+          "S08.corrected_measurement.value [C]": {
+            "field": "corrected_measurement.value",
+            "task": "S08",
+            "unit": "C",
+            "case_count": 40,
+            "numeric_actual_count": 40,
+            "within_tolerance_count": 40,
+            "mean_absolute_error": "0.00",
+            "maximum_absolute_error": "0.0",
+            "maximum_normalized_error": "0",
+            "permitted_tolerance": "0"
+          },
+          "S08.corrected_measurement.value [F]": {
+            "field": "corrected_measurement.value",
+            "task": "S08",
+            "unit": "F",
+            "case_count": 1,
+            "numeric_actual_count": 1,
+            "within_tolerance_count": 1,
+            "mean_absolute_error": "0.0",
+            "maximum_absolute_error": "0.0",
+            "maximum_normalized_error": "0",
+            "permitted_tolerance": "0"
+          },
+          "S08.decoded_measurement.raw_count [register count]": {
+            "field": "decoded_measurement.raw_count",
+            "task": "S08",
+            "unit": "register count",
+            "case_count": 43,
+            "numeric_actual_count": 43,
+            "within_tolerance_count": 43,
+            "mean_absolute_error": "0",
+            "maximum_absolute_error": "0",
+            "maximum_normalized_error": "0",
+            "permitted_tolerance": "0"
+          },
+          "S08.decoded_measurement.value [C]": {
+            "field": "decoded_measurement.value",
+            "task": "S08",
+            "unit": "C",
+            "case_count": 41,
+            "numeric_actual_count": 41,
+            "within_tolerance_count": 41,
+            "mean_absolute_error": "0.00",
+            "maximum_absolute_error": "0",
+            "maximum_normalized_error": "0",
+            "permitted_tolerance": "0"
+          },
+          "S08.decoded_measurement.value [F]": {
+            "field": "decoded_measurement.value",
+            "task": "S08",
+            "unit": "F",
+            "case_count": 1,
+            "numeric_actual_count": 1,
+            "within_tolerance_count": 1,
+            "mean_absolute_error": "0.0",
+            "maximum_absolute_error": "0.0",
+            "maximum_normalized_error": "0",
+            "permitted_tolerance": "0"
+          },
+          "S08.decoded_measurement.value [V]": {
+            "field": "decoded_measurement.value",
+            "task": "S08",
+            "unit": "V",
+            "case_count": 1,
+            "numeric_actual_count": 1,
+            "within_tolerance_count": 1,
+            "mean_absolute_error": "0",
+            "maximum_absolute_error": "0",
+            "maximum_normalized_error": "0",
+            "permitted_tolerance": "0"
+          },
+          "S08.expanded_uncertainty [C]": {
+            "field": "expanded_uncertainty",
+            "task": "S08",
+            "unit": "C",
+            "case_count": 39,
+            "numeric_actual_count": 39,
+            "within_tolerance_count": 39,
+            "mean_absolute_error": "3.677245612820512820512820513E-41",
+            "maximum_absolute_error": "2.035025402E-40",
+            "maximum_normalized_error": "2.035025402E-24",
+            "permitted_tolerance": "1E-16"
+          },
+          "S08.expanded_uncertainty [F]": {
+            "field": "expanded_uncertainty",
+            "task": "S08",
+            "unit": "F",
+            "case_count": 1,
+            "numeric_actual_count": 1,
+            "within_tolerance_count": 1,
+            "mean_absolute_error": "3.894923792E-41",
+            "maximum_absolute_error": "3.894923792E-41",
+            "maximum_normalized_error": "3.894923792E-25",
+            "permitted_tolerance": "1E-16"
+          },
+          "S08.physical_quantity.value [C]": {
+            "field": "physical_quantity.value",
+            "task": "S08",
+            "unit": "C",
+            "case_count": 41,
+            "numeric_actual_count": 41,
+            "within_tolerance_count": 41,
+            "mean_absolute_error": "0.00",
+            "maximum_absolute_error": "0",
+            "maximum_normalized_error": "0",
+            "permitted_tolerance": "0"
+          },
+          "S08.physical_quantity.value [F]": {
+            "field": "physical_quantity.value",
+            "task": "S08",
+            "unit": "F",
+            "case_count": 1,
+            "numeric_actual_count": 1,
+            "within_tolerance_count": 1,
+            "mean_absolute_error": "0",
+            "maximum_absolute_error": "0",
+            "maximum_normalized_error": "0",
+            "permitted_tolerance": "0"
+          },
+          "S08.standard_uncertainty [C]": {
+            "field": "standard_uncertainty",
+            "task": "S08",
+            "unit": "C",
+            "case_count": 39,
+            "numeric_actual_count": 39,
+            "within_tolerance_count": 39,
+            "mean_absolute_error": "2.146315114182051282051282051E-41",
+            "maximum_absolute_error": "1.9999999999E-40",
+            "maximum_normalized_error": "1.9999999999E-24",
+            "permitted_tolerance": "1E-16"
+          },
+          "S08.standard_uncertainty [F]": {
+            "field": "standard_uncertainty",
+            "task": "S08",
+            "unit": "F",
+            "case_count": 1,
+            "numeric_actual_count": 1,
+            "within_tolerance_count": 1,
+            "mean_absolute_error": "1.947461896E-41",
+            "maximum_absolute_error": "1.947461896E-41",
+            "maximum_normalized_error": "1.947461896E-25",
+            "permitted_tolerance": "1E-16"
+          }
+        },
+        "calibration_validity_recall": {
+          "numerator": 35,
+          "denominator": 35,
+          "value": 1.0
+        },
+        "uncertainty_calculation_accuracy": {
+          "numerator": 62,
+          "denominator": 62,
+          "value": 1.0
+        },
+        "false_rejection_rate": {
+          "numerator": 0,
+          "denominator": 22,
+          "value": 0.0
+        },
+        "boundary_decision_accuracy": {
+          "numerator": 9,
+          "denominator": 9,
+          "value": 1.0
+        },
+        "macro_average_task_accuracy": 0.6458333333333334,
+        "per_task": {
+          "S01": {
+            "functional_correctness": {
+              "numerator": 30,
+              "denominator": 32,
+              "value": 0.9375
+            },
+            "schema_compliance": {
+              "numerator": 32,
+              "denominator": 32,
+              "value": 1.0
+            },
+            "numerical_correctness": {
+              "numerator": 23,
+              "denominator": 23,
+              "value": 1.0
+            },
+            "physical_unit_correctness": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "physical_integrity_correctness": {
+              "numerator": 32,
+              "denominator": 32,
+              "value": 1.0
+            },
+            "semantic_integrity_failures": {
+              "numerator": 0,
+              "denominator": 32,
+              "value": 0.0
+            },
+            "validity_state_correctness": {
+              "numerator": 32,
+              "denominator": 32,
+              "value": 1.0
+            },
+            "engineering_decision_correctness": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "execution_failures": {
+              "numerator": 0,
+              "denominator": 32,
+              "value": 0.0
+            },
+            "malformed_response_rate": {
+              "numerator": 0,
+              "denominator": 32,
+              "value": 0.0
+            },
+            "contract_violations": {
+              "numerator": 2,
+              "denominator": 32,
+              "value": 0.0625
+            },
+            "silent_corruption_rate": {
+              "numerator": 0,
+              "denominator": 32,
+              "value": 0.0
+            },
+            "unsafe_acceptance_rate": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            }
+          },
+          "S05": {
+            "functional_correctness": {
+              "numerator": 30,
+              "denominator": 30,
+              "value": 1.0
+            },
+            "schema_compliance": {
+              "numerator": 30,
+              "denominator": 30,
+              "value": 1.0
+            },
+            "numerical_correctness": {
+              "numerator": 22,
+              "denominator": 22,
+              "value": 1.0
+            },
+            "physical_unit_correctness": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "physical_integrity_correctness": {
+              "numerator": 30,
+              "denominator": 30,
+              "value": 1.0
+            },
+            "semantic_integrity_failures": {
+              "numerator": 0,
+              "denominator": 30,
+              "value": 0.0
+            },
+            "validity_state_correctness": {
+              "numerator": 30,
+              "denominator": 30,
+              "value": 1.0
+            },
+            "engineering_decision_correctness": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "execution_failures": {
+              "numerator": 0,
+              "denominator": 30,
+              "value": 0.0
+            },
+            "malformed_response_rate": {
+              "numerator": 0,
+              "denominator": 30,
+              "value": 0.0
+            },
+            "contract_violations": {
+              "numerator": 0,
+              "denominator": 30,
+              "value": 0.0
+            },
+            "silent_corruption_rate": {
+              "numerator": 0,
+              "denominator": 30,
+              "value": 0.0
+            },
+            "unsafe_acceptance_rate": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            }
+          },
+          "S08": {
+            "functional_correctness": {
+              "numerator": 0,
+              "denominator": 45,
+              "value": 0.0
+            },
+            "schema_compliance": {
+              "numerator": 45,
+              "denominator": 45,
+              "value": 1.0
+            },
+            "numerical_correctness": {
+              "numerator": 10,
+              "denominator": 43,
+              "value": 0.23255813953488372
+            },
+            "physical_unit_correctness": {
+              "numerator": 43,
+              "denominator": 43,
+              "value": 1.0
+            },
+            "physical_integrity_correctness": {
+              "numerator": 12,
+              "denominator": 45,
+              "value": 0.26666666666666666
+            },
+            "semantic_integrity_failures": {
+              "numerator": 0,
+              "denominator": 45,
+              "value": 0.0
+            },
+            "validity_state_correctness": {
+              "numerator": 37,
+              "denominator": 45,
+              "value": 0.8222222222222222
+            },
+            "engineering_decision_correctness": {
+              "numerator": 42,
+              "denominator": 45,
+              "value": 0.9333333333333333
+            },
+            "execution_failures": {
+              "numerator": 0,
+              "denominator": 45,
+              "value": 0.0
+            },
+            "malformed_response_rate": {
+              "numerator": 0,
+              "denominator": 45,
+              "value": 0.0
+            },
+            "contract_violations": {
+              "numerator": 45,
+              "denominator": 45,
+              "value": 1.0
+            },
+            "silent_corruption_rate": {
+              "numerator": 41,
+              "denominator": 45,
+              "value": 0.9111111111111111
+            },
+            "unsafe_acceptance_rate": {
+              "numerator": 3,
+              "denominator": 23,
+              "value": 0.13043478260869565
+            }
+          }
+        },
+        "pass_at_3": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "pass_cubed": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        }
+      }
+    },
+    "pilot-history|ollama/llama3.2:1b|opencode": {
+      "trial_classes": {
+        "GENUINE": 0,
+        "TOOL_USE": 7,
+        "INFRA": 1
+      },
+      "metrics": null
+    },
+    "pilot-history|ollama/qwen3:8b|opencode": {
+      "trial_classes": {
+        "GENUINE": 2,
+        "TOOL_USE": 6,
+        "INFRA": 3
+      },
+      "metrics": {
+        "case_count": 60,
+        "functional_correctness": {
+          "numerator": 1,
+          "denominator": 60,
+          "value": 0.016666666666666666
+        },
+        "schema_compliance": {
+          "numerator": 30,
+          "denominator": 60,
+          "value": 0.5
+        },
+        "numerical_correctness": {
+          "numerator": 0,
+          "denominator": 44,
+          "value": 0.0
+        },
+        "physical_unit_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "physical_equivalence_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "physical_integrity_correctness": {
+          "numerator": 16,
+          "denominator": 60,
+          "value": 0.26666666666666666
+        },
+        "semantic_integrity_failures": {
+          "numerator": 0,
+          "denominator": 60,
+          "value": 0.0
+        },
+        "validity_state_correctness": {
+          "numerator": 8,
+          "denominator": 60,
+          "value": 0.13333333333333333
+        },
+        "engineering_decision_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "execution_failures": {
+          "numerator": 30,
+          "denominator": 60,
+          "value": 0.5
+        },
+        "malformed_response_rate": {
+          "numerator": 0,
+          "denominator": 60,
+          "value": 0.0
+        },
+        "contract_violations": {
+          "numerator": 59,
+          "denominator": 60,
+          "value": 0.9833333333333333
+        },
+        "end_to_end_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "silent_corruption_rate": {
+          "numerator": 0,
+          "denominator": 60,
+          "value": 0.0
+        },
+        "unsafe_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "numerical_error_by_field_unit": {
+          "S05.combined_standard_uncertainty [MU (task-defined measurand unit)]": {
+            "field": "combined_standard_uncertainty",
+            "task": "S05",
+            "unit": "MU (task-defined measurand unit)",
+            "case_count": 44,
+            "numeric_actual_count": 0,
+            "within_tolerance_count": 0,
+            "mean_absolute_error": null,
+            "maximum_absolute_error": null,
+            "maximum_normalized_error": null,
+            "permitted_tolerance": "1E-16"
+          },
+          "S05.expanded_uncertainty [MU (task-defined measurand unit)]": {
+            "field": "expanded_uncertainty",
+            "task": "S05",
+            "unit": "MU (task-defined measurand unit)",
+            "case_count": 44,
+            "numeric_actual_count": 0,
+            "within_tolerance_count": 0,
+            "mean_absolute_error": null,
+            "maximum_absolute_error": null,
+            "maximum_normalized_error": null,
+            "permitted_tolerance": "1E-16"
+          },
+          "S05.standard_uncertainties.0 [MU (task-defined measurand unit)]": {
+            "field": "standard_uncertainties.0",
+            "task": "S05",
+            "unit": "MU (task-defined measurand unit)",
+            "case_count": 44,
+            "numeric_actual_count": 0,
+            "within_tolerance_count": 0,
+            "mean_absolute_error": null,
+            "maximum_absolute_error": null,
+            "maximum_normalized_error": null,
+            "permitted_tolerance": "1E-16"
+          },
+          "S05.standard_uncertainties.1 [MU (task-defined measurand unit)]": {
+            "field": "standard_uncertainties.1",
+            "task": "S05",
+            "unit": "MU (task-defined measurand unit)",
+            "case_count": 40,
+            "numeric_actual_count": 0,
+            "within_tolerance_count": 0,
+            "mean_absolute_error": null,
+            "maximum_absolute_error": null,
+            "maximum_normalized_error": null,
+            "permitted_tolerance": "1E-16"
+          }
+        },
+        "calibration_validity_recall": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "uncertainty_calculation_accuracy": {
+          "numerator": 0,
+          "denominator": 44,
+          "value": 0.0
+        },
+        "false_rejection_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "boundary_decision_accuracy": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "macro_average_task_accuracy": 0.016666666666666666,
+        "per_task": {
+          "S05": {
+            "functional_correctness": {
+              "numerator": 1,
+              "denominator": 60,
+              "value": 0.016666666666666666
+            },
+            "schema_compliance": {
+              "numerator": 30,
+              "denominator": 60,
+              "value": 0.5
+            },
+            "numerical_correctness": {
+              "numerator": 0,
+              "denominator": 44,
+              "value": 0.0
+            },
+            "physical_unit_correctness": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "physical_integrity_correctness": {
+              "numerator": 16,
+              "denominator": 60,
+              "value": 0.26666666666666666
+            },
+            "semantic_integrity_failures": {
+              "numerator": 0,
+              "denominator": 60,
+              "value": 0.0
+            },
+            "validity_state_correctness": {
+              "numerator": 8,
+              "denominator": 60,
+              "value": 0.13333333333333333
+            },
+            "engineering_decision_correctness": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "execution_failures": {
+              "numerator": 30,
+              "denominator": 60,
+              "value": 0.5
+            },
+            "malformed_response_rate": {
+              "numerator": 0,
+              "denominator": 60,
+              "value": 0.0
+            },
+            "contract_violations": {
+              "numerator": 59,
+              "denominator": 60,
+              "value": 0.9833333333333333
+            },
+            "silent_corruption_rate": {
+              "numerator": 0,
+              "denominator": 60,
+              "value": 0.0
+            },
+            "unsafe_acceptance_rate": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            }
+          }
+        },
+        "pass_at_3": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "pass_cubed": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        }
+      }
+    },
+    "pilot-history|openrouter/nvidia/nemotron-3.5-super-vl:free|opencode": {
+      "trial_classes": {
+        "GENUINE": 4,
+        "TOOL_USE": 0,
+        "INFRA": 1
+      },
+      "metrics": {
+        "case_count": 139,
+        "functional_correctness": {
+          "numerator": 124,
+          "denominator": 139,
+          "value": 0.8920863309352518
+        },
+        "schema_compliance": {
+          "numerator": 139,
+          "denominator": 139,
+          "value": 1.0
+        },
+        "numerical_correctness": {
+          "numerator": 111,
+          "denominator": 111,
+          "value": 1.0
+        },
+        "physical_unit_correctness": {
+          "numerator": 126,
+          "denominator": 126,
+          "value": 1.0
+        },
+        "physical_equivalence_correctness": {
+          "numerator": 126,
+          "denominator": 126,
+          "value": 1.0
+        },
+        "physical_integrity_correctness": {
+          "numerator": 139,
+          "denominator": 139,
+          "value": 1.0
+        },
+        "semantic_integrity_failures": {
+          "numerator": 0,
+          "denominator": 139,
+          "value": 0.0
+        },
+        "validity_state_correctness": {
+          "numerator": 132,
+          "denominator": 139,
+          "value": 0.9496402877697842
+        },
+        "engineering_decision_correctness": {
+          "numerator": 43,
+          "denominator": 45,
+          "value": 0.9555555555555556
+        },
+        "execution_failures": {
+          "numerator": 0,
+          "denominator": 139,
+          "value": 0.0
+        },
+        "malformed_response_rate": {
+          "numerator": 0,
+          "denominator": 139,
+          "value": 0.0
+        },
+        "contract_violations": {
+          "numerator": 15,
+          "denominator": 139,
+          "value": 0.1079136690647482
+        },
+        "end_to_end_correctness": {
+          "numerator": 32,
+          "denominator": 45,
+          "value": 0.7111111111111111
+        },
+        "silent_corruption_rate": {
+          "numerator": 7,
+          "denominator": 139,
+          "value": 0.050359712230215826
+        },
+        "unsafe_acceptance_rate": {
+          "numerator": 2,
+          "denominator": 23,
+          "value": 0.08695652173913043
+        },
+        "numerical_error_by_field_unit": {
+          "S01.raw_count [scaled sensor count]": {
+            "field": "raw_count",
+            "task": "S01",
+            "unit": "scaled sensor count",
+            "case_count": 46,
+            "numeric_actual_count": 46,
+            "within_tolerance_count": 46,
+            "mean_absolute_error": "0",
+            "maximum_absolute_error": "0",
+            "maximum_normalized_error": "0",
+            "permitted_tolerance": "0"
+          },
+          "S01.value [scaled sensor count]": {
+            "field": "value",
+            "task": "S01",
+            "unit": "scaled sensor count",
+            "case_count": 46,
+            "numeric_actual_count": 46,
+            "within_tolerance_count": 46,
+            "mean_absolute_error": "0.000",
+            "maximum_absolute_error": "0.000",
+            "maximum_normalized_error": "0",
+            "permitted_tolerance": "0"
+          },
+          "S05.combined_standard_uncertainty [MU (task-defined measurand unit)]": {
+            "field": "combined_standard_uncertainty",
+            "task": "S05",
+            "unit": "MU (task-defined measurand unit)",
+            "case_count": 22,
+            "numeric_actual_count": 22,
+            "within_tolerance_count": 22,
+            "mean_absolute_error": "4.136363636363636363636363636E-40",
+            "maximum_absolute_error": "3E-39",
+            "maximum_normalized_error": "3E-23",
+            "permitted_tolerance": "1E-16"
+          },
+          "S05.expanded_uncertainty [MU (task-defined measurand unit)]": {
+            "field": "expanded_uncertainty",
+            "task": "S05",
+            "unit": "MU (task-defined measurand unit)",
+            "case_count": 22,
+            "numeric_actual_count": 22,
+            "within_tolerance_count": 22,
+            "mean_absolute_error": "1.181818181818181818181818182E-39",
+            "maximum_absolute_error": "1E-38",
+            "maximum_normalized_error": "1E-22",
+            "permitted_tolerance": "1E-16"
+          },
+          "S05.standard_uncertainties.0 [MU (task-defined measurand unit)]": {
+            "field": "standard_uncertainties.0",
+            "task": "S05",
+            "unit": "MU (task-defined measurand unit)",
+            "case_count": 22,
+            "numeric_actual_count": 22,
+            "within_tolerance_count": 22,
+            "mean_absolute_error": "2.772727272727272727272727273E-40",
+            "maximum_absolute_error": "1E-39",
+            "maximum_normalized_error": "1E-23",
+            "permitted_tolerance": "1E-16"
+          },
+          "S05.standard_uncertainties.1 [MU (task-defined measurand unit)]": {
+            "field": "standard_uncertainties.1",
+            "task": "S05",
+            "unit": "MU (task-defined measurand unit)",
+            "case_count": 20,
+            "numeric_actual_count": 20,
+            "within_tolerance_count": 20,
+            "mean_absolute_error": "0E-41",
+            "maximum_absolute_error": "0E-40",
+            "maximum_normalized_error": "0E-24",
+            "permitted_tolerance": "1E-16"
+          },
+          "S08.conformity_interval.lower [C]": {
+            "field": "conformity_interval.lower",
+            "task": "S08",
+            "unit": "C",
+            "case_count": 32,
+            "numeric_actual_count": 32,
+            "within_tolerance_count": 32,
+            "mean_absolute_error": "3.718508565711775992375E-41",
+            "maximum_absolute_error": "2.035025402537520372E-40",
+            "maximum_normalized_error": "2.035025402537520372E-24",
+            "permitted_tolerance": "1E-16"
+          },
+          "S08.conformity_interval.lower [F]": {
+            "field": "conformity_interval.lower",
+            "task": "S08",
+            "unit": "F",
+            "case_count": 1,
+            "numeric_actual_count": 1,
+            "within_tolerance_count": 1,
+            "mean_absolute_error": "3.89492379238743888E-41",
+            "maximum_absolute_error": "3.89492379238743888E-41",
+            "maximum_normalized_error": "3.89492379238743888E-25",
+            "permitted_tolerance": "1E-16"
+          },
+          "S08.conformity_interval.upper [C]": {
+            "field": "conformity_interval.upper",
+            "task": "S08",
+            "unit": "C",
+            "case_count": 32,
+            "numeric_actual_count": 32,
+            "within_tolerance_count": 32,
+            "mean_absolute_error": "3.718508565711775992375E-41",
+            "maximum_absolute_error": "2.035025402537520372E-40",
+            "maximum_normalized_error": "2.035025402537520372E-24",
+            "permitted_tolerance": "1E-16"
+          },
+          "S08.conformity_interval.upper [F]": {
+            "field": "conformity_interval.upper",
+            "task": "S08",
+            "unit": "F",
+            "case_count": 1,
+            "numeric_actual_count": 1,
+            "within_tolerance_count": 1,
+            "mean_absolute_error": "3.89492379238743888E-41",
+            "maximum_absolute_error": "3.89492379238743888E-41",
+            "maximum_normalized_error": "3.89492379238743888E-25",
+            "permitted_tolerance": "1E-16"
+          },
+          "S08.corrected_measurement.value [C]": {
+            "field": "corrected_measurement.value",
+            "task": "S08",
+            "unit": "C",
+            "case_count": 40,
+            "numeric_actual_count": 40,
+            "within_tolerance_count": 40,
+            "mean_absolute_error": "0.00",
+            "maximum_absolute_error": "0.0",
+            "maximum_normalized_error": "0",
+            "permitted_tolerance": "0"
+          },
+          "S08.corrected_measurement.value [F]": {
+            "field": "corrected_measurement.value",
+            "task": "S08",
+            "unit": "F",
+            "case_count": 1,
+            "numeric_actual_count": 1,
+            "within_tolerance_count": 1,
+            "mean_absolute_error": "0.0",
+            "maximum_absolute_error": "0.0",
+            "maximum_normalized_error": "0",
+            "permitted_tolerance": "0"
+          },
+          "S08.decoded_measurement.raw_count [register count]": {
+            "field": "decoded_measurement.raw_count",
+            "task": "S08",
+            "unit": "register count",
+            "case_count": 43,
+            "numeric_actual_count": 43,
+            "within_tolerance_count": 43,
+            "mean_absolute_error": "0",
+            "maximum_absolute_error": "0",
+            "maximum_normalized_error": "0",
+            "permitted_tolerance": "0"
+          },
+          "S08.decoded_measurement.value [C]": {
+            "field": "decoded_measurement.value",
+            "task": "S08",
+            "unit": "C",
+            "case_count": 41,
+            "numeric_actual_count": 41,
+            "within_tolerance_count": 41,
+            "mean_absolute_error": "0.00",
+            "maximum_absolute_error": "0",
+            "maximum_normalized_error": "0",
+            "permitted_tolerance": "0"
+          },
+          "S08.decoded_measurement.value [F]": {
+            "field": "decoded_measurement.value",
+            "task": "S08",
+            "unit": "F",
+            "case_count": 1,
+            "numeric_actual_count": 1,
+            "within_tolerance_count": 1,
+            "mean_absolute_error": "0.0",
+            "maximum_absolute_error": "0.0",
+            "maximum_normalized_error": "0",
+            "permitted_tolerance": "0"
+          },
+          "S08.decoded_measurement.value [V]": {
+            "field": "decoded_measurement.value",
+            "task": "S08",
+            "unit": "V",
+            "case_count": 1,
+            "numeric_actual_count": 1,
+            "within_tolerance_count": 1,
+            "mean_absolute_error": "0",
+            "maximum_absolute_error": "0",
+            "maximum_normalized_error": "0",
+            "permitted_tolerance": "0"
+          },
+          "S08.expanded_uncertainty [C]": {
+            "field": "expanded_uncertainty",
+            "task": "S08",
+            "unit": "C",
+            "case_count": 39,
+            "numeric_actual_count": 39,
+            "within_tolerance_count": 39,
+            "mean_absolute_error": "3.677245613672489135969230769E-41",
+            "maximum_absolute_error": "2.0350254025375203720E-40",
+            "maximum_normalized_error": "2.0350254025375203720E-24",
+            "permitted_tolerance": "1E-16"
+          },
+          "S08.expanded_uncertainty [F]": {
+            "field": "expanded_uncertainty",
+            "task": "S08",
+            "unit": "F",
+            "case_count": 1,
+            "numeric_actual_count": 1,
+            "within_tolerance_count": 1,
+            "mean_absolute_error": "3.8949237923874388840E-41",
+            "maximum_absolute_error": "3.8949237923874388840E-41",
+            "maximum_normalized_error": "3.8949237923874388840E-25",
+            "permitted_tolerance": "1E-16"
+          },
+          "S08.physical_quantity.value [C]": {
+            "field": "physical_quantity.value",
+            "task": "S08",
+            "unit": "C",
+            "case_count": 41,
+            "numeric_actual_count": 41,
+            "within_tolerance_count": 41,
+            "mean_absolute_error": "0.00",
+            "maximum_absolute_error": "0",
+            "maximum_normalized_error": "0",
+            "permitted_tolerance": "0"
+          },
+          "S08.physical_quantity.value [F]": {
+            "field": "physical_quantity.value",
+            "task": "S08",
+            "unit": "F",
+            "case_count": 1,
+            "numeric_actual_count": 1,
+            "within_tolerance_count": 1,
+            "mean_absolute_error": "0",
+            "maximum_absolute_error": "0",
+            "maximum_normalized_error": "0",
+            "permitted_tolerance": "0"
+          },
+          "S08.standard_uncertainty [C]": {
+            "field": "standard_uncertainty",
+            "task": "S08",
+            "unit": "C",
+            "case_count": 39,
+            "numeric_actual_count": 39,
+            "within_tolerance_count": 39,
+            "mean_absolute_error": "2.146315114528552260292051282E-41",
+            "maximum_absolute_error": "1.99999999999999999998E-40",
+            "maximum_normalized_error": "1.99999999999999999998E-24",
+            "permitted_tolerance": "1E-16"
+          },
+          "S08.standard_uncertainty [F]": {
+            "field": "standard_uncertainty",
+            "task": "S08",
+            "unit": "F",
+            "case_count": 1,
+            "numeric_actual_count": 1,
+            "within_tolerance_count": 1,
+            "mean_absolute_error": "1.9474618961937194420E-41",
+            "maximum_absolute_error": "1.9474618961937194420E-41",
+            "maximum_normalized_error": "1.9474618961937194420E-25",
+            "permitted_tolerance": "1E-16"
+          }
+        },
+        "calibration_validity_recall": {
+          "numerator": 35,
+          "denominator": 35,
+          "value": 1.0
+        },
+        "uncertainty_calculation_accuracy": {
+          "numerator": 62,
+          "denominator": 62,
+          "value": 1.0
+        },
+        "false_rejection_rate": {
+          "numerator": 0,
+          "denominator": 22,
+          "value": 0.0
+        },
+        "boundary_decision_accuracy": {
+          "numerator": 9,
+          "denominator": 9,
+          "value": 1.0
+        },
+        "macro_average_task_accuracy": 0.893287037037037,
+        "per_task": {
+          "S01": {
+            "functional_correctness": {
+              "numerator": 62,
+              "denominator": 64,
+              "value": 0.96875
+            },
+            "schema_compliance": {
+              "numerator": 64,
+              "denominator": 64,
+              "value": 1.0
+            },
+            "numerical_correctness": {
+              "numerator": 46,
+              "denominator": 46,
+              "value": 1.0
+            },
+            "physical_unit_correctness": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "physical_integrity_correctness": {
+              "numerator": 64,
+              "denominator": 64,
+              "value": 1.0
+            },
+            "semantic_integrity_failures": {
+              "numerator": 0,
+              "denominator": 64,
+              "value": 0.0
+            },
+            "validity_state_correctness": {
+              "numerator": 64,
+              "denominator": 64,
+              "value": 1.0
+            },
+            "engineering_decision_correctness": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "execution_failures": {
+              "numerator": 0,
+              "denominator": 64,
+              "value": 0.0
+            },
+            "malformed_response_rate": {
+              "numerator": 0,
+              "denominator": 64,
+              "value": 0.0
+            },
+            "contract_violations": {
+              "numerator": 2,
+              "denominator": 64,
+              "value": 0.03125
+            },
+            "silent_corruption_rate": {
+              "numerator": 0,
+              "denominator": 64,
+              "value": 0.0
+            },
+            "unsafe_acceptance_rate": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            }
+          },
+          "S05": {
+            "functional_correctness": {
+              "numerator": 30,
+              "denominator": 30,
+              "value": 1.0
+            },
+            "schema_compliance": {
+              "numerator": 30,
+              "denominator": 30,
+              "value": 1.0
+            },
+            "numerical_correctness": {
+              "numerator": 22,
+              "denominator": 22,
+              "value": 1.0
+            },
+            "physical_unit_correctness": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "physical_integrity_correctness": {
+              "numerator": 30,
+              "denominator": 30,
+              "value": 1.0
+            },
+            "semantic_integrity_failures": {
+              "numerator": 0,
+              "denominator": 30,
+              "value": 0.0
+            },
+            "validity_state_correctness": {
+              "numerator": 30,
+              "denominator": 30,
+              "value": 1.0
+            },
+            "engineering_decision_correctness": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "execution_failures": {
+              "numerator": 0,
+              "denominator": 30,
+              "value": 0.0
+            },
+            "malformed_response_rate": {
+              "numerator": 0,
+              "denominator": 30,
+              "value": 0.0
+            },
+            "contract_violations": {
+              "numerator": 0,
+              "denominator": 30,
+              "value": 0.0
+            },
+            "silent_corruption_rate": {
+              "numerator": 0,
+              "denominator": 30,
+              "value": 0.0
+            },
+            "unsafe_acceptance_rate": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            }
+          },
+          "S08": {
+            "functional_correctness": {
+              "numerator": 32,
+              "denominator": 45,
+              "value": 0.7111111111111111
+            },
+            "schema_compliance": {
+              "numerator": 45,
+              "denominator": 45,
+              "value": 1.0
+            },
+            "numerical_correctness": {
+              "numerator": 43,
+              "denominator": 43,
+              "value": 1.0
+            },
+            "physical_unit_correctness": {
+              "numerator": 43,
+              "denominator": 43,
+              "value": 1.0
+            },
+            "physical_integrity_correctness": {
+              "numerator": 45,
+              "denominator": 45,
+              "value": 1.0
+            },
+            "semantic_integrity_failures": {
+              "numerator": 0,
+              "denominator": 45,
+              "value": 0.0
+            },
+            "validity_state_correctness": {
+              "numerator": 38,
+              "denominator": 45,
+              "value": 0.8444444444444444
+            },
+            "engineering_decision_correctness": {
+              "numerator": 43,
+              "denominator": 45,
+              "value": 0.9555555555555556
+            },
+            "execution_failures": {
+              "numerator": 0,
+              "denominator": 45,
+              "value": 0.0
+            },
+            "malformed_response_rate": {
+              "numerator": 0,
+              "denominator": 45,
+              "value": 0.0
+            },
+            "contract_violations": {
+              "numerator": 13,
+              "denominator": 45,
+              "value": 0.28888888888888886
+            },
+            "silent_corruption_rate": {
+              "numerator": 7,
+              "denominator": 45,
+              "value": 0.15555555555555556
+            },
+            "unsafe_acceptance_rate": {
+              "numerator": 2,
+              "denominator": 23,
+              "value": 0.08695652173913043
+            }
+          }
+        },
+        "pass_at_3": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "pass_cubed": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        }
+      }
+    },
+    "full|ollama/qwen3:8b|opencode": {
+      "trial_classes": {
+        "GENUINE": 0,
+        "TOOL_USE": 18,
+        "INFRA": 6
+      },
+      "metrics": null
+    },
+    "full|ollama/llama3.2:1b|opencode": {
+      "trial_classes": {
+        "GENUINE": 0,
+        "TOOL_USE": 24,
+        "INFRA": 0
+      },
+      "metrics": null
+    },
+    "full|openrouter/nvidia/nemotron-3.5-super-vl:free|opencode": {
+      "trial_classes": {
+        "GENUINE": 7,
+        "TOOL_USE": 0,
+        "INFRA": 0
+      },
+      "metrics": {
+        "case_count": 216,
+        "functional_correctness": {
+          "numerator": 211,
+          "denominator": 216,
+          "value": 0.9768518518518519
+        },
+        "schema_compliance": {
+          "numerator": 216,
+          "denominator": 216,
+          "value": 1.0
+        },
+        "numerical_correctness": {
+          "numerator": 172,
+          "denominator": 172,
+          "value": 1.0
+        },
+        "physical_unit_correctness": {
+          "numerator": 78,
+          "denominator": 78,
+          "value": 1.0
+        },
+        "physical_equivalence_correctness": {
+          "numerator": 78,
+          "denominator": 78,
+          "value": 1.0
+        },
+        "physical_integrity_correctness": {
+          "numerator": 216,
+          "denominator": 216,
+          "value": 1.0
+        },
+        "semantic_integrity_failures": {
+          "numerator": 0,
+          "denominator": 216,
+          "value": 0.0
+        },
+        "validity_state_correctness": {
+          "numerator": 216,
+          "denominator": 216,
+          "value": 1.0
+        },
+        "engineering_decision_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "execution_failures": {
+          "numerator": 0,
+          "denominator": 216,
+          "value": 0.0
+        },
+        "malformed_response_rate": {
+          "numerator": 0,
+          "denominator": 216,
+          "value": 0.0
+        },
+        "contract_violations": {
+          "numerator": 5,
+          "denominator": 216,
+          "value": 0.023148148148148147
+        },
+        "end_to_end_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "silent_corruption_rate": {
+          "numerator": 0,
+          "denominator": 216,
+          "value": 0.0
+        },
+        "unsafe_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "numerical_error_by_field_unit": {
+          "S01.raw_count [scaled sensor count]": {
+            "field": "raw_count",
+            "task": "S01",
+            "unit": "scaled sensor count",
+            "case_count": 69,
+            "numeric_actual_count": 69,
+            "within_tolerance_count": 69,
+            "mean_absolute_error": "0",
+            "maximum_absolute_error": "0",
+            "maximum_normalized_error": "0",
+            "permitted_tolerance": "0"
+          },
+          "S01.value [scaled sensor count]": {
+            "field": "value",
+            "task": "S01",
+            "unit": "scaled sensor count",
+            "case_count": 69,
+            "numeric_actual_count": 69,
+            "within_tolerance_count": 69,
+            "mean_absolute_error": "0.000",
+            "maximum_absolute_error": "0.000",
+            "maximum_normalized_error": "0",
+            "permitted_tolerance": "0"
+          },
+          "S02.value [C]": {
+            "field": "value",
+            "task": "S02",
+            "unit": "C",
+            "case_count": 18,
+            "numeric_actual_count": 18,
+            "within_tolerance_count": 18,
+            "mean_absolute_error": "0.00000",
+            "maximum_absolute_error": "0.00000",
+            "maximum_normalized_error": "0",
+            "permitted_tolerance": "0"
+          },
+          "S02.value [F]": {
+            "field": "value",
+            "task": "S02",
+            "unit": "F",
+            "case_count": 6,
+            "numeric_actual_count": 6,
+            "within_tolerance_count": 6,
+            "mean_absolute_error": "0.00000",
+            "maximum_absolute_error": "0.00000",
+            "maximum_normalized_error": "0",
+            "permitted_tolerance": "0"
+          },
+          "S02.value [K]": {
+            "field": "value",
+            "task": "S02",
+            "unit": "K",
+            "case_count": 6,
+            "numeric_actual_count": 6,
+            "within_tolerance_count": 6,
+            "mean_absolute_error": "0.00000",
+            "maximum_absolute_error": "0.00000",
+            "maximum_normalized_error": "0",
+            "permitted_tolerance": "0"
+          },
+          "S02.value [Pa]": {
+            "field": "value",
+            "task": "S02",
+            "unit": "Pa",
+            "case_count": 12,
+            "numeric_actual_count": 12,
+            "within_tolerance_count": 12,
+            "mean_absolute_error": "0.00000",
+            "maximum_absolute_error": "0.00000",
+            "maximum_normalized_error": "0",
+            "permitted_tolerance": "0"
+          },
+          "S02.value [V]": {
+            "field": "value",
+            "task": "S02",
+            "unit": "V",
+            "case_count": 15,
+            "numeric_actual_count": 15,
+            "within_tolerance_count": 15,
+            "mean_absolute_error": "0.00000",
+            "maximum_absolute_error": "0.00000",
+            "maximum_normalized_error": "0",
+            "permitted_tolerance": "0"
+          },
+          "S02.value [bar]": {
+            "field": "value",
+            "task": "S02",
+            "unit": "bar",
+            "case_count": 6,
+            "numeric_actual_count": 6,
+            "within_tolerance_count": 6,
+            "mean_absolute_error": "0.00000",
+            "maximum_absolute_error": "0.00000",
+            "maximum_normalized_error": "0",
+            "permitted_tolerance": "0"
+          },
+          "S02.value [kPa]": {
+            "field": "value",
+            "task": "S02",
+            "unit": "kPa",
+            "case_count": 9,
+            "numeric_actual_count": 9,
+            "within_tolerance_count": 9,
+            "mean_absolute_error": "0.00000",
+            "maximum_absolute_error": "0.00000",
+            "maximum_normalized_error": "0",
+            "permitted_tolerance": "0"
+          },
+          "S02.value [mV]": {
+            "field": "value",
+            "task": "S02",
+            "unit": "mV",
+            "case_count": 6,
+            "numeric_actual_count": 6,
+            "within_tolerance_count": 6,
+            "mean_absolute_error": "0.00000",
+            "maximum_absolute_error": "0.00000",
+            "maximum_normalized_error": "0",
+            "permitted_tolerance": "0"
+          },
+          "S03.corrected_value [MU (task-defined measurand unit)]": {
+            "field": "corrected_value",
+            "task": "S03",
+            "unit": "MU (task-defined measurand unit)",
+            "case_count": 25,
+            "numeric_actual_count": 25,
+            "within_tolerance_count": 25,
+            "mean_absolute_error": "0.0000",
+            "maximum_absolute_error": "0.0000",
+            "maximum_normalized_error": "0",
+            "permitted_tolerance": "0"
+          }
+        },
+        "calibration_validity_recall": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "uncertainty_calculation_accuracy": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "false_rejection_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "boundary_decision_accuracy": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "macro_average_task_accuracy": 0.9826388888888888,
+        "per_task": {
+          "S01": {
+            "functional_correctness": {
+              "numerator": 91,
+              "denominator": 96,
+              "value": 0.9479166666666666
+            },
+            "schema_compliance": {
+              "numerator": 96,
+              "denominator": 96,
+              "value": 1.0
+            },
+            "numerical_correctness": {
+              "numerator": 69,
+              "denominator": 69,
+              "value": 1.0
+            },
+            "physical_unit_correctness": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "physical_integrity_correctness": {
+              "numerator": 96,
+              "denominator": 96,
+              "value": 1.0
+            },
+            "semantic_integrity_failures": {
+              "numerator": 0,
+              "denominator": 96,
+              "value": 0.0
+            },
+            "validity_state_correctness": {
+              "numerator": 96,
+              "denominator": 96,
+              "value": 1.0
+            },
+            "engineering_decision_correctness": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "execution_failures": {
+              "numerator": 0,
+              "denominator": 96,
+              "value": 0.0
+            },
+            "malformed_response_rate": {
+              "numerator": 0,
+              "denominator": 96,
+              "value": 0.0
+            },
+            "contract_violations": {
+              "numerator": 5,
+              "denominator": 96,
+              "value": 0.052083333333333336
+            },
+            "silent_corruption_rate": {
+              "numerator": 0,
+              "denominator": 96,
+              "value": 0.0
+            },
+            "unsafe_acceptance_rate": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            }
+          },
+          "S02": {
+            "functional_correctness": {
+              "numerator": 90,
+              "denominator": 90,
+              "value": 1.0
+            },
+            "schema_compliance": {
+              "numerator": 90,
+              "denominator": 90,
+              "value": 1.0
+            },
+            "numerical_correctness": {
+              "numerator": 78,
+              "denominator": 78,
+              "value": 1.0
+            },
+            "physical_unit_correctness": {
+              "numerator": 78,
+              "denominator": 78,
+              "value": 1.0
+            },
+            "physical_integrity_correctness": {
+              "numerator": 90,
+              "denominator": 90,
+              "value": 1.0
+            },
+            "semantic_integrity_failures": {
+              "numerator": 0,
+              "denominator": 90,
+              "value": 0.0
+            },
+            "validity_state_correctness": {
+              "numerator": 90,
+              "denominator": 90,
+              "value": 1.0
+            },
+            "engineering_decision_correctness": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "execution_failures": {
+              "numerator": 0,
+              "denominator": 90,
+              "value": 0.0
+            },
+            "malformed_response_rate": {
+              "numerator": 0,
+              "denominator": 90,
+              "value": 0.0
+            },
+            "contract_violations": {
+              "numerator": 0,
+              "denominator": 90,
+              "value": 0.0
+            },
+            "silent_corruption_rate": {
+              "numerator": 0,
+              "denominator": 90,
+              "value": 0.0
+            },
+            "unsafe_acceptance_rate": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            }
+          },
+          "S03": {
+            "functional_correctness": {
+              "numerator": 30,
+              "denominator": 30,
+              "value": 1.0
+            },
+            "schema_compliance": {
+              "numerator": 30,
+              "denominator": 30,
+              "value": 1.0
+            },
+            "numerical_correctness": {
+              "numerator": 25,
+              "denominator": 25,
+              "value": 1.0
+            },
+            "physical_unit_correctness": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "physical_integrity_correctness": {
+              "numerator": 30,
+              "denominator": 30,
+              "value": 1.0
+            },
+            "semantic_integrity_failures": {
+              "numerator": 0,
+              "denominator": 30,
+              "value": 0.0
+            },
+            "validity_state_correctness": {
+              "numerator": 30,
+              "denominator": 30,
+              "value": 1.0
+            },
+            "engineering_decision_correctness": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "execution_failures": {
+              "numerator": 0,
+              "denominator": 30,
+              "value": 0.0
+            },
+            "malformed_response_rate": {
+              "numerator": 0,
+              "denominator": 30,
+              "value": 0.0
+            },
+            "contract_violations": {
+              "numerator": 0,
+              "denominator": 30,
+              "value": 0.0
+            },
+            "silent_corruption_rate": {
+              "numerator": 0,
+              "denominator": 30,
+              "value": 0.0
+            },
+            "unsafe_acceptance_rate": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            }
+          }
+        },
+        "pass_at_3": {
+          "numerator": 1,
+          "denominator": 2,
+          "value": 0.5
+        },
+        "pass_cubed": {
+          "numerator": 1,
+          "denominator": 2,
+          "value": 0.5
+        }
+      }
+    },
+    "supplementary|opencode/beam-free|opencode": {
+      "trial_classes": {
+        "GENUINE": 0,
+        "TOOL_USE": 0,
+        "INFRA": 1
+      },
+      "metrics": null
+    },
+    "supplementary|ollama/qwen2.5-coder:7b|opencode": {
+      "trial_classes": {
+        "GENUINE": 0,
+        "TOOL_USE": 1,
+        "INFRA": 0
+      },
+      "metrics": null
+    }
+  },
+  "trials": [
+    {
+      "phase": "pilot",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S01",
+      "trial": 0,
+      "class": "INFRA",
+      "reason": "provider resolution/rate-limit error with no usage metadata",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "runtime_seconds": 30.9,
+      "total_tokens": 0,
+      "usage_reported": false,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T211317_885949Z_S01_opencode_trial0"
+    },
+    {
+      "phase": "pilot",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S05",
+      "trial": 0,
+      "class": "INFRA",
+      "reason": "provider resolution/rate-limit error with no usage metadata",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "runtime_seconds": 43.5,
+      "total_tokens": 0,
+      "usage_reported": false,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T211359_503804Z_S05_opencode_trial0"
+    },
+    {
+      "phase": "pilot",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S08",
+      "trial": 0,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 45,
+      "runtime_seconds": 48.1,
+      "total_tokens": 2698,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T211452_991976Z_S08_opencode_trial0"
+    },
+    {
+      "phase": "pilot",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S01",
+      "trial": 0,
+      "class": "INFRA",
+      "reason": "provider resolution/rate-limit error with no usage metadata",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "runtime_seconds": 31.0,
+      "total_tokens": 0,
+      "usage_reported": false,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T210258_586110Z_S01_opencode_trial0"
+    },
+    {
+      "phase": "pilot",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S05",
+      "trial": 0,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "runtime_seconds": 517.0,
+      "total_tokens": 10498,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T210338_875318Z_S05_opencode_trial0"
+    },
+    {
+      "phase": "pilot",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S08",
+      "trial": 0,
+      "class": "INFRA",
+      "reason": "provider resolution/rate-limit error with no usage metadata",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 45,
+      "runtime_seconds": 30.8,
+      "total_tokens": 0,
+      "usage_reported": false,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T211231_537174Z_S08_opencode_trial0"
+    },
+    {
+      "phase": "pilot",
+      "model_id": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+      "task": "S01",
+      "trial": 0,
+      "class": "GENUINE",
+      "reason": "candidate code produced and graded",
+      "task_accuracy": 0.9375,
+      "cases_passed": 30,
+      "case_count": 32,
+      "runtime_seconds": 162.8,
+      "total_tokens": 40243,
+      "usage_reported": true,
+      "candidate_sha256": "3ea0d2047dc59f8ea7cf5741f540ba8e6aa367009e2fa4375972265f12ed56b8",
+      "run_id": "20261105T211555_285112Z_S01_opencode_trial0"
+    },
+    {
+      "phase": "pilot",
+      "model_id": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+      "task": "S05",
+      "trial": 0,
+      "class": "GENUINE",
+      "reason": "candidate code produced and graded",
+      "task_accuracy": 1.0,
+      "cases_passed": 30,
+      "case_count": 30,
+      "runtime_seconds": 312.1,
+      "total_tokens": 58631,
+      "usage_reported": true,
+      "candidate_sha256": "d56c085fac1068e862fc7dc3847d50d786355c5e3287158a35f131ab2a60d7d5",
+      "run_id": "20261105T211849_194492Z_S05_opencode_trial0"
+    },
+    {
+      "phase": "pilot",
+      "model_id": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+      "task": "S08",
+      "trial": 0,
+      "class": "GENUINE",
+      "reason": "candidate code produced and graded",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 45,
+      "runtime_seconds": 728.1,
+      "total_tokens": 32680,
+      "usage_reported": true,
+      "candidate_sha256": "02bb3aa40ed92efa20e23b065d7304d9edbb1a711104566ef197f48308b28811",
+      "run_id": "20261105T212413_725900Z_S08_opencode_trial0"
+    },
+    {
+      "phase": "pilot-history",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S01",
+      "trial": 0,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "runtime_seconds": 43.8,
+      "total_tokens": 2414,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T191752_775775Z_S01_opencode_trial0"
+    },
+    {
+      "phase": "pilot-history",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S05",
+      "trial": 0,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "runtime_seconds": 58.8,
+      "total_tokens": 5874,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T191847_052718Z_S05_opencode_trial0"
+    },
+    {
+      "phase": "pilot-history",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S08",
+      "trial": 0,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 45,
+      "runtime_seconds": 31.1,
+      "total_tokens": 2705,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T191956_366031Z_S08_opencode_trial0"
+    },
+    {
+      "phase": "pilot-history",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S01",
+      "trial": 0,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "runtime_seconds": 444.2,
+      "total_tokens": 7999,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T185024_053144Z_S01_opencode_trial0"
+    },
+    {
+      "phase": "pilot-history",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S05",
+      "trial": 0,
+      "class": "GENUINE",
+      "reason": "candidate code produced and graded",
+      "task_accuracy": 0.03333333333333333,
+      "cases_passed": 1,
+      "case_count": 30,
+      "runtime_seconds": 688.0,
+      "total_tokens": 12259,
+      "usage_reported": true,
+      "candidate_sha256": "aeec246684aa33ce75c41cf3a64b12000c29c58a2addc67dfa413cf696884218",
+      "run_id": "20261105T185802_712495Z_S05_opencode_trial0"
+    },
+    {
+      "phase": "pilot-history",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S08",
+      "trial": 0,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 45,
+      "runtime_seconds": 470.0,
+      "total_tokens": 8431,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T190943_095253Z_S08_opencode_trial0"
+    },
+    {
+      "phase": "pilot-history",
+      "model_id": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+      "task": "S01",
+      "trial": 0,
+      "class": "INFRA",
+      "reason": "usage metadata absent (provider or launch failure)",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "runtime_seconds": 0.0,
+      "total_tokens": 0,
+      "usage_reported": false,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T192043_461033Z_S01_opencode_trial0"
+    },
+    {
+      "phase": "pilot-history",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S01",
+      "trial": 0,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "runtime_seconds": 40.1,
+      "total_tokens": 3528,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T195154_172780Z_S01_opencode_trial0"
+    },
+    {
+      "phase": "pilot-history",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S05",
+      "trial": 0,
+      "class": "INFRA",
+      "reason": "provider resolution/rate-limit error with no usage metadata",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "runtime_seconds": 31.7,
+      "total_tokens": 0,
+      "usage_reported": false,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T195246_606446Z_S05_opencode_trial0"
+    },
+    {
+      "phase": "pilot-history",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S01",
+      "trial": 0,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "runtime_seconds": 611.6,
+      "total_tokens": 10257,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T192752_977219Z_S01_opencode_trial0"
+    },
+    {
+      "phase": "pilot-history",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S05",
+      "trial": 0,
+      "class": "GENUINE",
+      "reason": "candidate code produced and graded",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "runtime_seconds": 233.8,
+      "total_tokens": 8649,
+      "usage_reported": true,
+      "candidate_sha256": "ab165a07fd1408a5070b3f04bab56d10cb7e2cd53748fe4479a1bb21c02ad144",
+      "run_id": "20261105T193817_952911Z_S05_opencode_trial0"
+    },
+    {
+      "phase": "pilot-history",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S08",
+      "trial": 0,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 45,
+      "runtime_seconds": 547.9,
+      "total_tokens": 8928,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T194225_384456Z_S08_opencode_trial0"
+    },
+    {
+      "phase": "pilot-history",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S01",
+      "trial": 0,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "runtime_seconds": 657.2,
+      "total_tokens": 10361,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T195552_812522Z_S01_opencode_trial0"
+    },
+    {
+      "phase": "pilot-history",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S05",
+      "trial": 0,
+      "class": "INFRA",
+      "reason": "provider resolution/rate-limit error with no usage metadata",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "runtime_seconds": 31.4,
+      "total_tokens": 0,
+      "usage_reported": false,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T200706_064221Z_S05_opencode_trial0"
+    },
+    {
+      "phase": "pilot-history",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S01",
+      "trial": 0,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "runtime_seconds": 36.3,
+      "total_tokens": 2241,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T203505_592607Z_S01_opencode_trial0"
+    },
+    {
+      "phase": "pilot-history",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S05",
+      "trial": 0,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "runtime_seconds": 37.1,
+      "total_tokens": 2421,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T203552_721869Z_S05_opencode_trial0"
+    },
+    {
+      "phase": "pilot-history",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S08",
+      "trial": 0,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 45,
+      "runtime_seconds": 41.8,
+      "total_tokens": 3284,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T203642_287539Z_S08_opencode_trial0"
+    },
+    {
+      "phase": "pilot-history",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S01",
+      "trial": 0,
+      "class": "INFRA",
+      "reason": "provider resolution/rate-limit error with no usage metadata",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "runtime_seconds": 34.6,
+      "total_tokens": 0,
+      "usage_reported": false,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T202618_455882Z_S01_opencode_trial0"
+    },
+    {
+      "phase": "pilot-history",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S05",
+      "trial": 0,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "runtime_seconds": 416.7,
+      "total_tokens": 7740,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T202703_226291Z_S05_opencode_trial0"
+    },
+    {
+      "phase": "pilot-history",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S08",
+      "trial": 0,
+      "class": "INFRA",
+      "reason": "provider resolution/rate-limit error with no usage metadata",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 45,
+      "runtime_seconds": 35.3,
+      "total_tokens": 0,
+      "usage_reported": false,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T203413_824281Z_S08_opencode_trial0"
+    },
+    {
+      "phase": "pilot-history",
+      "model_id": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+      "task": "S01",
+      "trial": 0,
+      "class": "GENUINE",
+      "reason": "candidate code produced and graded",
+      "task_accuracy": 0.96875,
+      "cases_passed": 31,
+      "case_count": 32,
+      "runtime_seconds": 262.9,
+      "total_tokens": 47330,
+      "usage_reported": true,
+      "candidate_sha256": "f0e01294f3e68418c81cd6f689afdc251e7657a1ba3a0f9c8e8d1003be8253c5",
+      "run_id": "20261105T203739_347661Z_S01_opencode_trial0"
+    },
+    {
+      "phase": "pilot-history",
+      "model_id": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+      "task": "S05",
+      "trial": 0,
+      "class": "GENUINE",
+      "reason": "candidate code produced and graded",
+      "task_accuracy": 1.0,
+      "cases_passed": 30,
+      "case_count": 30,
+      "runtime_seconds": 394.6,
+      "total_tokens": 42949,
+      "usage_reported": true,
+      "candidate_sha256": "af4d6e28491caa8635710595cd89bb0612087330816b5206cf7ec4dd765e5246",
+      "run_id": "20261105T204211_967324Z_S05_opencode_trial0"
+    },
+    {
+      "phase": "pilot-history",
+      "model_id": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+      "task": "S08",
+      "trial": 0,
+      "class": "GENUINE",
+      "reason": "candidate code produced and graded",
+      "task_accuracy": 0.7111111111111111,
+      "cases_passed": 32,
+      "case_count": 45,
+      "runtime_seconds": 649.4,
+      "total_tokens": 82740,
+      "usage_reported": true,
+      "candidate_sha256": "6be99370d66fafa68e984f9659fb39df935f00ffbe8221543a17c912996073c1",
+      "run_id": "20261105T204856_382435Z_S08_opencode_trial0"
+    },
+    {
+      "phase": "pilot-history",
+      "model_id": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+      "task": "S01",
+      "trial": 1,
+      "class": "GENUINE",
+      "reason": "candidate code produced and graded",
+      "task_accuracy": 0.96875,
+      "cases_passed": 31,
+      "case_count": 32,
+      "runtime_seconds": 206.5,
+      "total_tokens": 64271,
+      "usage_reported": true,
+      "candidate_sha256": "6c1c805bb35f6db633c1cf807edba3cd905c007125d2bc59938866b3fcfa092f",
+      "run_id": "20261106T010759_300310Z_S01_opencode_trial1"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S01",
+      "trial": 1,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "runtime_seconds": 782.4,
+      "total_tokens": 11956,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T214234_938009Z_S01_opencode_trial1"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S01",
+      "trial": 2,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "runtime_seconds": 450.6,
+      "total_tokens": 8109,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T215554_091942Z_S01_opencode_trial2"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S01",
+      "trial": 3,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "runtime_seconds": 544.6,
+      "total_tokens": 7907,
+      "usage_reported": true,
+      "candidate_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "run_id": "20261105T220342_117482Z_S01_opencode_trial3"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S02",
+      "trial": 1,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "runtime_seconds": 542.0,
+      "total_tokens": 9051,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T221303_154344Z_S02_opencode_trial1"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S02",
+      "trial": 2,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "runtime_seconds": 528.0,
+      "total_tokens": 9004,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T222219_794811Z_S02_opencode_trial2"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S02",
+      "trial": 3,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "runtime_seconds": 639.0,
+      "total_tokens": 9771,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T223121_755457Z_S02_opencode_trial3"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S03",
+      "trial": 1,
+      "class": "INFRA",
+      "reason": "provider resolution/rate-limit error with no usage metadata",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "runtime_seconds": 169.5,
+      "total_tokens": 0,
+      "usage_reported": false,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T224216_320030Z_S03_opencode_trial1"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S03",
+      "trial": 2,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "runtime_seconds": 381.5,
+      "total_tokens": 6672,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T224518_188613Z_S03_opencode_trial2"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S03",
+      "trial": 3,
+      "class": "INFRA",
+      "reason": "provider resolution/rate-limit error with no usage metadata",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "runtime_seconds": 153.9,
+      "total_tokens": 0,
+      "usage_reported": false,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T225205_313192Z_S03_opencode_trial3"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S04",
+      "trial": 1,
+      "class": "INFRA",
+      "reason": "provider resolution/rate-limit error with no usage metadata",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 37,
+      "runtime_seconds": 154.3,
+      "total_tokens": 0,
+      "usage_reported": false,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T225450_607122Z_S04_opencode_trial1"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S04",
+      "trial": 2,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 37,
+      "runtime_seconds": 390.2,
+      "total_tokens": 7011,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T225737_075084Z_S04_opencode_trial2"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S04",
+      "trial": 3,
+      "class": "INFRA",
+      "reason": "provider resolution/rate-limit error with no usage metadata",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 37,
+      "runtime_seconds": 157.0,
+      "total_tokens": 0,
+      "usage_reported": false,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T230428_485273Z_S04_opencode_trial3"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S05",
+      "trial": 1,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "runtime_seconds": 306.8,
+      "total_tokens": 6332,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T230717_866331Z_S05_opencode_trial1"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S05",
+      "trial": 2,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "runtime_seconds": 696.6,
+      "total_tokens": 10046,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T231241_469995Z_S05_opencode_trial2"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S05",
+      "trial": 3,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "runtime_seconds": 622.8,
+      "total_tokens": 9409,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T232436_611498Z_S05_opencode_trial3"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S06",
+      "trial": 1,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "runtime_seconds": 303.4,
+      "total_tokens": 5835,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T233514_269119Z_S06_opencode_trial1"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S06",
+      "trial": 2,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "runtime_seconds": 419.2,
+      "total_tokens": 6179,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T234033_195668Z_S06_opencode_trial2"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S06",
+      "trial": 3,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "runtime_seconds": 373.0,
+      "total_tokens": 5278,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T234748_300286Z_S06_opencode_trial3"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S07",
+      "trial": 1,
+      "class": "INFRA",
+      "reason": "provider resolution/rate-limit error with no usage metadata",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "runtime_seconds": 743.0,
+      "total_tokens": 0,
+      "usage_reported": false,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261105T235420_283213Z_S07_opencode_trial1"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S07",
+      "trial": 2,
+      "class": "INFRA",
+      "reason": "usage metadata absent (provider or launch failure)",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "runtime_seconds": 139.1,
+      "total_tokens": 0,
+      "usage_reported": false,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261106T000700_468661Z_S07_opencode_trial2"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S07",
+      "trial": 3,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "runtime_seconds": 817.8,
+      "total_tokens": 7603,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261106T000945_524988Z_S07_opencode_trial3"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S08",
+      "trial": 1,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 45,
+      "runtime_seconds": 474.0,
+      "total_tokens": 7227,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261106T002336_738383Z_S08_opencode_trial1"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S08",
+      "trial": 2,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 45,
+      "runtime_seconds": 180.0,
+      "total_tokens": 3938,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261106T003149_916206Z_S08_opencode_trial2"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/qwen3:8b",
+      "task": "S08",
+      "trial": 3,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 45,
+      "runtime_seconds": 337.1,
+      "total_tokens": 5422,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261106T003510_465302Z_S08_opencode_trial3"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S01",
+      "trial": 1,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "runtime_seconds": 477.7,
+      "total_tokens": 2579,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261106T004111_617977Z_S01_opencode_trial1"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S01",
+      "trial": 2,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "runtime_seconds": 39.3,
+      "total_tokens": 3848,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261106T004919_917370Z_S01_opencode_trial2"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S01",
+      "trial": 3,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "runtime_seconds": 30.3,
+      "total_tokens": 2301,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261106T005008_647575Z_S01_opencode_trial3"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S02",
+      "trial": 1,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "runtime_seconds": 38.2,
+      "total_tokens": 4177,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261106T005048_704856Z_S02_opencode_trial1"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S02",
+      "trial": 2,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "runtime_seconds": 29.8,
+      "total_tokens": 2286,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261106T005136_209640Z_S02_opencode_trial2"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S02",
+      "trial": 3,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "runtime_seconds": 34.0,
+      "total_tokens": 2552,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261106T005214_683070Z_S02_opencode_trial3"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S03",
+      "trial": 1,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "runtime_seconds": 39.9,
+      "total_tokens": 4166,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261106T005257_373498Z_S03_opencode_trial1"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S03",
+      "trial": 2,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "runtime_seconds": 29.1,
+      "total_tokens": 2265,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261106T005346_481319Z_S03_opencode_trial2"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S03",
+      "trial": 3,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "runtime_seconds": 32.7,
+      "total_tokens": 2314,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261106T005424_764046Z_S03_opencode_trial3"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S04",
+      "trial": 1,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 37,
+      "runtime_seconds": 36.5,
+      "total_tokens": 3843,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261106T005506_076920Z_S04_opencode_trial1"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S04",
+      "trial": 2,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 37,
+      "runtime_seconds": 41.5,
+      "total_tokens": 2498,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261106T005554_607905Z_S04_opencode_trial2"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S04",
+      "trial": 3,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 37,
+      "runtime_seconds": 67.2,
+      "total_tokens": 5150,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261106T005647_797745Z_S04_opencode_trial3"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S05",
+      "trial": 1,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "runtime_seconds": 31.7,
+      "total_tokens": 2426,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261106T005806_839460Z_S05_opencode_trial1"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S05",
+      "trial": 2,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "runtime_seconds": 29.9,
+      "total_tokens": 2453,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261106T005848_694461Z_S05_opencode_trial2"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S05",
+      "trial": 3,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "runtime_seconds": 47.6,
+      "total_tokens": 4861,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261106T005928_929952Z_S05_opencode_trial3"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S06",
+      "trial": 1,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "runtime_seconds": 35.4,
+      "total_tokens": 2454,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261106T010029_467968Z_S06_opencode_trial1"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S06",
+      "trial": 2,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "runtime_seconds": 30.9,
+      "total_tokens": 2230,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261106T010118_912858Z_S06_opencode_trial2"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S06",
+      "trial": 3,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 30,
+      "runtime_seconds": 33.2,
+      "total_tokens": 2288,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261106T010204_342442Z_S06_opencode_trial3"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S07",
+      "trial": 1,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "runtime_seconds": 45.2,
+      "total_tokens": 4466,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261106T010253_643870Z_S07_opencode_trial1"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S07",
+      "trial": 2,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "runtime_seconds": 40.5,
+      "total_tokens": 4050,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261106T010350_583750Z_S07_opencode_trial2"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S07",
+      "trial": 3,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "runtime_seconds": 35.6,
+      "total_tokens": 2456,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261106T010441_802454Z_S07_opencode_trial3"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S08",
+      "trial": 1,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 45,
+      "runtime_seconds": 34.6,
+      "total_tokens": 2730,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261106T010528_145947Z_S08_opencode_trial1"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S08",
+      "trial": 2,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 45,
+      "runtime_seconds": 42.5,
+      "total_tokens": 5112,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261106T010617_025883Z_S08_opencode_trial2"
+    },
+    {
+      "phase": "full",
+      "model_id": "ollama/llama3.2:1b",
+      "task": "S08",
+      "trial": 3,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 45,
+      "runtime_seconds": 30.4,
+      "total_tokens": 2658,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261106T010713_897768Z_S08_opencode_trial3"
+    },
+    {
+      "phase": "full",
+      "model_id": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+      "task": "S01",
+      "trial": 1,
+      "class": "GENUINE",
+      "reason": "candidate code produced and graded",
+      "task_accuracy": 0.96875,
+      "cases_passed": 31,
+      "case_count": 32,
+      "runtime_seconds": 189.8,
+      "total_tokens": 42058,
+      "usage_reported": true,
+      "candidate_sha256": "04c3be587002f725dfb75fbc7bedac003aeddd6e29057cf75c2ed30c713313eb",
+      "run_id": "20261106T011551_444367Z_S01_opencode_trial1"
+    },
+    {
+      "phase": "full",
+      "model_id": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+      "task": "S01",
+      "trial": 2,
+      "class": "GENUINE",
+      "reason": "candidate code produced and graded",
+      "task_accuracy": 0.9375,
+      "cases_passed": 30,
+      "case_count": 32,
+      "runtime_seconds": 164.4,
+      "total_tokens": 19442,
+      "usage_reported": true,
+      "candidate_sha256": "f552fdb8a7a3caab70f424595c83f339a1c7168e5a01d92706494efcadd11431",
+      "run_id": "20261106T011909_934974Z_S01_opencode_trial2"
+    },
+    {
+      "phase": "full",
+      "model_id": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+      "task": "S01",
+      "trial": 3,
+      "class": "GENUINE",
+      "reason": "candidate code produced and graded",
+      "task_accuracy": 0.9375,
+      "cases_passed": 30,
+      "case_count": 32,
+      "runtime_seconds": 154.8,
+      "total_tokens": 60352,
+      "usage_reported": true,
+      "candidate_sha256": "971a09cf67f406779c6d54aab765c5474c5d77e67ce1cdff7d985e41223cf739",
+      "run_id": "20261106T012203_414544Z_S01_opencode_trial3"
+    },
+    {
+      "phase": "full",
+      "model_id": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+      "task": "S02",
+      "trial": 1,
+      "class": "GENUINE",
+      "reason": "candidate code produced and graded",
+      "task_accuracy": 1.0,
+      "cases_passed": 30,
+      "case_count": 30,
+      "runtime_seconds": 176.4,
+      "total_tokens": 21231,
+      "usage_reported": true,
+      "candidate_sha256": "615f77bc35af02ce4f3af254fec4506eed28be09b149239aa141d1a97e67787b",
+      "run_id": "20261106T012757_437920Z_S02_opencode_trial1"
+    },
+    {
+      "phase": "full",
+      "model_id": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+      "task": "S02",
+      "trial": 2,
+      "class": "GENUINE",
+      "reason": "candidate code produced and graded",
+      "task_accuracy": 1.0,
+      "cases_passed": 30,
+      "case_count": 30,
+      "runtime_seconds": 116.4,
+      "total_tokens": 35780,
+      "usage_reported": true,
+      "candidate_sha256": "db95f3e9d05a962d16cf519a3a3500ed57c2842988e5180cac5605048c623292",
+      "run_id": "20261106T013102_599141Z_S02_opencode_trial2"
+    },
+    {
+      "phase": "full",
+      "model_id": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+      "task": "S02",
+      "trial": 3,
+      "class": "GENUINE",
+      "reason": "candidate code produced and graded",
+      "task_accuracy": 1.0,
+      "cases_passed": 30,
+      "case_count": 30,
+      "runtime_seconds": 225.7,
+      "total_tokens": 45126,
+      "usage_reported": true,
+      "candidate_sha256": "570f3b40d00ec49c23e6fb2cdec39326f75ac4e5959ee1fc6c8715dbe311deb2",
+      "run_id": "20261106T013307_336578Z_S02_opencode_trial3"
+    },
+    {
+      "phase": "full",
+      "model_id": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+      "task": "S03",
+      "trial": 1,
+      "class": "GENUINE",
+      "reason": "candidate code produced and graded",
+      "task_accuracy": 1.0,
+      "cases_passed": 30,
+      "case_count": 30,
+      "runtime_seconds": 229.1,
+      "total_tokens": 44065,
+      "usage_reported": true,
+      "candidate_sha256": "585dafc83c34031c5a05b80bf9b297c3d07064a68e4547c585d81f85f02bb2c5",
+      "run_id": "20261106T013702_131089Z_S03_opencode_trial1"
+    },
+    {
+      "phase": "supplementary",
+      "model_id": "opencode/beam-free",
+      "task": "S01",
+      "trial": 1,
+      "class": "INFRA",
+      "reason": "provider quota exhausted before any implementation was produced",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "runtime_seconds": 37.7,
+      "total_tokens": 1917,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261106T145511_157711Z_S01_opencode_trial1"
+    },
+    {
+      "phase": "supplementary",
+      "model_id": "ollama/qwen2.5-coder:7b",
+      "task": "S01",
+      "trial": 1,
+      "class": "TOOL_USE",
+      "reason": "usage reported but solution.py is starter/empty/missing",
+      "task_accuracy": 0.0,
+      "cases_passed": 0,
+      "case_count": 32,
+      "runtime_seconds": 60.4,
+      "total_tokens": 2652,
+      "usage_reported": true,
+      "candidate_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+      "run_id": "20261106T011332_124653Z_S01_opencode_trial1"
+    }
+  ],
+  "method_note": "Model metrics use GENUINE trials only. INFRA trials are excluded from all numerators/denominators. TOOL_USE trials are behavioral evidence reported separately."
+}

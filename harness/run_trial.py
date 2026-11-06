@@ -32,6 +32,25 @@ def _expand(value: str, values: dict) -> str:
     return value.format_map(values)
 
 
+def _quota_exhausted_signal(stdout_text: str) -> bool:
+    """Detect provider quota-exhaustion signals in agent stdout.
+
+    Hitting an exhausted free-tier daily quota is not transient: retrying burns
+    quota and waiting hours is outside a trial's scope. Callers record the
+    signal and stop launching further trials on that configuration.
+    """
+    haystack = stdout_text or ""
+    markers = (
+        "free-models-per-day", "FreeUsageLimitError", "free-limit",
+        "free_model_daily", "daily requests", "usage limit reached",
+        "quotaexceeded", "quota_exceeded", "quota exceeded",
+    )
+    lowered = haystack.lower()
+    if "rate-limit" in haystack.lower() or "rate_limit" in haystack.lower():
+        return any(marker in lowered for marker in ("free", "daily", "quota", "limit"))
+    return any(marker in lowered for marker in markers)
+
+
 def _run_version(command, env=None):
     if not command:
         return None
@@ -334,9 +353,20 @@ def run_trial(task, profile_path, model_id, trial, timeout, output_dir, cost_usd
     token_budget = budget_data.get("max_total_tokens_per_trial")
     input_rate = budget_data.get("input_usd_per_million_tokens")
     output_rate = budget_data.get("output_usd_per_million_tokens")
-    if agent in ("codex-cli", "opencode") and not credential_names:
+    zero_cost = isinstance(trial_configuration, dict) and trial_configuration.get("cost_tier") == "zero_cost"
+    if agent in ("codex-cli", "opencode") and not credential_names and not zero_cost:
         setup_error = "model agent requires an explicitly named dedicated provider credential; host auth files are not used"
-    elif credential_names and (
+    elif zero_cost and (
+        max_trial_cost != 0 or input_rate != 0 or output_rate != 0
+        or not isinstance((trial_configuration or {}).get("registered_cost_cap_usd"), (int, float))
+        or not isinstance((trial_configuration or {}).get("provider_hard_spend_limit_usd"), (int, float))
+    ):
+        setup_error = "zero-cost trial requires exact-zero monetary caps/rates and registered zero spend controls"
+    elif zero_cost and (
+        not isinstance(token_budget, int) or isinstance(token_budget, bool) or token_budget <= 0
+    ):
+        setup_error = "zero-cost trial still requires a positive max_total_tokens_per_trial"
+    elif credential_names and not zero_cost and (
         not isinstance(max_trial_cost, (int, float)) or isinstance(max_trial_cost, bool) or max_trial_cost <= 0
         or not isinstance(token_budget, int) or isinstance(token_budget, bool) or token_budget <= 0
         or not isinstance(input_rate, (int, float)) or isinstance(input_rate, bool) or input_rate <= 0
@@ -357,27 +387,71 @@ def run_trial(task, profile_path, model_id, trial, timeout, output_dir, cost_usd
         "setup_blocked": setup_error is not None,
         "setup_block_reason": setup_error,
     })
-    try:
+    def _infra_retry_eligible(stdout_text: str, exit_code_value, was_timed_out: bool,
+                              seconds: float, usage: dict) -> bool:
+        """Detect fast provider-resolution failures worth one bounded retry.
+
+        Only zero-cost trials may retry: no charge is possible by construction
+        (local models or documented $0 models), so a retry cannot conceal spend.
+        Retries never apply after a token/cost budget stop, a timeout, a setup
+        block, when usage was reported, or on rate-limit/quota signals (retrying
+        an exhausted quota is pointless and burns quota). Every attempt is
+        recorded in the event log; the final attempt's output is what gets graded.
+        """
+        if not zero_cost or setup_error or was_timed_out:
+            return False
+        if usage.get("reported") or usage.get("budget_stop_reason"):
+            return False
+        if exit_code_value == 0 or seconds >= 120:
+            return False
+        haystack = stdout_text or ""
+        if _quota_exhausted_signal(haystack):
+            return False
+        return ('"type":"error"' in haystack and (
+            "no-route" in haystack or "Model unavailable" in haystack
+            or "timeout" in haystack.lower()))
+
+    def _launch_agent_once():
         if setup_error:
-            stdout, stderr, exit_code = "", f"agent setup blocked: {setup_error}", None
-        else:
-            # This allowlisted environment contains only a dedicated provider key.
-            # Candidate Docker execution receives no part of this environment.
-            if credential_names:
-                completed = _run_agent_with_limits(
-                    command, work, agent_env, timeout, token_budget,
-                    max_trial_cost, input_rate, output_rate,
-                )
-                stdout = _redact_text(completed["stdout"], agent_env)
-                stderr = _redact_text(completed["stderr"], agent_env)
-                exit_code = completed["returncode"]
-                timed_out = completed["timed_out"]
-                usage_report = completed["usage"]
-            else:
-                completed = subprocess.run(command, cwd=work, capture_output=True, text=True, timeout=timeout, check=False, env=agent_env)
-                stdout = _redact_text(completed.stdout, agent_env)
-                stderr = _redact_text(completed.stderr, agent_env)
-                exit_code = completed.returncode
+            return "", f"agent setup blocked: {setup_error}", None, False, dict(usage_report)
+        # This allowlisted environment contains only a dedicated provider key (or
+        # no secrets at all for zero-cost local models).
+        # Candidate Docker execution receives no part of this environment.
+        if credential_names or zero_cost:
+            finished = _run_agent_with_limits(
+                command, work, agent_env, timeout, token_budget,
+                max_trial_cost, input_rate, output_rate,
+            )
+            return (
+                _redact_text(finished["stdout"], agent_env),
+                _redact_text(finished["stderr"], agent_env),
+                finished["returncode"], finished["timed_out"], finished["usage"],
+            )
+        finished = subprocess.run(command, cwd=work, capture_output=True, text=True, timeout=timeout, check=False, env=agent_env)
+        return (
+            _redact_text(finished.stdout, agent_env),
+            _redact_text(finished.stderr, agent_env),
+            finished.returncode, False, dict(usage_report),
+        )
+
+    try:
+        stdout, stderr, exit_code, timed_out, usage_report = _launch_agent_once()
+        attempt = 1
+        attempt_elapsed = time.monotonic() - t0
+        while _infra_retry_eligible(stdout, exit_code, timed_out, attempt_elapsed, usage_report) and attempt <= 2:
+            wait_seconds = 30 if attempt == 1 else 90
+            _append_event(event_path, {
+                "event": "agent_command_infra_retry",
+                "attempt": attempt + 1,
+                "previous_exit_code": exit_code,
+                "previous_runtime_seconds": attempt_elapsed,
+                "wait_seconds": wait_seconds,
+                "reason": "fast provider-resolution failure with no usage metadata on a zero-cost trial; retrying with the same trial seed",
+            })
+            time.sleep(wait_seconds)
+            stdout, stderr, exit_code, timed_out, usage_report = _launch_agent_once()
+            attempt += 1
+            attempt_elapsed = time.monotonic() - t0
     except subprocess.TimeoutExpired as exc:
         timed_out = True
         raw_stdout = exc.stdout.decode(errors="replace") if isinstance(exc.stdout, bytes) else (exc.stdout or "")
@@ -467,6 +541,7 @@ def run_trial(task, profile_path, model_id, trial, timeout, output_dir, cost_usd
     run_result = {
         "run_id": run_id, "task": task, "trial": trial, "trial_seed": trial_seed,
         "agent": agent, "agent_version": agent_version, "model_id": model_id,
+        "quota_exhausted": _quota_exhausted_signal(stdout),
         "profile": str(profile_path), "profile_configuration": _redact_mapping(profile),
         "experiment_configuration": _redact_mapping(trial_configuration or {}),
         "started_at_utc": started, "runtime_seconds": elapsed, "timeout_seconds": timeout,

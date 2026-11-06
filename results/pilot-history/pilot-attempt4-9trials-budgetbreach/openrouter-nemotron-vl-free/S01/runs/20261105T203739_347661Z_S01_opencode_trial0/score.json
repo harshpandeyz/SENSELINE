@@ -1,0 +1,2305 @@
+{
+  "run_id": "20261105T203739_347661Z_S01_opencode_trial0",
+  "task": "S01",
+  "trial": 0,
+  "trial_seed": 20262110,
+  "agent": "opencode",
+  "agent_version": {
+    "command": [
+      "npm",
+      "exec",
+      "--yes",
+      "--package=@opencode/cli@2.2.5",
+      "--",
+      "opencode",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "opencode v2.2.5\n",
+    "stderr": ""
+  },
+  "model_id": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+  "profile": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/configs/opencode.json",
+  "profile_configuration": {
+    "name": "opencode",
+    "command": [
+      "npm",
+      "exec",
+      "--yes",
+      "--package=@opencode/cli@2.2.5",
+      "--",
+      "opencode",
+      "--standalone",
+      "run",
+      "--model",
+      "{model}",
+      "--format",
+      "json",
+      "{prompt}"
+    ],
+    "version_command": [
+      "npm",
+      "exec",
+      "--yes",
+      "--package=@opencode/cli@2.2.5",
+      "--",
+      "opencode",
+      "--version"
+    ],
+    "structured_stdout_jsonl": true,
+    "environment_allowlist": [
+      "OPENCODE_CONFIG",
+      "OPENCODE_CONFIG_DIR",
+      "OPENCODE_DISABLE_PROJECT_CONFIG",
+      "OPENCODE_DISABLE_EXTERNAL_SKILLS",
+      "OPENCODE_DISABLE_CLAUDE_CODE",
+      "OPENCODE_DISABLE_AUTOUPDATE"
+    ],
+    "credential_env": "[REDACTED]",
+    "environment": {
+      "OPENCODE_CONFIG": "{opencode_policy_path}",
+      "OPENCODE_CONFIG_DIR": "{opencode_config_dir}",
+      "OPENCODE_DISABLE_PROJECT_CONFIG": "true",
+      "OPENCODE_DISABLE_EXTERNAL_SKILLS": "true",
+      "OPENCODE_DISABLE_CLAUDE_CODE": "true",
+      "OPENCODE_DISABLE_AUTOUPDATE": "true"
+    },
+    "settings": {
+      "mode": "OpenCode CLI 2.2.5 non-interactive run from the isolated task workspace",
+      "model_id": "exact provider/model ID supplied at run time with --model",
+      "isolation": "read-only task files and solution.py-only edits; external directories and all shell commands denied; candidate code separately runs in the network-disabled Docker sandbox",
+      "network": "the agent CLI requires outbound HTTPS to the selected model provider; candidate execution has no network",
+      "dynamic_permission_test": "not performed; the pinned CLI resolves this policy without inference, while shell is denied and candidate execution is separately sandboxed"
+    }
+  },
+  "experiment_configuration": {
+    "name": "openrouter-nemotron-vl-free",
+    "profile": "configs/opencode.json",
+    "model_id": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+    "agent_version_expected": "opencode v2.2.5",
+    "cost_tier": "zero_cost",
+    "budget": {
+      "agent_timeout_seconds": 900,
+      "candidate_timeout_seconds": 5,
+      "max_cost_per_trial_usd": 0,
+      "max_total_tokens_per_trial": "[REDACTED]",
+      "input_usd_per_million_tokens": "[REDACTED]",
+      "output_usd_per_million_tokens": "[REDACTED]",
+      "cost_capture": "documented $0 OpenRouter free-tier model served under the 50/day free-model quota; provider-reported token usage is recorded, estimated cost is $0, confirmed billing is not applicable",
+      "reasoning_effort": null
+    },
+    "credential_env": "[REDACTED]",
+    "registered_cost_cap_usd": 0,
+    "provider_hard_spend_limit_usd": 0,
+    "sandbox_preflight": {
+      "docker_path": "/usr/local/bin/docker",
+      "image": "python:3.11.18-slim-bookworm@sha256:ef521de1d817dc92a6358c906bbadb9a0b7e38040038642833521b9d582c2233",
+      "image_id": "sha256:ef521de1d817dc92a6358c906bbadb9a0b7e38040038642833521b9d582c2233",
+      "isolation": "docker",
+      "isolation_probe": "PASS"
+    }
+  },
+  "started_at_utc": "2026-11-05T20:37:39.348194+00:00",
+  "runtime_seconds": 262.89394133305177,
+  "timeout_seconds": 900,
+  "candidate_timeout_seconds": 5,
+  "timed_out": false,
+  "exit_code": 0,
+  "cost_usd": null,
+  "cost_usd_estimated": "0",
+  "cost_usd_confirmed": null,
+  "usage": {
+    "input_tokens": 44606,
+    "output_tokens": 2724,
+    "total_tokens": 47330,
+    "events": [
+      {
+        "input_tokens": 2960,
+        "output_tokens": 126,
+        "total_tokens": 3086,
+        "agent_reported_cost_usd": null,
+        "source_event_type": "step_finish",
+        "billing_cost_confirmed": false
+      },
+      {
+        "input_tokens": 3494,
+        "output_tokens": 393,
+        "total_tokens": 3887,
+        "agent_reported_cost_usd": null,
+        "source_event_type": "step_finish",
+        "billing_cost_confirmed": false
+      },
+      {
+        "input_tokens": 5977,
+        "output_tokens": 104,
+        "total_tokens": 6081,
+        "agent_reported_cost_usd": null,
+        "source_event_type": "step_finish",
+        "billing_cost_confirmed": false
+      },
+      {
+        "input_tokens": 18854,
+        "output_tokens": 1278,
+        "total_tokens": 20132,
+        "agent_reported_cost_usd": null,
+        "source_event_type": "step_finish",
+        "billing_cost_confirmed": false
+      },
+      {
+        "input_tokens": 2817,
+        "output_tokens": 176,
+        "total_tokens": 2993,
+        "agent_reported_cost_usd": null,
+        "source_event_type": "step_finish",
+        "billing_cost_confirmed": false
+      },
+      {
+        "input_tokens": 3059,
+        "output_tokens": 108,
+        "total_tokens": 3167,
+        "agent_reported_cost_usd": null,
+        "source_event_type": "step_finish",
+        "billing_cost_confirmed": false
+      },
+      {
+        "input_tokens": 7445,
+        "output_tokens": 539,
+        "total_tokens": 7984,
+        "agent_reported_cost_usd": null,
+        "source_event_type": "step_finish",
+        "billing_cost_confirmed": false
+      }
+    ],
+    "reported": true,
+    "estimated_cost_complete": true,
+    "estimated_cost_usd": "0",
+    "confirmed_cost_usd": null,
+    "budget_stop_reason": null
+  },
+  "candidate_source_path": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/results/pilot/openrouter-nemotron-vl-free/S01/runs/20261105T203739_347661Z_S01_opencode_trial0/workspace/solution.py",
+  "candidate_source_sha256": "f0e01294f3e68418c81cd6f689afdc251e7657a1ba3a0f9c8e8d1003be8253c5",
+  "candidate_source_snapshot_issue": null,
+  "task_accuracy": 0.96875,
+  "score_path": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/results/pilot/openrouter-nemotron-vl-free/S01/runs/20261105T203739_347661Z_S01_opencode_trial0/score.json",
+  "workspace_path": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/results/pilot/openrouter-nemotron-vl-free/S01/runs/20261105T203739_347661Z_S01_opencode_trial0/workspace",
+  "sandbox": {
+    "docker_path": "/usr/local/bin/docker",
+    "image": "python:3.11.18-slim-bookworm@sha256:ef521de1d817dc92a6358c906bbadb9a0b7e38040038642833521b9d582c2233",
+    "image_id": "sha256:ef521de1d817dc92a6358c906bbadb9a0b7e38040038642833521b9d582c2233",
+    "isolation": "docker",
+    "isolation_probe": "PASS"
+  },
+  "structured_agent_event_count": 0,
+  "metrics": {
+    "case_count": 32,
+    "functional_correctness": {
+      "numerator": 31,
+      "denominator": 32,
+      "value": 0.96875
+    },
+    "schema_compliance": {
+      "numerator": 32,
+      "denominator": 32,
+      "value": 1.0
+    },
+    "numerical_correctness": {
+      "numerator": 23,
+      "denominator": 23,
+      "value": 1.0
+    },
+    "physical_unit_correctness": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "physical_equivalence_correctness": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "physical_integrity_correctness": {
+      "numerator": 32,
+      "denominator": 32,
+      "value": 1.0
+    },
+    "semantic_integrity_failures": {
+      "numerator": 0,
+      "denominator": 32,
+      "value": 0.0
+    },
+    "validity_state_correctness": {
+      "numerator": 32,
+      "denominator": 32,
+      "value": 1.0
+    },
+    "engineering_decision_correctness": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "execution_failures": {
+      "numerator": 0,
+      "denominator": 32,
+      "value": 0.0
+    },
+    "malformed_response_rate": {
+      "numerator": 0,
+      "denominator": 32,
+      "value": 0.0
+    },
+    "contract_violations": {
+      "numerator": 1,
+      "denominator": 32,
+      "value": 0.03125
+    },
+    "end_to_end_correctness": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "silent_corruption_rate": {
+      "numerator": 0,
+      "denominator": 32,
+      "value": 0.0
+    },
+    "unsafe_acceptance_rate": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "numerical_error_by_field_unit": {
+      "S01.raw_count [scaled sensor count]": {
+        "field": "raw_count",
+        "task": "S01",
+        "unit": "scaled sensor count",
+        "case_count": 23,
+        "numeric_actual_count": 23,
+        "within_tolerance_count": 23,
+        "mean_absolute_error": "0",
+        "maximum_absolute_error": "0",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      },
+      "S01.value [scaled sensor count]": {
+        "field": "value",
+        "task": "S01",
+        "unit": "scaled sensor count",
+        "case_count": 23,
+        "numeric_actual_count": 23,
+        "within_tolerance_count": 23,
+        "mean_absolute_error": "0.000",
+        "maximum_absolute_error": "0.000",
+        "maximum_normalized_error": "0",
+        "permitted_tolerance": "0"
+      }
+    },
+    "calibration_validity_recall": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "uncertainty_calculation_accuracy": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "false_rejection_rate": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "boundary_decision_accuracy": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "macro_average_task_accuracy": 0.96875,
+    "per_task": {
+      "S01": {
+        "functional_correctness": {
+          "numerator": 31,
+          "denominator": 32,
+          "value": 0.96875
+        },
+        "schema_compliance": {
+          "numerator": 32,
+          "denominator": 32,
+          "value": 1.0
+        },
+        "numerical_correctness": {
+          "numerator": 23,
+          "denominator": 23,
+          "value": 1.0
+        },
+        "physical_unit_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "physical_integrity_correctness": {
+          "numerator": 32,
+          "denominator": 32,
+          "value": 1.0
+        },
+        "semantic_integrity_failures": {
+          "numerator": 0,
+          "denominator": 32,
+          "value": 0.0
+        },
+        "validity_state_correctness": {
+          "numerator": 32,
+          "denominator": 32,
+          "value": 1.0
+        },
+        "engineering_decision_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "execution_failures": {
+          "numerator": 0,
+          "denominator": 32,
+          "value": 0.0
+        },
+        "malformed_response_rate": {
+          "numerator": 0,
+          "denominator": 32,
+          "value": 0.0
+        },
+        "contract_violations": {
+          "numerator": 1,
+          "denominator": 32,
+          "value": 0.03125
+        },
+        "silent_corruption_rate": {
+          "numerator": 0,
+          "denominator": 32,
+          "value": 0.0
+        },
+        "unsafe_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        }
+      }
+    },
+    "pass_at_3": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "pass_cubed": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    }
+  },
+  "grader": {
+    "task": "S01",
+    "candidate": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/results/pilot/openrouter-nemotron-vl-free/S01/runs/20261105T203739_347661Z_S01_opencode_trial0/workspace/solution.py",
+    "case_count": 32,
+    "passed": 31,
+    "accuracy": 0.96875,
+    "cases": [
+      {
+        "id": "S01-seeded-00",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "raw_count": -104,
+          "valid": true,
+          "value": "-52.000"
+        },
+        "actual": {
+          "valid": true,
+          "raw_count": -104,
+          "value": "-52.000"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "raw_count",
+            "unit": "scaled sensor count",
+            "expected": "-104",
+            "actual": "-104",
+            "comparison_actual": "-104",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          },
+          {
+            "field": "value",
+            "unit": "scaled sensor count",
+            "expected": "-52.000",
+            "actual": "-52.000",
+            "comparison_actual": "-52.000",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0.000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S01-seeded-01",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "raw_count": 22417,
+          "valid": true,
+          "value": "22.417"
+        },
+        "actual": {
+          "valid": true,
+          "raw_count": 22417,
+          "value": "22.417"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "raw_count",
+            "unit": "scaled sensor count",
+            "expected": "22417",
+            "actual": "22417",
+            "comparison_actual": "22417",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          },
+          {
+            "field": "value",
+            "unit": "scaled sensor count",
+            "expected": "22.417",
+            "actual": "22.417",
+            "comparison_actual": "22.417",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0.000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S01-seeded-02",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "raw_count": 1002788,
+          "valid": true,
+          "value": "1002.788"
+        },
+        "actual": {
+          "valid": true,
+          "raw_count": 1002788,
+          "value": "1002.788"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "raw_count",
+            "unit": "scaled sensor count",
+            "expected": "1002788",
+            "actual": "1002788",
+            "comparison_actual": "1002788",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          },
+          {
+            "field": "value",
+            "unit": "scaled sensor count",
+            "expected": "1002.788",
+            "actual": "1002.788",
+            "comparison_actual": "1002.788",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0.000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S01-seeded-03",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "raw_count": 527298523,
+          "valid": true,
+          "value": "5272985.230"
+        },
+        "actual": {
+          "valid": true,
+          "raw_count": 527298523,
+          "value": "5272985.230"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "raw_count",
+            "unit": "scaled sensor count",
+            "expected": "527298523",
+            "actual": "527298523",
+            "comparison_actual": "527298523",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          },
+          {
+            "field": "value",
+            "unit": "scaled sensor count",
+            "expected": "5272985.230",
+            "actual": "5272985.230",
+            "comparison_actual": "5272985.230",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0.000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S01-seeded-04",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "raw_count": 112,
+          "valid": true,
+          "value": "224.000"
+        },
+        "actual": {
+          "valid": true,
+          "raw_count": 112,
+          "value": "224.000"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "raw_count",
+            "unit": "scaled sensor count",
+            "expected": "112",
+            "actual": "112",
+            "comparison_actual": "112",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          },
+          {
+            "field": "value",
+            "unit": "scaled sensor count",
+            "expected": "224.000",
+            "actual": "224.000",
+            "comparison_actual": "224.000",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0.000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S01-seeded-05",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "raw_count": 63568,
+          "valid": true,
+          "value": "31784.000"
+        },
+        "actual": {
+          "valid": true,
+          "raw_count": 63568,
+          "value": "31784.000"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "raw_count",
+            "unit": "scaled sensor count",
+            "expected": "63568",
+            "actual": "63568",
+            "comparison_actual": "63568",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          },
+          {
+            "field": "value",
+            "unit": "scaled sensor count",
+            "expected": "31784.000",
+            "actual": "31784.000",
+            "comparison_actual": "31784.000",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0.000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S01-seeded-06",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "raw_count": 4213939,
+          "valid": true,
+          "value": "8427878.000"
+        },
+        "actual": {
+          "valid": true,
+          "raw_count": 4213939,
+          "value": "8427878.000"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "raw_count",
+            "unit": "scaled sensor count",
+            "expected": "4213939",
+            "actual": "4213939",
+            "comparison_actual": "4213939",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          },
+          {
+            "field": "value",
+            "unit": "scaled sensor count",
+            "expected": "8427878.000",
+            "actual": "8427878.000",
+            "comparison_actual": "8427878.000",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0.000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S01-seeded-07",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "raw_count": 3365665005,
+          "valid": true,
+          "value": "33656650.050"
+        },
+        "actual": {
+          "valid": true,
+          "raw_count": 3365665005,
+          "value": "33656650.050"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "raw_count",
+            "unit": "scaled sensor count",
+            "expected": "3365665005",
+            "actual": "3365665005",
+            "comparison_actual": "3365665005",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          },
+          {
+            "field": "value",
+            "unit": "scaled sensor count",
+            "expected": "33656650.050",
+            "actual": "33656650.050",
+            "comparison_actual": "33656650.050",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0.000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S01-seeded-08",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "raw_count": -112,
+          "valid": true,
+          "value": "-0.112"
+        },
+        "actual": {
+          "valid": true,
+          "raw_count": -112,
+          "value": "-0.112"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "raw_count",
+            "unit": "scaled sensor count",
+            "expected": "-112",
+            "actual": "-112",
+            "comparison_actual": "-112",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          },
+          {
+            "field": "value",
+            "unit": "scaled sensor count",
+            "expected": "-0.112",
+            "actual": "-0.112",
+            "comparison_actual": "-0.112",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0.000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S01-seeded-09",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "raw_count": 62141,
+          "valid": true,
+          "value": "62.141"
+        },
+        "actual": {
+          "valid": true,
+          "raw_count": 62141,
+          "value": "62.141"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "raw_count",
+            "unit": "scaled sensor count",
+            "expected": "62141",
+            "actual": "62141",
+            "comparison_actual": "62141",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          },
+          {
+            "field": "value",
+            "unit": "scaled sensor count",
+            "expected": "62.141",
+            "actual": "62.141",
+            "comparison_actual": "62.141",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0.000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S01-seeded-10",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "raw_count": -7748932,
+          "valid": true,
+          "value": "-7748.932"
+        },
+        "actual": {
+          "valid": true,
+          "raw_count": -7748932,
+          "value": "-7748.932"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "raw_count",
+            "unit": "scaled sensor count",
+            "expected": "-7748932",
+            "actual": "-7748932",
+            "comparison_actual": "-7748932",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          },
+          {
+            "field": "value",
+            "unit": "scaled sensor count",
+            "expected": "-7748.932",
+            "actual": "-7748.932",
+            "comparison_actual": "-7748.932",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0.000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S01-seeded-11",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "raw_count": 949181120,
+          "valid": true,
+          "value": "9491811.200"
+        },
+        "actual": {
+          "valid": true,
+          "raw_count": 949181120,
+          "value": "9491811.200"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "raw_count",
+            "unit": "scaled sensor count",
+            "expected": "949181120",
+            "actual": "949181120",
+            "comparison_actual": "949181120",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          },
+          {
+            "field": "value",
+            "unit": "scaled sensor count",
+            "expected": "9491811.200",
+            "actual": "9491811.200",
+            "comparison_actual": "9491811.200",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0.000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S01-seeded-12",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "raw_count": -108,
+          "valid": true,
+          "value": "-216.000"
+        },
+        "actual": {
+          "valid": true,
+          "raw_count": -108,
+          "value": "-216.000"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "raw_count",
+            "unit": "scaled sensor count",
+            "expected": "-108",
+            "actual": "-108",
+            "comparison_actual": "-108",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          },
+          {
+            "field": "value",
+            "unit": "scaled sensor count",
+            "expected": "-216.000",
+            "actual": "-216.000",
+            "comparison_actual": "-216.000",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0.000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S01-seeded-13",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "raw_count": 9730,
+          "valid": true,
+          "value": "97.300"
+        },
+        "actual": {
+          "valid": true,
+          "raw_count": 9730,
+          "value": "97.300"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "raw_count",
+            "unit": "scaled sensor count",
+            "expected": "9730",
+            "actual": "9730",
+            "comparison_actual": "9730",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          },
+          {
+            "field": "value",
+            "unit": "scaled sensor count",
+            "expected": "97.300",
+            "actual": "97.300",
+            "comparison_actual": "97.300",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0.000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S01-seeded-14",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "raw_count": -2878397,
+          "valid": true,
+          "value": "-5756794.000"
+        },
+        "actual": {
+          "valid": true,
+          "raw_count": -2878397,
+          "value": "-5756794.000"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "raw_count",
+            "unit": "scaled sensor count",
+            "expected": "-2878397",
+            "actual": "-2878397",
+            "comparison_actual": "-2878397",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          },
+          {
+            "field": "value",
+            "unit": "scaled sensor count",
+            "expected": "-5756794.000",
+            "actual": "-5756794.000",
+            "comparison_actual": "-5756794.000",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0.000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S01-seeded-15",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "raw_count": 3946239561,
+          "valid": true,
+          "value": "3946239.561"
+        },
+        "actual": {
+          "valid": true,
+          "raw_count": 3946239561,
+          "value": "3946239.561"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "raw_count",
+            "unit": "scaled sensor count",
+            "expected": "3946239561",
+            "actual": "3946239561",
+            "comparison_actual": "3946239561",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          },
+          {
+            "field": "value",
+            "unit": "scaled sensor count",
+            "expected": "3946239.561",
+            "actual": "3946239.561",
+            "comparison_actual": "3946239.561",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0.000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S01-seeded-16",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "raw_count": -46,
+          "valid": true,
+          "value": "-0.460"
+        },
+        "actual": {
+          "valid": true,
+          "raw_count": -46,
+          "value": "-0.460"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "raw_count",
+            "unit": "scaled sensor count",
+            "expected": "-46",
+            "actual": "-46",
+            "comparison_actual": "-46",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          },
+          {
+            "field": "value",
+            "unit": "scaled sensor count",
+            "expected": "-0.460",
+            "actual": "-0.460",
+            "comparison_actual": "-0.460",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0.000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S01-seeded-17",
+        "category": "ordinary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "raw_count": 9817,
+          "valid": true,
+          "value": "19634.000"
+        },
+        "actual": {
+          "valid": true,
+          "raw_count": 9817,
+          "value": "19634.000"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "raw_count",
+            "unit": "scaled sensor count",
+            "expected": "9817",
+            "actual": "9817",
+            "comparison_actual": "9817",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          },
+          {
+            "field": "value",
+            "unit": "scaled sensor count",
+            "expected": "19634.000",
+            "actual": "19634.000",
+            "comparison_actual": "19634.000",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0.000",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S01-signed-min",
+        "category": "boundary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "raw_count": -128,
+          "valid": true,
+          "value": "-128"
+        },
+        "actual": {
+          "valid": true,
+          "raw_count": -128,
+          "value": "-128"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "raw_count",
+            "unit": "scaled sensor count",
+            "expected": "-128",
+            "actual": "-128",
+            "comparison_actual": "-128",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          },
+          {
+            "field": "value",
+            "unit": "scaled sensor count",
+            "expected": "-128",
+            "actual": "-128",
+            "comparison_actual": "-128",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S01-signed-max",
+        "category": "boundary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "raw_count": 127,
+          "valid": true,
+          "value": "127"
+        },
+        "actual": {
+          "valid": true,
+          "raw_count": 127,
+          "value": "127"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "raw_count",
+            "unit": "scaled sensor count",
+            "expected": "127",
+            "actual": "127",
+            "comparison_actual": "127",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          },
+          {
+            "field": "value",
+            "unit": "scaled sensor count",
+            "expected": "127",
+            "actual": "127",
+            "comparison_actual": "127",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S01-unsigned-max",
+        "category": "boundary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "raw_count": 65535,
+          "valid": true,
+          "value": "65535"
+        },
+        "actual": {
+          "valid": true,
+          "raw_count": 65535,
+          "value": "65535"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "raw_count",
+            "unit": "scaled sensor count",
+            "expected": "65535",
+            "actual": "65535",
+            "comparison_actual": "65535",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          },
+          {
+            "field": "value",
+            "unit": "scaled sensor count",
+            "expected": "65535",
+            "actual": "65535",
+            "comparison_actual": "65535",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S01-little-endian",
+        "category": "boundary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "raw_count": 4660,
+          "valid": true,
+          "value": "466.0"
+        },
+        "actual": {
+          "valid": true,
+          "raw_count": 4660,
+          "value": "466.0"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "raw_count",
+            "unit": "scaled sensor count",
+            "expected": "4660",
+            "actual": "4660",
+            "comparison_actual": "4660",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          },
+          {
+            "field": "value",
+            "unit": "scaled sensor count",
+            "expected": "466.0",
+            "actual": "466.0",
+            "comparison_actual": "466.0",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0.0",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S01-sentinel",
+        "category": "adversarial",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "sentinel",
+          "valid": false
+        },
+        "actual": {
+          "valid": false,
+          "reason": "sentinel"
+        },
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S01-truncated",
+        "category": "adversarial",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "frame_length",
+          "valid": false
+        },
+        "actual": {
+          "valid": false,
+          "reason": "frame_length"
+        },
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S01-malformed-hex",
+        "category": "adversarial",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "invalid_frame",
+          "valid": false
+        },
+        "actual": {
+          "valid": false,
+          "reason": "invalid_frame"
+        },
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S01-bad-scale",
+        "category": "adversarial",
+        "passed": false,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [
+          "exact_semantic_contract"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "invalid_parameters",
+          "valid": false
+        },
+        "actual": {
+          "valid": false,
+          "reason": "invalid_scale"
+        },
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S01-bad-width",
+        "category": "adversarial",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "invalid_width",
+          "valid": false
+        },
+        "actual": {
+          "valid": false,
+          "reason": "invalid_width"
+        },
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S01-round-half-even",
+        "category": "boundary",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "raw_count": 3,
+          "valid": true,
+          "value": "2"
+        },
+        "actual": {
+          "valid": true,
+          "raw_count": 3,
+          "value": "2"
+        },
+        "numerical_diagnostics": [
+          {
+            "field": "raw_count",
+            "unit": "scaled sensor count",
+            "expected": "3",
+            "actual": "3",
+            "comparison_actual": "3",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          },
+          {
+            "field": "value",
+            "unit": "scaled sensor count",
+            "expected": "2",
+            "actual": "2",
+            "comparison_actual": "2",
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": "0",
+            "relative_error": "0",
+            "permitted_tolerance": "0",
+            "normalized_error": "0",
+            "within_tolerance": true
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S01-odd-nibble",
+        "category": "adversarial",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "invalid_frame",
+          "valid": false
+        },
+        "actual": {
+          "valid": false,
+          "reason": "invalid_frame"
+        },
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S01-negative-scale",
+        "category": "adversarial",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "invalid_scale",
+          "valid": false
+        },
+        "actual": {
+          "valid": false,
+          "reason": "invalid_scale"
+        },
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S01-sentinel-out-of-width",
+        "category": "adversarial",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "invalid_sentinels",
+          "valid": false
+        },
+        "actual": {
+          "valid": false,
+          "reason": "invalid_sentinels"
+        },
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S01-tab-separator-not-allowed",
+        "category": "adversarial",
+        "passed": true,
+        "schema_valid": true,
+        "schema_errors": [],
+        "semantic_correct": true,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": true,
+        "engineering_decision_correct": true,
+        "runtime_failure": false,
+        "malformed_response": false,
+        "error": null,
+        "failure_dimensions": [],
+        "contract_violation": false,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "invalid_frame",
+          "valid": false
+        },
+        "actual": {
+          "valid": false,
+          "reason": "invalid_frame"
+        },
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      }
+    ]
+  }
+}

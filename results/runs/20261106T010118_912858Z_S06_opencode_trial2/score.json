@@ -1,0 +1,2482 @@
+{
+  "run_id": "20261106T010118_912858Z_S06_opencode_trial2",
+  "task": "S06",
+  "trial": 2,
+  "trial_seed": 20467161,
+  "agent": "opencode",
+  "agent_version": {
+    "command": [
+      "npm",
+      "exec",
+      "--yes",
+      "--package=@opencode/cli@2.2.5",
+      "--",
+      "opencode",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "opencode v2.2.5\n",
+    "stderr": ""
+  },
+  "model_id": "ollama/llama3.2:1b",
+  "profile": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/configs/opencode.json",
+  "profile_configuration": {
+    "name": "opencode",
+    "command": [
+      "npm",
+      "exec",
+      "--yes",
+      "--package=@opencode/cli@2.2.5",
+      "--",
+      "opencode",
+      "--standalone",
+      "run",
+      "--model",
+      "{model}",
+      "--format",
+      "json",
+      "{prompt}"
+    ],
+    "version_command": [
+      "npm",
+      "exec",
+      "--yes",
+      "--package=@opencode/cli@2.2.5",
+      "--",
+      "opencode",
+      "--version"
+    ],
+    "structured_stdout_jsonl": true,
+    "environment_allowlist": [
+      "OPENCODE_CONFIG",
+      "OPENCODE_CONFIG_DIR",
+      "OPENCODE_DISABLE_PROJECT_CONFIG",
+      "OPENCODE_DISABLE_EXTERNAL_SKILLS",
+      "OPENCODE_DISABLE_CLAUDE_CODE",
+      "OPENCODE_DISABLE_AUTOUPDATE"
+    ],
+    "credential_env": "[REDACTED]",
+    "environment": {
+      "OPENCODE_CONFIG": "{opencode_policy_path}",
+      "OPENCODE_CONFIG_DIR": "{opencode_config_dir}",
+      "OPENCODE_DISABLE_PROJECT_CONFIG": "true",
+      "OPENCODE_DISABLE_EXTERNAL_SKILLS": "true",
+      "OPENCODE_DISABLE_CLAUDE_CODE": "true",
+      "OPENCODE_DISABLE_AUTOUPDATE": "true"
+    },
+    "settings": {
+      "mode": "OpenCode CLI 2.2.5 non-interactive run from the isolated task workspace",
+      "model_id": "exact provider/model ID supplied at run time with --model",
+      "isolation": "read-only task files and solution.py-only edits; external directories and all shell commands denied; candidate code separately runs in the network-disabled Docker sandbox",
+      "network": "the agent CLI requires outbound HTTPS to the selected model provider; candidate execution has no network",
+      "dynamic_permission_test": "not performed; the pinned CLI resolves this policy without inference, while shell is denied and candidate execution is separately sandboxed"
+    }
+  },
+  "experiment_configuration": {
+    "name": "ollama-llama3-2-1b",
+    "profile": "configs/opencode.json",
+    "model_id": "ollama/llama3.2:1b",
+    "agent_version_expected": "opencode v2.2.5",
+    "cost_tier": "zero_cost",
+    "budget": {
+      "agent_timeout_seconds": 900,
+      "candidate_timeout_seconds": 5,
+      "max_cost_per_trial_usd": 0,
+      "max_total_tokens_per_trial": "[REDACTED]",
+      "input_usd_per_million_tokens": "[REDACTED]",
+      "output_usd_per_million_tokens": "[REDACTED]",
+      "cost_capture": "local Ollama inference; provider-reported token usage is recorded, estimated cost is $0, confirmed billing is not applicable (raised from 60000 after pilot attempt 4 showed a reasoning model exceeding 60000 tokens)",
+      "reasoning_effort": null
+    },
+    "credential_env": "[REDACTED]",
+    "registered_cost_cap_usd": 0,
+    "provider_hard_spend_limit_usd": 0,
+    "sandbox_preflight": {
+      "docker_path": "/usr/local/bin/docker",
+      "image": "python:3.11.18-slim-bookworm@sha256:ef521de1d817dc92a6358c906bbadb9a0b7e38040038642833521b9d582c2233",
+      "image_id": "sha256:ef521de1d817dc92a6358c906bbadb9a0b7e38040038642833521b9d582c2233",
+      "isolation": "docker",
+      "isolation_probe": "PASS"
+    }
+  },
+  "started_at_utc": "2026-11-06T01:01:18.913139+00:00",
+  "runtime_seconds": 30.853343875147402,
+  "timeout_seconds": 900,
+  "candidate_timeout_seconds": 5,
+  "timed_out": false,
+  "exit_code": 0,
+  "cost_usd": null,
+  "cost_usd_estimated": "0",
+  "cost_usd_confirmed": null,
+  "usage": {
+    "input_tokens": 2186,
+    "output_tokens": 44,
+    "total_tokens": 2230,
+    "events": [
+      {
+        "input_tokens": 2186,
+        "output_tokens": 44,
+        "total_tokens": 2230,
+        "agent_reported_cost_usd": null,
+        "source_event_type": "step_finish",
+        "billing_cost_confirmed": false
+      }
+    ],
+    "reported": true,
+    "estimated_cost_complete": true,
+    "estimated_cost_usd": "0",
+    "confirmed_cost_usd": null,
+    "budget_stop_reason": null
+  },
+  "candidate_source_path": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/results/runs/20261106T010118_912858Z_S06_opencode_trial2/workspace/solution.py",
+  "candidate_source_sha256": "d7fdbad0e2f4afc6f027d732fbf4b0eea9b05819db8c6b6aaedf0e4dee7aa887",
+  "candidate_source_snapshot_issue": null,
+  "task_accuracy": 0.0,
+  "score_path": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/results/runs/20261106T010118_912858Z_S06_opencode_trial2/score.json",
+  "workspace_path": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/results/runs/20261106T010118_912858Z_S06_opencode_trial2/workspace",
+  "sandbox": {
+    "docker_path": "/usr/local/bin/docker",
+    "image": "python:3.11.18-slim-bookworm@sha256:ef521de1d817dc92a6358c906bbadb9a0b7e38040038642833521b9d582c2233",
+    "image_id": "sha256:ef521de1d817dc92a6358c906bbadb9a0b7e38040038642833521b9d582c2233",
+    "isolation": "docker",
+    "isolation_probe": "PASS"
+  },
+  "structured_agent_event_count": 0,
+  "metrics": {
+    "case_count": 30,
+    "functional_correctness": {
+      "numerator": 0,
+      "denominator": 30,
+      "value": 0.0
+    },
+    "schema_compliance": {
+      "numerator": 0,
+      "denominator": 30,
+      "value": 0.0
+    },
+    "numerical_correctness": {
+      "numerator": 0,
+      "denominator": 28,
+      "value": 0.0
+    },
+    "physical_unit_correctness": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "physical_equivalence_correctness": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "physical_integrity_correctness": {
+      "numerator": 2,
+      "denominator": 30,
+      "value": 0.06666666666666667
+    },
+    "semantic_integrity_failures": {
+      "numerator": 0,
+      "denominator": 30,
+      "value": 0.0
+    },
+    "validity_state_correctness": {
+      "numerator": 0,
+      "denominator": 30,
+      "value": 0.0
+    },
+    "engineering_decision_correctness": {
+      "numerator": 0,
+      "denominator": 28,
+      "value": 0.0
+    },
+    "execution_failures": {
+      "numerator": 30,
+      "denominator": 30,
+      "value": 1.0
+    },
+    "malformed_response_rate": {
+      "numerator": 0,
+      "denominator": 30,
+      "value": 0.0
+    },
+    "contract_violations": {
+      "numerator": 30,
+      "denominator": 30,
+      "value": 1.0
+    },
+    "end_to_end_correctness": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "silent_corruption_rate": {
+      "numerator": 0,
+      "denominator": 30,
+      "value": 0.0
+    },
+    "unsafe_acceptance_rate": {
+      "numerator": 0,
+      "denominator": 17,
+      "value": 0.0
+    },
+    "numerical_error_by_field_unit": {
+      "S06.lower [MU (task-defined specification unit)]": {
+        "field": "lower",
+        "task": "S06",
+        "unit": "MU (task-defined specification unit)",
+        "case_count": 28,
+        "numeric_actual_count": 0,
+        "within_tolerance_count": 0,
+        "mean_absolute_error": null,
+        "maximum_absolute_error": null,
+        "maximum_normalized_error": null,
+        "permitted_tolerance": "0"
+      },
+      "S06.upper [MU (task-defined specification unit)]": {
+        "field": "upper",
+        "task": "S06",
+        "unit": "MU (task-defined specification unit)",
+        "case_count": 28,
+        "numeric_actual_count": 0,
+        "within_tolerance_count": 0,
+        "mean_absolute_error": null,
+        "maximum_absolute_error": null,
+        "maximum_normalized_error": null,
+        "permitted_tolerance": "0"
+      }
+    },
+    "calibration_validity_recall": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "uncertainty_calculation_accuracy": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "false_rejection_rate": {
+      "numerator": 0,
+      "denominator": 13,
+      "value": 0.0
+    },
+    "boundary_decision_accuracy": {
+      "numerator": 0,
+      "denominator": 8,
+      "value": 0.0
+    },
+    "macro_average_task_accuracy": 0.0,
+    "per_task": {
+      "S06": {
+        "functional_correctness": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "schema_compliance": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "numerical_correctness": {
+          "numerator": 0,
+          "denominator": 28,
+          "value": 0.0
+        },
+        "physical_unit_correctness": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "physical_integrity_correctness": {
+          "numerator": 2,
+          "denominator": 30,
+          "value": 0.06666666666666667
+        },
+        "semantic_integrity_failures": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "validity_state_correctness": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "engineering_decision_correctness": {
+          "numerator": 0,
+          "denominator": 28,
+          "value": 0.0
+        },
+        "execution_failures": {
+          "numerator": 30,
+          "denominator": 30,
+          "value": 1.0
+        },
+        "malformed_response_rate": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "contract_violations": {
+          "numerator": 30,
+          "denominator": 30,
+          "value": 1.0
+        },
+        "silent_corruption_rate": {
+          "numerator": 0,
+          "denominator": 30,
+          "value": 0.0
+        },
+        "unsafe_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 17,
+          "value": 0.0
+        }
+      }
+    },
+    "pass_at_3": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "pass_cubed": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    }
+  },
+  "grader": {
+    "task": "S06",
+    "candidate": "/Users/harsh/Desktop/MICRO1-Hackathon/SENSELINE/results/runs/20261106T010118_912858Z_S06_opencode_trial2/workspace/solution.py",
+    "case_count": 30,
+    "passed": 0,
+    "accuracy": 0.0,
+    "cases": [
+      {
+        "id": "S06-seeded-00",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": false,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state",
+          "engineering_decision"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": "ACCEPT",
+        "actual_disposition": null,
+        "expected": {
+          "decision": "ACCEPT",
+          "lower": "10",
+          "upper": "10",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "lower",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "10",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "upper",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "10",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S06-seeded-01",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": false,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state",
+          "engineering_decision"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": "ACCEPT",
+        "actual_disposition": null,
+        "expected": {
+          "decision": "ACCEPT",
+          "lower": "-8",
+          "upper": "-2",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "lower",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "-8",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "upper",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "-2",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S06-seeded-02",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": false,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state",
+          "engineering_decision"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": "INDETERMINATE",
+        "actual_disposition": null,
+        "expected": {
+          "decision": "INDETERMINATE",
+          "lower": "-4",
+          "upper": "0",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "lower",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "-4",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "upper",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "0",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S06-seeded-03",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": false,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state",
+          "engineering_decision"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": "ACCEPT",
+        "actual_disposition": null,
+        "expected": {
+          "decision": "ACCEPT",
+          "lower": "3",
+          "upper": "5",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "lower",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "3",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "upper",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "5",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S06-seeded-04",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": false,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state",
+          "engineering_decision"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": "ACCEPT",
+        "actual_disposition": null,
+        "expected": {
+          "decision": "ACCEPT",
+          "lower": "-8",
+          "upper": "-2",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "lower",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "-8",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "upper",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "-2",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S06-seeded-05",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": false,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state",
+          "engineering_decision"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": "INDETERMINATE",
+        "actual_disposition": null,
+        "expected": {
+          "decision": "INDETERMINATE",
+          "lower": "6",
+          "upper": "12",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "lower",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "6",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "upper",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "12",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S06-seeded-06",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": false,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state",
+          "engineering_decision"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": "ACCEPT",
+        "actual_disposition": null,
+        "expected": {
+          "decision": "ACCEPT",
+          "lower": "2",
+          "upper": "4",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "lower",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "2",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "upper",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "4",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S06-seeded-07",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": false,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state",
+          "engineering_decision"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": "REJECT",
+        "actual_disposition": null,
+        "expected": {
+          "decision": "REJECT",
+          "lower": "-10",
+          "upper": "-10",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "lower",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "-10",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "upper",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "-10",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S06-seeded-08",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": false,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state",
+          "engineering_decision"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": "ACCEPT",
+        "actual_disposition": null,
+        "expected": {
+          "decision": "ACCEPT",
+          "lower": "-2",
+          "upper": "2",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "lower",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "-2",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "upper",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "2",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S06-seeded-09",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": false,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state",
+          "engineering_decision"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": "INDETERMINATE",
+        "actual_disposition": null,
+        "expected": {
+          "decision": "INDETERMINATE",
+          "lower": "0",
+          "upper": "4",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "lower",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "0",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "upper",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "4",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S06-seeded-10",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": false,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state",
+          "engineering_decision"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": "ACCEPT",
+        "actual_disposition": null,
+        "expected": {
+          "decision": "ACCEPT",
+          "lower": "2",
+          "upper": "2",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "lower",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "2",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "upper",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "2",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S06-seeded-11",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": false,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state",
+          "engineering_decision"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": "ACCEPT",
+        "actual_disposition": null,
+        "expected": {
+          "decision": "ACCEPT",
+          "lower": "2",
+          "upper": "4",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "lower",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "2",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "upper",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "4",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S06-seeded-12",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": false,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state",
+          "engineering_decision"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": "INDETERMINATE",
+        "actual_disposition": null,
+        "expected": {
+          "decision": "INDETERMINATE",
+          "lower": "-4",
+          "upper": "0",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "lower",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "-4",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "upper",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "0",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S06-seeded-13",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": false,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state",
+          "engineering_decision"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": "REJECT",
+        "actual_disposition": null,
+        "expected": {
+          "decision": "REJECT",
+          "lower": "6",
+          "upper": "8",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "lower",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "6",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "upper",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "8",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S06-seeded-14",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": false,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state",
+          "engineering_decision"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": "REJECT",
+        "actual_disposition": null,
+        "expected": {
+          "decision": "REJECT",
+          "lower": "-10",
+          "upper": "-10",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "lower",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "-10",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "upper",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "-10",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S06-seeded-15",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": false,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state",
+          "engineering_decision"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": "ACCEPT",
+        "actual_disposition": null,
+        "expected": {
+          "decision": "ACCEPT",
+          "lower": "0",
+          "upper": "6",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "lower",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "0",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "upper",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "6",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S06-seeded-16",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": false,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state",
+          "engineering_decision"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": "ACCEPT",
+        "actual_disposition": null,
+        "expected": {
+          "decision": "ACCEPT",
+          "lower": "1",
+          "upper": "5",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "lower",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "1",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "upper",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "5",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S06-seeded-17",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": false,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state",
+          "engineering_decision"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": "INDETERMINATE",
+        "actual_disposition": null,
+        "expected": {
+          "decision": "INDETERMINATE",
+          "lower": "9",
+          "upper": "15",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "lower",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "9",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "upper",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "15",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S06-seeded-18",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": false,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state",
+          "engineering_decision"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": "REJECT",
+        "actual_disposition": null,
+        "expected": {
+          "decision": "REJECT",
+          "lower": "-11",
+          "upper": "-11",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "lower",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "-11",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "upper",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "-11",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S06-seeded-19",
+        "category": "ordinary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": false,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state",
+          "engineering_decision"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": "INDETERMINATE",
+        "actual_disposition": null,
+        "expected": {
+          "decision": "INDETERMINATE",
+          "lower": "-15",
+          "upper": "-9",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "lower",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "-15",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "upper",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "-9",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S06-accept-equality",
+        "category": "boundary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": false,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state",
+          "engineering_decision"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": "ACCEPT",
+        "actual_disposition": null,
+        "expected": {
+          "decision": "ACCEPT",
+          "lower": "-1",
+          "upper": "1",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "lower",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "-1",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "upper",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "1",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S06-touch-outside-lower",
+        "category": "boundary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": false,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state",
+          "engineering_decision"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": "INDETERMINATE",
+        "actual_disposition": null,
+        "expected": {
+          "decision": "INDETERMINATE",
+          "lower": "-1",
+          "upper": "1",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "lower",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "-1",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "upper",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "1",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S06-touch-outside-upper",
+        "category": "boundary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": false,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state",
+          "engineering_decision"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": "INDETERMINATE",
+        "actual_disposition": null,
+        "expected": {
+          "decision": "INDETERMINATE",
+          "lower": "2",
+          "upper": "4",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "lower",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "2",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "upper",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "4",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S06-reject-below",
+        "category": "boundary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": false,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state",
+          "engineering_decision"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": "REJECT",
+        "actual_disposition": null,
+        "expected": {
+          "decision": "REJECT",
+          "lower": "-4",
+          "upper": "-2",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "lower",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "-4",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "upper",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "-2",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S06-reject-above",
+        "category": "boundary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": false,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state",
+          "engineering_decision"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": "INDETERMINATE",
+        "actual_disposition": null,
+        "expected": {
+          "decision": "INDETERMINATE",
+          "lower": "2",
+          "upper": "4",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "lower",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "2",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "upper",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "4",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S06-zero-u-at-limit",
+        "category": "boundary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": false,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state",
+          "engineering_decision"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": "ACCEPT",
+        "actual_disposition": null,
+        "expected": {
+          "decision": "ACCEPT",
+          "lower": "1",
+          "upper": "1",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "lower",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "1",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "upper",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "1",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S06-negative-u",
+        "category": "adversarial",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "negative_uncertainty",
+          "valid": false
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S06-reversed-limits",
+        "category": "adversarial",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": true,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": true,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": true,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "validity_state"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": null,
+        "actual_disposition": null,
+        "expected": {
+          "reason": "malformed_limits",
+          "valid": false
+        },
+        "actual": null,
+        "numerical_diagnostics": [],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S06-wide-indeterminate",
+        "category": "boundary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": false,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state",
+          "engineering_decision"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": "INDETERMINATE",
+        "actual_disposition": null,
+        "expected": {
+          "decision": "INDETERMINATE",
+          "lower": "-100",
+          "upper": "100",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "lower",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "-100",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "upper",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "100",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      },
+      {
+        "id": "S06-decimal",
+        "category": "boundary",
+        "passed": false,
+        "schema_valid": false,
+        "schema_errors": [
+          "None is not valid under any of the given schemas"
+        ],
+        "semantic_correct": false,
+        "numerical_correct": false,
+        "physical_unit_correct": null,
+        "physical_equivalence_correct": null,
+        "physical_integrity_correct": false,
+        "semantic_integrity_failure": false,
+        "unit_diagnostics": [],
+        "validity_state_correct": false,
+        "engineering_decision_correct": false,
+        "runtime_failure": true,
+        "malformed_response": false,
+        "error": "CandidateExecutionError: NotImplementedError: Implement the task contract",
+        "failure_dimensions": [
+          "execution",
+          "output_schema",
+          "numerical_value",
+          "validity_state",
+          "engineering_decision"
+        ],
+        "contract_violation": true,
+        "silent_corruption": false,
+        "silent_corruption_reasons": [],
+        "unsafe_acceptance": false,
+        "expected_disposition": "ACCEPT",
+        "actual_disposition": null,
+        "expected": {
+          "decision": "ACCEPT",
+          "lower": "0",
+          "upper": "0.2",
+          "valid": true
+        },
+        "actual": null,
+        "numerical_diagnostics": [
+          {
+            "field": "lower",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "0",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          },
+          {
+            "field": "upper",
+            "unit": "MU (task-defined specification unit)",
+            "expected": "0.2",
+            "actual": null,
+            "comparison_actual": null,
+            "actual_unit": null,
+            "actual_in_expected_unit": null,
+            "absolute_error": null,
+            "relative_error": null,
+            "permitted_tolerance": "0",
+            "normalized_error": null,
+            "within_tolerance": false
+          }
+        ],
+        "candidate_stdout": "",
+        "candidate_stderr": ""
+      }
+    ]
+  }
+}

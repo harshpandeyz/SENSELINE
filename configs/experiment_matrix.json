@@ -1,0 +1,93 @@
+{
+  "protocol_version": "0.3.1",
+  "status": "CONFIGURED_ZERO_COST",
+  "spend_control": {
+    "max_total_cost_usd": 0,
+    "provider_hard_spend_limit_usd": 0,
+    "provider_hard_spend_limit_configured": false,
+    "provider_hard_spend_limit_evidence": "Zero-cost design, verified 2026-11-05: (1) ollama/qwen3:8b and ollama/llama3.2:1b execute against the local Ollama daemon with no provider account and no charge; (2) openrouter/nvidia/nemotron-3.5-super-vl:free is a documented $0-priced OpenRouter model (pricing prompt=0/completion=0) served under the account free-model daily quota (50/day, $0 charge; account paid credits exhausted: total_credits=5, total_usage=5.018, so paid calls fail closed with 402 and cannot add charges). No provider can bill this matrix; reserved spend is exactly $0.",
+    "owner_authorization_record": "Owner-directed zero-cost execution authorized by the SENSELINE release instruction (2026-11-05): run real frontier-model experiments under an explicitly configured $0 spending cap using only authenticated/runnable providers, never inventing credentials or incurring unapproved costs. Paid providers are excluded: OpenRouter paid has no remaining credits, the OpenAI-slot key is an OpenRouter key (invalid for OpenAI), and NVIDIA/Meta paid use has no verifiable balance or provider-side hard limit."
+  },
+  "configurations": [
+    {
+      "name": "ollama-qwen3-8b",
+      "profile": "configs/opencode.json",
+      "model_id": "ollama/qwen3:8b",
+      "agent_version_expected": "opencode v2.2.5",
+      "cost_tier": "zero_cost",
+      "budget": {
+        "agent_timeout_seconds": 900,
+        "candidate_timeout_seconds": 5,
+        "max_cost_per_trial_usd": 0,
+        "max_total_tokens_per_trial": 120000,
+        "input_usd_per_million_tokens": 0,
+        "output_usd_per_million_tokens": 0,
+        "cost_capture": "local Ollama inference; provider-reported token usage is recorded, estimated cost is $0, confirmed billing is not applicable (raised from 60000 after pilot attempt 4 showed a reasoning model exceeding 60000 tokens)",
+        "reasoning_effort": null
+      },
+      "credential_env": []
+    },
+    {
+      "name": "ollama-llama3-2-1b",
+      "profile": "configs/opencode.json",
+      "model_id": "ollama/llama3.2:1b",
+      "agent_version_expected": "opencode v2.2.5",
+      "cost_tier": "zero_cost",
+      "budget": {
+        "agent_timeout_seconds": 900,
+        "candidate_timeout_seconds": 5,
+        "max_cost_per_trial_usd": 0,
+        "max_total_tokens_per_trial": 120000,
+        "input_usd_per_million_tokens": 0,
+        "output_usd_per_million_tokens": 0,
+        "cost_capture": "local Ollama inference; provider-reported token usage is recorded, estimated cost is $0, confirmed billing is not applicable (raised from 60000 after pilot attempt 4 showed a reasoning model exceeding 60000 tokens)",
+        "reasoning_effort": null
+      },
+      "credential_env": []
+    },
+    {
+      "name": "openrouter-nemotron-vl-free",
+      "profile": "configs/opencode.json",
+      "model_id": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+      "agent_version_expected": "opencode v2.2.5",
+      "cost_tier": "zero_cost",
+      "budget": {
+        "agent_timeout_seconds": 900,
+        "candidate_timeout_seconds": 5,
+        "max_cost_per_trial_usd": 0,
+        "max_total_tokens_per_trial": 120000,
+        "input_usd_per_million_tokens": 0,
+        "output_usd_per_million_tokens": 0,
+        "cost_capture": "documented $0 OpenRouter free-tier model served under the 50/day free-model quota; provider-reported token usage is recorded, estimated cost is $0, confirmed billing is not applicable (CORRECTED 2026-11-06: 60000 in pilot5/full-run was an editing error; uniform 120000 token budget now applies to all three configurations; the single truncated 60k trial is preserved as evidence and excluded from analysis)",
+        "reasoning_effort": null
+      },
+      "credential_env": ["OPENROUTER_API_KEY"]
+    }
+  ],
+  "tasks": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08"
+  ],
+  "trials": [
+    1,
+    2,
+    3
+  ],
+  "pilot": {
+    "tasks": [
+      "S01",
+      "S05",
+      "S08"
+    ],
+    "trial": 0,
+    "runs_per_configuration": 1,
+    "human_review_required_before_full": true
+  },
+  "comparison_unit": "model"
+}

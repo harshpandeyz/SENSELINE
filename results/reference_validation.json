@@ -1,6 +1,10 @@
 {
   "status": "PASS",
   "classification": "reference/oracle and deliberate mutation validation; not model results",
+  "video_status": {
+    "status": "PENDING_OWNER_ACTION",
+    "note": "PENDING \u2014 project owner to record and publish the five-minute walkthrough, then replace this line with the public https URL (see docs/video_walkthrough_script.md)."
+  },
   "task_case_counts": {
     "S01": 32,
     "S02": 30,
