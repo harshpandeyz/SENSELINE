@@ -3,7 +3,7 @@
   "statuses": {
     "CODE_COMPLETE": {
       "evidence": [
-        "130 tests pass (104 benchmark + 26 finalizer)",
+        "134 tests pass (104 benchmark + 30 finalizer)",
         "8 task packages, oracle, references, harness present"
       ],
       "status": "COMPLETE"

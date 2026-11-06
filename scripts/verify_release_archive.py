@@ -26,8 +26,8 @@ REQUIRED = {
     "reference/s05.py", "reference/s06.py", "reference/s07.py", "reference/s08.py",
     "mutations/MUTATION_MANIFEST.json",
     "docs/METHODOLOGY.md", "docs/RELATED_WORK.md", "docs/FAILURE_ANALYSIS.md",
-    "docs/video_walkthrough_script.md", "docs/INDEPENDENT_REVIEW_PACKAGE.md",
-    "presentation/SENSELINE_walkthrough.html", "results/experiment_status.json",
+    "docs/INDEPENDENT_REVIEW_PACKAGE.md",
+    "results/experiment_status.json",
     "results/reference_validation.json", "results/unit_integrity_validation.json",
     "results/docker_security_validation.json", "results/agent_security_validation.json",
     "results/opencode_permission_verification.json",
@@ -56,6 +56,9 @@ def _check_names(names: list[str]) -> None:
             raise RuntimeError(f"environment secret file in archive: {name}")
     if "README.md" not in name_set or any(name.startswith("SENSELINE/") for name in names):
         raise RuntimeError("README.md must be at the flat ZIP root")
+    for not_shipped in ("docs/video_walkthrough_script.md", "presentation/SENSELINE_walkthrough.html"):
+        if not_shipped in name_set:
+            raise RuntimeError(f"video/presentation material must not ship in the ZIP: {not_shipped}")
     task_roots = {"/".join(PurePosixPath(name).parts[:2]) for name in names if name.startswith("tasks/") and len(PurePosixPath(name).parts) > 2}
     if len(task_roots) != 8:
         raise RuntimeError(f"expected eight task packages, found {sorted(task_roots)}")

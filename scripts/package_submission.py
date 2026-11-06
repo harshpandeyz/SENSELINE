@@ -34,14 +34,22 @@ REQUIRED = {
     "scripts/package_submission.py", "scripts/verify_release_archive.py", "scripts/finalize_submission.py",
     "mutations/MUTATION_MANIFEST.json",
     "tests/test_benchmark.py", "tests/test_finalize.py", "docs/METHODOLOGY.md", "docs/RELATED_WORK.md",
-    "docs/FAILURE_ANALYSIS.md", "docs/video_walkthrough_script.md",
-    "docs/INDEPENDENT_REVIEW_PACKAGE.md", "presentation/SENSELINE_walkthrough.html",
+    "docs/FAILURE_ANALYSIS.md",
+    "docs/INDEPENDENT_REVIEW_PACKAGE.md",
     "results/experiment_status.json", "results/reference_validation.json",
     "results/submission_status.json",
     "results/unit_integrity_validation.json", "results/docker_security_validation.json",
     "results/agent_security_validation.json", "results/opencode_permission_verification.json",
 }
 TASK_LEAVES = ("task.md", "input.schema.json", "output.schema.json", "public_examples.json", "solution.py")
+
+# Submission-focused exclusions: the video walkthrough script and the slide
+# deck live in the working repository but are not evaluation material and are
+# not shipped inside the candidate/final ZIP.
+EXCLUDED_FILES = {
+    "docs/video_walkthrough_script.md",
+    "presentation/SENSELINE_walkthrough.html",
+}
 
 # Local-machine path prefixes are replaced with portable placeholders in the
 # published ZIP copies only. Raw experiment records in the working tree are
@@ -76,6 +84,8 @@ def sanitized_bytes(data: bytes) -> tuple[bytes, bool]:
 
 def excluded(relative: Path) -> bool:
     if any(part in EXCLUDED_DIRS for part in relative.parts):
+        return True
+    if relative.as_posix() in EXCLUDED_FILES:
         return True
     name = relative.name
     if name in EXCLUDED_NAMES or name == ".env":

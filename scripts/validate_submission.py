@@ -97,11 +97,11 @@ def _isolated_validation(preflight: dict, mutation_paths: list[Path]) -> dict:
 
 
 def _parse_video_line(video_line: str) -> dict:
-    """Candidate mode allows the explicit VIDEO_URL_PENDING_OWNER_RECORDING placeholder;
+    """Candidate mode allows the explicit VIDEO_URL_PENDING_OWNER_UPLOAD placeholder;
     final mode requires a real public https URL. Placeholders, local/file URLs and
     example domains are always rejected in final mode."""
-    if "VIDEO_URL_PENDING_OWNER_RECORDING" in video_line:
-        return {"status": "PENDING_OWNER_ACTION", "note": video_line.strip(), "placeholder": "VIDEO_URL_PENDING_OWNER_RECORDING"}
+    if "VIDEO_URL_PENDING_OWNER_UPLOAD" in video_line:
+        return {"status": "PENDING_OWNER_ACTION", "note": video_line.strip(), "placeholder": "VIDEO_URL_PENDING_OWNER_UPLOAD"}
     if video_line.startswith("Video walkthrough: https://"):
         from urllib.parse import urlparse as _urlparse
         url = video_line.split(":", 1)[1].strip().split()[0]
@@ -120,10 +120,17 @@ def _parse_video_line(video_line: str) -> dict:
         host = (parsed.hostname or "").lower()
         if not host or "." not in host:
             raise SystemExit(f"FAIL: README video URL is not a legitimate public link: {url}")
+        if host in ("drive.google.com", "docs.google.com") and (
+            "/drive/folders" in parsed.path or "/drive/" in parsed.path
+        ):
+            raise SystemExit(
+                "FAIL: Google Drive folder URLs are not video links; supply the "
+                f"individual public video-file URL, not a folder: {url}"
+            )
         return {"status": "PUBLISHED", "url": url}
     if video_line.startswith("Video walkthrough: PENDING"):
         return {"status": "PENDING_OWNER_ACTION", "note": video_line.split(":", 1)[1].strip()}
-    raise SystemExit("FAIL: README video line must be a real 'https://' URL or the explicit 'VIDEO_URL_PENDING_OWNER_RECORDING' / 'PENDING' owner-action marker; placeholders are rejected")
+    raise SystemExit("FAIL: README video line must be a real 'https://' URL or the explicit 'VIDEO_URL_PENDING_OWNER_UPLOAD' / 'PENDING' owner-action marker; placeholders are rejected")
 
 
 def main() -> int:
@@ -132,7 +139,16 @@ def main() -> int:
     _parser.add_argument("--mode", choices=["candidate", "final"], default="candidate",
                          help="candidate allows the PENDING placeholder (reports PENDING_VIDEO); final rejects it")
     _args, _unknown = _parser.parse_known_args()
+    # The walkthrough script and slide deck live in the working repository but
+    # are excluded from the submission ZIP by design (delivery aids, not
+    # evaluation material). They are required in the source tree, optional in
+    # an extracted archive.
+    _packaging_excluded = {
+        "docs/video_walkthrough_script.md",
+        "presentation/SENSELINE_walkthrough.html",
+    }
     missing = [path for path in ROOT_FILES if not (ROOT / path).is_file()]
+    missing = [path for path in missing if path not in _packaging_excluded]
     missing.extend(
         f"{task}/{name}" for task, folder in TASK_DIRS.items() for name in TASK_FILES
         if not (folder / name).is_file()
@@ -152,7 +168,7 @@ def main() -> int:
     if video_status["status"] == "PENDING_OWNER_ACTION":
         print("WARNING: video walkthrough URL is pending (project-owner action); release is blocked on publication")
         if _args.mode == "final":
-            raise SystemExit("FAIL: final mode rejects the VIDEO_URL_PENDING_OWNER_RECORDING/PENDING placeholder; supply a real public https URL")
+            raise SystemExit("FAIL: final mode rejects the VIDEO_URL_PENDING_OWNER_UPLOAD/PENDING placeholder; supply a real public https URL")
     if _args.mode == "candidate" and video_status["status"] == "PUBLISHED":
         print("NOTE: candidate validation sees a published video URL; final validation still required for submission")
 

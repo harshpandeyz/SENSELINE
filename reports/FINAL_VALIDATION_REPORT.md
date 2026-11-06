@@ -7,7 +7,7 @@ pinned sandbox image `python:3.11.18-slim-bookworm@sha256:ef521de1…` present l
 
 | Check | Command | Result |
 |---|---|---|
-| Unit/integration tests | `.venv/bin/python -m pytest -q` | **130 passed, 0 skipped** (104 benchmark + 26 finalizer) |
+| Unit/integration tests | `.venv/bin/python -m pytest -q` | **134 passed, 0 skipped** (104 benchmark + 30 finalizer) |
 | Reference + mutation validation | `.venv/bin/python scripts/validate_submission.py --mode candidate` | **PASS**: 266/266 references, 30/30 mutations rejected, 8 exports, unit-integrity PASS; video PENDING (candidate mode). Final mode (`--mode final`) correctly rejects the placeholder |
 | Docker security | `.venv/bin/python scripts/run_docker_security_tests.py` | **PASS**: 12/12, 0 skipped |
 | Agent workspace security | `.venv/bin/python scripts/verify_agent_security.py` | **PASS** (codex-cli 0.164.0-alpha.11.1, reinstalled pinned) |
@@ -16,8 +16,11 @@ pinned sandbox image `python:3.11.18-slim-bookworm@sha256:ef521de1…` present l
 | Aggregate (raw record) | `.venv/bin/python -m harness.aggregate --results results` | 55 full trials, PARTIAL (nemotron S04–S08 absent on quota) |
 
 Note: one pytest run showed 11 docker-integration skips while the Docker daemon was down;
-the daemon was restarted, the image re-verified, and the suite re-run green (104/104).
-The skip episode is recorded here, not hidden.
+the daemon was restarted, the image re-verified, and the suite re-run green (134/134).
+The skip episode is recorded here, not hidden. Fresh-extraction runs report
+133 passed + 1 skipped: the skip is `test_video_script_says_seventeen_infra`,
+which skips by design inside the extracted ZIP because the walkthrough script is
+intentionally excluded from the package (delivery aid, not evaluation material).
 
 ## Grader and task audit (Phase F)
 
@@ -62,5 +65,5 @@ extracted copy with TECHNICAL_PASS; video status PENDING_OWNER_ACTION is recorde
 `results/archive_validation.json` (source tree) as the release blocker (SUBMISSION_READINESS PENDING_VIDEO).
 README-at-root, 8 task packages, 50 MB limit, and prohibited-file scan all enforced by
 `scripts/verify_release_archive.py --mode candidate`. Final mode (`--mode final`) rejects the
-`VIDEO_URL_PENDING_OWNER_RECORDING` placeholder; `scripts/finalize_submission.py` rebuilds
+`VIDEO_URL_PENDING_OWNER_UPLOAD` placeholder; `scripts/finalize_submission.py` rebuilds
 `dist/SENSELINE_FINAL_SUBMISSION.zip` only after a real public URL is supplied.

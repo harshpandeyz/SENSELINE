@@ -442,8 +442,11 @@ def test_reference_validation_update_preserves_results(temp_project):
 def test_video_script_says_seventeen_infra(temp_project):
     from scripts.finalize_submission import update_video_script
 
-    update_video_script(temp_project / "docs" / "video_walkthrough_script.md", REALISTIC_YOUTUBE)
-    text = (temp_project / "docs" / "video_walkthrough_script.md").read_text(encoding="utf-8")
+    script = temp_project / "docs" / "video_walkthrough_script.md"
+    if not script.is_file():
+        pytest.skip("walkthrough script excluded from the packaged ZIP by design")
+    update_video_script(script, REALISTIC_YOUTUBE)
+    text = script.read_text(encoding="utf-8")
     assert "Seventeen infrastructure trials" in text
     assert "Ten infrastructure trials" not in text
 
@@ -507,9 +510,9 @@ def test_end_to_end_finalize_in_temp_copy(temp_project, monkeypatch):
     fin.update_reference_validation(
         temp_project / "results" / "reference_validation.json", url
     )
-    fin.update_video_script(
-        temp_project / "docs" / "video_walkthrough_script.md", url
-    )
+    script = temp_project / "docs" / "video_walkthrough_script.md"
+    if script.is_file():
+        fin.update_video_script(script, url)
     from scripts import package_submission
 
     members = package_submission.archive_members(temp_project)
@@ -536,3 +539,56 @@ def test_end_to_end_finalize_in_temp_copy(temp_project, monkeypatch):
     )
     assert str(len(members)) in manifest
     assert "sha256" in manifest.lower()
+
+
+OWNER_DRIVE_FOLDER = "https://drive.google.com/drive/folders/1fffOxRWkspQ09lKs4gf23DIyx5Ue7ZtA?usp=sharing"
+
+
+def test_drive_folder_urls_rejected():
+    for folder_url in [
+        OWNER_DRIVE_FOLDER,
+        "https://drive.google.com/drive/folders/1AbC2DeFgHi3JkLmNop",
+        "https://drive.google.com/drive/shared-with-me",
+    ]:
+        with pytest.raises(ValueError):
+            validate_video_url(folder_url)
+
+
+def test_drive_file_urls_accepted():
+    assert (
+        validate_video_url(
+            "https://drive.google.com/file/d/1AbC2DeFgHi3JkLmNop/view?usp=sharing"
+        )
+        == "https://drive.google.com/file/d/1AbC2DeFgHi3JkLmNop/view?usp=sharing"
+    )
+
+
+def test_video_script_and_presentation_excluded_from_zip(temp_project, monkeypatch):
+    monkeypatch.chdir(temp_project)
+    (temp_project / "dist").mkdir(parents=True, exist_ok=True)
+    from scripts import package_submission
+
+    archive = temp_project / "dist" / "TEST_EXCLUDE_TMP.zip"
+    report = package_submission.package(root=temp_project, archive=archive)
+    assert report["file_count"] == len(zipfile.ZipFile(archive).namelist())
+    with zipfile.ZipFile(archive) as zf:
+        names = zf.namelist()
+    assert "docs/video_walkthrough_script.md" not in names
+    assert not any(n.startswith("presentation/") for n in names)
+    assert "README.md" in names
+    assert "docs/METHODOLOGY.md" in names
+    assert "results/experiment_analysis.json" in names
+
+
+def test_readme_has_single_video_url_field(temp_project):
+    update_readme(temp_project / "README.md", REALISTIC_YOUTUBE)
+    update_readme(temp_project / "README.md", REALISTIC_YOUTUBE_2)
+    text = (temp_project / "README.md").read_text(encoding="utf-8")
+    video_lines = [ln for ln in text.splitlines() if ln.startswith("Video walkthrough:")]
+    assert len(video_lines) == 1
+    assert REALISTIC_YOUTUBE_2 in video_lines[0]
+    assert REALISTIC_YOUTUBE not in text
+    status_lines = [ln for ln in text.splitlines() if ln.startswith("**Release status:**")]
+    assert len(status_lines) == 1
+    assert REALISTIC_YOUTUBE_2 in status_lines[0]
+    assert "VIDEO_URL_PENDING" not in text

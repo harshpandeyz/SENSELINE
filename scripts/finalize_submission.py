@@ -7,7 +7,7 @@ The owner must first verify the link loads in an incognito/private browser windo
 Syntax validation alone does NOT prove public accessibility.
 
 Candidate state (before owner publishes):
-    README contains: Video walkthrough: VIDEO_URL_PENDING_OWNER_RECORDING ...
+    README contains: Video walkthrough: VIDEO_URL_PENDING_OWNER_UPLOAD ...
     Candidate ZIP: dist/SENSELINE_SUBMISSION_CANDIDATE.zip (candidate validation PASS,
     VIDEO_URL PENDING, SUBMISSION_READINESS PENDING_VIDEO)
 
@@ -54,7 +54,7 @@ sys.path.insert(0, str(ROOT))
 
 CANDIDATE_NAME = "SENSELINE_SUBMISSION_CANDIDATE.zip"
 FINAL_NAME = "SENSELINE_FINAL_SUBMISSION.zip"
-PLACEHOLDER = "VIDEO_URL_PENDING_OWNER_RECORDING"
+PLACEHOLDER = "VIDEO_URL_PENDING_OWNER_UPLOAD"
 
 EXAMPLE_DOMAINS = (
     "example.com", "example.org", "example.net", "example.edu",
@@ -115,6 +115,13 @@ def validate_video_url(url: str) -> str:
     if host not in SUPPORTED_HOSTS and not host.endswith(SUPPORTED_SUFFIXES):
         raise ValueError(
             f"unsupported video host {host!r}; supported platforms: {SUPPORTED_LABEL}"
+        )
+    if host in ("drive.google.com", "docs.google.com") and (
+        "/drive/folders" in parsed.path or "/drive/" in parsed.path
+    ):
+        raise ValueError(
+            "Google Drive folder URLs are not video links; supply the individual "
+            "public video-file URL, e.g. https://drive.google.com/file/d/FILE_ID/view"
         )
     path_query = (parsed.path or "") + ("?" + parsed.query if parsed.query else "")
     if len(cleaned) < 20:
@@ -274,6 +281,10 @@ def update_reference_validation(ref_path: Path, url: str) -> dict:
 
 
 def update_video_script(script_path: Path, url: str) -> dict:
+    if not script_path.is_file():
+        # The walkthrough script ships in the working repository but is
+        # excluded from the submission ZIP by design; nothing to update there.
+        return {"updated": False, "skipped": True}
     text = script_path.read_text(encoding="utf-8")
     new_text = text
     new_text = new_text.replace("Ten infrastructure trials", "Seventeen infrastructure trials")
@@ -344,7 +355,7 @@ def update_manifest(manifest_path: Path, url: str, file_count: int) -> dict:
         elif line.startswith("- Final mode"):
             updated.append(
                 "- Final mode (`--mode final`) rejects the "
-                "`VIDEO_URL_PENDING_OWNER_RECORDING` placeholder; this final ZIP "
+                "`VIDEO_URL_PENDING_OWNER_UPLOAD` placeholder; this final ZIP "
                 "carries the public URL in the extracted README."
             )
         else:
@@ -396,10 +407,10 @@ def update_release_audit(audit_path: Path, url: str) -> dict:
     text = audit_path.read_text(encoding="utf-8")
     old_video = (
         "| Video | **PENDING** — no URL invented; README carries "
-        "`VIDEO_URL_PENDING_OWNER_RECORDING`; candidate validator allows it "
+        "`VIDEO_URL_PENDING_OWNER_UPLOAD`; candidate validator allows it "
         "(PENDING_VIDEO), final validator rejects it; owner action required "
         "(`python scripts/finalize_submission.py --video-url "
-        "\"ACTUAL_PUBLIC_VIDEO_URL\"`) |"
+        "\"REAL_PUBLIC_VIDEO_FILE_URL\"`) |"
     )
     new_video = (
         f"| Video | **PUBLISHED** (syntax-validated; owner confirmed incognito) — {url} "

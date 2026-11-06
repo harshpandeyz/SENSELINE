@@ -29,12 +29,14 @@ Per-configuration full-run record (opencode v2.2.5 agent, uniform 120000-token b
 | `ollama/llama3.2:1b` (local) | 24 (S01–S08 × 3) | 0 | 24 | 0 |
 | `openrouter/nvidia/nemotron-3.5-super-vl:free` ($0 free tier) | 7 (S01×3, S02×3, S03×1) | 7 | 0 | 0 |
 
-Pilot + history add 9 more genuine trials (all nemotron except two partial qwen S05
-attempts scoring 1/30 and 0/30). No configuration besides nemotron produced a
-passing case in any phase. S04, S06, S07 have no genuine full-run coverage; S05 and
-S08 genuine evidence comes from pilot phases only; S04–S08 nemotron trials are
-missing because the OpenRouter free quota (50 requests/day) was exhausted — they are
-absent, not zero.
+Pilot + history add 7 more genuine trials: nemotron S01/S05/S08 pilots plus two
+early qwen S05 pilot-history implementations scoring 1/30 and 0/30 (combined 1/60,
+one passing case on `S05-zero-factor`). Nemotron holds the substantial genuine
+full-run coverage (7 trials, 211/216); qwen's two genuine implementations come from
+pilot-history attempts only, not the full run. S04, S06, S07 have no genuine coverage
+in any phase; S05 and S08 genuine evidence comes from pilot phases only; S04–S08
+nemotron full-run trials are missing because the OpenRouter free quota
+(50 requests/day) was exhausted — they are absent, not zero.
 
 ## Genuine reasoning and implementation failures
 

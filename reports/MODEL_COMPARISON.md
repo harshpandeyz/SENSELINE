@@ -7,7 +7,7 @@ Date: 2026-11-06 UTC. All figures pool GENUINE trials only (eligibility in
 
 ### 1. `openrouter/nvidia/nemotron-3.5-super-vl:free` via opencode v2.2.5 — EVALUATED
 
-The only configuration that completed the tool-use loop and produced graded code.
+Nemotron holds the substantial genuine full-run coverage (7 trials, 211/216). Qwen3 separately produced two early genuine pilot-history S05 implementations (combined 1/60, one passing case) — pilot-history attempts, not full-run results, and not ranked here.
 
 | Scope | Trials | Cases | Accuracy | SCR | UAR | Notes |
 |---|---|---|---|---|---|---|
@@ -20,7 +20,7 @@ Strengths: exact decoding, affine units, calibration order, Type A/B uncertainty
 
 ### 2/3. `ollama/qwen3:8b`, `ollama/llama3.2:1b` — TOOL-USE BOUNDARY (not ranked by quality)
 
-48 full-run trials + pilots: 0 genuine. Zero tool_use events in successful-usage transcripts vs 13 for nemotron; starter never replaced (one historical qwen S05 produced graded code scoring 1/30). Verdict: cannot operate the edit-only agent loop; excluded from quality comparison by rule (a zero from tool-use failure is not a measurement-reasoning result).
+48 full-run trials: 0 genuine in the full run; pilot-history adds two genuine qwen S05 implementations (combined 1/60, one passing case on `S05-zero-factor`). Zero tool_use events in successful-usage full-run transcripts vs 13 for nemotron; full-run starters never replaced. Verdict: local models cannot reliably operate the edit-only agent loop — a reproducible tool-use boundary, not a measurement-reasoning score; tool-use failures are never presented as reasoning failures.
 
 ### Probes (not ranked)
 

@@ -28,7 +28,7 @@ and excluded), validator placeholder rule (fixed to accept real URL / explicit P
 
 | Item | Evidence / result |
 |---|---|
-| Benchmark tests | `pytest`: **130 passed, 0 skipped** (104 benchmark + 26 finalizer) (2026-11-06; one run showed 11 docker-integration skips while the Docker daemon was down — daemon restarted, image verified, suite re-run green) |
+| Benchmark tests | `pytest`: **134 passed, 0 skipped** (104 benchmark + 30 finalizer) (2026-11-06; one run showed 11 docker-integration skips while the Docker daemon was down — daemon restarted, image verified, suite re-run green) |
 | Oracle | 266/266 hidden fixtures: reference and independent oracle agree exactly |
 | Mutation suite | **30/30 rejected** for an intended failure dimension |
 | Docker security | **12/12 PASS, 0 skipped**; Codex CLI 0.164.0-alpha.11.1 sandbox checks PASS; OpenCode 2.2.5 policy resolves (dynamic tool denial not exercised — disclosed) |
@@ -39,10 +39,10 @@ and excluded), validator placeholder rule (fixed to accept real URL / explicit P
 | UAR (genuine) | Genuine pilot S08: **3/23** (run B). Exploratory budget-breach S08: **2/23** (run A), kept separate and excluded. Never pooled (no 5/46). Full: null denominator (no S06/S08 genuine cases) |
 | Accuracy (genuine) | Nemotron full: **211/216 = 0.977** (S01 91/96, S02 90/90, S03 30/30); macro task avg 0.983; pass@3 = pass^3 = **1/2** full (S02 perfect; strict perfect-trial definition) and **1/11** overall genuine pooled (run_id-keyed; S01 n=5 + S02 n=3). Groups with <3 genuine trials contribute null |
 | Cost | Configured cap **$0** (enforced: paid paths require hard limits + credentials; none present). Estimated $0 all trials. Confirmed billing: unverified (no billing dashboard pulled; counter ≠ billing). Provider counter +$0.0016 total (4.9868 → 4.9876 → 4.9884, two +$0.0008 steps) across free-tier probing (disclosed) |
-| Packaging | `dist/SENSELINE_SUBMISSION_CANDIDATE.zip` (technical candidate, README with `VIDEO_URL_PENDING_OWNER_RECORDING` at root, < 50 MB, SHA-256 sidecar) + `scripts/finalize_submission.py` to rebuild `dist/SENSELINE_FINAL_SUBMISSION.zip` once the owner supplies the real public URL. Both use the official inclusion/exclusion rules; candidate validation reports TECHNICAL_PASS + PENDING_VIDEO |
+| Packaging | `dist/SENSELINE_SUBMISSION_CANDIDATE.zip` (technical candidate, README with `VIDEO_URL_PENDING_OWNER_UPLOAD` at root, < 50 MB, SHA-256 sidecar) + `scripts/finalize_submission.py` to rebuild `dist/SENSELINE_FINAL_SUBMISSION.zip` once the owner supplies the real public URL. Both use the official inclusion/exclusion rules; candidate validation reports TECHNICAL_PASS + PENDING_VIDEO |
 | Reproducibility | Fresh-directory extraction + dependency install + tests + validation + security: see `reports/FINAL_VALIDATION_REPORT.md` and `results/archive_validation.json` (candidate mode) |
 | Security | No candidate code on host (DockerCandidate only); non-root, no-network, read-only, capped containers; hidden fixtures never exported (visible in repo/ZIP for judge reproducibility — agent-confidential, not repo-confidential); secret scan clean; transcripts redacted, contain operator-local paths (no credentials) |
-| Video | **PENDING** — no URL invented; README carries `VIDEO_URL_PENDING_OWNER_RECORDING`; candidate validator allows it (PENDING_VIDEO), final validator rejects it; owner action required (`python scripts/finalize_submission.py --video-url "ACTUAL_PUBLIC_VIDEO_URL"`) |
+| Video | **PENDING** — no URL invented; README carries `VIDEO_URL_PENDING_OWNER_UPLOAD`; candidate validator allows it (PENDING_VIDEO), final validator rejects it; owner action required (`python scripts/finalize_submission.py --video-url "REAL_PUBLIC_VIDEO_FILE_URL"`) |
 | Human review | Operator (transcript-level, all phases); **owner review pending** — `results/pilot/pilot_approval.json` records `approved:true` by operator criteria with `owner_review: PENDING`. Full run proceeded on operator review; chronology and gate deviation documented below |
 | GitHub | Branch `main`; final commit + push status recorded at release time (see §7) |
 
